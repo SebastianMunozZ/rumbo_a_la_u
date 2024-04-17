@@ -1,0 +1,18 @@
+# Archivos de configuración local
+/rumbo_a_la_u/settings/local.py
+
+# Archivos generados automáticamente por Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# Directorio de entorno virtual
+/venv/
+
+# Archivos de log
+/logs/
+
+# Archivos de caché
+/__pycache__/
