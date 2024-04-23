@@ -1,6 +1,8 @@
 # Archivos de configuración local
 /rumbo_a_la_u/settings/local.py
 
+node_modules/
+
 # Archivos generados automáticamente por Django
 __pycache__/
 *.pyc
