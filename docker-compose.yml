@@ -2,14 +2,15 @@ version: '3'
 
 services:
   db:
-      image: mysql:8.0   # Imagen de Docker a utilizar para la base de datos MySQL
-      ports:
-        - "3306:3306"    # Mapeo del puerto 3306 del contenedor al puerto 3306 del host
-      environment:
-        MYSQL_DATABASE: rumbo_a_la_u    # Configuración de la base de datos MySQL
-        MYSQL_USER: seba
-        MYSQL_PASSWORD: seba
-        MYSQL_ROOT_PASSWORD: root
+    build: ./db
+    image: mysql:8.0   # Imagen de Docker a utilizar para la base de datos MySQL
+    ports:
+      - "3306:3306"    # Mapeo del puerto 3306 del contenedor al puerto 3306 del host
+    environment:
+      MYSQL_DATABASE: rumbo_a_la_u    # Configuración de la base de datos MySQL
+      MYSQL_USER: seba
+      MYSQL_PASSWORD: seba
+      MYSQL_ROOT_PASSWORD: root
   backend:
     build: ./rumbo_a_la_u
     ports:
