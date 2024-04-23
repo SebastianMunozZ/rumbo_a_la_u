@@ -21,4 +21,7 @@ services:
       - DATABASE_NAME=rumbo_a_la_u
       - DATABASE_USER=seba
       - DATABASE_PASSWORD=seba
-  
+  frontend:
+    build: ./frontend
+    ports:
+      - "3111:3000"
