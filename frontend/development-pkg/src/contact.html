@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('style.html')
+<body>
+    <!-- header style one -->
+    @@include('header/header-two.html')
+    <!-- header style end -->
+
+    @@include('elements/breadcrumb.html',{
+        "title": "Contact Us",
+        "name": "Contact us",
+        "active": "contact.html",
+    })    
+    
+    <!-- rts contact area start -->
+    <div class="rts-contact-area rts-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-xl-5">
+                    <!-- contact left area start -->
+                    <div class="contact-left-area-start">
+                        <div class="title-area-left-style">
+                            <div class="pre-title">
+                                <img src="assets/images/banner/bulb.png" alt="icon">
+                                <span>Courses</span>
+                            </div>
+                            <h2 class="title">Love to hear from you <br>
+                                <span>Get in touch!</span></h2>
+                        </div>
+                        <form action="mailer.php" method="post" class="contact-page-form" id="contact-form">
+                            <div class="single-input">
+                                <label for="name">Your Name*</label>
+                                <input id="name" name="name" type="text" placeholder="Andrew Davis ...." required>
+                            </div>
+                            <div class="single-input">
+                                <label for="email">Your Email*</label>
+                                <input id="email" name="email" type="email" placeholder="info@studyhub.net">
+                            </div>
+                            <div class="single-input">
+                                <label for="message">Message*</label>
+                                <textarea id="message" name="message" placeholder="Let tell us about your projects"></textarea>
+                            </div>
+                            <button class="rts-btn btn-primary mt--30">Send Message</button>
+                        </form>
+                        <div id="form-messages" class="mt--20"></div>
+                    </div>
+                    <!-- contact left area end -->
+                </div>
+                <div class="col-xl-7 pl--50 pl_lg--15 pl_md--15 pl_sm--15 pb_md--100 pb_sm--100">
+                    <div class="contact-map-area-start">
+                        <div class="single-maptop-info">
+                            <div class="icon">
+                                <img src="assets/images/contact/02.png" alt="contact">
+                            </div>
+                            <p class="disc">
+                                123 Main Street,
+                                New York, AV 10013
+                            </p>
+                        </div>
+                        <div class="single-maptop-info">
+                            <div class="icon">
+                                <img src="assets/images/contact/03.png" alt="contact">
+                            </div>
+                            <a href="tel:+4733378901">(555) 123-4567</a> <br>
+                            <a href="tel:+4733378901">(555) 123-4567</a>
+                        </div>
+                        <div class="single-maptop-info">
+                            <div class="icon">
+                                <img src="assets/images/contact/04.png" alt="contact">
+                            </div>
+                            <p class="disc">
+                                Mon-Fri: 9 AM – 6 PM <br>
+                                Saturday: 9 AM – 4 PM
+                            </p>
+                        </div>
+                    </div>
+                    <div class="map-bottom-area mt--30">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.288851207937!2d90.47855065!3d23.798243149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1705835333294!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts contact area end -->
+
+    <div class="rts-section-gap">
+
+    </div>
+
+    <!-- footer call to action area start -->
+    <div class="footer-callto-action-area bg-light-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="call-to-sction bg_image shape-move">
+                        <h2 class="title">Skills Certificate From <br> the Studyhub</h2>
+                        <a href="course-one.html" class="rts-btn btn-primary-white with-arrow">View All Course <i class="fa-regular fa-arrow-right"></i></a>
+                        <div class="cta-image">
+                            <img src="assets/images/cta/women.png" alt="">
+                        </div>
+                        <div class="shape-image">
+                            <div class="shape one" data-speed="0.04"><img src="assets/images/cta/03.svg" alt=""></div>
+                            <div class="shape two" data-speed="0.04"><img src="assets/images/cta/04.svg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ptb--105">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized left-logo">
+                            <div class="head">
+                                <a href="#">
+                                    <img src="assets/images/logo/logo-1.svg" alt="logo" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p class="dsic">
+                                    We are passionate education dedicated to providing high-quality resources learners
+                                    all backgrounds.
+                                </p>
+                                <ul class="wrapper-list">
+                                    <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia </li>
+                                    <li><i class="fa-regular fa-phone"></i><a href="call-to:61485826710">+(61) 485-826-710</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Quick Links</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">Latest Courses</a></li>
+                                    <li><a href="#">Mission & Vision</a></li>
+                                    <li><a href="#">Join a Carrer</a></li>
+                                    <li><a href="#">Our Approach</a></li>
+                                    <li><a href="#">Pricing Plan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Explore</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Upcoming Events</a></li>
+                                    <li><a href="#">Blog & News</a></li>
+                                    <li><a href="#">FAQ Question</a></li>
+                                    <li><a href="#">Course</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Newsletter</h6>
+                            </div>
+                            <div class="body">
+                                <p class="disc">Subscribe Our newsletter get update our new course</p>
+                                <form action="#">
+                                    <div class="input-area-fill">
+                                        <input type="email" placeholder="Enter Your Email" required>
+                                        <button> Subscribe</button>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input type="checkbox" id="exampleCheck1">
+                                        <label for="exampleCheck1">I agree to the terms of use and privacy policy.</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                    </div>
+                    <!-- footer main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area-one-border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-area-one">
+                            <p>Copyright © 2024 All Rights Reserved by Studyhub</p>
+                            <div class="social-copyright">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer call to action area end -->
+
+    <!-- cart area start -->
+    @@include('elements/cart.html')
+    <!-- cart area edn -->
+
+    @@include('scripts.html')
+
+</body>
+</html>

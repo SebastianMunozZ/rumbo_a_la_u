@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'rumbo_a_la_u.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rumbo_a_la_u',
+        'USER': 'seba',
+        'PASSWORD': 'seba',
+        'HOST': 'db',
+        'PORT': '3306'
     }
 }
 
