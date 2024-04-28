@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -12,17 +13,17 @@ html {
     font-size: 10px;
     overflow: hidden;
     overflow-y: auto;
-    scroll-behavior:smooth;
+    scroll-behavior: auto !important;
 }
 
 body {
-    font-size: var(--p-s);
+    font-size: var(--font-size-b2);
     line-height: var(--line-height-b2);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--font-primary);
-    color: var(--rt-body);
-    font-weight: var(--f-regular);
+    color: var(--color-body);
+    font-weight: var(--p-regular);
     position: relative;
     overflow-x: hidden;
     // background: var(--background-color-2);
@@ -86,8 +87,8 @@ h6,
 .h6 {
     word-break: break-word;
     font-family: var(--font-secondary);
-    line-height: 1.2;
-    color: var(--rt-secondary);
+    line-height: 1.4074;
+    color: var(--color-heading-1);
 }
 
 h1,
@@ -237,7 +238,7 @@ h2,
 .h2,
 h3,
 .h3 {
-    font-weight: var(--f-bold);
+    font-weight: var(--s-bold);
 }
 
 
@@ -245,26 +246,25 @@ h4,
 .h4,
 h5,
 .h5 {
-    font-weight: var(--f-bold);
+    font-weight: var(--s-bold);
 }
 
 h6,
 .h6 {
-    font-weight: var(--f-bold);
+    font-weight: var(--s-bold);
 }
 
 p {
-    font-size: var(--p-s);
+    font-size: var(--font-size-b2);
     line-height: var(--line-height-b2);
-    font-weight: var(--f-regular);
-    color: var(--rt-body);
-    margin: 0 auto 20px;
-    font-family: var(--font-primary);
+    font-weight: var(--p-regular);
+    color: var(--color-body);
+    margin: 0 0 40px;
 
     @media #{$sm-layout} {
         margin: 0 0 20px;
         font-size: 16px;
-        line-height: 26px;
+        line-height: 28px;
     }
     &.b1 {
         font-size: var(--font-size-b1);
@@ -291,7 +291,7 @@ p {
     }
 
     &.has-very-light-gray-color {
-        color: var(--rt-white);
+        color: var(--color-white);
     }
 
     &.has-background {
@@ -355,7 +355,7 @@ cite,
 .wp-block-pullquote cite,
 .wp-block-pullquote.is-style-solid-color blockquote cite,
 .wp-block-quote cite {
-    color: var(--rt-secondary);
+    color: var(--color-heading);
 }
 
 var {
@@ -380,7 +380,7 @@ ul {
             li {
                 font-size: 18px;
                 line-height: 30px;
-                color: var(--rt-body);
+                color: var(--color-body);
                 position: relative;
                 padding-left: 30px;
 
@@ -394,7 +394,7 @@ ul {
                     width: 6px;
                     height: 6px;
                     border-radius: 100%;
-                    background: var(--rt-body);
+                    background: var(--color-body);
                     left: 0;
                     top: 10px;
                 }
@@ -411,14 +411,14 @@ ul {
         line-height: var(--line-height-b1);
         margin-top: 10px;
         margin-bottom: 10px;
-        color: var(--rt-body);
+        color: var(--color-body);
 
         a {
             text-decoration: none;
             color: var(--color-gray);
 
             &:hover {
-                color: var(--rt-primary);
+                color: var(--color-primary);
             }
         }
     }
@@ -434,16 +434,16 @@ ol {
     li {
         font-size: var(--font-size-b1);
         line-height: var(--line-height-b1);
-        color: var(--rt-body);
+        color: var(--color-body);
         margin-top: 10px;
         margin-bottom: 10px;
 
         a {
-            color: var(--rt-secondary);
+            color: var(--color-heading);
             text-decoration: none;
 
             &:hover {
-                color: var(--rt-primary);
+                color: var(--color-primary);
             }
         }
     }

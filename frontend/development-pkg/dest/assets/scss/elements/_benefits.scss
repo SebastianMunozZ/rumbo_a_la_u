@@ -18,6 +18,10 @@
     .information{
         .title{
             margin-bottom: 5px;
+            font-size: 20px;
+        }
+        p{
+            font-size: 15px;
         }
     }
 }
@@ -25,6 +29,14 @@
 
 .thumbnail-benefits-right-image{
     position: relative;
+    img{
+        @media #{$md-layout} {
+            width: 100%;
+        }
+        @media #{$sm-layout} {
+            width: 100%;
+        }
+    }
 }
 
 
@@ -53,7 +65,7 @@
             height: 130px;
             background: transparent;
             border-radius: 50%;
-            border: 1px solid var(--rt-primary);
+            border: 1px solid var(--color-primary);
             animation: waves 3s ease-in-out infinite;
         }
         &::after{
@@ -67,7 +79,7 @@
             width: 60px;
             height: 60px;
             background: #fff;
-            // border: 2px solid var(--rt-primary);
+            // border: 2px solid var(--color-primary);
             transition: all 200ms;
             border-radius: 50%;
         }
@@ -77,7 +89,7 @@
             z-index: 3;
             width: 0;
             height: 0;
-            border-left: 15px solid var(--rt-primary);
+            border-left: 15px solid var(--color-primary);
             border-top: 8px solid transparent;
             border-bottom: 8px solid transparent;
             top: 50%;
@@ -89,7 +101,7 @@
                 margin-left: 75px;
                 position: relative;
                 margin-top: -12px;
-                color: var(--rt-primary);
+                color: var(--color-primary);
                 font-weight: 500;
             }
         }

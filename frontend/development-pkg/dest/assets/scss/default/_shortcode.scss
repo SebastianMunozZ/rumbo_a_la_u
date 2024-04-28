@@ -38,7 +38,7 @@ iframe {
 =================================*/
 
 @include config-bg-colors('bg-color-',
-    'primary'var(--rt-primary),
+    'primary'var(--color-primary),
     'secondary'var(--color-secondary),
     'tertiary'var(--color-tertiary),
     'gray'var(--color-gray),
@@ -490,7 +490,7 @@ textarea:-ms-input-placeholder {
 }
 
 [data-overlay]:before {
-    background: var(--rt-primary);
+    background: var(--color-primary);
 }
 
 [data-black-overlay]:before {
@@ -594,7 +594,7 @@ textarea:-ms-input-placeholder {
                 height: 0;
                 border-style: solid;
                 border-width: 0 5px 7px 5px;
-                border-color: transparent transparent var(--rt-primary) transparent;
+                border-color: transparent transparent var(--color-primary) transparent;
                 position: absolute;
                 content: "";
                 left: 50%;
@@ -607,7 +607,7 @@ textarea:-ms-input-placeholder {
     &:hover {
         span {
             &.text {
-                color: var(--rt-primary);
+                color: var(--color-primary);
             }
         }
     }

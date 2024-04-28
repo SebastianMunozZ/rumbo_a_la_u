@@ -3667,6 +3667,16 @@ Copyright (c) 2015 Daniel Eden
       }
 }
 
+@keyframes stickyanimations {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }
 
 .floting-line{
     animation: animate-floting 15s linear infinite;
@@ -3736,7 +3746,7 @@ Copyright (c) 2015 Daniel Eden
     top: 0;
     width: 100%;
     height: 101%;
-    background: var(--rt-primary);
+    background: var(--color-primary);
   }
   .reveal-item .reveal-animation::before {
     position: absolute;
@@ -3882,29 +3892,3 @@ Copyright (c) 2015 Daniel Eden
     0%   { transform: translateX(-100%); }
     100% { transform: translateX(0%); }
 }
-@keyframes rotate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-@keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1.2);
-      opacity: .2;
-    }
-  }
-  @keyframes topbottom {
-    0% {
-      transform: translateY(-5%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }

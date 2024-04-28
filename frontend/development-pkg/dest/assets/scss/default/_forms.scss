@@ -4,15 +4,15 @@ button,
 select,
 textarea {
     background: transparent;
-    border: 1px solid var(--rt-border);
-    transition: var(--transition);
-    color: var(--rt-body);
+    border: 1px solid var(--color-border);
+    transition: all 0.4s ease-out 0s;
+    color: var(--color-body);
     width: 100%;
 
     &:focus,
     &:active {
         outline: none;
-        border-color: var(--rt-primary) !important;
+        border-color: var(--color-primary);
     }
 }
 
@@ -28,13 +28,28 @@ input {
     padding: 0 15px;
 }
 
+// select {
+//     transition: 0.3s;
+//     height: 40px;
+//     padding: 0 20px;
+//     outline: none;
+//     color: var(--color-body);
+//     -moz-appearance: none;
+//     -webkit-appearance: none;
+//     appearance: none;
+//     border: 1px solid var(--color-border);
+//     border-radius: 4px;
+//     background: url(../images/icons/arrow-icon.png) 95% center no-repeat transparent;
+//     padding-right: 32px;
+// }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
 input[type="tel"],
 textarea {
-    font-size: var(--p-s);
+    font-size: var(--font-size-b2);
     font-weight: 400;
     height: auto;
     line-height: 28px;
@@ -43,44 +58,44 @@ textarea {
     box-shadow: none;
     padding: 0 15px;
     outline: none;
-    border: var(--border-width) solid var(--rt-border);
-    border-radius: var(--rt-radius-none);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
 
     /* -- Placeholder -- */
     &::placeholder {
-        color: var(--rt-body);
+        color: var(--body-color);
         /* Firefox */
         opacity: 1;
     }
 
     &:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
-        color: var(--rt-body);
+        color: var(--body-color);
     }
 
     &::-ms-input-placeholder {
         /* Microsoft Edge */
-        color: var(--rt-body);
+        color: var(--body-color);
     }
 
     &.p-holder__active {
-        border-color: var(--rt-primary);
+        border-color: var(--color-primary);
 
         /* -- Placeholder -- */
         &::placeholder {
-            color: var(--rt-primary);
+            color: var(--color-primary);
             /* Firefox */
             opacity: 1;
         }
 
         &:-ms-input-placeholder {
             /* Internet Explorer 10-11 */
-            color: var(--rt-primary);
+            color: var(--color-primary);
         }
 
         &::-ms-input-placeholder {
             /* Microsoft Edge */
-            color: var(--rt-primary);
+            color: var(--color-primary);
         }
     }
 
@@ -110,7 +125,7 @@ textarea {
     }
 
     &:focus {
-        border-color: var(--rt-primary);
+        border-color: var(--color-primary);
     }
 }
 
@@ -188,7 +203,7 @@ input[type="radio"] {
 
 input:checked ~ .rn-check-box-label {
     &::before{
-        background: var(--rt-primary) !important;
+        background: var(--color-primary) !important;
     }
 }
 
@@ -223,7 +238,7 @@ input[type="radio"] {
         border: 0 none;
         border-radius: 4px;
         height: 50px;
-        font-size: var(--p-s);
+        font-size: var(--font-size-b2);
         transition: var(--transition);
         padding: 0 20px;
         background-color: var(--color-lightest);
@@ -231,7 +246,7 @@ input[type="radio"] {
         transition: var(--transition);
 
         &:focus {
-            border-color: var(--rt-primary);
+            border-color: var(--color-primary);
             box-shadow: none;
         }
     }
@@ -242,13 +257,13 @@ input[type="radio"] {
         border-radius: 4px;
         resize: none;
         padding: 15px;
-        font-size: var(--p-s);
+        font-size: var(--font-size-b2);
         transition: var(--transition);
         background-color: var(--color-lightest);
         border: 1px solid transparent;
 
         &:focus {
-            border-color: var(--rt-primary);
+            border-color: var(--color-primary);
         }
     }
 }
@@ -261,18 +276,18 @@ input[type="submit"] {
     font-weight: 500;
     transition: 0.3s;
     height: 60px;
-    background: var(--rt-primary);
+    background: var(--color-primary);
     color: var(--color-white);
     font-weight: var(--p-medium);
-    font-size: var(--p-s);
+    font-size: var(--font-size-b2);
     line-height: var(--line-height-b3);
     height: 50px;
-    border: 2px solid var(--rt-primary);
+    border: 2px solid var(--color-primary);
     transition: var(--transition);
 
     &:hover {
         background: transparent;
-        color: var(--rt-primary);
+        color: var(--color-primary);
         transform: translateY(-5px);
     }
 

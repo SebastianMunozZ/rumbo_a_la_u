@@ -2,7 +2,7 @@
  *
  * -----------------------------------------------------------------------------
  *
- * Template : Bizup - Creative Agency & Portfolio HTML Template
+ * Template : Studyhub - Education and LMS HTML Template
  * Author : reacthemes
  * Author URI : https://reactheme.com/ 
  *

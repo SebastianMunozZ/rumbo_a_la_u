@@ -45,7 +45,7 @@ a:focus,
 a:active {
     text-decoration: none;
     outline: none;
-    color: var(--rt-primary);
+    color: var(--color-primary);
 }
 
 a:focus {
@@ -66,7 +66,7 @@ strong {
 }
 
 mark {
-    background: var(--rt-primary);
+    background: var(--color-primary);
     color: #ffffff;
 }
 
@@ -80,7 +80,7 @@ samp {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    color: var(--rt-primary);
+    color: var(--color-primary);
 }
 
 kbd,
@@ -354,4 +354,3 @@ blockquote strong,
 blockquote b {
     font-weight: 700;
 }
-

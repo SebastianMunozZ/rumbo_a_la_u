@@ -1,9 +1,33 @@
 /*=== Javascript function indexing hear===========
 
 01.swiperActivation();
+02.counterUp();
+03.searchOption();
+04.cartBarshow();
+05.cartNumberIncDec();
+06.niceSelect();
+07.backToTopInit();
+08.mesonaryTab();
+09.vedioActivation();
+10.stickyHeader();
+11.progressAvtivation();
+12.wowActive();
+13.stickySidebar();
+14.rtslessonToggle();
+15.filterClickButton();
+16.datePicker();
+17.fileUpload();
+18.countDownTimer();
+19.modalOver();
+20.sideMenu();
+21.metismenu();
+22.autoCompleate();
+23.fitRows();
+24.tabToggle();
+25.shapeMove();
+
 
 ==================================================*/
-
 
 (function ($) {
     'use strict';
@@ -15,10 +39,10 @@
             rtsJs.methods();
         },
         d: function (e) {
-              this._window = $(window),
-              this._document = $(document),
-              this._body = $('body'),
-              this._html = $('html')
+            this._window = $(window),
+                this._document = $(document),
+                this._body = $('body'),
+                this._html = $('html')
         },
         methods: function (e) {
             rtsJs.swiperActivation();
@@ -34,12 +58,20 @@
             rtsJs.progressAvtivation();
             rtsJs.wowActive();
             rtsJs.stickySidebar();
+            rtsJs.rtslessonToggle();
+            rtsJs.filterClickButton();
             rtsJs.datePicker();
-            rtsJs.magnificPopup();
+            rtsJs.fileUpload();
             rtsJs.countDownTimer();
+            rtsJs.modalOver();
             rtsJs.sideMenu();
-
+            rtsJs.metismenu();
+            rtsJs.autoCompleate();
+            rtsJs.fitRows();
+            rtsJs.tabToggle();
+            rtsJs.shapeMove();
         },
+
         swiperActivation: function () {
 
             $(document).ready(function () {
@@ -48,12 +80,12 @@
                     spaceBetween: 24,
                     loop: true,
                     navigation: {
-                        nextEl: ".rt-next",
-                        prevEl: ".rt-prev",
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
                         clickable: true
                     },
                     pagination: {
-                        el: ".rts-swiper-dots",
+                        el: ".swiper-pagination",
                         clickable: true
                     },
                     breakpoints: {
@@ -61,64 +93,31 @@
                           slidesPerView: 6,
                         },
                         1500: {
-                          slidesPerView: 3,
+                          slidesPerView: 6,
                         },
-                        1024: {
+                        1324: {
+                          slidesPerView: 6,
+                        },
+                        1100: {
+                          slidesPerView: 4,
+                        },
+                        800: {
                           slidesPerView: 3,
                         },
                         768: {
                           slidesPerView: 2,
                         },
                         640: {
-                          slidesPerView: 1,
+                          slidesPerView: 2,
+                        },
+                        440: {
+                          slidesPerView: 2,
                         },
                         320: {
                           slidesPerView: 1,
                         }
                     }
                 });
-            });
-            $(document).ready(function () {
-              var swiper = new Swiper(".testmonial-v2", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                      el: '.swiper-pagination',
-                      clickable: true
-                  }
-              });
-            });
-
-            $(document).ready(function () {
-              var swiper = new Swiper(".single-testimonial-active", {
-                  slidesPerView: 2,
-                  loop: true,
-                  spaceBetween: 30,
-                  pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-                  breakpoints: {
-                    1700: {
-                      slidesPerView: 2,
-                    },
-                    1500: {
-                      slidesPerView: 2,
-                    },
-                    1024: {
-                      slidesPerView: 2,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    640: {
-                      slidesPerView: 1,
-                    },
-                    320: {
-                      slidesPerView: 1,
-                    }
-                }
-              });
             });
             $(document).ready(function () {
                 var swiper = new Swiper(".mySwiper-testimonials-1", {
@@ -136,6 +135,36 @@
                     },
                 });
             });
+            $(document).ready(function(){
+              var swiper = new Swiper(".swiper-container-h1", {
+                  direction: "horizontal",
+                  effect: "slide",
+                  autoplay: false,
+                  parallax: true,
+                  speed: 1600,
+                  rtl: true,
+                  loop: true,
+                  loopFillGroupWithBlank: !0,
+                  keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                  },
+                  scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: false,
+                    draggable: true
+                  },
+                  navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
+                  pagination: {
+                      el: ".swiper-pagination",
+                      type: "bullets",
+                      clickable:"true"
+                    }
+                });
+          });
 
             $(document).ready(function(){
               let defaults = {
@@ -144,6 +173,7 @@
               };
               // call init function
               initSwipers(defaults);
+              
               function initSwipers(defaults = {}, selector = ".swiper-data") {
                 let swipers = document.querySelectorAll(selector);
                 swipers.forEach((swiper) => {
@@ -166,6 +196,7 @@
             })
 
         },
+
         counterUp: function () {
           $('.counter').counterUp({
               delay: 10,
@@ -174,6 +205,7 @@
           $('.counter').addClass('animated fadeInDownBig');
           $('h3').addClass('animated fadeIn');
         },
+        
         // search popup
         searchOption: function () {
             $(document).on('click', '#search', function () {
@@ -189,6 +221,7 @@
                 $("#anywhere-home").removeClass("bgshow");
             });
         },
+
         // cart bar show
         cartBarshow: function () {
             // Cart Bar show & hide
@@ -205,6 +238,7 @@
                 $("#anywhere-home").removeClass("bgshow");
             });
         },
+
         cartNumberIncDec: function(){
             $(document).ready(function(){
               
@@ -232,7 +266,8 @@
         },
 
         niceSelect: function(){
-            $('.select').each(function() {
+            $('.nice-select').each(function() {
+  
                 var select = $(this),
                     name = select.attr('name');
                 
@@ -284,7 +319,7 @@
                 
                 });
                 
-            });
+              });
         },
 
         backToTopInit: function () {
@@ -327,14 +362,17 @@
         },
 
         mesonaryTab: function(){
-          $(document).ready(function(){
+          $(window).on("load", function() {
 
             var isotope = $(".main-isotop");
     
             if(isotope.length){
                 var iso = new Isotope( '.filter', {
                     itemSelector: '.element-item',
-                    layoutMode: 'fitRows'
+                    layoutMode: 'fitRows',
+                    fitRows: {
+                      equalheight: true
+                     }
                   });
                   
                   // filter functions
@@ -403,11 +441,11 @@
                 $(this).addClass('is-checked');
                 event.preventDefault();
             });
-            
-            
-          });
+  
+         });
     
         },
+
         vedioActivation: function () {
           $(document).ready(function(){
             $('.popup-youtube, .popup-video').magnificPopup({
@@ -420,26 +458,17 @@
           });
         },
         // sticky header activation
+
         stickyHeader: function (e) {
-			function sticky_header() {
-				const headerSticky = $('header.header--sticky');
-				const scroll = $(window).scrollTop();
-				const isScrollingDown = scroll > lastScroll;
-				const header_height = headerSticky.innerHeight();
-				if (scroll > header_height && scroll > lastScroll) {
-				  headerSticky.addClass('back-hide-header');
-				} else if (scroll < lastScroll) {
-				  headerSticky.removeClass('back-hide-header');
-				}
-				headerSticky.toggleClass('fixed', scroll > 300);
-				$('.header-top-one-wrapper').toggle(scroll <= 100);
-				headerSticky.toggleClass('active', scroll === 100);
-				lastScroll = scroll;
-			  }
-			  let lastScroll = 0;
-			  $(document).ready(sticky_header);
-			  $(window).on('load scroll resize', sticky_header);	
-		},
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 150) {
+                $('.header--sticky').addClass('sticky')
+            } else {
+                $('.header--sticky').removeClass('sticky')
+            }
+          })
+        },
+
         progressAvtivation: function () {
           $(window).scroll(function () {
               if ($(this).scrollTop() > 250) {
@@ -456,28 +485,88 @@
               }
           })
         },
+
         wowActive: function () {
           new WOW().init();
         },
+
         stickySidebar: function () {
           if (typeof $.fn.theiaStickySidebar !== "undefined") {
-            $(".faculty-member__details").theiaStickySidebar({
+            $(".rts-sticky-column-item").theiaStickySidebar({
               additionalMarginTop: 130,
             });
           }
         },
-        datePicker: function (){
-          $(document).ready(function () {
-            $('#datepicker').datepicker({
+
+        rtslessonToggle: function () {
+          $('#toggle-left-back').on('click', function () {
+              $(this).toggleClass('sidebar-hide')
+              $('.rts-lession-left').toggleClass('sibebar-none');
+          })
+        },
+        
+        filterClickButton: function () {
+          
+          $('.discover-filter-activation').on('click', function () {
+              $(this).toggleClass('open');
+              $('.default-exp-expand').slideToggle('400');
+          })
+
+          function slider() {
+              $('#slider-range').slider({
+                range: true,
+                min: 10,
+                max: 500,
+                values: [100, 300],
+                slide: function (event, ui) {
+                    $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
+                }
+            });
+            $('#amount').val('$' + $('#slider-range').slider('values', 0) +
+                " - $" + $('#slider-range').slider('values', 1));
+          }
+
+
+        },
+
+        datePicker: function(){
+          jQuery(document).ready(function () {
+            jQuery('#datepicker').datepicker({
                 format: 'dd-mm-yyyy',
                 startDate: '+1d'
             });
           });
         },
+
+        fileUpload : function(){
+          var input = document.querySelectorAll("#custom-button");
+          if(input.length){
+            const realFileBtn = document.getElementById("real-file");
+            const customBtn = document.getElementById("custom-button");
+            const customTxt = document.getElementById("custom-text");
+  
+            customBtn.addEventListener("click", function() {
+              realFileBtn.click();
+            });
+  
+            realFileBtn.addEventListener("change", function() {
+              if (realFileBtn.value) {
+                customTxt.innerHTML = realFileBtn.value.match(
+                  /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                )[1];
+              } else {
+                customTxt.innerHTML = "No file chosen, yet.";
+              }
+            });
+  
+          }
+
+        },
+
         countDownTimer: function(){
           function makeTimer() {
 
-            // var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
+            //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
               var endTime = new Date("29 April 2025 9:56:00 GMT+01:00");			
                 endTime = (Date.parse(endTime) / 1000);
           
@@ -495,27 +584,35 @@
                 if (minutes < "10") { minutes = "0" + minutes; }
                 if (seconds < "10") { seconds = "0" + seconds; }
           
-                $("#day").html(days );
-                $("#hour").html(hours );
-                $("#minute").html(minutes );
-                $("#second").html(seconds );		
+                $("#days").html(days + "<span>Days</span>");
+                $("#hours").html(hours + "<span>Hours</span>");
+                $("#minutes").html(minutes + "<span>Minutes</span>");
+                $("#seconds").html(seconds + "<span>Seconds</span>");		
           
             }
           
             setInterval(function() { makeTimer(); }, 1000);
         },
-        magnificPopup: function (){
-          $('.gallery-area').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            gallery:{
-              enabled:true
-            }
-          });
 
+        modalOver: function(){
+          $(document).ready(function () {
+            // Check if 'popState' is not set in localStorage
+            if (!localStorage.getItem('popState')) {
+              // Show the modal after a delay
+              setTimeout(function () {
+                $("#myModal-1").modal('show');
+              }, 2000);
+              // Set the 'popState' to 'shown' when the modal is closed
+              $('#myModal-1').on('hidden.bs.modal', function () {
+                localStorage.setItem('popState', 'shown');
+              });
+            }
+            
+          });
+        
         },
+
         sideMenu:function(){
-          $('#mobile-menu-active').metisMenu();
           $(document).on('click', '#menu-btn', function () {
             $("#side-bar").addClass("show");
             $("#anywhere-home").addClass("bgshow");
@@ -533,36 +630,215 @@
             $("#anywhere-home").removeClass("bgshow");
           });
         },
-        stickySidebar: function () {
-          if (typeof $.fn.theiaStickySidebar !== "undefined") {
-            $(".rts-sticky-column-item").theiaStickySidebar({
-              additionalMarginTop: 130,
+
+        metismenu:function(){
+          $('#mobile-menu-active').metisMenu();
+        },
+
+        autoCompleate: function(){
+          $( function() {
+            var availableTags = [
+              "Mobile Phone Repair",
+              "How to Write the Ultimate 1 Page",
+              "What to Write the Ultimate 1 Page",
+              "Sunglasses Trading",
+              "Spectacles & Contact Lenses Trading",
+              "Beauty & Personal Care Equipment Trading",
+              "Parties & Entertainments Services",
+              "Art Production Services",
+              "ColdFusion",
+              "Marketing",
+              "Fortran",
+              "Groovy",
+              "Haskell",
+              "Main to Write the Ultimate 1 Page Strategic Business Plan",
+              "JavaScript",
+              "Lisp",
+              "Perl",
+              "How to Write the Ultimate 1 Page",
+              "Python",
+              "Ruby",
+              "Scala",
+              "Scheme",
+              "How to Write the Ultimate 1 Page",
+              "How to Write the Ultimate 1 Page Strategic Business Plan",
+              "The Complete Web Developer in 2023: Zero to Mastery",
+              "How to Write the Ultimate 1 Page Strategic Business Plan",
+              "100 Days Of Code - 2023 Web Development Bootcamp",
+              "User Experience The Ultimate Guide to Usability and UX",
+              "Complete Guitar Lessons System Beginner to Advanced",
+              "How to Market Yourself as Coach or Consultant Market",
+              "How to Run truly Productive in Meetings – and add value",
+              ">Pole Dancing Video Course with Noelle Wood",
+              "free",
+            ];
+            $( ".autocomplete" ).autocomplete({
+              source: availableTags
             });
-          }
+          } );
+        },
+
+        fitRows: function(){
+          //fit rows
+          function fitRowsDefinition( LayoutMode ) {
+            var FitRows = LayoutMode.create('fitRows');
+            FitRows.prototype._resetLayout = function() {
+              this.x = 0;
+              this.y = 0;
+              this.maxY = 0;
+              this.row = 0;
+              this.rows = [];
+              this._getMeasurement( 'gutter', 'outerWidth' );
+              if (this.options.equalheight) {
+                for (var i=0; i < this.isotope.items.length; i++) {
+                  this.isotope.items[i].css({
+                    height: 'auto'
+                  });
+                }
+              }
+            };
+            /**
+             * Working but glicthy with newly appended element via ajax
+             * must reinvoke isotope('layout') to properly realign the horizontal position
+             * after isotope('appended), not sure why?
+             */
+            FitRows.prototype._getItemLayoutPosition = function( item ) {
+              
+              item.getSize();
+              
+              var itemWidth = item.size.outerWidth;
+              
+              // if this element cannot fit in the current row
+              // need to add extra pixel to avoid layout dropping in some edge
+              // bootstrap grid in firefox
+              var containerWidth = Math.ceil(this.isotope.size.innerWidth + 1);
+              if ( this.x !== 0 && itemWidth + this.x > containerWidth ) {
+                this.x = 0;
+                this.y = this.maxY;
+              }
+            
+              // New row?
+              if (this.x == 0 && this.y != 0) {
+                this.row++;
+              }
+              var position = {
+                x: this.x,
+                y: this.y
+              };
+              this.maxY = Math.max(this.maxY, this.y + item.size.outerHeight);
+              this.x += itemWidth;
+              
+              
+              // Compare Y from this row and previous row
+              if (typeof this.rows[this.row] == 'undefined') {
+                this.rows[this.row] = [];
+                this.rows[this.row].start = this.y;
+                this.rows[this.row].end = this.maxY;
+              }
+              else {
+                this.rows[this.row].end = Math.max(this.rows[this.row].end, this.maxY);
+              }
+              // Record row number to item
+              item.row = this.row;
+              return position;
+            };
+            FitRows.prototype._equalHeight = function() {
+              
+              // Should we use this.isotope.filteredItems or this.isotope.items?
+              
+              for (var i=0; i < this.isotope.items.length; i++) {
+                var row = this.isotope.items[i].row,
+                    data = this.rows[row];
+                
+                if (data) {
+                  var height =  data.end - data.start;
+                  height -= this.isotope.items[i].size.borderTopWidth + this.isotope.items[i].size.borderBottomWidth;
+                  height -= this.isotope.items[i].size.marginTop + this.isotope.items[i].size.marginBottom;
+                  height -= this.gutter.height || 0;
+                  
+                  if (this.isotope.items[i].size.isBorderBox == false) {
+                    height -= this.isotope.items[i].size.paddingTop + this.isotope.items[i].size.paddingBottom;
+                  }
+                  
+                  this.isotope.items[i].size.height = height;
+                  
+                  this.isotope.items[i].css({
+                    height : height.toString() + 'px',
+                  });
+                }
+              }
+            }
+            FitRows.prototype._getContainerSize = function() {
+              if (this.options.equalheight) {
+                this._equalHeight();
+              }
+              return { height: this.maxY };
+            };
+            return FitRows;
+            }
+            if ( typeof define === 'function' && define.amd ) {
+              // AMD
+              define( [
+                  '../layout-mode'
+                ],
+                fitRowsDefinition );
+            } else if ( typeof exports === 'object' ) {
+              // CommonJS
+              module.exports = fitRowsDefinition(
+                require('../layout-mode')
+              );
+            } else {
+              // browser global
+              fitRowsDefinition(
+                window.Isotope.LayoutMode
+              );
+            }
+        },
+        
+        tabToggle: function(){
+          $('#rts-toggle').click(function(event) {
+            $('.plan-toggle-wrap').toggleClass('active');
+          });
+         
+          $('#rts-toggle').change(function(){
+               if ($(this).is(':checked')) {
+                 $('.tab-content #yearly').hide();
+                 $('.tab-content #monthly').show();
+               }
+               else{
+                 $('.tab-content #yearly').show();
+                 $('.tab-content #monthly').hide();
+               }
+         
+          });
+        },
+
+        shapeMove: function(){
+          $('.shape-move').mousemove(function(e){
+      
+            var wx = $(window).width();
+            var wy = $(window).height();
+            
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            
+            var newx = x - wx/2;
+            var newy = y - wy/2;
+            
+            $('.shape-image .shape').each(function(){
+              var speed = $(this).attr('data-speed');
+              if($(this).attr('data-revert')) speed *= -1;
+              TweenMax.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
+              
+            });
+            
+          });
         },
 
     }
 
     rtsJs.m();
-    $('.moving').mousemove(function(e){
-      
-      var wx = $(window).width();
-      var wy = $(window).height();
-      
-      var x = e.pageX - this.offsetLeft;
-      var y = e.pageY - this.offsetTop;
-      
-      var newx = x - wx/2;
-      var newy = y - wy/2;
-      
-      $('.rt-shape .shape').each(function(){
-        var speed = $(this).attr('data-speed');
-        if($(this).attr('data-revert')) speed *= -1;
-        TweenMax.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
-        
-      });
-      
-    });
-
 
 })(jQuery, window)
+
+
