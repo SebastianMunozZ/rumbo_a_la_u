@@ -7,4 +7,3 @@ from .views import UserViewSet
 urlpatterns = [
     path('login/', UserViewSet.as_view({'post': 'login'}), name='login'),
     path('register/', UserViewSet.as_view({'post': 'create'}), name='create'),
-]
