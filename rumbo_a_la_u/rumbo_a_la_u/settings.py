@@ -12,7 +12,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+import logging
 
+# Configuración básica de logging
+logging.basicConfig(
+    level=logging.DEBUG,  # Configura el nivel de registro a DEBUG para mostrar todos los mensajes
+    stream=sys.stdout,    # Redirige la salida a sys.stdout (la salida estándar)
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Formato del mensaje de registro
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dest',
     # rumbo_a_la_u.rumbo_a_la_u',
     'api',
     'rest_framework',

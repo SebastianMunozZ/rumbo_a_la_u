@@ -25,4 +25,4 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3111:3000"
+      - "3000:3000"
