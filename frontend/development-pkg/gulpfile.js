@@ -1,62 +1,62 @@
-var gulp            = require('gulp'),
-    clean           = require('gulp-clean'),
-    browserSync     = require('browser-sync').create(),
-    concat          = require('gulp-concat'),
-    sass            = require('gulp-sass')(require('sass')),
-    autoprefixer    = require('gulp-autoprefixer'),
-    notify          = require('gulp-notify'),
-    plumber         = require('gulp-plumber'),
-    sourcemaps      = require('gulp-sourcemaps'),
-    fileInclude     = require('gulp-file-include'),
-    beautifyCode    = require('gulp-beautify-code'),
-    
-    
+var gulp = require('gulp'),
+    clean = require('gulp-clean'),
+    browserSync = require('browser-sync').create(),
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass')(require('sass')),
+    autoprefixer = require('gulp-autoprefixer'),
+    notify = require('gulp-notify'),
+    plumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps'),
+    fileInclude = require('gulp-file-include'),
+    beautifyCode = require('gulp-beautify-code'),
+
+
     // Source Folder Locations
     src = {
         'root': './src/',
-        
+
         'rootHtml': './src/*.html',
         'rootPartials': './src/partials/',
-        
+
         'rootFonts': './src/assets/fonts/*',
         'fontsAll': './src/assets/fonts/**/*',
-        
+
         'rootVendorCss': './src/assets/css/vendor/*.css',
         'rootPluginsCss': './src/assets/css/plugins/*.css',
-        
+
         'styleScss': './src/assets/scss/*.scss',
         'rootScss': './src/assets/scss/*',
         'scssAll': './src/assets/scss/**/*',
-        
+
         'rootVendorJs': './src/assets/js/vendor/*.js',
         'rootPluginsJs': './src/assets/js/plugins/*.js',
-        
+
         'mainJs': './src/assets/js/main.js',
-        
+
         'images': './src/assets/images/**/*',
     },
-    
+
     // Destination Folder Locations
     dest = {
         'root': './dest/',
         'fonts': './dest/assets/fonts/',
         'assets': './dest/assets/',
         'scss': './dest/assets/scss/',
-        
+
         'rootCss': './dest/assets/css',
         'rootVendorCss': './dest/assets/css/vendor/',
         'rootPluginsCss': './dest/assets/css/plugins/',
-        
+
         'rootJs': './dest/assets/js',
         'rootVendorJs': './dest/assets/js/vendor/',
         'rootPluginsJs': './dest/assets/js/plugins/',
-        
+
         'images': './dest/assets/images/',
     },
-    
+
     // Separator For Vendor CSS & JS
     separator = '\n\n/*====================================*/\n\n',
-    
+
     // Autoprefixer Options
     autoPreFixerOptions = [
         "last 4 version",
@@ -80,7 +80,8 @@ var gulp            = require('gulp'),
 function liveBrowserSync(done) {
     browserSync.init({
         server: {
-            baseDir: dest.root
+            baseDir: dest.root,
+            index: "index-four.html"
         }
     });
     done();
@@ -168,7 +169,7 @@ function vendorCss(done) {
         .pipe(gulp.dest(dest.rootVendorCss))
         .pipe(customPlumber('Error On Combine & Minifying Vendor CSS'))
         // .pipe(concat('vendor.min.css', {newLine: separator}))
-      
+
         .pipe(autoprefixer(autoPreFixerOptions))
         .pipe(gulp.dest(dest.rootVendorCss));
     done();
@@ -196,7 +197,7 @@ function styleCss(done) {
         .pipe(sourcemaps.init())
         .pipe(autoprefixer(autoPreFixerOptions))
         .pipe(sass().on('error', sass.logError))
-        .pipe( sourcemaps.write( '../maps' ) )
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(dest.rootCss));
     done();
 }
@@ -253,15 +254,15 @@ gulp.task('allTask', gulp.series(fonts, images, html, vendorCss, pluginsCss, sty
 function watchFiles() {
     gulp.watch(src.fontsAll, gulp.series(fonts, reload));
     gulp.watch(src.fontsAll, gulp.series(images, reload));
-    
+
     gulp.watch(src.rootHtml, gulp.series(html, reload));
     gulp.watch(src.rootPartials, gulp.series(html, reload));
-    
+
     gulp.watch(src.rootVendorCss, gulp.series(vendorCss, reload));
     gulp.watch(src.rootPluginsCss, gulp.series(pluginsCss, reload));
     gulp.watch(src.scssAll, gulp.series(styleCss, reload));
     gulp.watch(src.scssAll, gulp.series(scss, reload));
-    
+
     gulp.watch(src.rootVendorJs, gulp.series(vendorJs, reload));
     gulp.watch(src.rootPluginsJs, gulp.series(pluginsJs, reload));
     gulp.watch(src.mainJs, gulp.series(mainJs, reload));
