@@ -142,11 +142,15 @@ function images(done) {
 function html(done) {
     gulp.src(src.rootHtml)
         .pipe(customPlumber('Error On Compile HTML'))
-        .pipe(fileInclude({ basepath: src.rootPartials }))
+        .pipe(fileInclude({
+            basepath: src.rootPartials, // Ruta base para los parciales
+            prefix: '@@' // Prefijo para los includes, por defecto es '@@'
+        }))
         .pipe(beautifyCode())
         .pipe(gulp.dest(dest.root));
     done();
 }
+
 
 /* =====================================================
     Image

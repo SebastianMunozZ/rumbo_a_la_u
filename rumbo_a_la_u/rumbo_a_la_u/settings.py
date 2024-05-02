@@ -57,7 +57,7 @@ ROOT_URLCONF = 'rumbo_a_la_u.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'development-pkg', 'dest'),],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'development-pkg', 'dest'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
