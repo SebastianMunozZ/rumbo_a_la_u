@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
+
     user_id = models.AutoField(primary_key=True, db_column='user_id')
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)

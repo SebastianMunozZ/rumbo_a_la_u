@@ -182,6 +182,152 @@ CREATE TABLE `NOTICIAS` (
 );
 
 --
+-- Dumping data for table `REGIONES`
+--
+
+LOCK TABLES `REGIONES` WRITE;
+/*!40000 ALTER TABLE `REGIONES` DISABLE KEYS */;
+INSERT INTO `REGIONES` VALUES (1,'REGIÓN METROPOLITANA');
+/*!40000 ALTER TABLE `REGIONES` ENABLE KEYS */;
+
+
+-- Crear tabla de Profesores
+CREATE TABLE `PROFESORES` (
+  `teacher_id` INT AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `nombre` VARCHAR(255) NOT NULL,
+  `apellido` VARCHAR(255) NOT NULL,
+  `asignatura_que_ensena` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`teacher_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`)
+);
+
+-- Crear tabla de Alumnos
+CREATE TABLE `ESTUDIANTES` (
+  `student_id` INT AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `ano_de_ingreso` INT NOT NULL,
+  `nivel_de_educacion` VARCHAR(100) NOT NULL,
+  `comuna_id` INT NOT NULL,
+  PRIMARY KEY (`student_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`),
+  FOREIGN KEY (`comuna_id`) REFERENCES `COMUNAS`(`commune_id`)
+);
+
+-- Crear tabla de Cursos
+CREATE TABLE `CURSOS` (
+  `course_id` INT AUTO_INCREMENT,
+  `nombre_del_curso` VARCHAR(255) NOT NULL,
+  `descripcion` TEXT,
+  `asignatura` VARCHAR(100) NOT NULL,
+  `nivel_del_curso` VARCHAR(100) NOT NULL,
+  `teacher_id` INT NOT NULL,
+  PRIMARY KEY (`course_id`),
+  FOREIGN KEY (`teacher_id`) REFERENCES `PROFESORES`(`teacher_id`)
+);
+
+-- Crear tabla de Inscripciones
+CREATE TABLE `INSCRIPCIONES` (
+  `enrollment_id` INT AUTO_INCREMENT,
+  `student_id` INT NOT NULL,
+  `course_id` INT NOT NULL,
+  PRIMARY KEY (`enrollment_id`),
+  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
+  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
+);
+
+-- Crear tabla de Materiales del Curso
+CREATE TABLE `MATERIALES` (
+  `material_id` INT AUTO_INCREMENT,
+  `course_id` INT NOT NULL,
+  `titulo_del_material` VARCHAR(255) NOT NULL,
+  `descripcion_del_material` TEXT,
+  `archivo_adjunto` VARCHAR(255),
+  PRIMARY KEY (`material_id`),
+  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
+);
+
+-- Crear tabla de Calificaciones
+CREATE TABLE `NOTAS` (
+  `grade_id` INT AUTO_INCREMENT,
+  `student_id` INT NOT NULL,
+  `course_id` INT NOT NULL,
+  `calificacion` DECIMAL(5, 2) NOT NULL,
+  `fecha_de_calificacion` DATE NOT NULL,
+  PRIMARY KEY (`grade_id`),
+  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
+  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
+);
+
+-- Crear tabla de Comentarios del Curso
+CREATE TABLE `COMENTARIOS` (
+  `comment_id` INT AUTO_INCREMENT,
+  `course_id` INT NOT NULL,
+  `student_id` INT NOT NULL,
+  `comentario` TEXT NOT NULL,
+  `fecha_de_comentario` DATETIME NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`),
+  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
+);
+
+-- Crear tabla de Foros de Discusión
+CREATE TABLE `DISCUSIONES` (
+  `forum_id` INT AUTO_INCREMENT,
+  `nombre_del_foro` VARCHAR(255) NOT NULL,
+  `descripcion` TEXT,
+  `course_id` INT NOT NULL,
+  PRIMARY KEY (`forum_id`),
+  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
+);
+
+-- Crear tabla de Publicaciones del Foro
+CREATE TABLE `POSTS` (
+  `post_id` INT AUTO_INCREMENT,
+  `forum_id` INT NOT NULL,
+  `student_id` INT NOT NULL,
+  `contenido_del_post` TEXT NOT NULL,
+  `fecha_de_publicacion` DATETIME NOT NULL,
+  PRIMARY KEY (`post_id`),
+  FOREIGN KEY (`forum_id`) REFERENCES `DISCUSIONES`(`forum_id`),
+  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
+);
+
+-- Crear tabla de Regiones
+CREATE TABLE `REGIONES` (
+  `region_id` INT AUTO_INCREMENT,
+  `nombre_de_la_region` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`region_id`)
+);
+
+-- Crear tabla de Provincias
+CREATE TABLE `PROVINCIAS` (
+  `province_id` INT AUTO_INCREMENT,
+  `nombre_de_la_provincia` VARCHAR(255) NOT NULL,
+  `region_id` INT NOT NULL,
+  PRIMARY KEY (`province_id`),
+  FOREIGN KEY (`region_id`) REFERENCES `REGIONES`(`region_id`)
+);
+
+-- Crear tabla de Comunas
+CREATE TABLE `COMUNAS` (
+  `commune_id` INT AUTO_INCREMENT,
+  `nombre_de_la_comuna` VARCHAR(255) NOT NULL,
+  `province_id` INT NOT NULL,
+  PRIMARY KEY (`commune_id`),
+  FOREIGN KEY (`province_id`) REFERENCES `PROVINCIAS`(`province_id`)
+);
+
+-- Crear tabla de Noticias
+CREATE TABLE `NOTICIAS` (
+  `news_id` INT AUTO_INCREMENT,
+  `titulo_de_la_noticia` VARCHAR(255) NOT NULL,
+  `contenido_de_la_noticia` TEXT NOT NULL,
+  `fecha_de_publicacion` DATETIME NOT NULL,
+  PRIMARY KEY (`news_id`)
+);
+
+--
 -- Dumping data for table `REGION`
 --
 
@@ -189,6 +335,7 @@ LOCK TABLES `REGIONES` WRITE;
 /*!40000 ALTER TABLE `REGION` DISABLE KEYS */;
 INSERT INTO `REGIONES` VALUES (1,'REGIÓN METROPOLITANA');
 /*!40000 ALTER TABLE `REGION` ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 --
