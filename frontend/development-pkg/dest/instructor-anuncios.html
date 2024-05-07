@@ -403,6 +403,7 @@
     <!-- header style end -->
     <!-- header style end -->
 
+
     <!-- dashboard banner area start -->
     <div class="dashboard-banner-area-wrapper">
         <div class="container">
@@ -447,6 +448,7 @@
     </div>
     <!-- dashboard banner area end -->
 
+
     <!-- rts dahboard-area-main-wrapper -->
     <div class="dashboard--area-main pt--100 pt_sm--50">
         <div class="container">
@@ -487,7 +489,7 @@
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="instructor-calender.html" class="single-item active">
+                            <a href="instructor-calendario.html" class="single-item">
                                 <i class="fa-light fa-calendar-days"></i>
                                 <p>Calendario</p>
                             </a>
@@ -503,19 +505,19 @@
                             <!-- single item end -->
 
                             <!-- single item -->
-                            <a href="instructor-announcement.html" class="single-item">
+                            <a href="instructor-announcement.html" class="single-item active">
                                 <i class="fa-solid fa-megaphone"></i>
                                 <p>Anuncios</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="instructor-withdrowals.html" class="single-item">
+                            <a href="instructor-saldo.html" class="single-item">
                                 <i class="fa-regular fa-box"></i>
                                 <p>Saldo a pago</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="instructor-assignments.html" class="single-item">
+                            <a href="instructor-asignaciontareas.html" class="single-item">
                                 <i class="fa-regular fa-page"></i>
                                 <p>Asignación de tareas</p>
                             </a>
@@ -524,6 +526,12 @@
                             <a href="instructor-certificate.html" class="single-item">
                                 <i class="fa-sharp fa-light fa-file-certificate"></i>
                                 <p>Certificado</p>
+                            </a>
+                            <!-- single item end -->
+                            <!-- single item -->
+                            <a href="instructor-reporteria.html" class="single-item">
+                                <i class="fa-light fa-chart-mixed"></i>
+                                <p>Reportería</p>
                             </a>
                             <!-- single item end -->
                         </div>
@@ -545,134 +553,187 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <div class="calender-area-wrapper">
-                        <h5 class="title">Calendario</h5>
-                        <div class="calender-dash-wrapper" id="calender-active">
-                            <!-- calender -->
-                            <div class="wrapper">
-
-                                <div class="container-calendar">
-                                    <div class="footer-container-calendar">
-                                        <select id="month" onchange="jump()">
-                                            <option value=0>Jan</option>
-                                            <option value=1>Feb</option>
-                                            <option value=2>Mar</option>
-                                            <option value=3>Apr</option>
-                                            <option value=4>May</option>
-                                            <option value=5>Jun</option>
-                                            <option value=6>Jul</option>
-                                            <option value=7>Aug</option>
-                                            <option value=8>Sep</option>
-                                            <option value=9>Oct</option>
-                                            <option value=10>Nov</option>
-                                            <option value=11>Dec</option>
-                                        </select>
-                                        <select id="year" onchange="jump()"></select>
-                                    </div>
-                                    <div id="monthAndYear" class="mt--30"></div>
-
-                                    <!-- <div class="button-container-calendar">
-                                        <button id="previous" onclick="previous()">&#8249;</button>
-                                        <button id="next" onclick="next()">&#8250;</button>
-                                    </div> -->
-
-                                    <table class="table-calendar" id="calendar" data-lang="en">
-                                        <thead id="thead-month"></thead>
-                                        <tbody id="calendar-body"></tbody>
-                                    </table>
-
-
-
+                    <div class="announcements-wrapper-dashed">
+                        <div class="top-announcement-wrapper">
+                            <div class="left-wrapper">
+                                <div class="icon">
+                                    <img src="assets/images/dashboard/announcement/01.png" alt="announcement">
                                 </div>
-
-                            </div>
-                            <!-- calender -->
-                        </div>
-                        <div class="search-area-calender-inner">
-                            <input type="text" placeholder="Buscar...">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-
-                        <!-- assignments-area saert -->
-                        <div class="assignment-list-wrapper-calender">
-                            <!-- single assignments area wrapper -->
-                            <div class="single-assignments-wrapper">
-                                <div class="top-wrapper">
-                                    <i class="fa-regular fa-calendar-lines-pen"></i>
-                                    <span>October 4, 2023</span>
-                                </div>
-                                <div class="assignment-list">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
-                                </div>
-                                <div class="assignment-list mt--20">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
+                                <div class="information">
+                                    <span>Crear Anuncio</span>
+                                    <p>Notificar a todos los alumnos de tu curso</p>
                                 </div>
                             </div>
-                            <!-- single assignments area wrapper end -->
-                            <!-- single assignments area wrapper -->
-                            <div class="single-assignments-wrapper mt--50">
-                                <div class="top-wrapper">
-                                    <i class="fa-regular fa-calendar-lines-pen"></i>
-                                    <span>October 29, 2023</span>
-                                </div>
-                                <div class="assignment-list">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
-                                </div>
-                                <div class="assignment-list mt--20">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
-                                </div>
-                                <div class="assignment-list mt--20">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
-                                </div>
-                                <div class="assignment-list mt--20">
-                                    <div class="left">
-                                        <i class="fa-regular fa-calendar-lines-pen"></i>
-                                        <p>Assignment:</p>
-                                        <span>My Quiz Attempts</span>
-                                    </div>
-                                    <div class="right">
-                                        <span>Deadline: No Limit</span>
-                                    </div>
+                            <div class="right">
+                                <button type="button" class="rts-btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Agregar nuevo anuncio</button>
+                            </div>
+                        </div>
+                        <div class="course-short-by-date-wrapper">
+                            <div class="single-course-filter">
+                                <span>Curso</span>
+                                <select class="nice-select" name="price">
+                                    <option>Leído (12)</option>
+                                    <option value="asc">Estrellas (30)</option>
+                                    <option value="desc">Comentarios(42)</option>
+                                    <option value="pop">Popularidad (20)</option>
+                                    <option value="low">Preg y Resp (10)</option>
+                                    <option value="high">Estrellas (52)</option>
+                                </select>
+                            </div>
+                            <div class="single-course-filter short-by">
+                                <span>Curso</span>
+                                <select class="nice-select" name="price">
+                                    <option>Leído (12)</option>
+                                    <option value="asc">Estrellas (30)</option>
+                                    <option value="desc">Comentarios(42)</option>
+                                    <option value="pop">Popularidad (20)</option>
+                                    <option value="low">Preg y Resp (10)</option>
+                                    <option value="high">Estrellas (52)</option>
+                                </select>
+                            </div>
+                            <div class="single-course-filter short-by">
+                                <span>Fecha</span>
+                                <div class="date-picker-area">
+                                    <input placeholder="Select your date" type="text" name="checkIn" id="datepicker"
+                                        value="mm/dd/yyyy" class="calendar">
+                                    <i class="fa-light fa-calendar-lines-pen"></i>
                                 </div>
                             </div>
-                            <!-- single assignments area wrapper end -->
                         </div>
-                        <!-- assignments-area end -->
+                        <div class="rts-reviewd-area-dashed table-responsive" style="white-space: nowrap;">
+                            <table class="table-reviews quiz announcement">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Date</th>
+                                        <th>Anuncios</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="information-quiz">
+                                                <span>November 28, 2023</span>
+                                                <p class="quiz">9:20 pm</p>
+                                            </div>
+                                        </td>
+                                        <td class="announcement-1">
+                                            <div class="left">
+                                                <p>Recently Update Web Design Course</p>
+                                                <span>Course: New Courses</span>
+                                            </div>
+                                            <div class="right">
+                                                <button class="rts-btn btn-primary">Detalles</button>
+                                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination-full-width">
+                                <span>Página 1 de 4</span>
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href="#0" class="prev"><i class="fa-solid fa-chevron-left"></i></a></li>
+                                        <li><a href="#0">1</a></li>
+                                        <li><a href="#0">2</a></li>
+                                        <li><a href="#0">3</a></li>
+                                        <li><a href="#0">4</a></li>
+                                        <li><a href="#0" class="next"><i class="fa-solid fa-chevron-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -709,6 +770,43 @@
         </div>
     </div>
     <!-- footer dashboards area end -->
+
+
+    <!-- Modal -->
+    <div class="modal announcement fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Announcement</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="modal-form">
+                        <select class="nice-select" name="price">
+                            <option>User Experience</option>
+                            <option value="asc">Recently Update Web Design </option>
+                            <option value="desc">Web Design Course</option>
+                            <option value="pop">Update Web Design</option>
+                            <option value="low">Recently Update Web</option>
+                            <option value="high">Course: New Courses</option>
+                        </select>
+                        <div class="single-input mt--20">
+                            <label for="course">Announcement Title</label>
+                            <input id="course" type="text" placeholder="Announcement title">
+                        </div>
+                        <div class="single-input">
+                            <label for="message">Summary</label>
+                            <textarea id="message" placeholder="Summary..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="rts-btn btn-primary">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- cart area start -->
 
