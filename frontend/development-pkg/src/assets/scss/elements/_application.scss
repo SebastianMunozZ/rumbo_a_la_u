@@ -1,0 +1,289 @@
+// apply now area css
+.rts-application-area {
+    &>* {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.rts-application-area-bg {
+        position: relative;
+        background: var(--rt-white);
+
+        &::before {
+            @include position;
+            height: 95%;
+            width: 100%;
+            background: var(--rt-secondary);
+            top: 0;
+            left: 0;
+        }
+    }
+    .rt-shape {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        @include mq($sm){
+            display: none;
+        }
+        &__1 {
+            position: absolute;
+            left: -22%;
+            top: -15%;
+        }
+    
+        &__2 {
+            position: absolute;
+            left: -20%;
+            top: 15%;
+        }
+    
+        &__3 {
+            position: absolute;
+            left: -15%;
+            bottom: 40%;
+        }
+    
+        &__4 {
+            position: absolute;
+            right: -10%;
+        }
+    
+        &__5 {
+            position: absolute;
+            right: -15%;
+            bottom: 30%;
+        }
+    }
+
+    // application area home 2
+    &.v_2 {
+        .rts-section-title {
+            font-size: 100px;
+            line-height: 100%;
+            @include mq($md){
+                font-size: 60px;
+            }
+        }
+
+        .rts-admission-form-image {
+            position: relative;
+            min-height: 570px;
+            width: 100%;
+
+            img {
+                position: absolute;
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .rts-application-form-content {
+            padding: 50px 85px;
+            background: var(--rt-white);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+            position: relative;
+            margin-top: -20%;
+            @include mq($md){
+                padding: 50px 40px;
+            }
+        }
+
+        .rts-input {
+            .single-input {
+                width: 50%;
+            }
+
+            &.w-full {
+                .single-input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .rt-shape {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+
+            &__1 {
+                position: absolute;
+                left: -4%;
+                top: 18%;
+            }
+
+            &__2 {
+                position: absolute;
+                left: -10%;
+                top: 80%;
+            }
+
+            &__3 {
+                position: absolute;
+                right: -25%;
+                left: unset;
+                top: 5%;
+            }
+
+            &__4 {
+                position: absolute;
+                right: -10%;
+                bottom: 8px;
+                transform: rotate(114deg);
+            }
+
+        }
+
+    }
+}
+
+.rts-admission-form-image {
+    img {
+        min-height: 440px;
+        object-fit: cover;
+        max-width: max-content;
+        @include mq($md){
+            max-width: 100%;
+        }
+    }
+}
+
+.rts-application-form {
+    &-content {
+        padding: 50px 40px 40px 40px;
+        background: var(--rt-white);
+        box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+
+        .rts-form {
+            .rts-input {
+                gap: 20px;
+                margin-bottom: 20px;
+                flex-wrap: nowrap;
+                @include mq($sm){
+                    flex-wrap: wrap;
+                }
+                .single-input{
+                    width: 50%;
+                    @include mq($sm){
+                        width: 100%;
+                    }
+                }
+                &.w-full{
+                    .single-input{
+                        width: 100%;
+                    }
+                }
+
+                .single-input input,
+                .single-input textarea {
+                    padding: 5px 15px;
+                    border: 1px solid #DDDDDD;
+                    font-size: 14px;
+                }
+
+                .single-input textarea {
+                    height: 100px;
+                    resize: none;
+                }
+            }
+
+            .apply-btn {
+                padding: 15px 0;
+                background: var(--rt-primary);
+                color: var(--rt-white);
+                position: relative;
+            }
+        }
+    }
+}
+
+
+
+// APPLY PROCEDURE CSS
+.rts-application-procedure {
+    .rts-section{
+        @include mq($md){
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+
+}
+
+.single-procedure {
+    padding: 40px 40px 50px 40px;
+    position: relative;
+    background: var(--rt-primary);
+    overflow: hidden;
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+    &:hover{
+        .procedure-image{
+            opacity: 1;
+        }
+
+    }
+    .procedure-image{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: var(--transition);
+        &::before{
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, #000 100%);
+            @include position-100;
+            inset: 0;
+            transition: var(--transition);
+        }
+        img{
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .rt-clip-serial {
+        font-size: 64px;
+        font-weight: 700;
+        position: absolute;
+        right: 35px;
+        top: 50px;
+        color: var(--rt-white);
+    }
+    a {
+        font-size: 22px;
+        @include mq($lg){
+            font-size: 21px;
+        }
+        font-weight: 600;
+        color: var(--rt-white);
+        display: block;
+        margin-bottom: 20px;
+        transition: var(--transition);
+        &:hover{
+            color: var(--rt-white);
+        }
+    }
+    .icon {
+        margin-bottom: 30px;
+    }
+    p {
+        color: var(--rt-white);
+    }
+    
+}
+
+
+
+

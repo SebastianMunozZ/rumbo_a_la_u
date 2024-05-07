@@ -1,0 +1,299 @@
+// campus life
+.rts-campus-life {}
+
+.campus-life {
+    &__content {
+        text-align: center;
+
+        .rts-section-title {
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 20px;
+        }
+        .campus-video {
+            position: relative;
+            margin-top: 50px;
+            // for hide saveform.net helper plugin download icon
+            span{
+                display: none;
+            }
+            &::before {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                content: "";
+                left: 0;
+                top: 0;
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            .video-play {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                cursor: pointer;
+
+                img.round{
+                    height: 126px;
+                    width: 126px;
+                    animation: rotate 10s linear infinite;
+                    position: relative;
+                    @include mq($md){
+                        height: 80px;
+                        width: 80px;
+                    }
+                }
+                img.play-icon{
+                    height: 50px;
+                    width: 50px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    @include mq($md){
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+// single section css
+.rts-campus-section{
+    &.v_2{
+        background: #F9F8FF;
+    }
+    &.v_3{
+        .single-item{
+            &__meta{
+                padding: 35px 0 0 0;
+
+            }
+            &__content{
+                border: none;
+            }
+        }
+    }
+}
+.single-item{
+    &__meta{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+    &__image{
+        img{
+            min-height: 305px;
+            max-width: 100%;
+            object-fit: cover;
+            @include mq($md){
+                width: 100%;
+            }
+        }
+    }
+    &__content{
+        border: 1px solid var(--rt-line);
+        transition: var(--transition);
+        &:hover{
+            border-color: var(--rt-theme);
+        }
+        .single-item__image{
+            overflow: hidden;
+            img{
+                transform: scale(1.0);
+                transition: var(--transition);
+            }
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .item-title{
+            margin-bottom: 10px;
+            a{
+                color: var(--rt-secondary);
+                transition: var(--transition);
+                &:hover{
+                    color: var(--rt-theme);
+                }
+            }
+        }
+    }
+}
+
+// Athletics Single content
+.rts-athletics{
+    &__content{
+        .athletics-image{
+            img{
+                width: 100%;
+            }
+        }
+        .right-content{
+            margin-left: 40px;
+            @include mq($md){
+                margin-left: 0;
+            }
+        }
+    }
+}
+// Gallery Area
+.rts-gallery{
+    &.section-bg{
+        background: #F9F8FF;
+    }
+    .single-gallery{
+        position: relative;
+        &::before{
+            @include position-100;
+            background: rgba(0, 0, 0, 0.40);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        &__item{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__icon{
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: var(--translate);
+            z-index: 2;
+            opacity: 0;
+            transition: var(--transition);
+            i{
+                font-size: 50px;
+                color: var(--rt-white);
+            }
+        }
+        &:hover{
+            &::before{
+                opacity: 1;
+            }
+            .single-gallery__icon{
+                opacity: 1;
+                left: 50%;
+            }
+        }
+    }
+}
+
+// Research Item
+.rts-research-section{
+    &__content{
+        margin-bottom: 50px;
+       .research-image{
+        margin-bottom: 40px;
+       }
+       .rts-section{
+        &-title{
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
+       }
+    }
+    .research__items{
+        margin-bottom: 45px;
+        .research-procedure {
+            padding: 40px 30px 40px 40px;
+            position: relative;
+            background: var(--rt-theme);
+            &.primary-style{
+                background: var(--rt-primary);
+                .rt-serial{
+                    background: var(--rt-primary);
+                }
+                .icon{
+                    margin-bottom: 28px;
+                }
+            }
+            & > * {
+                position: relative;
+                z-index: 1;
+            }
+            &:hover{
+                .research-image{
+                    opacity: .4;
+                }
+        
+            }
+            .research-image{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                transition: var(--transition);
+                
+                img{
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .rt-serial {
+                font-size: 26px;
+                font-weight: 600;
+                position: absolute;
+                right: 0;
+                top: -30px;
+                color: var(--rt-white);
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                border: 5px solid var(--rt-white);
+                display: grid;
+                place-items: center;
+                background: var(--rt-theme);
+                
+            }
+            a {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--rt-white);
+                display: block;
+                margin-bottom: 15px;
+                transition: var(--transition);
+                &:hover{
+                    color: var(--rt-white);
+                }
+            }
+            .icon {
+                margin-bottom: 30px;
+            }
+            p {
+                color: var(--rt-white);
+            }
+            
+        }
+    }
+    .research__text{
+        &--single{
+            &:not(:last-child){
+                margin-bottom: 40px;
+            }
+            .rts-section-title{
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+

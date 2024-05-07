@@ -1,0 +1,283 @@
+// campus css
+.rts-campus {
+    & * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.mobile-padding {
+        @include mq($md) {
+            padding-bottom: 100px;
+        }
+    }
+
+    .rt-shape {
+        @include shape;
+        @include mq($sm){
+            display: none;
+        }
+        &__1 {
+            position: absolute;
+            top: 15%;
+            left: -25%;
+        }
+
+        &__2 {
+            position: absolute;
+            top: 0;
+            left: -8.5%;
+        }
+
+        &__3 {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+        }
+
+        &__4 {
+            position: absolute;
+            bottom: 40%;
+            right: -11%;
+        }
+
+    }
+
+    &.rts-campus-bg {
+        position: relative;
+
+        &::before {
+            @include position;
+            height: 80%;
+            width: 100%;
+            background: var(--rt-primary);
+            z-index: -1;
+            top: 0;
+        }
+    }
+
+    .about-btn::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        bottom: 0;
+        width: 90%;
+        background: var(--rt-white);
+    }
+
+    .rts-left-section {
+        margin-right: 30px;
+
+        h2 {
+            font-weight: 600;
+            line-height: 58px;
+
+            @include mq($lg) {
+                line-height: 1.2;
+            }
+            @include mq($md){
+                &.mb--55{
+                    margin-bottom: 40px !important; 
+
+                }
+            }
+        }
+    }
+
+    .rts-right-section {
+        @include mq($md) {
+            margin-top: 40px;
+        }
+
+        .rts-round-shape {
+            height: 102px;
+            width: 102px;
+            border-radius: 50%;
+            background: #FFD335;
+            position: absolute;
+            top: 75px;
+            right: -40px;
+            z-index: -1;
+            animation: topbottom 5s infinite alternate;
+            @include mq($sm){
+                display: none;
+            }
+        }
+    }
+
+    .bottom-text {
+        position: absolute;
+        bottom: 7%;
+        font-size: 130px;
+        left: -18.5%;
+        font-weight: 700;
+        color: #DADADA;
+        font-family: var(--font-secondary);
+        @include mq($xxl){
+            font-size: 100px;
+            left: -20px;
+        }
+        @include mq($lg) {
+            font-size: 90px;
+            left: 15px;
+        }
+        @include mq($sm){
+            font-size: 60px;
+        }
+        @include mq($xs){
+            font-size: 45px;
+        }
+        @include mq($md) {
+            bottom: -75px;
+            left: 100%;
+            transform: translateX(-80%);
+            width: 100%;
+        }
+        @include mq($sm){
+            left: 90%;
+        }
+    }
+
+    &.v_2 {
+        padding-top: 140px;
+        @include mq($sm){
+            padding-top: 80px;
+        }
+        &.rts-campus-bg {
+            background-image: url(../images/campus/bg.svg);
+            position: relative;
+
+            &::before {
+                background: transparent;
+                background-repeat: no-repeat;
+                top: 32%;
+                background-image: url(../images/campus/bg-line.svg);
+                @include mq($xs){
+                    display: none;
+                }
+            }
+        }
+
+        .rts-left-section {
+            position: relative;
+
+            &::before {
+                @include position;
+                left: 0;
+                height: 70%;
+                width: 1px;
+                background: var(--rt-line);
+                bottom: -5%;
+            }
+
+            .section-title {
+                font-size: 100px;
+                @include mq($xs){
+                    font-size: 60px;
+                }
+                line-height: 110%;
+                margin-bottom: 45px;
+                @include mq($sm){
+                    font-size: 70px;
+                }
+                span {
+                    display: block;
+                    @include mq($sm){
+                        display: inline-block;
+                        margin-left: 0;
+                    }
+                    margin-left: 100px;
+                }
+            }
+
+            .rts-theme-btn {
+                margin-top: 35px;
+            }
+
+            .left-section-content {
+                margin-left: 25px;
+            }
+        }
+
+        .rt-rounded-shape {
+            border: 1px solid #C3B8FF;
+            display: inline-block;
+            position: absolute;
+            z-index: 9;
+            border-radius: 50%;
+            top: -50px;
+            left: -50px;
+            background: linear-gradient(180deg, #CAC0FF 0%, #E1FFFB 100%);
+            @include mq($md){
+                left: unset;
+                right: -10px;
+            }
+            svg {
+
+                animation: rotate 10s linear infinite;
+            }
+
+            span {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-35deg);
+                color: var(--rt-secondary);
+            }
+
+        }
+
+        .rts-right-section {
+            margin-top: 50px;
+            position: relative;
+            .campus-video {
+                position: relative;
+                margin-top: 50px;
+                // for hide saveform.net helper plugin download icon
+                span{
+                    display: none;
+                }
+                > img {
+                    min-height: 440px;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    position: relative;
+                }
+                .video-play {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                    cursor: pointer;
+    
+                     img.round{
+                        height: 82px;
+                        width: 82px;
+                        animation: rotate 10s linear infinite;
+                        position: relative;
+                        @include mq($md){
+                            height: 80px;
+                            width: 80px;
+                        }
+                    }
+                     img.play-icon{
+                        height: 30px;
+                        width: 30px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        @include mq($md){
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+}

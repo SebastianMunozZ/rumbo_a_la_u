@@ -81,7 +81,7 @@ function liveBrowserSync(done) {
     browserSync.init({
         server: {
             baseDir: dest.root,
-            index: "index-four.html"
+            index: "index.html"
         }
     });
     done();
