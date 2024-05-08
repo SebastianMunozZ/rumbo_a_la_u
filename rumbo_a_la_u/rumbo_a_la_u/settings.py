@@ -17,9 +17,12 @@ import logging
 
 # Configuración básica de logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Configura el nivel de registro a DEBUG para mostrar todos los mensajes
-    stream=sys.stdout,    # Redirige la salida a sys.stdout (la salida estándar)
-    format='%(asctime)s - %(levelname)s - %(message)s'  # Formato del mensaje de registro
+    # Configura el nivel de registro a DEBUG para mostrar todos los mensajes
+    level=logging.DEBUG,
+    # Redirige la salida a sys.stdout (la salida estándar)
+    stream=sys.stdout,
+    # Formato del mensaje de registro
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,7 +143,8 @@ LOGOUT_REDIRECT_URL = "index-four"
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend', 'development-pkg', 'dest', 'assets'),
+    os.path.join(BASE_DIR, 'frontend', 'development-pkg', 'dest',
+                 'C:\\rumbo_a_la_u\\rumbo_a_la_u_web\\rumbo_a_la_u_web\\static'),
 ]
 
 # Default primary key field type
