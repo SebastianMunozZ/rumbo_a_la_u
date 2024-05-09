@@ -32,6 +32,15 @@
                 <div class="col-lg-6">
                     <div class="login-page-form-area">
                         <h4 class="title">Registra tu Cuenta 👋</h4>
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                        </ul>
+                        {% endif %}
+                        
                         <form method="POST" action="{% url 'views_register' %}">
                             {% csrf_token %}
                             <div class="single-input-wrapper">
@@ -41,18 +50,20 @@
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
                                     <label for="username">Nombre de usuario</label>
-                                    <input name="username" id="username" type="text" placeholder="Ingresa tu nombre de usuario"
-                                        required>
+                                    <input name="username" id="username" type="text"
+                                        placeholder="Ingresa tu nombre de usuario" required>
                                 </div>
                                 <div class="single-input-wrapper">
                                     <label for="email">Correo*</label>
-                                    <input name="correo" id="email" type="email" placeholder="Ingresa tu Correo" required>
+                                    <input name="correo" id="email" type="email" placeholder="Ingresa tu Correo"
+                                        required>
                                 </div>
                             </div>
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
                                     <label for="password">Tu clave*</label>
-                                    <input name="password" id="password" type="password" placeholder="Ingresa tu clave" required>
+                                    <input name="password" id="password" type="password" placeholder="Ingresa tu clave"
+                                        required>
                                 </div>
                                 <div class="single-input-wrapper">
                                     <label for="passwords">Vuelve a ingresar tu clave*</label>

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import redirect
 from django.views import View
 from .models import Usuarios
@@ -11,9 +12,11 @@ class RegisterView(View):
         password = request.POST.get('password')
 
         if Usuarios.objects.filter(username=username).exists():
-            return redirect('registration', {'error': 'El nombre de usuario ya existe'})
-        if Usuarios.objects.filter(correo=correo).exists():
-            return redirect('registration', {'error': 'El correo electrónico ya está en uso'})
+            messages.error(request, 'El nombre de usuario ya existe')
+            return redirect('registration')
+        if Usuarios.objects.filter(correo_electronico=correo).exists():
+            messages.error(request, 'El correo electrónico ya está en uso')
+            return redirect('registration')
 
         
         user = Usuarios(
