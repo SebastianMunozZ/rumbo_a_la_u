@@ -54,7 +54,7 @@ CREATE TABLE `PROFESORES` (
   `asignatura_que_ensena` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`teacher_id`),
   FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Alumnos
 CREATE TABLE `ESTUDIANTES` (
@@ -66,7 +66,7 @@ CREATE TABLE `ESTUDIANTES` (
   PRIMARY KEY (`student_id`),
   FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`),
   FOREIGN KEY (`comuna_id`) REFERENCES `COMUNAS`(`commune_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Cursos
 CREATE TABLE `CURSOS` (
@@ -78,7 +78,7 @@ CREATE TABLE `CURSOS` (
   `teacher_id` INT NOT NULL,
   PRIMARY KEY (`course_id`),
   FOREIGN KEY (`teacher_id`) REFERENCES `PROFESORES`(`teacher_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Inscripciones
 CREATE TABLE `INSCRIPCIONES` (
@@ -88,7 +88,7 @@ CREATE TABLE `INSCRIPCIONES` (
   PRIMARY KEY (`enrollment_id`),
   FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
   FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Materiales del Curso
 CREATE TABLE `MATERIALES` (
@@ -99,7 +99,7 @@ CREATE TABLE `MATERIALES` (
   `archivo_adjunto` VARCHAR(255),
   PRIMARY KEY (`material_id`),
   FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Calificaciones
 CREATE TABLE `NOTAS` (
@@ -111,8 +111,7 @@ CREATE TABLE `NOTAS` (
   PRIMARY KEY (`grade_id`),
   FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
   FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 -- Crear tabla de Comentarios del Curso
 CREATE TABLE `COMENTARIOS` (
   `comment_id` INT AUTO_INCREMENT,
@@ -123,7 +122,7 @@ CREATE TABLE `COMENTARIOS` (
   PRIMARY KEY (`comment_id`),
   FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`),
   FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Foros de Discusión
 CREATE TABLE `DISCUSIONES` (
@@ -133,7 +132,7 @@ CREATE TABLE `DISCUSIONES` (
   `course_id` INT NOT NULL,
   PRIMARY KEY (`forum_id`),
   FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Publicaciones del Foro
 CREATE TABLE `POSTS` (
@@ -145,14 +144,14 @@ CREATE TABLE `POSTS` (
   PRIMARY KEY (`post_id`),
   FOREIGN KEY (`forum_id`) REFERENCES `DISCUSIONES`(`forum_id`),
   FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Regiones
 CREATE TABLE `REGIONES` (
   `region_id` INT AUTO_INCREMENT,
   `nombre_de_la_region` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`region_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Provincias
 CREATE TABLE `PROVINCIAS` (
@@ -161,7 +160,7 @@ CREATE TABLE `PROVINCIAS` (
   `region_id` INT NOT NULL,
   PRIMARY KEY (`province_id`),
   FOREIGN KEY (`region_id`) REFERENCES `REGIONES`(`region_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Comunas
 CREATE TABLE `COMUNAS` (
@@ -170,7 +169,7 @@ CREATE TABLE `COMUNAS` (
   `province_id` INT NOT NULL,
   PRIMARY KEY (`commune_id`),
   FOREIGN KEY (`province_id`) REFERENCES `PROVINCIAS`(`province_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Crear tabla de Noticias
 CREATE TABLE `NOTICIAS` (
@@ -179,7 +178,7 @@ CREATE TABLE `NOTICIAS` (
   `contenido_de_la_noticia` TEXT NOT NULL,
   `fecha_de_publicacion` DATETIME NOT NULL,
   PRIMARY KEY (`news_id`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `REGIONES`
@@ -187,157 +186,217 @@ CREATE TABLE `NOTICIAS` (
 
 LOCK TABLES `REGIONES` WRITE;
 /*!40000 ALTER TABLE `REGIONES` DISABLE KEYS */;
-INSERT INTO `REGIONES` VALUES (1,'REGIÓN METROPOLITANA');
+INSERT INTO REGIONES (nombre_de_la_region) VALUES
+('Región de Arica y Parinacota'),
+('Región de Tarapacá'),
+('Región de Antofagasta'),
+('Región de Atacama'),
+('Región de Coquimbo'),
+('Región de Valparaíso'),
+('Región Metropolitana de Santiago'),
+('Región del Libertador General Bernardo O''Higgins'),
+('Región del Maule'),
+('Región del Ñuble'),
+('Región del Biobío'),
+('Región de La Araucanía'),
+('Región de Los Ríos'),
+('Región de Los Lagos'),
+('Región de Aysén del General Carlos Ibáñez del Campo'),
+('Región de Magallanes y de la Antártica Chilena');
 /*!40000 ALTER TABLE `REGIONES` ENABLE KEYS */;
-
-
--- Crear tabla de Profesores
-CREATE TABLE `PROFESORES` (
-  `teacher_id` INT AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `nombre` VARCHAR(255) NOT NULL,
-  `apellido` VARCHAR(255) NOT NULL,
-  `asignatura_que_ensena` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`teacher_id`),
-  FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`)
-);
-
--- Crear tabla de Alumnos
-CREATE TABLE `ESTUDIANTES` (
-  `student_id` INT AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `ano_de_ingreso` INT NOT NULL,
-  `nivel_de_educacion` VARCHAR(100) NOT NULL,
-  `comuna_id` INT NOT NULL,
-  PRIMARY KEY (`student_id`),
-  FOREIGN KEY (`user_id`) REFERENCES `USUARIOS`(`user_id`),
-  FOREIGN KEY (`comuna_id`) REFERENCES `COMUNAS`(`commune_id`)
-);
-
--- Crear tabla de Cursos
-CREATE TABLE `CURSOS` (
-  `course_id` INT AUTO_INCREMENT,
-  `nombre_del_curso` VARCHAR(255) NOT NULL,
-  `descripcion` TEXT,
-  `asignatura` VARCHAR(100) NOT NULL,
-  `nivel_del_curso` VARCHAR(100) NOT NULL,
-  `teacher_id` INT NOT NULL,
-  PRIMARY KEY (`course_id`),
-  FOREIGN KEY (`teacher_id`) REFERENCES `PROFESORES`(`teacher_id`)
-);
-
--- Crear tabla de Inscripciones
-CREATE TABLE `INSCRIPCIONES` (
-  `enrollment_id` INT AUTO_INCREMENT,
-  `student_id` INT NOT NULL,
-  `course_id` INT NOT NULL,
-  PRIMARY KEY (`enrollment_id`),
-  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
-  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
-
--- Crear tabla de Materiales del Curso
-CREATE TABLE `MATERIALES` (
-  `material_id` INT AUTO_INCREMENT,
-  `course_id` INT NOT NULL,
-  `titulo_del_material` VARCHAR(255) NOT NULL,
-  `descripcion_del_material` TEXT,
-  `archivo_adjunto` VARCHAR(255),
-  PRIMARY KEY (`material_id`),
-  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
-
--- Crear tabla de Calificaciones
-CREATE TABLE `NOTAS` (
-  `grade_id` INT AUTO_INCREMENT,
-  `student_id` INT NOT NULL,
-  `course_id` INT NOT NULL,
-  `calificacion` DECIMAL(5, 2) NOT NULL,
-  `fecha_de_calificacion` DATE NOT NULL,
-  PRIMARY KEY (`grade_id`),
-  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`),
-  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
-
--- Crear tabla de Comentarios del Curso
-CREATE TABLE `COMENTARIOS` (
-  `comment_id` INT AUTO_INCREMENT,
-  `course_id` INT NOT NULL,
-  `student_id` INT NOT NULL,
-  `comentario` TEXT NOT NULL,
-  `fecha_de_comentario` DATETIME NOT NULL,
-  PRIMARY KEY (`comment_id`),
-  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`),
-  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
-);
-
--- Crear tabla de Foros de Discusión
-CREATE TABLE `DISCUSIONES` (
-  `forum_id` INT AUTO_INCREMENT,
-  `nombre_del_foro` VARCHAR(255) NOT NULL,
-  `descripcion` TEXT,
-  `course_id` INT NOT NULL,
-  PRIMARY KEY (`forum_id`),
-  FOREIGN KEY (`course_id`) REFERENCES `CURSOS`(`course_id`)
-);
-
--- Crear tabla de Publicaciones del Foro
-CREATE TABLE `POSTS` (
-  `post_id` INT AUTO_INCREMENT,
-  `forum_id` INT NOT NULL,
-  `student_id` INT NOT NULL,
-  `contenido_del_post` TEXT NOT NULL,
-  `fecha_de_publicacion` DATETIME NOT NULL,
-  PRIMARY KEY (`post_id`),
-  FOREIGN KEY (`forum_id`) REFERENCES `DISCUSIONES`(`forum_id`),
-  FOREIGN KEY (`student_id`) REFERENCES `ESTUDIANTES`(`student_id`)
-);
-
--- Crear tabla de Regiones
-CREATE TABLE `REGIONES` (
-  `region_id` INT AUTO_INCREMENT,
-  `nombre_de_la_region` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`region_id`)
-);
-
--- Crear tabla de Provincias
-CREATE TABLE `PROVINCIAS` (
-  `province_id` INT AUTO_INCREMENT,
-  `nombre_de_la_provincia` VARCHAR(255) NOT NULL,
-  `region_id` INT NOT NULL,
-  PRIMARY KEY (`province_id`),
-  FOREIGN KEY (`region_id`) REFERENCES `REGIONES`(`region_id`)
-);
-
--- Crear tabla de Comunas
-CREATE TABLE `COMUNAS` (
-  `commune_id` INT AUTO_INCREMENT,
-  `nombre_de_la_comuna` VARCHAR(255) NOT NULL,
-  `province_id` INT NOT NULL,
-  PRIMARY KEY (`commune_id`),
-  FOREIGN KEY (`province_id`) REFERENCES `PROVINCIAS`(`province_id`)
-);
-
--- Crear tabla de Noticias
-CREATE TABLE `NOTICIAS` (
-  `news_id` INT AUTO_INCREMENT,
-  `titulo_de_la_noticia` VARCHAR(255) NOT NULL,
-  `contenido_de_la_noticia` TEXT NOT NULL,
-  `fecha_de_publicacion` DATETIME NOT NULL,
-  PRIMARY KEY (`news_id`)
-);
-
---
--- Dumping data for table `REGION`
---
-
-LOCK TABLES `REGIONES` WRITE;
-/*!40000 ALTER TABLE `REGION` DISABLE KEYS */;
-INSERT INTO `REGIONES` VALUES (1,'REGIÓN METROPOLITANA');
-/*!40000 ALTER TABLE `REGION` ENABLE KEYS */;
-
 UNLOCK TABLES;
 
+LOCK TABLES `PROVINCIAS` WRITE;
+/*!40000 ALTER TABLE `PROVINCIAS` DISABLE KEYS */;
+INSERT INTO PROVINCIAS (nombre_de_la_provincia, region_id) VALUES
+('Arica', 1),
+('Parinacota', 1),
+('Iquique', 2),
+('Tamarugal', 2),
+('Antofagasta', 3),
+('El Loa', 3),
+('Tocopilla', 3),
+('Chañaral', 4),
+('Copiapó', 4),
+('Huasco', 4),
+('Elqui', 5),
+('Choapa', 5),
+('Limarí', 5),
+('Valparaíso', 6),
+('Isla de Pascua', 6),
+('Los Andes', 6),
+('Petorca', 6),
+('Quillota', 6),
+('San Antonio', 6),
+('San Felipe de Aconcagua', 6),
+('Marga Marga', 6),
+('Santiago', 7),
+('Cordillera', 7),
+('Chacabuco', 7),
+('Maipo', 7),
+('Melipilla', 7),
+('Talagante', 7),
+('Cachapoal', 8),
+('Cardenal Caro', 8),
+('Colchagua', 8),
+('Curicó', 9),
+('Diguillín', 9),
+('Linares', 9),
+('Talca', 9),
+('Itata', 10),
+('Diguillín', 10),
+('Punilla', 10),
+('Arauco', 11),
+('Biobío', 11),
+('Concepción', 11),
+('Ñuble', 10),
+('Cautín', 12),
+('Malleco', 12),
+('Valdivia', 13),
+('Ranco', 13),
+('Osorno', 14),
+('Llanquihue', 14),
+('Chiloé', 14),
+('Palena', 14),
+('Aysén', 15),
+('Capitán Prat', 15),
+('Coihaique', 15),
+('General Carrera', 15),
+('Magallanes', 16),
+('Antártica Chilena', 16),
+('Tierra del Fuego', 16),
+('Última Esperanza', 16);
+/*!40000 ALTER TABLE `PROVINCIAS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `COMUNAS` WRITE;
+/*!40000 ALTER TABLE `COMUNAS` DISABLE KEYS */;
+INSERT INTO COMUNAS (nombre_de_la_comuna, province_id) VALUES
+('Arica', 1),
+('Camarones', 1),
+('Putre', 2),
+('General Lagos', 2),
+('Iquique', 3),
+('Alto Hospicio', 3),
+('Pozo Almonte', 4),
+('Camiña', 4),
+('Colchane', 4),
+('Huara', 4),
+('Pica', 4),
+('Antofagasta', 5),
+('Mejillones', 5),
+('Sierra Gorda', 5),
+('Taltal', 5),
+('Calama', 6),
+('Ollagüe', 6),
+('San Pedro de Atacama', 6),
+('Tocopilla', 7),
+('María Elena', 7),
+('Copiapó', 8),
+('Caldera', 8),
+('Tierra Amarilla', 8),
+('Chañaral', 9),
+('Diego de Almagro', 9),
+('Vallenar', 10),
+('Alto del Carmen', 10),
+('Freirina', 10),
+('Huasco', 10),
+('La Serena', 11),
+('Coquimbo', 11),
+('Andacollo', 11),
+('La Higuera', 11),
+('Paihuano', 11),
+('Vicuña', 11),
+('Illapel', 12),
+('Canela', 12),
+('Los Vilos', 12),
+('Salamanca', 12),
+('Ovalle', 13),
+('Combarbalá', 13),
+('Monte Patria', 13),
+('Punitaqui', 13),
+('Río Hurtado', 13),
+('Isla de Pascua', 14),
+('Calle Larga', 15),
+('Los Andes', 15),
+('Rinconada', 15),
+('San Esteban', 15),
+('La Ligua', 16),
+('Cabildo', 16),
+('Papudo', 16),
+('Petorca', 16),
+('Zapallar', 16),
+('Quillota', 17),
+('Calera', 17),
+('Hijuelas', 17),
+('La Cruz', 17),
+('Nogales', 17),
+('San Antonio', 18),
+('Algarrobo', 18),
+('Cartagena', 18),
+('El Quisco', 18),
+('El Tabo', 18),
+('Santo Domingo', 18),
+('San Felipe', 19),
+('Catemu', 19),
+('Llaillay', 19),
+('Panquehue', 19),
+('Putaendo', 19),
+('Santa María', 19),
+('Valparaíso', 20),
+('Casablanca', 20),
+('Concón', 20),
+('Juan Fernández', 20),
+('Puchuncaví', 20),
+('Quilpué', 20),
+('Quintero', 20),
+('Villa Alemana', 20),
+('Viña del Mar', 20),
+('Isla de Maipo', 21),
+('El Monte', 21),
+('Padre Hurtado', 21),
+('Peñaflor', 21),
+('Talagante', 21),
+('Codegua', 22),
+('Coínco', 22),
+('Coltauco', 22),
+('Doñihue', 22),
+('Graneros', 22),
+('Las Cabras', 22),
+('Machalí', 22),
+('Malloa', 22),
+('Mostazal', 22),
+('Olivar', 22),
+('Peumo', 22),
+('Pichidegua', 22),
+('Quinta de Tilcoco', 22),
+('Rancagua', 22),
+('Requínoa', 22),
+('Rengo', 22),
+('San Vicente', 22),
+('La Estrella', 23),
+('Litueche', 23),
+('Marchihue', 23),
+('Navidad', 23),
+('Peredones', 23),
+('Pichilemu', 23),
+('Chépica', 24),
+('Chimbarongo', 24),
+('Lolol', 24),
+('Nancagua', 24),
+('Palmilla', 24),
+('Peralillo', 24),
+('Placilla', 24),
+('Pumanque', 24),
+('San Fernando', 24),
+('Santa Cruz', 24),
+('Cauquenes', 25),
+('Chanco', 25),
+('Longaví', 25),
+('Parral', 25);
+/*!40000 ALTER TABLE `COMUNAS` ENABLE KEYS */;
+UNLOCK TABLES;
 --
 -- Table structure for table `auth_group`
 --
@@ -619,6 +678,20 @@ LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+DELIMITER //
+DROP trigger IF EXISTS after_usuario_insert;
+DELIMITER //
+CREATE TRIGGER after_usuario_insert
+AFTER INSERT ON USUARIOS
+FOR EACH ROW
+BEGIN
+    IF NEW.tipo_usuario = 1 THEN
+        INSERT INTO ESTUDIANTES (user_id, ano_de_ingreso, nivel_de_educacion, comuna_id)
+        VALUES (NEW.user_id, '2024', 'Cuarto Medio', '5');
+    END IF;
+END //
+DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

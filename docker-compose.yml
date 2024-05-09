@@ -11,8 +11,8 @@ services:
       MYSQL_USER: seba
       MYSQL_PASSWORD: seba
       MYSQL_ROOT_PASSWORD: root
-  backend:
-    build: ./rumbo_a_la_u
+  rumbo_a_la_u:
+    build: ./rumbo_a_la_u_web
     ports:
       - "8000:8000"
     depends_on:
@@ -22,7 +22,3 @@ services:
       - DATABASE_NAME=rumbo_a_la_u
       - DATABASE_USER=seba
       - DATABASE_PASSWORD=seba
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"

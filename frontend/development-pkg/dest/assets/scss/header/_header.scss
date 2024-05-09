@@ -3,6 +3,7 @@
 // header style here
 
 .header-top-one-wrapper{
+    width: 100%;
     background: var(--color-primary);
     padding: 0;
     @media #{$sm-layout} {

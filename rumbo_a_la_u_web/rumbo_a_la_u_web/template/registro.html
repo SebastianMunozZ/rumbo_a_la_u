@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/fav.png">
     <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="static/css/plugins/fontawesome-6.css">
     <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="static/css/plugins/swiper.min.css">
     <!-- magnific popup css -->
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/vendor/magnific-popup.css">
     <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
     <!-- jquery ui css -->
-    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="static/css/vendor/jquery-ui.css">
     <!-- metismenu scss -->
-    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="static/css/vendor/metismenu.css">
     <!-- custom style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body class="login-page">
@@ -32,26 +32,38 @@
                 <div class="col-lg-6">
                     <div class="login-page-form-area">
                         <h4 class="title">Registra tu Cuenta 👋</h4>
-                        <form action="#">
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                        </ul>
+                        {% endif %}
+                        
+                        <form method="POST" action="{% url 'views_register' %}">
+                            {% csrf_token %}
                             <div class="single-input-wrapper">
                                 <label for="name">Tu nombre*</label>
-                                <input id="name" type="text" placeholder="Ingresa tu nombre" required>
+                                <input name="nombre" id="name" type="text" placeholder="Ingresa tu nombre" required>
                             </div>
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
                                     <label for="username">Nombre de usuario</label>
-                                    <input id="username" type="text" placeholder="Ingresa tu nombre de usuario"
-                                        required>
+                                    <input name="username" id="username" type="text"
+                                        placeholder="Ingresa tu nombre de usuario" required>
                                 </div>
                                 <div class="single-input-wrapper">
                                     <label for="email">Correo*</label>
-                                    <input id="email" type="email" placeholder="Ingresa tu Correo" required>
+                                    <input name="correo" id="email" type="email" placeholder="Ingresa tu Correo"
+                                        required>
                                 </div>
                             </div>
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
                                     <label for="password">Tu clave*</label>
-                                    <input id="password" type="password" placeholder="Ingresa tu clave" required>
+                                    <input name="password" id="password" type="password" placeholder="Ingresa tu clave"
+                                        required>
                                 </div>
                                 <div class="single-input-wrapper">
                                     <label for="passwords">Vuelve a ingresar tu clave*</label>
@@ -64,14 +76,14 @@
                                     <label for="type-1">Acepto las condiciones y la política de privacidad</label><br>
                                 </div>
                             </div>
-                            <button class="rts-btn btn-primary">Registrarse</button>
-                            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+                            <button type="submit" class="rts-btn btn-primary">Registrarse</button>
+                            <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia Sesión</a></p>
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-thumbnail-login-p mt--100">
-                        <object type="image/svg+xml" data="assets/images/banner/tablet-login-animate.svg" width="600"
+                        <object type="image/svg+xml" data="static/images/banner/tablet-login-animate.svg" width="600"
                             height="495" alt="login-form"></object>
                     </div>
                 </div>
@@ -85,7 +97,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="assets/images/banner/04.jpg" alt="elevate">
+                <img src="static/images/banner/04.jpg" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>
@@ -318,41 +330,41 @@
 
     <!-- all scripts -->
     <!-- jquery min js -->
-    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="static/js/vendor/jquery.min.js"></script>
     <!-- jquery ui js -->
-    <script src="assets/js/vendor/jquery-ui.js"></script>
+    <script src="static/js/vendor/jquery-ui.js"></script>
     <!-- metismenu js -->
-    <script src="assets/js/vendor/metismenu.js"></script>
+    <script src="static/js/vendor/metismenu.js"></script>
     <!-- magnific popup js-->
-    <script src="assets/js/vendor/magnifying-popup.js"></script>
+    <script src="static/js/vendor/magnifying-popup.js"></script>
     <!-- swiper JS 10.2.0 -->
-    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="static/js/plugins/swiper.js"></script>
     <!-- counterup js -->
-    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="static/js/plugins/counterup.js"></script>
     <!-- waypoint js -->
-    <script src="assets/js/vendor/waypoint.js"></script>
+    <script src="static/js/vendor/waypoint.js"></script>
     <!-- wow js -->
-    <script src="assets/js/vendor/waw.js"></script>
+    <script src="static/js/vendor/waw.js"></script>
     <!-- isotop mesonary -->
-    <script src="assets/js/plugins/isotop.js"></script>
+    <script src="static/js/plugins/isotop.js"></script>
     <!-- jquery imageloaded -->
-    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="static/js/plugins/imagesloaded.pkgd.min.js"></script>
     <!-- resize sensor js -->
-    <script src="assets/js/plugins/resizer-sensor.js"></script>
+    <script src="static/js/plugins/resizer-sensor.js"></script>
     <!-- sticky sidebar -->
-    <script src="assets/js/plugins/sticky-sidebar.js"></script>
+    <script src="static/js/plugins/sticky-sidebar.js"></script>
     <!-- gsap twinmax js -->
-    <script src="assets/js/plugins/twinmax.js"></script>
+    <script src="static/js/plugins/twinmax.js"></script>
     <!-- chroma js -->
-    <script src="assets/js/vendor/chroma.min.js"></script>
+    <script src="static/js/vendor/chroma.min.js"></script>
     <!-- bootstrap 5.0.2 -->
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="static/js/plugins/bootstrap.min.js"></script>
     <!-- dymanic Contact Form -->
-    <script src="assets/js/plugins/contact.form.js"></script>
+    <script src="static/js/plugins/contact.form.js"></script>
     <!-- calender js -->
-    <script src="assets/js/plugins/calender.js"></script>
+    <script src="static/js/plugins/calender.js"></script>
     <!-- main Js -->
-    <script src="assets/js/main.js"></script>
+    <script src="static/js/main.js"></script>
 
 
 </body>

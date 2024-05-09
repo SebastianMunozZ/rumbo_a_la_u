@@ -70,7 +70,7 @@ def login(request):
 
 
 def registration(request):
-    return render(request, 'registration.html')
+    return render(request, 'registro.html')
 
 
 def createcourse(request):
@@ -79,3 +79,6 @@ def createcourse(request):
 
 def becomeinstructor(request):
     return render(request, 'become-instructor.html')
+
+def error(request):
+    return render(request, '404.html')
