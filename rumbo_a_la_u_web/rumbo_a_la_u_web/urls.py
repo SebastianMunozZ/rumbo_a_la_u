@@ -19,6 +19,8 @@ from django.urls import path
 from rumbo_a_la_u_web.views import index
 from .views import *
 from django.urls import path, include
+from .views_register import RegisterView
+
 
 urlpatterns = [
     path('', index, name='index'),
@@ -42,5 +44,7 @@ urlpatterns = [
     path('create-course', createcourse, name="create-course"),
     path('registration', registration, name="registration"),
     path('login', login, name="login"),
+    path('error', error, name="error"),
+    path('register/', RegisterView.as_view(), name='views_register'),
 
 ]

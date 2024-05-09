@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('style.html')
+<body>
+  
+    <!-- header style one -->
+    @@include('header/header-two.html')
+    <!-- header style end -->
+
+    @@include('elements/breadcrumb.html',{
+        "title": "Events",
+        "name": "All Events",
+        "active": "Instructor.html",
+    }) 
+    
+
+    <div class="up-coming-events rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- single up coming events -->
+                    <div class="upcoming-events-main-wrapper-1">
+                        <!-- single -->
+                        <div class="single-upcoming-events">
+                            <a href="event-details.html" class="thumbnail">
+                                <img src="assets/images/events/01.jpg" alt="events">
+                            </a>
+                            <div class="information">
+                                <div class="date-details">
+                                    <div class="date">
+                                        <i class="fa-thin fa-calendar-days"></i>
+                                        <p> December 26, 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>10:30 am</p>
+                                    </div>
+                                    <div class="location">
+                                        <i class="fa-thin fa-location-dot"></i>
+                                        <p>Yarra Park, Melbourne</p>
+                                    </div>
+                                </div>
+                                <a href="event-details.html">
+                                    <h5 class="title">EduFest 2023: Igniting Minds, Transforming Lives </h5>
+                                </a>
+                            </div>
+                            <a href="event-details.html" class="rts-btn btn-primary with-arrow">Get Ticket <i class="fa-light fa-arrow-right"></i></a>
+                        </div>
+                        <!-- single -->
+                        <!-- single -->
+                        <div class="single-upcoming-events">
+                            <a href="event-details.html" class="thumbnail">
+                                <img src="assets/images/events/02.jpg" alt="events">
+                            </a>
+                            <div class="information">
+                                <div class="date-details">
+                                    <div class="date">
+                                        <i class="fa-thin fa-calendar-days"></i>
+                                        <p> December 29, 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>10:30 am</p>
+                                    </div>
+                                    <div class="location">
+                                        <i class="fa-thin fa-location-dot"></i>
+                                        <p>Yarra Park, Melbourne</p>
+                                    </div>
+                                </div>
+                                <a href="event-details.html">
+                                    <h5 class="title">EdTech Summit: Revolutionizing Learning</h5>
+                                </a>
+                            </div>
+                            <a href="event-details.html" class="rts-btn btn-primary with-arrow">Get Ticket <i class="fa-light fa-arrow-right"></i></a>
+                        </div>
+                        <!-- single -->
+                        <!-- single -->
+                        <div class="single-upcoming-events">
+                            <a href="event-details.html" class="thumbnail">
+                                <img src="assets/images/events/03.jpg" alt="events">
+                            </a>
+                            <div class="information">
+                                <div class="date-details">
+                                    <div class="date">
+                                        <i class="fa-thin fa-calendar-days"></i>
+                                        <p> December 16, 2023</p>
+                                    </div>
+                                    <div class="time">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p>10:30 am</p>
+                                    </div>
+                                    <div class="location">
+                                        <i class="fa-thin fa-location-dot"></i>
+                                        <p>Yarra Park, Melbourne</p>
+                                    </div>
+                                </div>
+                                <a href="event-details.html">
+                                    <h5 class="title">Teaching Tomorrow: A Symposium on Modern</h5>
+                                </a>
+                            </div>
+                            <a href="event-details.html" class="rts-btn btn-primary with-arrow">Get Ticket <i class="fa-light fa-arrow-right"></i></a>
+                        </div>
+                        <!-- single -->
+                    </div>
+                    <!-- single up coming events end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cart area start -->
+    @@include('footer/footer-one.html')
+    <!-- cart area edn -->
+
+    <!-- cart area start -->
+    @@include('elements/cart.html')
+    <!-- cart area edn -->
+
+    @@include('scripts.html')
+
+</body>
+</html>
