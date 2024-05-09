@@ -44,14 +44,14 @@
                                         <li class="has-child-menu">
                                             <a href="#">
                                                 <i class="fa-regular fa-user"></i>
-                                                <span class="menu-item">Admin</span>
+                                                <span class="menu-item">Bienvenido, {{ user.username }}</span>
                                             </a>
                                             <ul class="sub-menu">
                                                 <li class="user-profile">
                                                     <div class="profile-picture">
                                                         <img src="static/images/banner/36.png" alt="banner">
                                                         <div class="info">
-                                                            <h6 class="name">MR. Bali</h6>
+                                                            <h6 class="name">{{ user.username }}</h6>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -322,12 +322,14 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="buttons-area">
-                                <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
-                            </div>
-                            <div class="buttons-area">
-                                <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
-                            </div>
+                            {% if not user.is_authenticated %}
+                                <div class="buttons-area">
+                                    <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
+                                </div>
+                                <div class="buttons-area">
+                                    <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
+                                </div>
+                            {% endif %}
                             <div class="menu-btn" id="menu-btn">
                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

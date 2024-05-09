@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .models import Usuarios
+
 
 
 def index(request):
-    return render(request, 'index.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    return render(request, 'index.html', {'user': user})
 
 
 def about(request):

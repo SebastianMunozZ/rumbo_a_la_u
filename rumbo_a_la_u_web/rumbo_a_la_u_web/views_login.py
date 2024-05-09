@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.views import View
 from .models import Usuarios
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth import login
 
 class LoginView(View):
     def post(self, request):
@@ -19,4 +20,5 @@ class LoginView(View):
             messages.error(request, 'Correo electrónico o contraseña incorrectos')
             return redirect('login')
 
+        request.session['user_id'] = user.user_id
         return redirect('index')
