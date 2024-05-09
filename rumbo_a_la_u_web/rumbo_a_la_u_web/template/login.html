@@ -33,14 +33,24 @@
                 <div class="col-lg-6">
                     <div class="login-page-form-area">
                         <h4 class="title">Ingresa a tu cuenta 👋</h4>
-                        <form action="#">
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        <form method="POST" action="{% url 'views_login' %}">
+                            {% csrf_token %}
                             <div class="single-input-wrapper">
                                 <label for="email">Tu correo</label>
-                                <input id="email" type="email" placeholder="Enter Your Email" required>
+                                <input name="correo" id="email" type="email" placeholder="Enter Your Email" required>
                             </div>
                             <div class="single-input-wrapper">
                                 <label for="password">Tu clave</label>
-                                <input id="password" type="password" placeholder="Password" required>
+                                <input name="password" id="password" type="password" placeholder="Password" required>
                             </div>
                             <div class="single-checkbox-filter">
                                 <div class="check-box">
@@ -48,7 +58,7 @@
                                     <label for="type-1">Recordarme</label><br>
                                 </div>
                             </div>
-                            <button class="rts-btn btn-primary">Iniciar sesión</button>
+                            <button type="submit" class="rts-btn btn-primary">Iniciar sesión</button>
 
                             <div class="google-apple-wrapper">
                                 <div class="google">
