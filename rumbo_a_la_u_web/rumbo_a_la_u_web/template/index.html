@@ -38,86 +38,88 @@
                                 <a href="tel:+4733378901" class="email"><i class="fa-light fa-phone"></i>+569 0120
                                     1244</a>
                             </div>
-                            <div class="right-information">
-                                <div class="right-information admin-panel">
-                                    <ul class="rts-dropdown-menu switcher-language">
-                                        <li class="has-child-menu">
-                                            <a href="#">
-                                                <i class="fa-regular fa-user"></i>
-                                                <span class="menu-item">Bienvenido, {{ user.username }}</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li class="user-profile">
-                                                    <div class="profile-picture">
-                                                        <img src="static/images/banner/36.png" alt="banner">
-                                                        <div class="info">
-                                                            <h6 class="name">{{ user.username }}</h6>
+                            {% if user.username %}
+                                <div class="right-information">
+                                    <div class="right-information admin-panel">
+                                        <ul class="rts-dropdown-menu switcher-language">
+                                            <li class="has-child-menu">
+                                                <a href="#">
+                                                    <i class="fa-regular fa-user"></i>
+                                                    <span class="menu-item">Bienvenido, {{ user.username }}</span>
+                                                </a>
+                                                <ul class="sub-menu">
+                                                    <li class="user-profile">
+                                                        <div class="profile-picture">
+                                                            <img src="static/images/banner/36.png" alt="banner">
+                                                            <div class="info">
+                                                                <h6 class="name">{{ user.username }}</h6>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="dashboard.html" class="single-item active">
-                                                        <i class="fa-light fa-house"></i>
-                                                        <p>Dashboard</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="my-profile.html" class="single-item">
-                                                        <i class="fa-regular fa-user"></i>
-                                                        <p>Mi Perfil </p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="enroll-course.html" class="single-item">
-                                                        <i class="fa-light fa-graduation-cap"></i>
-                                                        <p>Cursos Inscritos</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="reviews.html" class="single-item">
-                                                        <i class="fa-regular fa-star"></i>
-                                                        <p>Reseñas</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="quiz-attempts.html" class="single-item">
-                                                        <i class="fa-sharp fa-light fa-bullseye-pointer"></i>
-                                                        <p>Mi Progreso</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="order-history.html" class="single-item">
-                                                        <i class="fa-sharp fa-light fa-bag-shopping"></i>
-                                                        <p>Historial de Compras</p>
-                                                    </a>
-                                                </li>
-                                                <li class="admin-border-top">
-                                                    <a href="settings.html" class="single-item">
-                                                        <i class="fa-sharp fa-regular fa-gear"></i>
-                                                        <p>Configuración</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.html" class="single-item">
-                                                        <i class="fa-light fa-right-from-bracket"></i>
-                                                        <p>Cerrar Sesión</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <div class="header-right-area-one admin-top-area-right">
-                                        <div class="actions-area">
-                                            <div class="search-btn">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </div>
-                                            <div class="cart cart-icon">
-                                                <i class="fa-regular fa-cart-shopping"></i>
+                                                    </li>
+                                                    <li>
+                                                        <a href="dashboard.html" class="single-item active">
+                                                            <i class="fa-light fa-house"></i>
+                                                            <p>Dashboard</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{% url 'studentprofile' %}" class="single-item">
+                                                            <i class="fa-regular fa-user"></i>
+                                                            <p>Mi Perfil </p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="enroll-course.html" class="single-item">
+                                                            <i class="fa-light fa-graduation-cap"></i>
+                                                            <p>Cursos Inscritos</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="reviews.html" class="single-item">
+                                                            <i class="fa-regular fa-star"></i>
+                                                            <p>Reseñas</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="quiz-attempts.html" class="single-item">
+                                                            <i class="fa-sharp fa-light fa-bullseye-pointer"></i>
+                                                            <p>Mi Progreso</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="order-history.html" class="single-item">
+                                                            <i class="fa-sharp fa-light fa-bag-shopping"></i>
+                                                            <p>Historial de Compras</p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="admin-border-top">
+                                                        <a href="settings.html" class="single-item">
+                                                            <i class="fa-sharp fa-regular fa-gear"></i>
+                                                            <p>Configuración</p>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{% url 'logout' %}" class="single-item">
+                                                            <i class="fa-light fa-right-from-bracket"></i>
+                                                            <p>Cerrar Sesión</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="header-right-area-one admin-top-area-right">
+                                            <div class="actions-area">
+                                                <div class="search-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </div>
+                                                <div class="cart cart-icon">
+                                                    <i class="fa-regular fa-cart-shopping"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -316,19 +318,19 @@
                                             <a class="nav-link" href="#">Blog</a>
                                             <ul class="submenu">
 
-                                                <li><a href="blog.html">Blog del Preu</a></li>
+                                                <li><a href="{% url 'blog' %}">Blog del Preu</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-                            {% if not user.is_authenticated %}
-                                <div class="buttons-area">
-                                    <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
-                                </div>
-                                <div class="buttons-area">
-                                    <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
-                                </div>
+                            {% if not user.username %}
+                            <div class="buttons-area">
+                                <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
+                            </div>
+                            <div class="buttons-area">
+                                <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
+                            </div>
                             {% endif %}
                             <div class="menu-btn" id="menu-btn">
                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
