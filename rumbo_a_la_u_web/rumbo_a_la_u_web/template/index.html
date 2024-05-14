@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
     <link rel="shortcut icon" type="image/x-icon"
-        href="static/images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico">
+        href="assets/images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico">
     <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="static/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
     <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="static/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
     <!-- magnific popup css -->
-    <link rel="stylesheet" href="static/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
     <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <!-- jquery ui css -->
-    <link rel="stylesheet" href="static/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.css">
     <!-- metismenu scss -->
-    <link rel="stylesheet" href="static/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
     <!-- custom style css -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -131,7 +131,7 @@
                     <div class="header-one-wrapper">
                         <div class="left-side-header">
                             <a href="index.html" class="logo-area">
-                                <img src="static/images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png"
+                                <img src="assets/images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png"
                                     alt="logo">
                             </a>
                             <div class="search-area">
@@ -167,22 +167,11 @@
                                                 <li class="sub-dropdown">
                                                     <a href="javascript:void(0);">Zoom</a>
                                                     <ul class="submenu third-lvl base">
-                                                        <li><a class="mobile-menu-link" href="zoom-meeting.html">Zoom
-                                                                Meeting</a></li>
-                                                        <li><a class="mobile-menu-link" href="zoom-detalles.html">Zoom
-                                                                Detalles</a></li>
+                                                        <li><a class="mobile-menu-link" href="zoom-reuniones.html">Zoom
+                                                                Reuniones</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="sub-dropdown">
-                                                    <a href="javascript:void(0);">Eventos (opc)</a>
-                                                    <ul class="submenu third-lvl base">
-                                                        <li><a class="mobile-menu-link" href="eventos.html">Eventos
-                                                            </a></li>
-                                                        <li><a class="mobile-menu-link"
-                                                                href="eventos-detalles.html">Eventos
-                                                                Detalles</a></li>
-                                                    </ul>
-                                                </li>
+
                                                 <li class="sub-dropdown">
                                                     <a href="javascript:void(0);">Shop</a>
                                                     <ul class="submenu third-lvl base">
@@ -204,12 +193,7 @@
                                                         </li>
 
                                                     </ul>
-                                                    <ul class="">
-                                                        <li class="parent"><a href="#">Detalles de curso</a></li>
-                                                        <li><a class="mobile-menu-link"
-                                                                href="cursos-detalles.html">Detalles de curso</a></li>
 
-                                                    </ul>
                                                     <ul class="">
                                                         <li class="parent"><a href="#">Otros</a></li>
                                                         <li><a href="profesor-registro.html">Conviertete en Profesor</a>
@@ -222,7 +206,7 @@
                                                         <!-- single thumbnav -->
                                                         <a href="curso-crear.html" class="single-thumbnav">
                                                             <div class="icon">
-                                                                <img src="static/images/nav/04.png" alt="nav">
+                                                                <img src="assets/images/nav/04.png" alt="nav">
                                                             </div>
                                                             <span>Crear Curso</span>
                                                         </a>
@@ -230,7 +214,7 @@
                                                         <!-- single thumbnav -->
                                                         <a href="profesor-reporteria.html" class="single-thumbnav mash">
                                                             <div class="icon">
-                                                                <img src="static/images/nav/05.png" alt="nav">
+                                                                <img src="assets/images/nav/05.png" alt="nav">
                                                             </div>
                                                             <span>Reportería</span>
                                                         </a>
@@ -326,10 +310,10 @@
                             </div>
                             {% if not user.username %}
                             <div class="buttons-area">
-                                <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
+                                <a href="login.html" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
                             </div>
                             <div class="buttons-area">
-                                <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
+                                <a href="registro.html" class="rts-btn btn-primary radious-0">Registrate</a>
                             </div>
                             {% endif %}
                             <div class="menu-btn" id="menu-btn">
@@ -357,12 +341,12 @@
                     <div class="banner-content-four pt_sm--50 pt_md--50">
                         <div class="title-area-left-2">
                             <div class="pre-title">
-                                <img src="static/images/banner/12.svg" alt="banner">
+                                <img src="assets/images/banner/12.svg" alt="banner">
                                 <span>Bienvenid@ a nuestra educación preuniversitaria a distancia 💻</span>
                             </div>
                             <h1 class="title-m">Donde aprender <br>
                                 no tiene <span>fronteras</span>
-                                <img src="static/images/banner/shape/05.png" alt="">
+                                <img src="assets/images/banner/shape/05.png" alt="">
                             </h1>
                             <p class="disc">
                                 Descubre un mundo de conocimientos y oportunidades de aprendizaje a través de nuestra
@@ -370,13 +354,13 @@
                                 distancia.
                             </p>
                             <div class="banner-btn-author-wrapper">
-                                <a href="zoom-meeting.html" class="rts-btn btn-primary radious-0">Clases grupales en
+                                <a href="zoom-reuniones.html" class="rts-btn btn-primary radious-0">Clases grupales en
                                     vivo</a>
                                 <div class="sm-image-wrapper">
                                     <div class="images-wrap">
-                                        <img src="static/images/banner/shape/06.png" alt="banner">
-                                        <img class="two" src="static/images/banner/shape/07.png" alt="banner">
-                                        <img class="three" src="static/images/banner/shape/08.png" alt="banner">
+                                        <img src="assets/images/banner/shape/06.png" alt="banner">
+                                        <img class="two" src="assets/images/banner/shape/07.png" alt="banner">
+                                        <img class="three" src="assets/images/banner/shape/08.png" alt="banner">
                                     </div>
                                     <div class="info">
                                         <h6 class="title">2000 estudiantes</h6>
@@ -390,7 +374,7 @@
                 </div>
                 <div class="col-lg-6 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1">
                     <div class="thumbnail-right-banner-4">
-                        <img src="static/images/banner/estudiantes-index.png" alt="banner">
+                        <img src="assets/images/banner/estudiantes-index.png" alt="banner">
                     </div>
                 </div>
             </div>
@@ -406,18 +390,18 @@
                     <!-- about area left image -->
                     <div class="about-area-left-four">
                         <div class="thumbnail-left-image">
-                            <img src="static/images/about/watching-videos-digital-tablet.png" alt="about">
+                            <img src="assets/images/about/watching-videos-digital-tablet.png" alt="about">
                         </div>
                         <div class="thumbnail-right-image">
-                            <img src="static/images/about/close-up-woman-videocall.png" alt="about">
+                            <img src="assets/images/about/close-up-woman-videocall.png" alt="about">
                         </div>
                         <div class="award-image-badge">
-                            <img src="static/images/about/02.png" alt="about">
+                            <img src="assets/images/about/02.png" alt="about">
                         </div>
                         <div class="review-thumb">
                             <!-- single review -->
                             <div class="review-single">
-                                <img src="static/images/banner/04.png" alt="banner">
+                                <img src="assets/images/banner/04.png" alt="banner">
                                 <div class="info-right">
                                     <h6 class="title">4.5</h6>
                                     <span>(2.4k Review)</span>
@@ -426,7 +410,7 @@
                             <!-- single review end -->
                             <!-- single review -->
                             <div class="review-single two">
-                                <img src="static/images/banner/08.png" alt="banner">
+                                <img src="assets/images/banner/08.png" alt="banner">
                                 <div class="info-right">
                                     <h6 class="title">100+
                                     </h6>
@@ -443,7 +427,7 @@
                     <div class="about-content-right-4">
                         <div class="title-area-left-2">
                             <div class="pre-title">
-                                <img src="static/images/banner/12.png" alt="banner">
+                                <img src="assets/images/banner/12.png" alt="banner">
                                 <span>Sobre nosotros 👨‍👦</span>
                             </div>
                             <h2 class="title">Conozca nuestro sistema de educación a distancia</h2>
@@ -457,7 +441,7 @@
                             <!-- single about card -->
                             <div class="single-card-about">
                                 <div class="icon">
-                                    <img src="static/images/about/icon/03.png" alt="about-icon">
+                                    <img src="assets/images/about/icon/03.png" alt="about-icon">
                                 </div>
                                 <div class="information">
                                     <h6 class="title">Amplia gama</h6>
@@ -470,7 +454,7 @@
                             <!-- single about card -->
                             <div class="single-card-about">
                                 <div class="icon">
-                                    <img src="static/images/about/icon/04.png" alt="about-icon">
+                                    <img src="assets/images/about/icon/04.png" alt="about-icon">
                                 </div>
                                 <div class="information">
                                     <h6 class="title">Profesores expertos</h6>
@@ -486,7 +470,7 @@
                             <a href="sobrenosotros.html" class="rts-btn btn-primary radious-0">Sobre nosotros</a>
                             <!-- author mid start -->
                             <div class="author-about">
-                                <img src="static/images/about/01.png" alt="about">
+                                <img src="assets/images/about/01.png" alt="about">
                                 <div class="information">
                                     <h6 class="title">Devid Jon</h6>
                                     <p>CEO, Studyhub</p>
@@ -495,7 +479,7 @@
                             <!-- author mid end -->
                             <div class="video-classes">
                                 <div class="icon">
-                                    <img src="static/images/about/01.svg" alt="about">
+                                    <img src="assets/images/about/01.svg" alt="about">
                                 </div>
                                 <p>30k Video Class</p>
                             </div>
@@ -517,7 +501,7 @@
                         <!-- single  -->
                         <div class="single-fun-facts">
                             <div class="icon">
-                                <img src="static/images/fun-facts/icon/01.svg" alt="icon">
+                                <img src="assets/images/fun-facts/icon/01.svg" alt="icon">
                             </div>
                             <h5 class="title"><span class="counter">65,972</span></h5>
                             <span class="enr">Estudiantes matriculados</span>
@@ -526,7 +510,7 @@
                         <!-- single  -->
                         <div class="single-fun-facts">
                             <div class="icon">
-                                <img src="static/images/fun-facts/icon/02.svg" alt="icon">
+                                <img src="assets/images/fun-facts/icon/02.svg" alt="icon">
                             </div>
                             <h5 class="title"><span class="counter">5,321</span></h5>
                             <span class="enr">Cursos finalizados</span>
@@ -535,7 +519,7 @@
                         <!-- single  -->
                         <div class="single-fun-facts">
                             <div class="icon">
-                                <img src="static/images/fun-facts/icon/03.svg" alt="icon">
+                                <img src="assets/images/fun-facts/icon/03.svg" alt="icon">
                             </div>
                             <h5 class="title"><span class="counter">44,239</span></h5>
                             <span class="enr">Estudiantes aprendiendo</span>
@@ -544,7 +528,7 @@
                         <!-- single  -->
                         <div class="single-fun-facts">
                             <div class="icon">
-                                <img src="static/images/fun-facts/icon/04.svg" alt="icon">
+                                <img src="assets/images/fun-facts/icon/04.svg" alt="icon">
                             </div>
                             <h5 class="title"><span class="counter">75,992</span></h5>
                             <span class="enr">Estudiantes matriculados</span>
@@ -564,7 +548,7 @@
                 <div class="col-lg-12">
                     <div class="title-area-center-style">
                         <div class="pre-title">
-                            <img src="static/images/banner/bulb.png" alt="icon">
+                            <img src="assets/images/banner/bulb.png" alt="icon">
                             <span>Categoría principal ⭐</span>
                         </div>
                         <h2 class="title">Explora más de 2000 cursos gratuitos en línea</h2>
@@ -577,7 +561,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/lenguaje-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/lenguaje-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -592,7 +576,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/matematicas-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/matematicas-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -607,7 +591,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/biologia-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/biologia-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -622,7 +606,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/fisica-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/fisica-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -637,7 +621,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/quimica-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/quimica-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -652,7 +636,7 @@
                     <!-- single category -->
                     <div class="category-single-list radious-0">
                         <a href="course-one.html" class="thumbnail">
-                            <img src="static/images/course/historia-removebg-preview(1).png" alt="course">
+                            <img src="assets/images/course/historia-removebg-preview(1).png" alt="course">
                         </a>
                         <div class="information">
                             <a href="course-one.html">
@@ -679,7 +663,7 @@
                     <div class="title-between-area align-items-end">
                         <div class="title-area-left-style">
                             <div class="pre-title">
-                                <img src="static/images/banner/bulb.png" alt="icon">
+                                <img src="assets/images/banner/bulb.png" alt="icon">
                                 <span>Cursos 📓</span>
                             </div>
                             <h2 class="title mb--5">Explora nuestros cursos destacados</h2>
@@ -733,23 +717,23 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/01.jpg" alt="course">
+                                <a href="cursos-complectora-localizar.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Comprensión Lectora</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más vendidos</div>
+                                        <div class="price">$7.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">How to Write the Ultimate 1 Page
-                                            Strategic Business Plan</h5>
+                                    <a href="cursos-complectora-localizar.html">
+                                        <h5 class="title">Localizar: Identificando, reconociendo y extrayendo datos
+                                            textuales presentes en nuestra lectura</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Emma Elizabeth</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -762,11 +746,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>54 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -776,23 +760,23 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/02.jpg" alt="course">
+                                <a href="cursos-matematicas-algebrayfunciones.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-matematicas.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Matemáticas</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más vendidos</div>
+                                        <div class="price">$7.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">The Complete Web Developer in
-                                            2023: Zero to Mastery</h5>
+                                    <a href="cursos-matematicas-algebrayfunciones.html">
+                                        <h5 class="title">Algebra y Funciones: Ecuaciones lineales y ecuaciones de
+                                            segundo grado</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Macarena Gonzalez</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -805,11 +789,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -819,23 +803,22 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/03.jpg" alt="course">
+                                <a href="cursos-fisica-mecanica.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-fisica.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Física</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más vendidos</div>
+                                        <div class="price">$8.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">User Experience The Ultimate
-                                            Guide to Usability and UX</h5>
+                                    <a href="cursos-fisica-mecanica.html">
+                                        <h5 class="title">Mecánica: Movimiento traslacional de cuerpos</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Lucía Dominguez</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -848,11 +831,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>54 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -862,23 +845,23 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/04.jpg" alt="course">
+                                <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-quimica.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Química</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más populares</div>
+                                        <div class="price">$29.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">Complete Guitar Lessons System
-                                            Beginner to Advanced</h5>
+                                    <a href="cursos-quimica-estructuraatomica.html">
+                                        <h5 class="title">Estructura Atómica: Analizando el comportamiento de la
+                                            materia</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Elias Gomez</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -891,11 +874,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>54 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -905,23 +888,23 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/05.jpg" alt="course">
+                                <a href="cursos-biologia-organismoyambiente.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-biologia.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Biología</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más populares</div>
+                                        <div class="price">$7.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">Automate the Boring Stuff with
-                                            Python Programming</h5>
+                                    <a href="cursos-biologia-organismoyambiente.html">
+                                        <h5 class="title">Organismo y Ambiente: Materia orgánica en organismos
+                                            autótrofos</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Lizbeth White</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -934,11 +917,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>19 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>14 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -948,23 +931,22 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/06.jpg" alt="course">
+                                <a href="cursos-matematicas-numeros.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-matematicas.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Matemáticas</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más vendidos</div>
+                                        <div class="price">$7.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">Automate the Boring Stuff with
-                                            Python Programming</h5>
+                                    <a href="cursos-matematicas-numeros.html">
+                                        <h5 class="title">Matemáticas: Números, matemática financiera y logaritmos</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Macarena Gonzalez</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -977,11 +959,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>23 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>40 Alumnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -991,23 +973,22 @@
                         <div class="swiper-slide">
                             <!-- single course style two -->
                             <div class="single-course-style-three">
-                                <a href="cursos-detalles.html" class="thumbnail">
-                                    <img src="static/images/course/07.jpg" alt="course">
+                                <a href="cursos-historia-ejehistoria.html" class="thumbnail">
+                                    <img src="assets/images/course/cursos-historia.png" alt="course">
                                     <div class="tag-thumb">
-                                        <span>Marketing</span>
+                                        <span>Historia y Ciencias Sociales</span>
                                     </div>
                                 </a>
                                 <div class="body-area">
                                     <div class="course-top">
-                                        <div class="tags">Best Seller</div>
-                                        <div class="price">$49.50</div>
+                                        <div class="tags">Más vendidos</div>
+                                        <div class="price">$7.999</div>
                                     </div>
-                                    <a href="cursos-detalles.html">
-                                        <h5 class="title">How to Write the Ultimate 1 Page
-                                            Strategic Business Plan</h5>
+                                    <a href="cursos-historia-ejehistoria.html">
+                                        <h5 class="title">Eje Historia: Mundo, América y Chile</h5>
                                     </a>
                                     <div class="teacher-stars">
-                                        <div class="teacher"><span>Dr. Angela Yu</span></div>
+                                        <div class="teacher"><span>Thomas Fred</span></div>
                                         <ul class="stars">
                                             <li class="span">
                                             <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -1020,11 +1001,11 @@
                                     <div class="leasson-students">
                                         <div class="lesson">
                                             <i class="fa-light fa-calendar-lines-pen"></i>
-                                            <span>25 Lessons</span>
+                                            <span>22 Clases</span>
                                         </div>
                                         <div class="students">
                                             <i class="fa-light fa-users"></i>
-                                            <span>25 Lessons</span>
+                                            <span>25 Alummnos</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1048,7 +1029,7 @@
                 <div class="col-lg-5">
                     <div class="title-area-left-2">
                         <div class="pre-title">
-                            <img src="static/images/banner/12.png" alt="banner">
+                            <img src="assets/images/banner/12.png" alt="banner">
                             <span>Nuestros beneficios 🙌</span>
                         </div>
                         <h2 class="title">Principales ventajas de la educación a distancia</h2>
@@ -1060,7 +1041,7 @@
                         <!-- single banifits  -->
                         <div class="single-benifits">
                             <div class="icon">
-                                <img src="static/images/benefits/01.svg" alt="banefits">
+                                <img src="assets/images/benefits/01.svg" alt="banefits">
                             </div>
                             <div class="information">
                                 <h5 class="title">Flexibilidad</h5>
@@ -1073,7 +1054,7 @@
                         <!-- single banifits  -->
                         <div class="single-benifits">
                             <div class="icon">
-                                <img src="static/images/benefits/02.svg" alt="banefits">
+                                <img src="assets/images/benefits/02.svg" alt="banefits">
                             </div>
                             <div class="information">
                                 <h5 class="title">Accesibilidad</h5>
@@ -1086,7 +1067,7 @@
                         <!-- single banifits  -->
                         <div class="single-benifits mt--10">
                             <div class="icon">
-                                <img src="static/images/benefits/03.svg" alt="banefits">
+                                <img src="assets/images/benefits/03.svg" alt="banefits">
                             </div>
                             <div class="information">
                                 <h5 class="title">Diversos Cursos</h5>
@@ -1099,7 +1080,7 @@
                         <!-- single banifits  -->
                         <div class="single-benifits mt--10">
                             <div class="icon">
-                                <img src="static/images/benefits/04.svg" alt="banefits">
+                                <img src="assets/images/benefits/04.svg" alt="banefits">
                             </div>
                             <div class="information">
                                 <h5 class="title">Profesores expertos</h5>
@@ -1113,7 +1094,7 @@
                 </div>
                 <div class="col-lg-6 offset-lg-1 mt_sm--30 mt_md--50 mt_sm--50">
                     <div class="thumbnail-benefits-right-image">
-                        <img src="static/images/benefits/01.jpg" alt="benefits">
+                        <img src="assets/images/benefits/01.jpg" alt="benefits">
                         <div class="vedio-icone">
                             <a class="video-play-button play-video popup-video"
                                 href="https://www.youtube.com/watch?v=ezbJwaLmOeM">
@@ -1138,7 +1119,7 @@
                     <div class="title-between-area">
                         <div class="title-area-left-style">
                             <div class="pre-title">
-                                <img src="static/images/banner/bulb.png" alt="icon">
+                                <img src="assets/images/banner/bulb.png" alt="icon">
                                 <span>Reseñas 🧑‍🎓</span>
                             </div>
                             <h2 class="title">Opiniones de nuestros estudiantes</h2>
@@ -1179,14 +1160,14 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="static/images/students-feedback/boy-holding-notebook-outside.png"
+                                                <img src="assets/images/students-feedback/boy-holding-notebook-outside.png"
                                                     alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="static/images/students-feedback/10.png" alt="feedback">
+                                                    <img src="assets/images/students-feedback/10.png" alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     La profesora Lizbeth es una experta en su materia, tiene un enfoque
@@ -1195,7 +1176,7 @@
                                                     rápido a mis consultas y es muy atenta con mi aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="static/images/students-feedback/fotoperfil-inst-biologia 60x60.png"
+                                                    <img src="assets/images/students-feedback/fotoperfil-inst-biologia 60x60.png"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Lizbeth White</h5>
@@ -1214,14 +1195,14 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="static/images/students-feedback/dreamy-student-school.png"
+                                                <img src="assets/images/students-feedback/dreamy-student-school.png"
                                                     alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="static/images/students-feedback/10.png" alt="feedback">
+                                                    <img src="assets/images/students-feedback/10.png" alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     El profesor Thomas es excepcional en su capacidad para transmitir
@@ -1231,7 +1212,7 @@
                                                     experiencia de aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="static/images/students-feedback/fotoperfil-inst-historia 60x60.png"
+                                                    <img src="assets/images/students-feedback/fotoperfil-inst-historia 60x60.png"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Thomas Fred</h5>
@@ -1250,14 +1231,14 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="static/images/students-feedback/young-man-with-notebook-book.png"
+                                                <img src="assets/images/students-feedback/young-man-with-notebook-book.png"
                                                     alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="static/images/students-feedback/10.png" alt="feedback">
+                                                    <img src="assets/images/students-feedback/10.png" alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     El profe Elías tiene una gran habilidad para explicar conceptos
@@ -1266,7 +1247,7 @@
                                                     disposición para brindar apoyo en mi aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="static/images/students-feedback/fotoperfil-inst-quimica 60x60.png"
+                                                    <img src="assets/images/students-feedback/fotoperfil-inst-quimica 60x60.png"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Elias Gomez</h5>
@@ -1289,7 +1270,7 @@
             </div>
         </div>
         <div class="shape-area">
-            <img src="static/images/students-feedback/12.png" alt="feedback">
+            <img src="assets/images/students-feedback/12.png" alt="feedback">
         </div>
     </div>
     <!-- students feedback area end -->
@@ -1302,7 +1283,7 @@
                     <div class="title-between-area align-items-end">
                         <div class="title-area-left-style">
                             <div class="pre-title">
-                                <img src="static/images/banner/bulb.png" alt="icon">
+                                <img src="assets/images/banner/bulb.png" alt="icon">
                                 <span>Noticias y artículos 📰</span>
                             </div>
                             <h2 class="title">Lee nuestras últimas noticias</h2>
@@ -1318,7 +1299,7 @@
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
                         <a href="blogdet01.html" class="thumbnail">
-                            <img src="static/images/blog/10.jpg" alt="blog">
+                            <img src="assets/images/blog/10.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
@@ -1344,7 +1325,7 @@
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
                         <a href="blogdet02.html" class="thumbnail">
-                            <img src="static/images/blog/09.jpg" alt="blog">
+                            <img src="assets/images/blog/09.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
@@ -1399,7 +1380,7 @@
                         <div class="footer-singl-wized left-logo">
                             <div class="head">
                                 <a href="#">
-                                    <img src="static/images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png"
+                                    <img src="assets/images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png"
                                         alt="logo" loading="lazy">
                                 </a>
                             </div>
@@ -1505,13 +1486,13 @@
     <!-- cart area start -->
     <div class="cart-bar">
         <div class="cart-header">
-            <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
+            <h3 class="cart-heading">MIS COMPRAS (3 ITEMS)</h3>
             <div class="close-cart"><i class="fal fa-times"></i></div>
         </div>
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="assets/images/course/cart/01.jpg" alt="product-thumb"></div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -1538,7 +1519,7 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="assets/images/course/cart/02.jpg" alt="product-thumb"></div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -1565,7 +1546,7 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="assets/images/course/cart/03.jpg" alt="product-thumb"></div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -1609,7 +1590,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="static/images/banner/04.jpg" alt="elevate">
+                <img src="assets/images/banner/04.jpg" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>
@@ -1644,8 +1625,7 @@
                             <li class="has-droupdown third-lvl">
                                 <a class="main" href="#">Zoom</a>
                                 <ul class="submenu-third-lvl mm-collapse">
-                                    <li><a href="zoom-meeting.html"></a>Zoom Meeting</li>
-                                    <li><a href="zoom-detalles.html"></a>Zoom Detalles</li>
+                                    <li><a href="zoom-reuniones.html"></a>Zoom Reuniones</li>
                                 </ul>
                             </li>
                             <li class="has-droupdown third-lvl">
@@ -1672,11 +1652,6 @@
                         <ul class="submenu mm-collapse">
                             <li><a href="#" class="tag">Cursos</a></li>
                             <li><a class="mobile-menu-link" href="cursos.html">Cursos</a></li>
-                        </ul>
-                        <ul class="submenu mm-collapse">
-                            <li><a href="#" class="tag">Detalle de cursos</a></li>
-                            <li><a class="mobile-menu-link" href="cursos-detalles.html">Detalle de cursos</a></li>
-
                         </ul>
                         <ul class="submenu mm-collapse">
                             <li><a href="#" class="tag">Others</a></li>
@@ -1825,41 +1800,41 @@
 
     <!-- all scripts -->
     <!-- jquery min js -->
-    <script src="static/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/jquery.min.js"></script>
     <!-- jquery ui js -->
-    <script src="static/js/vendor/jquery-ui.js"></script>
+    <script src="assets/js/vendor/jquery-ui.js"></script>
     <!-- metismenu js -->
-    <script src="static/js/vendor/metismenu.js"></script>
+    <script src="assets/js/vendor/metismenu.js"></script>
     <!-- magnific popup js-->
-    <script src="static/js/vendor/magnifying-popup.js"></script>
+    <script src="assets/js/vendor/magnifying-popup.js"></script>
     <!-- swiper JS 10.2.0 -->
-    <script src="static/js/plugins/swiper.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
     <!-- counterup js -->
-    <script src="static/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
     <!-- waypoint js -->
-    <script src="static/js/vendor/waypoint.js"></script>
+    <script src="assets/js/vendor/waypoint.js"></script>
     <!-- wow js -->
-    <script src="static/js/vendor/waw.js"></script>
+    <script src="assets/js/vendor/waw.js"></script>
     <!-- isotop mesonary -->
-    <script src="static/js/plugins/isotop.js"></script>
+    <script src="assets/js/plugins/isotop.js"></script>
     <!-- jquery imageloaded -->
-    <script src="static/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
     <!-- resize sensor js -->
-    <script src="static/js/plugins/resizer-sensor.js"></script>
+    <script src="assets/js/plugins/resizer-sensor.js"></script>
     <!-- sticky sidebar -->
-    <script src="static/js/plugins/sticky-sidebar.js"></script>
+    <script src="assets/js/plugins/sticky-sidebar.js"></script>
     <!-- gsap twinmax js -->
-    <script src="static/js/plugins/twinmax.js"></script>
+    <script src="assets/js/plugins/twinmax.js"></script>
     <!-- chroma js -->
-    <script src="static/js/vendor/chroma.min.js"></script>
+    <script src="assets/js/vendor/chroma.min.js"></script>
     <!-- bootstrap 5.0.2 -->
-    <script src="static/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
     <!-- dymanic Contact Form -->
-    <script src="static/js/plugins/contact.form.js"></script>
+    <script src="assets/js/plugins/contact.form.js"></script>
     <!-- calender js -->
-    <script src="static/js/plugins/calender.js"></script>
+    <script src="assets/js/plugins/calender.js"></script>
     <!-- main Js -->
-    <script src="static/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

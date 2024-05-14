@@ -9,12 +9,12 @@ def index(request):
     return render(request, 'index.html', {'user': user})
 
 
-def about(request):
-    return render(request, 'about.html')
+def sobrenosotros(request):
+    return render(request, 'sobrenosotros.html')
 
 
-def instructor(request):
-    return render(request, 'instructor.html')
+def profesores(request):
+    return render(request, 'profesores.html')
 
 
 def pricing(request):
@@ -41,32 +41,8 @@ def event(request):
     return render(request, 'event.html')
 
 
-def cart(request):
-    return render(request, 'cart.html')
-
-
-def event2(request):
-    return render(request, 'event-2.html')
-
-
-def eventdetails(request):
-    return render(request, 'event-details.html')
-
-
-def coursefour(request):
-    return render(request, 'course-four.html')
-
-
-def coursethree(request):
-    return render(request, 'course-three.html')
-
-
-def coursetwo(request):
-    return render(request, 'course-two.html')
-
-
-def singlecourse(request):
-    return render(request, 'single-course.html')
+def carro(request):
+    return render(request, 'carro.html')
 
 
 def login(request):
@@ -77,12 +53,13 @@ def registration(request):
     return render(request, 'registro.html')
 
 
-def createcourse(request):
-    return render(request, 'create-course.html')
+def cursocrear(request):
+    return render(request, 'curso-crear.html')
 
 
 def becomeinstructor(request):
     return render(request, 'become-instructor.html')
+
 
 def error(request):
     return render(request, '404.html')
