@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .models import Usuarios
+
 
 
 def index(request):
-    return render(request, 'index.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    return render(request, 'index.html', {'user': user})
 
 
 def sobrenosotros(request):
@@ -59,3 +63,33 @@ def becomeinstructor(request):
 
 def error(request):
     return render(request, '404.html')
+
+def studentprofile(request):
+    return render(request, 'alumno-miperfil.html')
+
+def blog(request):
+    return render(request, 'blog.html')
+
+def alumnoconfiguraciones(request):
+    return render(request, 'alumno-configuraciones.html')
+
+def alumnocursosmatriculados(request):
+    return render(request, 'alumno-cursosmatriculados.html')
+
+def alumnodashboard(request):
+    return render(request, 'alumno-dashboard.html')
+
+def alumnohistorialdepedidos(request):
+    return render(request, 'alumno-historialdepedidos.html')
+
+def alumnolistadedeseos(request):
+    return render(request, 'alumno-listadedeseos.html')
+
+def alumnomisevaluaciones(request):
+    return render(request, 'alumno-misevaluaciones.html')
+
+def alumnopregyresp(request):
+    return render(request, 'alumno-pregyresp.html')
+
+def alumnoresenas(request):
+    return render(request, 'alumno-resenas.html')
