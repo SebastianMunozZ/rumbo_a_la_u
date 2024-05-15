@@ -1,6 +1,14 @@
 from django.shortcuts import render
-from .models import Usuarios
-from django.contrib.auth.decorators import login_required
+from .models import Usuarios, Curso
+from .views_cart import load_cart
+from django.shortcuts import redirect
+
+def login_required_manual(func):
+    def wrapper(request, *args, **kwargs):
+        if 'user_id' not in request.session:
+            return redirect('login')
+        return func(request, *args, **kwargs)
+    return wrapper
 
 
 
@@ -43,7 +51,15 @@ def event(request):
 
 
 def carro(request):
-    return render(request, 'carro.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    carts, quantities, total, products = load_cart(request.user.id)
+    context = {
+        'products': products,
+        'quantities': quantities,
+        'total': total,
+    }
+    return render(request, 'carro.html', {'user': user, 'context': context})
 
 
 def login(request):
@@ -66,7 +82,7 @@ def becomeinstructor(request):
 def error(request):
     return render(request, '404.html')
 
-@login_required
+@login_required_manual
 def alumnomiperfil(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
@@ -75,97 +91,97 @@ def alumnomiperfil(request):
 def blog(request):
     return render(request, 'blog.html')
 
-@login_required
+@login_required_manual
 def alumnocalendario(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-calendario.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnoconfiguraciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-configuraciones.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnocursosmatriculados(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-cursosmatriculados.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnodashboard(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-dashboard.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnohistorialpedidos(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-historialdepedidos.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnolistadeseos(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-listadedeseos.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnomisevaluaciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-misevaluaciones.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnopregyresp(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-pregyresp.html', {'user':user})
 
-@login_required
+@login_required_manual
 def alumnoresenas(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
     return render(request, 'alumno-resenas.html', {'user':user})
 
-@login_required
+@login_required_manual
 def profesoranuncios(request):
     return render(request, 'profesor-anuncios.html')
 
-@login_required
+@login_required_manual
 def profesorasignaciontareas(request):
     return render(request, 'profesor-asignaciontareas.html')
 
-@login_required
+@login_required_manual
 def profesorcalendario(request):
     return render(request, 'profesor-calendario.html')
 
-@login_required
+@login_required_manual
 def profesorcertificado(request):
     return render(request, 'profesor-certificado.html')
 
-@login_required
+@login_required_manual
 def profesorconfiguraciones(request):
     return render(request, 'profesor-configuraciones.html')
 
-@login_required
+@login_required_manual
 def profesordashboard(request):
     return render(request, 'profesor-dashboard.html')
 
-@login_required
+@login_required_manual
 def profesorevaluaciones(request):
     return render(request, 'profesor-evaluaciones.html')
 
-@login_required
+@login_required_manual
 def profesormiperfil(request):
     return render(request, 'profesor-miperfil.html')
 
-@login_required
+@login_required_manual
 def profesormiscursos(request):
     return render(request, 'profesor-miscursos.html')
 
-@login_required
+@login_required_manual
 def profesorpregyresp(request):
     return render(request, 'profesor-pregyresp.html')
 
@@ -174,15 +190,15 @@ def profesorregistro(request):
     user = Usuarios.objects.get(user_id=user_id) if user_id else None
     return render(request, 'profesor-registro.html',{'user':user})
 
-@login_required
+@login_required_manual
 def profesorreporteria(request):
     return render(request, 'profesor-reporteria.html')
 
-@login_required
+@login_required_manual
 def profesorresenas(request):
     return render(request, 'profesor-resenas.html')
 
-@login_required
+@login_required_manual
 def profesorsaldo(request):
     return render(request, 'profesor-saldo.html')
 
@@ -224,7 +240,10 @@ def blogblogdet05(request):
     return render(request, 'blogblogdet05.html')
 
 def cursos(request):
-    return render(request, 'cursos.html')
+    cursos = Curso.objects.all()
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    return render(request, 'cursos.html', {'cursos': cursos, 'user': user,})
 
 def cursosbiologiaorganismoyambiente(request):
     return render(request, 'cursos-biologia-organismoyambiente.html')

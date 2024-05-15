@@ -84,9 +84,6 @@
                                 </ul>
                                 <div class="header-right-area-one admin-top-area-right">
                                     <div class="actions-area">
-                                        <div class="search-btn">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </div>
                                         <div class="cart cart-icon">
                                             <i class="fa-regular fa-cart-shopping"></i>
                                         </div>
@@ -105,7 +102,7 @@
             <div class="col-lg-12">
                 <div class="header-one-wrapper">
                     <div class="left-side-header">
-                        <a href="index.html" class="logo-area">
+                        <a href="{% url 'index' %}" class="logo-area">
                             <img src="{% static 'images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png' %}"
                                 alt="logo">
                         </a>
@@ -149,9 +146,7 @@
                                             <li class="sub-dropdown">
                                                 <a href="javascript:void(0);">Shop</a>
                                                 <ul class="submenu third-lvl base">
-
-                                                    <li><a class="mobile-menu-link" href="carro.html">Carro de
-                                                            compras</a></li>
+                                                    <li><a class="mobile-menu-link" href="{% url 'carro' %}">Carro de compras</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="404.html">Error 404</a></li>
@@ -163,19 +158,22 @@
                                             <li>
                                                 <ul class="">
                                                     <li class="parent"><a href="#">Cursos</a></li>
-                                                    <li><a class="mobile-menu-link" href="cursos.html">Cursos</a>
+                                                    <li><a class="mobile-menu-link" href="{% url 'cursos' %}">Cursos</a></li>
                                                     </li>
 
                                                 </ul>
 
                                                 <ul class="">
                                                     <li class="parent"><a href="#">Otros</a></li>
+                                                    {% if user.tipo_usuario == "1" %}
                                                     <li><a href="{% url 'profesorregistro' %}">Conviertete en Profesor</a></li>
+                                                    {% endif %}
                                                     </li>
                                                     <li><a href="profesores.html">Profesores</a></li>
                                                     <li><a href="planesdemembresia.html">Planes de Membresía</a>
                                                     </li>
                                                 </ul>
+                                                {% if user.tipo_usuario == "2" %}
                                                 <div class="thumbnav-area">
                                                     <!-- single thumbnav -->
                                                     <a href="{% url 'cursocrear' %}" class="single-thumbnav">
@@ -196,6 +194,7 @@
 
                                                     <!-- single thumbnav end -->
                                                 </div>
+                                                {% endif %}
                                             </li>
                                         </ul>
                                     </li>

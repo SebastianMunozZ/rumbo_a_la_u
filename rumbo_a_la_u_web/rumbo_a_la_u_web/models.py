@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser
+
 from django.db import models
 
 class Usuarios(models.Model):
@@ -22,9 +22,43 @@ class Alumno(models.Model):
         db_table = 'ESTUDIANTES'
 
 class Profesor(models.Model):
-    usuario = models.OneToOneField(Usuarios, on_delete=models.CASCADE)
-    asignatura = models.CharField(max_length=255)
+    teacher_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(Usuarios, on_delete=models.CASCADE)
+    asignatura_que_ensena = models.CharField(max_length=255)
     # Tus campos específicos de Profesor aquí
 
     class Meta:
         db_table = 'PROFESORES'
+
+class Curso(models.Model):
+    course_id = models.AutoField(primary_key=True)
+    nombre_del_curso = models.CharField(max_length=255)
+    descripcion = models.TextField(null=True, blank=True)
+    asignatura = models.CharField(max_length=100)
+    es_pagado = models.IntegerField()
+    precio = models.IntegerField(null=True, default=0)
+    miniatura = models.ImageField(upload_to='fotos/', default='fotos/default.jpg')
+    teacher = models.ForeignKey(Profesor, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'CURSOS'
+
+class ShoppingSession(models.Model):
+    usuario = models.ForeignKey(Usuarios, models.DO_NOTHING, blank=True, null=True)
+    create_at = models.DateTimeField(blank=True, null=True)
+    state = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'SHOPPING_SESSION'
+
+class Carro(models.Model):
+    precio = models.IntegerField(blank=True, null=True)
+    cantidad = models.IntegerField(blank=True, null=True)
+    curso = models.OneToOneField('Curso', models.DO_NOTHING, primary_key=True)  # The composite primary key (products_id, shopping_session_id) found, that is not supported. The first column is selected.
+    shopping_session = models.ForeignKey('ShoppingSession', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'CARRO'
+        unique_together = (('curso_id', 'shopping_session'),)

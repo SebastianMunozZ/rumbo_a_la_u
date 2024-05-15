@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
-from rumbo_a_la_u_web.views import index
+from .views import index
 from .views import *
 from django.urls import path, include
 from .views_register import RegisterView, RegisterTeacherView
+from .views_courses import CourseView
 from .views_login import LoginView
+from .views_sell_course import SellCourseView
+from .views import error
+from .views import sobrenosotros  # Import the missing view function
 
 urlpatterns = [
     path('', index, name='index'),
@@ -87,6 +91,7 @@ urlpatterns = [
 
     # Seccion Cursos
     path('cursos', cursos, name="cursos"),
+    path('sell-courses', SellCourseView.as_view(), name="views_sell_course"),
     path('curso-crear', cursocrear, name="cursocrear"),
     path('cursos-biologia-organismoyambiente', cursosbiologiaorganismoyambiente, name="cursos-biologia-organismoyambiente"),
     path('cursos-complectora-evaluar', cursoscomplectoraevaluar, name="cursos-complectora-evaluar"),
@@ -97,6 +102,7 @@ urlpatterns = [
     path('cursos-matematicas-algebrayfunciones', cursosmatematicasalgebrayfunciones, name="cursos-matematicas-algebrayfunciones"),
     path('cursos-matematicas-numeros', cursosmatematicasnumeros, name="cursos-matematicas-numeros"),
     path('cursos-quimica-estructuraatomica', cursosquimicaestructuraatomica, name="cursos-quimica-estructuraatomica"),
+    path('course/', CourseView.as_view(), name='views_course'),
 
     # Seccion Header
     path('header', header, name="header"),

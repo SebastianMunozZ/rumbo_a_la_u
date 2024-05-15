@@ -73,47 +73,126 @@
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="course-information-area">
-                                            <form action="#" class="top-form-create-course">
+                                            <form method="POST" action="{% url 'views_course' %}" class="top-form-create-course" enctype="multipart/form-data">
+                                                {% csrf_token %}
                                                 <div class="single-input">
                                                     <label for="name">Título del Curso</label>
-                                                    <input id="name" type="text" placeholder="Nuevo Curso">
+                                                    <input name="titulo" id="name" type="text"
+                                                        placeholder="Nuevo Curso">
                                                 </div>
 
                                                 <div class="single-input">
                                                     <label for="message-2">Acerca del Curso</label>
-                                                    <textarea id="message-2" placeholder="Nuevo Curso"></textarea>
+                                                    <textarea name="descripcion" id="message-2"
+                                                        placeholder="Nuevo Curso"></textarea>
                                                 </div>
-                                            </form>
-                                            <div class="course-setting-title">
-                                                <h5 class="title">Configuraciones del Curso</h5>
-                                                <div class="create-course-tab-area">
-                                                    <ul class="nav nav-tabs" id="myTab-2" role="tablist">
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link active" id="home-tab"
-                                                                data-bs-toggle="tab" data-bs-target="#home"
-                                                                type="button" role="tab" aria-controls="home"
-                                                                aria-selected="true"> <i class="fa-regular fa-gear"></i>
-                                                                General</button>
-                                                        </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="profile-tab"
-                                                                data-bs-toggle="tab" data-bs-target="#profile"
-                                                                type="button" role="tab" aria-controls="profile"
-                                                                aria-selected="false"><i
-                                                                    class="fa-regular fa-meter-droplet"></i> Content
-                                                                Drip</button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tab-content" id="myTabContent-2">
-                                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                                            aria-labelledby="home-tab">
-                                                            <div class="generale-tab-main-wrapper">
-                                                                <!-- generale content taeb -->
+                                                <div class="course-setting-title">
+                                                    <h5 class="title">Configuraciones del Curso</h5>
+                                                    <div class="create-course-tab-area">
+                                                        <ul class="nav nav-tabs" id="myTab-2" role="tablist">
+                                                            <li class="nav-item" role="presentation">
+                                                                <button class="nav-link active" id="home-tab"
+                                                                    data-bs-toggle="tab" data-bs-target="#home"
+                                                                    type="button" role="tab" aria-controls="home"
+                                                                    aria-selected="true"> <i
+                                                                        class="fa-regular fa-gear"></i>
+                                                                    General</button>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content" id="myTabContent-2">
+                                                            <div class="tab-pane fade show active" id="home"
+                                                                role="tabpanel" aria-labelledby="home-tab">
+                                                                <div class="generale-tab-main-wrapper">
+                                                                    <!-- generale content taeb -->
+                                                                    <div class="generale-tab-content">
+                                                                        <div class="single-checkbox-filter">
+                                                                            <div class="check-box">
+                                                                                <input type="checkbox" id="type-1">
+                                                                                <label
+                                                                                    for="type-1">Habilitar</label><br>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="disable">
+                                                                            <i class="fa-light fa-circle-check"></i>
+                                                                            <span>Habilitar / Deshabilitar contenido
+                                                                                continuo</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="choosea-category-input">
+                                                                        <label for="choose">Elegir una
+                                                                            asignatura</label>
+                                                                        <input name="asignatura" id="choose" type="text"
+                                                                            placeholder="Ej: Lenguaje">
+                                                                    </div>
+                                                                    <div class="choosea-category-input">
+                                                                        <label for="choose">Elegir Precio</label>
+                                                                        <div class="check-box-wrapper">
+                                                                            <div class="single-checkbox-filter">
+                                                                                <div class="check-box">
+                                                                                    <input type="checkbox" id="type-3"
+                                                                                        name="gratis">
+                                                                                    <label
+                                                                                        for="type-3">Gratis</label><br>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="single-checkbox-filter">
+                                                                                <div class="check-box">
+                                                                                    <input type="checkbox" id="type-2"
+                                                                                        name="pagado" checked>
+                                                                                    <label
+                                                                                        for="type-2">Pagado</label><br>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="regular-price-discount-price-area">
+                                                                            <div class="input-group mb-3">
+                                                                                <span class="input-group-text"
+                                                                                    id="basic-addon1">$</span>
+                                                                                <input name="precio" id="regular"
+                                                                                    type="number" class="form-control"
+                                                                                    placeholder="Precio"
+                                                                                    aria-label="Username"
+                                                                                    aria-describedby="basic-addon1">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <!-- generale content taeb end -->
+
+                                                                    <h6 class="title mt--20">Miniatura del curso</h6>
+                                                                    <div class="course-thumbnail-upload-area">
+                                                                        <div class="thumbnail-area">
+                                                                            <img id="preview"
+                                                                                src="{% static 'images/dashboard/05.png' %}"
+                                                                                alt="dashboard">
+                                                                        </div>
+                                                                        <div class="information">
+                                                                            <span>Tamaño: 700 X 430 Pixels</span>
+                                                                            <span>Soporte de archivos:</span>
+                                                                            <div class="input-file-type-btn">
+                                                                                <input name="miniatura" type="file"
+                                                                                    id="real-file" accept="image/*" />
+                                                                                <button type="button"
+                                                                                    class="rts-btn btn-primary"
+                                                                                    id="custom-button">ELEGIR UN
+                                                                                    ARCHIVO</button>
+                                                                                <span id="custom-text">Aún no se ha
+                                                                                    elegido
+                                                                                    el archivo.</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="tab-pane fade" id="profile" role="tabpanel"
+                                                                aria-labelledby="profile-tab">
                                                                 <div class="generale-tab-content">
                                                                     <div class="single-checkbox-filter">
                                                                         <div class="check-box">
-                                                                            <input type="checkbox" id="type-1">
-                                                                            <label for="type-1">Habilitar</label><br>
+                                                                            <input type="checkbox" id="type-12">
+                                                                            <label for="type-12">Habilitar</label><br>
                                                                         </div>
                                                                     </div>
 
@@ -123,93 +202,12 @@
                                                                             continuo</span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="choosea-category-input">
-                                                                    <label for="choose">Elegir una categoría</label>
-                                                                    <input id="choose" type="text"
-                                                                        placeholder="Buscar categoría de area educacional del curso">
-                                                                </div>
-                                                                <div class="choosea-category-input">
-                                                                    <label for="choose">Elegir Precio</label>
-                                                                    <div class="check-box-wrapper">
-                                                                        <div class="single-checkbox-filter">
-                                                                            <div class="check-box">
-                                                                                <input type="checkbox" id="type-3">
-                                                                                <label for="type-3">Gratis</label><br>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="single-checkbox-filter">
-                                                                            <div class="check-box">
-                                                                                <input type="checkbox" id="type-2">
-                                                                                <label for="type-2">Pagado</label><br>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="regular-price-discount-price-area">
-                                                                        <div class="input-group mb-3">
-                                                                            <span class="input-group-text"
-                                                                                id="basic-addon1">$</span>
-                                                                            <input id="regular" type="number"
-                                                                                class="form-control"
-                                                                                placeholder="Precio Normal"
-                                                                                aria-label="Username"
-                                                                                aria-describedby="basic-addon1">
-                                                                        </div>
-                                                                        <div class="input-group mb-3">
-                                                                            <span class="input-group-text"
-                                                                                id="basic-addon2">$</span>
-                                                                            <input id="discount" type="number"
-                                                                                class="form-control"
-                                                                                placeholder="Precio con Descuento"
-                                                                                aria-label="Username"
-                                                                                aria-describedby="basic-addon1">
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <!-- generale content taeb end -->
-
-                                                                <h6 class="title mt--20">Miniatura del curso</h6>
-                                                                <div class="course-thumbnail-upload-area">
-                                                                    <div class="thumbnail-area">
-                                                                        <img src="{% static 'images/dashboard/05.png' %}" alt="dashboard">
-                                                                    </div>
-                                                                    <div class="information">
-                                                                        <span>Tamaño: 700 X 430 Pixels</span>
-                                                                        <span>Soporte de archivos:</span>
-                                                                        <div class="input-file-type-btn">
-                                                                            <input type="file" id="real-file" hidden />
-                                                                            <button type="button"
-                                                                                class="rts-btn btn-primary"
-                                                                                id="custom-button">ELEGIR UN
-                                                                                ARCHIVO</button>
-                                                                            <span id="custom-text">Aún no se ha elegido
-                                                                                el archivo.</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="tab-pane fade" id="profile" role="tabpanel"
-                                                            aria-labelledby="profile-tab">
-                                                            <div class="generale-tab-content">
-                                                                <div class="single-checkbox-filter">
-                                                                    <div class="check-box">
-                                                                        <input type="checkbox" id="type-12">
-                                                                        <label for="type-12">Habilitar</label><br>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="disable">
-                                                                    <i class="fa-light fa-circle-check"></i>
-                                                                    <span>Habilitar / Deshabilitar contenido
-                                                                        continuo</span>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <button type="submit" class="rts-btn btn-primary mb--30">Publicar</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +232,6 @@
                                                 <option>Seleccionar fuente de vídeo</option>
                                                 <option value="asc"> URL Externa</option>
                                                 <option value="desc">Youtube Video</option>
-                                                <option value="pop">Vimeo Video</option>
                                             </select>
                                             <input type="text" placeholder="Introduzca su enlace de vídeo">
                                         </div>
@@ -379,7 +376,8 @@
                                                             <input type="radio" id="number1" name="radio-group"
                                                                 value="number1">
                                                             <label for="number1">
-                                                                <img src="{% static 'images/dashboard/certificates/04.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/04.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -388,7 +386,8 @@
                                                             <input type="radio" id="number2" name="radio-group"
                                                                 value="number2">
                                                             <label for="number2">
-                                                                <img src="{% static 'images/dashboard/certificates/05.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/05.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -397,7 +396,8 @@
                                                             <input type="radio" id="number3" name="radio-group"
                                                                 value="number3">
                                                             <label for="number3">
-                                                                <img src="{% static 'images/dashboard/certificates/06.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/06.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -406,7 +406,8 @@
                                                             <input type="radio" id="number4" name="radio-group"
                                                                 value="number4">
                                                             <label for="number4">
-                                                                <img src="{% static 'images/dashboard/certificates/07.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/07.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -415,7 +416,8 @@
                                                             <input type="radio" id="number5" name="radio-group"
                                                                 value="number5">
                                                             <label for="number5">
-                                                                <img src="{% static 'images/dashboard/certificates/08.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/08.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -424,7 +426,8 @@
                                                             <input type="radio" id="number6" name="radio-group"
                                                                 value="number6">
                                                             <label for="number6">
-                                                                <img src="{% static 'images/dashboard/certificates/09.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/09.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -438,7 +441,8 @@
                                                             <input type="radio" id="number7" name="radio-group"
                                                                 value="number7">
                                                             <label for="number7">
-                                                                <img src="{% static 'images/dashboard/certificates/11.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/11.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -447,7 +451,8 @@
                                                             <input type="radio" id="number8" name="radio-group"
                                                                 value="number8">
                                                             <label for="number8">
-                                                                <img src="{% static 'images/dashboard/certificates/12.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/12.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -456,7 +461,8 @@
                                                             <input type="radio" id="number9" name="radio-group"
                                                                 value="number9">
                                                             <label for="number9">
-                                                                <img src="{% static 'images/dashboard/certificates/13.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/13.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -465,7 +471,8 @@
                                                             <input type="radio" id="number10" name="radio-group"
                                                                 value="number10">
                                                             <label for="number10">
-                                                                <img src="{% static 'images/dashboard/certificates/14.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/14.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -474,7 +481,8 @@
                                                             <input type="radio" id="number11" name="radio-group"
                                                                 value="number11">
                                                             <label for="number11">
-                                                                <img src="{% static 'images/dashboard/certificates/15.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/15.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -483,7 +491,8 @@
                                                             <input type="radio" id="number12" name="radio-group"
                                                                 value="number12">
                                                             <label for="number12">
-                                                                <img src="{% static 'images/dashboard/certificates/16.png' %}" alt="Certificate Image">
+                                                                <img src="{% static 'images/dashboard/certificates/16.png' %}"
+                                                                    alt="Certificate Image">
                                                             </label>
                                                         </div>
                                                     </div>
@@ -623,7 +632,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -650,7 +660,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -677,7 +688,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -989,6 +1001,49 @@
     <!-- main Js -->
     <script src="{% static 'js/main.js' %}"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const gratisCheckbox = document.getElementById('type-3');
+            const pagadoCheckbox = document.getElementById('type-2');
+            const regularPriceInput = document.getElementById('regular');
+            const discountPriceInput = document.getElementById('discount');
+
+            gratisCheckbox.addEventListener('change', (event) => {
+                const isChecked = event.target.checked;
+
+                regularPriceInput.disabled = isChecked;
+
+                if (isChecked) {
+                    regularPriceInput.value = '';
+                }
+
+                if (event.target.checked) {
+                    pagadoCheckbox.checked = false;
+                }
+            });
+
+            pagadoCheckbox.addEventListener('change', (event) => {
+                const isChecked = event.target.checked;
+
+                regularPriceInput.disabled = !isChecked;
+
+                if (event.target.checked) {
+                    gratisCheckbox.checked = false;
+                }
+            })
+        });
+    </script>
+    <script>
+        document.getElementById('real-file').addEventListener('change', function (e) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview').src = e.target.result;
+            }
+
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
 
 </body>
 
