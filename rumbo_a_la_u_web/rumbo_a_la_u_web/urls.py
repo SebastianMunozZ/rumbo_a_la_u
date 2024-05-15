@@ -20,7 +20,7 @@ from django.urls import path
 from rumbo_a_la_u_web.views import index
 from .views import *
 from django.urls import path, include
-from .views_register import RegisterView
+from .views_register import RegisterView, RegisterTeacherView
 from .views_login import LoginView
 
 urlpatterns = [
@@ -41,57 +41,40 @@ urlpatterns = [
 
     # Seccion Dashboard Alumno
     path('alumno-calendario', alumnocalendario, name="alumnocalendario"),
-    path('alumno-configuraciones', alumnoconfiguraciones,
-         name="alumnoconfiguraciones"),
-    path('alumno-cursosmatriculados',
-         alumnocursosmatriculados, name="alumnocursosmatriculados"),
+    path('alumno-configuraciones', alumnoconfiguraciones, name="alumnoconfiguraciones"),
+    path('alumno-cursosmatriculados', alumnocursosmatriculados, name="alumnocursosmatriculados"),
     path('alumno-dashboard', alumnodashboard, name="alumnodashboard"),
-    path('alumno-historialpedidos',
-         alumnohistorialpedidos, name="alumnohistorialpedidos"),
+    path('alumno-historialpedidos', alumnohistorialpedidos, name="alumnohistorialpedidos"),
     path('alumno-listadeseos', alumnolistadeseos, name="alumnolistadeseos"),
     path('alumno-miperfil', alumnomiperfil, name="alumnomiperfil"),
-    path('alumno-misevaluaciones', alumnomisevaluaciones,
-         name="alumnomisevaluaciones"),
+    path('alumno-misevaluaciones', alumnomisevaluaciones, name="alumnomisevaluaciones"),
     path('alumno-pregyresp', alumnopregyresp, name="alumnopregyresp"),
-    path('alumno-resenas', alumnoresenas name="alumnoresenas"),
+    path('alumno-resenas', alumnoresenas, name="alumnoresenas"),
 
     # Seccion Dashboard Profesor
-    path('profesor-anuncios', profesor-anuncios, name="profesor-anuncios"),
-    path('profesor-asignaciontareas', profesor - \
-         asignaciontareas, name="profesor-asignaciontareas"),
-    path('profesor-calendario', profesor - \
-         calendario, name="profesor-calendario"),
-    path('profesor-certificado', profesor - \
-         certificado, name="profesor-certificado"),
-    path('profesor-configuraciones', profesor - \
-         configuraciones, name="profesor-configuraciones"),
-    path('profesor-dashboard', profesor-configuraciones,
-         name="profesor-configuraciones"),
-    path('profesor-evaluaciones', profesor - \
-         evaluaciones, name="profesor-evaluaciones"),
-    path('profesor-miperfil', profesor-miperfil, name="profesor-miperfil"),
-    path('profesor-miperfil', profesor-miperfil, name="profesor-miperfil"),
-    path('profesor-miscursos', profesor-miscursos, name="profesor-miscursos"),
-    path('profesor-pregyresp', profesor-pregyresp, name="profesor-pregyresp"),
-    path('profesor-registro', profesor-registro, name="profesor-registro"),
-    path('profesor-reporteria', profesor - \
-         reporteria, name="profesor-reporteria"),
-    path('profesor-resenas', profesor-resenas, name="profesor-resenas"),
-    path('profesor-saldo', profesor-saldo, name="profesor-saldo"),
+    path('profesor-anuncios', profesoranuncios, name="profesor-anuncios"),
+    path('profesor-asignaciontareas', profesorasignaciontareas, name="profesor-asignaciontareas"),
+    path('profesor-calendario', profesorcalendario, name="profesor-calendario"),
+    path('profesor-certificado', profesorcertificado, name="profesor-certificado"),
+    path('profesor-configuraciones', profesorconfiguraciones, name="profesor-configuraciones"),
+    path('profesor-dashboard', profesorconfiguraciones, name="profesor-configuraciones"),
+    path('profesor-evaluaciones', profesorevaluaciones, name="profesor-evaluaciones"),
+    path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
+    path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
+    path('profesor-miscursos', profesormiscursos, name="profesor-miscursos"),
+    path('profesor-pregyresp', profesorpregyresp, name="profesor-pregyresp"),
+    path('profesor-registro', profesorregistro, name="profesorregistro"),
+    path('profesor-reporteria', profesorreporteria, name="profesor-reporteria"),
+    path('profesor-resenas', profesorresenas, name="profesor-resenas"),
+    path('profesor-saldo', profesorsaldo, name="profesor-saldo"),
 
     # Seccion Perfiles Profesores
-    path('profesor-profile-biologia', profesor - \
-         profile-biologia, name="profesor-profile-biologia"),
-    path('profesor-profile-complectora', profesor - \
-         profile-complectora, name="profesor-profile-complectora"),
-    path('profesor-profile-fisica', profesor - \
-         profile-fisica, name="profesor-profile-fisica"),
-    path('profesor-profile-historia', profesor - \
-         profile-historia, name="profesor-profile-historia"),
-    path('profesor-profile-matematica', profesor - \
-         profile-matematica, name="profesor-profile-matematica"),
-    path('profesor-profile-quimica', profesor - \
-         profile-quimica, name="profesor-profile-quimica"),
+    path('profesor-profile-biologia', profesorprofilebiologia, name="profesor-profile-biologia"),
+    path('profesor-profile-complectora', profesorprofilecomplectora, name="profesor-profile-complectora"),
+    path('profesor-profile-fisica', profesorprofilefisica, name="profesor-profile-fisica"),
+    path('profesor-profile-historia', profesorprofilehistoria, name="profesor-profile-historia"),
+    path('profesor-profile-matematica', profesorprofilematematica, name="profesor-profile-matematica"),
+    path('profesor-profile-quimica', profesorprofilequimica, name="profesor-profile-quimica"),
 
     # Seccion blog
     path('blog', blog, name="blog"),
@@ -104,25 +87,16 @@ urlpatterns = [
 
     # Seccion Cursos
     path('cursos', cursos, name="cursos"),
-    path('curso-crear', curso-crear, name="curso-crear"),
-    path('cursos-biologia-organismoyambiente', cursos-biologia - \
-         organismoyambiente, name="cursos-biologia-organismoyambiente"),
-    path('cursos-complectora-evaluar', cursos - \
-         complectora-evaluar, name="cursos-complectora-evaluar"),
-    path('cursos-complectora-interpretar', cursos - \
-         complectora-interpretar, name="cursos-complectora-interpretar"),
-    path('cursos-complectora-localizar', cursos - \
-         complectora-localizar, name="cursos-complectora-localizar"),
-    path('cursos-fisica-mecanica', cursos-fisica - \
-         mecanica, name="cursos-fisica-mecanica"),
-    path('cursos-historia-ejehistoria', cursos - \
-         historia-ejehistoria, name="cursos-historia-ejehistoria"),
-    path('cursos-matematicas-algebrayfunciones', cursos - \
-         matematicas-algebrayfunciones, name="cursos-matematicas-algebrayfunciones"),
-    path('cursos-matematicas-numeros', cursos - \
-         matematicas-numeros, name="cursos-matematicas-numeros"),
-    path('cursos-quimica-estructuraatomica', cursos - \
-         quimica-estructuraatomica, name="cursos-quimica-estructuraatomica"),
+    path('curso-crear', cursocrear, name="cursocrear"),
+    path('cursos-biologia-organismoyambiente', cursosbiologiaorganismoyambiente, name="cursos-biologia-organismoyambiente"),
+    path('cursos-complectora-evaluar', cursoscomplectoraevaluar, name="cursos-complectora-evaluar"),
+    path('cursos-complectora-interpretar', cursoscomplectorainterpretar, name="cursos-complectora-interpretar"),
+    path('cursos-complectora-localizar', cursoscomplectoralocalizar, name="cursos-complectora-localizar"),
+    path('cursos-fisica-mecanica', cursosfisicamecanica, name="cursos-fisica-mecanica"),
+    path('cursos-historia-ejehistoria', cursoshistoriaejehistoria, name="cursos-historia-ejehistoria"),
+    path('cursos-matematicas-algebrayfunciones', cursosmatematicasalgebrayfunciones, name="cursos-matematicas-algebrayfunciones"),
+    path('cursos-matematicas-numeros', cursosmatematicasnumeros, name="cursos-matematicas-numeros"),
+    path('cursos-quimica-estructuraatomica', cursosquimicaestructuraatomica, name="cursos-quimica-estructuraatomica"),
 
     # Seccion Header
     path('header', header, name="header"),
@@ -137,25 +111,19 @@ urlpatterns = [
     path('planesdemembresia', planesdemembresia, name="planesdemembresia"),
 
     # Seccion Registro
-    path('registro', registro, name="registro"),
+    path('registration/', registration, name="registration"),
     path('register/', RegisterView.as_view(), name='views_register'),
+    path('registerteacher/', RegisterTeacherView.as_view(), name='views_teacher_register'),
     path('login/', LoginView.as_view(), name='views_login'),
+    path('accounts/login/', LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     # Seccion zoom
-    path('zoom-detalles-mat-algebrayfunciones', zoom-detalles-mat - \
-         algebrayfunciones, name="zoom-detalles-mat-algebrayfunciones"),
-    path('zoom-detalles-mat-geometria', zoom - \
-         detalles-mat-geometria, name="zoom-detalles-mat-geometria"),
-    path('zoom-detalles-mat-geometria', zoom - \
-         detalles-mat-geometria, name="zoom-detalles-mat-geometria"),
-    path('zoom-detalles-mat-probabilidadyestadistica', zoom - \
-         detalles-probabilidadyestadistica, name="zoom-detalles-probabilidadyestadistica"),
-    path('zoom-detalles-quim-estructuraatomica', zoom - \
-         detalles-quim-estructuraatomica, name="zoom-detalles-quim-estructuraatomica"),
-    path('zoom-detalles-quim-quimicaorganica', zoom - \
-         detalles-quim-quimicaorganica, name="zoom-detalles-quim-quimicaorganica"),
-    path('zoom-detalles-quim-quimicasyestequiometria', zoom - \
-         detalles-quim-quimicasyestequiometria, name="zoom-detalles-quim-quimicasyestequiometria"),
+    path('zoom-detalles-mat-algebrayfunciones', zoomdetallesmatalgebrayfunciones, name="zoom-detalles-mat-algebrayfunciones"),
+    path('zoom-detalles-mat-geometria', zoomdetallesmatgeometria, name="zoom-detalles-mat-geometria"),
+    path('zoom-detalles-mat-probabilidadyestadistica', zoomdetallesprobabilidadyestadistica, name="zoom-detalles-probabilidadyestadistica"),
+    path('zoom-detalles-quim-estructuraatomica', zoomdetallesquimestructuraatomica, name="zoom-detalles-quim-estructuraatomica"),
+    path('zoom-detalles-quim-quimicaorganica', zoomdetallesquimquimicaorganica, name="zoom-detalles-quim-quimicaorganica"),
+    path('zoom-detalles-quim-quimicasyestequiometria', zoomdetallesquimquimicasyestequiometria, name="zoom-detalles-quim-quimicasyestequiometria"),
     path('zoom-reuniones', zoomdetails, name="zoom-details"),
-
 ]

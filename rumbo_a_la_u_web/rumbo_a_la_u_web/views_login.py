@@ -4,8 +4,12 @@ from django.views import View
 from .models import Usuarios
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import login
+from django.shortcuts import render
 
 class LoginView(View):
+    def get(self, request):
+        return render(request, 'login.html')
+    
     def post(self, request):
         correo = request.POST.get('correo')
         password = request.POST.get('password')
