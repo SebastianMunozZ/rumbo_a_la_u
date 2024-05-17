@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
+    <title>Blog del preu</title>
     <link rel="shortcut icon" type="image/x-icon" href="static/images/fav.png">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="static/css/plugins/fontawesome-6.css">
@@ -40,7 +41,7 @@
                         <h1 class="title">Nuestro Blog</h1>
                         <!-- breadcrumb pagination area -->
                         <div class="pagination-wrapper">
-                            <a href="index.html">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                             <i class="fa-regular fa-chevron-right"></i>
                             <a class="active" href="blog-list.html">Nuestro Blog</a>
                         </div>
@@ -59,12 +60,12 @@
                 <div class="col-lg-6">
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
-                        <a href="blogdet01.html" class="thumbnail">
+                        <a href="{% url 'blogblogdet01' %}" class="thumbnail">
                             <img src="static/images/blog/10.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
-                            <a href="blogdet01.html">
+                            <a href="{% url 'blogblogdet01' %}">
                                 <h5 class="title">Aumentan los inscritos a la PAES de Invierno</h5>
                             </a>
                             <p class="disc">Número habría aumentado en un 3%</p>
@@ -85,12 +86,12 @@
                 <div class="col-lg-6">
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
-                        <a href="blogdet02.html" class="thumbnail">
+                        <a href="{% url 'blogblogdet02' %}" class="thumbnail">
                             <img src="static/images/blog/09.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
-                            <a href="blogdet02.html">
+                            <a href="{% url 'blogblogdet02' %}">
                                 <h5 class="title">Más del 90% de estudiantes de preuniversitario online logran ingresar
                                     a la universidad </h5>
                             </a>
@@ -114,12 +115,12 @@
                 <div class="col-lg-6">
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
-                        <a href="blogdet03.html" class="thumbnail">
+                        <a href="{% url 'blogblogdet03' %}" class="thumbnail">
                             <img src="static/images/blog/12.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
-                            <a href="blogdet03.html">
+                            <a href="{% url 'blogblogdet03' %}">
                                 <h5 class="title">Calendario completo del Proceso de Admisión 2025</h5>
                             </a>
                             <p class="disc">Revisa todas las fechas importantes en nuestro Calendario</p>
@@ -140,12 +141,12 @@
                 <div class="col-lg-6">
                     <!-- single blog list -->
                     <div class="single-blog-list-wrapper">
-                        <a href="blogdet04.html" class="thumbnail">
+                        <a href="{% url 'blogblogdet04' %}" class="thumbnail">
                             <img src="static/images/blog/11.jpg" alt="blog">
                         </a>
                         <div class="information-blog">
                             <div class="tag"><span>PAES 2025</span></div>
-                            <a href="blogdet04.html">
+                            <a href="{% url 'blogblogdet04' %}">
                                 <h5 class="title">Cómo gestionar la frustración y convertirla en
                                     crecimiento</h5>
                             </a>

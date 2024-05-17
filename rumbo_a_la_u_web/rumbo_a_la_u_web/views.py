@@ -243,19 +243,19 @@ def blogblogdet(request):
     return render(request, 'blogblogdet.html')
 
 def blogblogdet01(request):
-    return render(request, 'blogblogdet01.html')
+    return render(request, 'blogdet01.html')
 
 def blogblogdet02(request):
-    return render(request, 'blogblogdet02.html')
+    return render(request, 'blogdet02.html')
 
 def blogblogdet03(request):
-    return render(request, 'blogblogdet03.html')
+    return render(request, 'blogdet03.html')
 
 def blogblogdet04(request):
-    return render(request, 'blogblogdet04.html')
+    return render(request, 'blogdet04.html')
 
 def blogblogdet05(request):
-    return render(request, 'blogblogdet05.html')
+    return render(request, 'blogdet05.html')
 
 def cursos(request):
     cursos = Curso.objects.all()
