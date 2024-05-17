@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fav.png' %}">
+    <title>Cursos</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -352,7 +352,8 @@
                                     <!-- rts single course -->
                                     <div class="rts-single-course">
                                         <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail"></a>
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}" alt="course">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
                                         </a>
                                         <div class="save-icon" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal-login">
@@ -370,7 +371,7 @@
                                             </div>
                                         </div>
                                         <a href="{% url 'cursos-complectora-interpretar' %}"></a>
-                                            <h5 class="title">{{ curso.nombre_del_curso }}</h5>
+                                        <h5 class="title">{{ curso.nombre_del_curso }}</h5>
                                         </a>
                                         <p class="teacher">{{ curso.teacher.user.nombre }}</p>
                                         <div class="rating-and-price">
@@ -388,12 +389,18 @@
                                             </div>
                                             <div class="price-area">
                                                 <div class="price">
+                                                    {% if curso.precio %}
                                                     ${{ curso.precio }}
+                                                    {% else %}
+                                                    Gratis
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                             <div class="text-center">
-                                                <a class="btn btn-outline-success ms-2" href="/cursos?course_id={{curso.course_id}}"><i
-                                                        class="bi bi-plus-circle-fill"></i><span>Añadir al carro</span></a>
+                                                <a class="btn btn-outline-success ms-2"
+                                                    href="/agregarcurso/{{curso.course_id}}"><i
+                                                        class="bi bi-plus-circle-fill"></i><span>Añadir al
+                                                        carro</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -621,7 +628,8 @@
                                     <!-- rts single course -->
                                     <div class="rts-single-course">
                                         <a href="cursos-complectora-localizar.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}" alt="course">
+                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                                alt="course">
                                         </a>
                                         <div class="save-icon" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal-login">
@@ -780,7 +788,8 @@
                                     <!-- rts single course -->
                                     <div class="rts-single-course">
                                         <a href="cursos-complectora-evaluar.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}" alt="course">
+                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                                alt="course">
                                         </a>
                                         <div class="save-icon" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal-login">
@@ -1034,7 +1043,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -1061,7 +1071,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -1088,7 +1099,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">

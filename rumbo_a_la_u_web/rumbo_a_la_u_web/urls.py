@@ -24,8 +24,12 @@ from .views_register import RegisterView, RegisterTeacherView
 from .views_courses import CourseView
 from .views_login import LoginView
 from .views_sell_course import SellCourseView
+from .views_cart import load as load_viewcart
+from .views_sell_course import SellCourseView
+from .views import transbankpay_load, transbankpay_commitpay
 from .views import error
 from .views import sobrenosotros  # Import the missing view function
+from .views import carro
 
 urlpatterns = [
     path('', index, name='index'),
@@ -39,6 +43,8 @@ urlpatterns = [
 
     # Carro de compras
     path('carro', carro, name="carro"),
+    path('webpay-plus-create', transbankpay_load),
+    path('commit-pay', transbankpay_commitpay),
 
     # Seccion Profesores
     path('profesores', profesores, name="profesores"),
@@ -91,6 +97,8 @@ urlpatterns = [
 
     # Seccion Cursos
     path('cursos', cursos, name="cursos"),
+    path('agregarcurso/<int:course_id>', SellCourseView.as_view()),
+    path('sell-courses', SellCourseView.as_view(), name="views_sell_course"),
     path('sell-courses', SellCourseView.as_view(), name="views_sell_course"),
     path('curso-crear', cursocrear, name="cursocrear"),
     path('cursos-biologia-organismoyambiente', cursosbiologiaorganismoyambiente, name="cursos-biologia-organismoyambiente"),
@@ -114,7 +122,7 @@ urlpatterns = [
     path('login', login, name="login"),
 
     # Seccion Planes de Membresia
-    path('planesdemembresia', planesdemembresia, name="planesdemembresia"),
+    path('planesdemembresia', planesdemembresia, name="planesdemembresia"), 
 
     # Seccion Registro
     path('registration/', registration, name="registration"),
