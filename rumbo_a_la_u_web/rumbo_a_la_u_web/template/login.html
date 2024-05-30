@@ -1,25 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="static/images/fav.png">
+    <title>Iniciar Sesión</title>
+    
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="static/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="static/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
     <!-- magnific popup css -->
-    <link rel="stylesheet" href="static/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
     <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
     <!-- jquery ui css -->
-    <link rel="stylesheet" href="static/css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
     <!-- metismenu scss -->
-    <link rel="stylesheet" href="static/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
     <!-- custom style css -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="login-page">
@@ -62,10 +65,10 @@
 
                             <div class="google-apple-wrapper">
                                 <div class="google">
-                                    <img src="static/images/contact/06.png" alt="contact">
+                                    <img src="{% static 'images/contact/06.png' %}" alt="contact">
                                 </div>
                                 <div class="google">
-                                    <img src="static/images/contact/07.png" alt="contact">
+                                    <img src="{% static 'images/contact/07.png' %}" alt="contact">
                                 </div>
                             </div>
                             <p>¿No tienes una cuenta? <a href="{% url 'registration' %}">Regístrate</a></p>
@@ -74,8 +77,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-thumbnail-login-p mt--100">
-                        <object type="image/svg+xml" data="static/images/banner/tablet-login-animate.svg" width="600"
-                            height="495" alt="login-form"></object>
+                        <object type="image/svg+xml" data="{% static 'images/banner/tablet-login-animate.svg' %}" width="600" height="495" alt="login-form"></object>
                     </div>
                 </div>
 
@@ -323,41 +325,41 @@
 
     <!-- all scripts -->
     <!-- jquery min js -->
-    <script src="static/js/vendor/jquery.min.js"></script>
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
     <!-- jquery ui js -->
-    <script src="static/js/vendor/jquery-ui.js"></script>
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
     <!-- metismenu js -->
-    <script src="static/js/vendor/metismenu.js"></script>
+    <script src="{% static 'js/vendor/metismenu.js' %}"></script>
     <!-- magnific popup js-->
-    <script src="static/js/vendor/magnifying-popup.js"></script>
+    <script src="{% static 'js/vendor/magnifying-popup.js' %}"></script>
     <!-- swiper JS 10.2.0 -->
-    <script src="static/js/plugins/swiper.js"></script>
+    <script src="{% static 'js/plugins/swiper.js' %}"></script>
     <!-- counterup js -->
-    <script src="static/js/plugins/counterup.js"></script>
+    <script src="{% static 'js/plugins/counterup.js' %}"></script>
     <!-- waypoint js -->
-    <script src="static/js/vendor/waypoint.js"></script>
+    <script src="{% static 'js/vendor/waypoint.js' %}"></script>
     <!-- wow js -->
-    <script src="static/js/vendor/waw.js"></script>
+    <script src="{% static 'js/vendor/waw.js' %}"></script>
     <!-- isotop mesonary -->
-    <script src="static/js/plugins/isotop.js"></script>
+    <script src="{% static 'js/plugins/isotop.js' %}"></script>
     <!-- jquery imageloaded -->
-    <script src="static/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
     <!-- resize sensor js -->
-    <script src="static/js/plugins/resizer-sensor.js"></script>
+    <script src="{% static 'js/plugins/resizer-sensor.js' %}"></script>
     <!-- sticky sidebar -->
-    <script src="static/js/plugins/sticky-sidebar.js"></script>
+    <script src="{% static 'js/plugins/sticky-sidebar.js' %}"></script>
     <!-- gsap twinmax js -->
-    <script src="static/js/plugins/twinmax.js"></script>
+    <script src="{% static 'js/plugins/twinmax.js' %}"></script>
     <!-- chroma js -->
-    <script src="static/js/vendor/chroma.min.js"></script>
+    <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
     <!-- bootstrap 5.0.2 -->
-    <script src="static/js/plugins/bootstrap.min.js"></script>
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
     <!-- dymanic Contact Form -->
-    <script src="static/js/plugins/contact.form.js"></script>
+    <script src="{% static 'js/plugins/contact.form.js' %}"></script>
     <!-- calender js -->
-    <script src="static/js/plugins/calender.js"></script>
+    <script src="{% static 'js/plugins/calender.js' %}"></script>
     <!-- main Js -->
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 
 </body>
