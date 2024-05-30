@@ -54,10 +54,10 @@ def zoomdetails(request):
 def event(request):
     return render(request, 'event.html')
 
-
+@login_required_manual
 def carro(request):
     user_id = request.session.get('user_id')
-    user = Usuarios.objects.get(user_id=user_id)
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
     try: 
         carts, quantities, total, products = load_cart(customer_id=user_id)
     except Exception as ex:
