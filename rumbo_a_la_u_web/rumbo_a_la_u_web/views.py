@@ -1,12 +1,17 @@
+import json
+import base64
+import hmac
+import hashlib
+import datetime
 from django.shortcuts import render
-from .models import Usuarios, Curso
+from .models import Usuarios, Curso, Inscripciones
 import datetime as dt
 from .views_cart import load_cart
 import traceback, os, requests
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 import traceback
-from django.http import HttpResponse
+from django.http import JsonResponse,HttpResponse
 
 def login_required_manual(func):
     def wrapper(request, *args, **kwargs):
@@ -40,7 +45,7 @@ def bloglist(request):
 
 
 def blogdetails(request):
-    return render(request, 'blog-details.html')
+    return render(request, 'blog-reuniones.html')
 
 
 def zoommeeting(request):
@@ -48,7 +53,7 @@ def zoommeeting(request):
 
 
 def zoomdetails(request):
-    return render(request, 'zoom-details.html')
+    return render(request, 'zoom-reuniones.html')
 
 
 def event(request):
@@ -125,7 +130,12 @@ def alumnoconfiguraciones(request):
 def alumnocursosmatriculados(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'alumno-cursosmatriculados.html', {'user':user})
+    inscripciones = Inscripciones.objects.filter(student_id=user_id)
+    context = {
+        'user': user,
+        'inscripciones': inscripciones
+    }
+    return render(request, 'alumno-cursosmatriculados.html', context)
 
 @login_required_manual
 def alumnodashboard(request):
@@ -137,7 +147,12 @@ def alumnodashboard(request):
 def alumnohistorialpedidos(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'alumno-historialdepedidos.html', {'user':user})
+    inscripciones = Inscripciones.objects.filter(student_id=user_id)
+    context = {
+        'user': user,
+        'inscripciones': inscripciones
+    }
+    return render(request, 'alumno-historialdepedidos.html', context)
 
 @login_required_manual
 def alumnolistadeseos(request):
@@ -311,7 +326,12 @@ def zoomdetallesmatgeometria(request):
     return render(request, 'zoom-detalles-mat-geometria.html')
 
 def zoomdetallesprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-geometria.html')
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
+
+def zoomprueba(request):
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-prueba.html', {'user': user})
 
 def zoomdetallesquimestructuraatomica(request):
     return render(request, 'zoom-detalles-quim-estructuraatomica.html')
@@ -326,9 +346,11 @@ def transbankpay_load(request):
     print('METHOD', request.method)
 
     if  request.method == 'POST':
-
+        course_id = request.POST.get('course_id')
         buy_order = request.POST.get('buy_order')
         session_id = request.POST.get('session_id') # SESSION ID USER
+        user = Usuarios.objects.get(user_id=int(session_id))
+        course = Curso.objects.get(course_id=int(course_id))
         amount = request.POST.get('amount')
         return_url = 'http://localhost:8000/commit-pay'
 
@@ -347,6 +369,9 @@ def transbankpay_load(request):
             print(f'token: ', token)
             url = json_response['url']
             print(f'url: ', url)
+            inscription = Inscripciones(student=user, course=course)
+            # Guardar la inscripción en la base de datos
+            inscription.save()
             return render(request,'send-pay.html', {'token' : token, 'url': url, 'amount': amount})
         else: 
             HttpResponse("Error transacción transbank")
@@ -442,12 +467,14 @@ def transbankpay_commitpay(request):
             pay_type = ''
             if response['payment_type_code'] == 'VD':
                 pay_type = 'Tarjeta de Débito'
-            if response['payment_type_code'] == 'VC':
+            if response['payment_type_code'] == 'VN':
                 pay_type = 'Tarjeta de Crédito'
             amount = int(response['amount'])
             amount = f'{amount:,.0f}'.replace(',', '.')
             transaction_date = dt.datetime.strptime(response['transaction_date'], '%Y-%m-%dT%H:%M:%S.%fZ')
             transaction_date = '{:%d-%m-%Y %H:%M:%S}'.format(transaction_date)
+            print(response)
+
             transaction_detail = {  'card_number': response['card_detail']['card_number'],
                                     'transaction_date': transaction_date,
                                     'state': state,
@@ -492,3 +519,32 @@ def transbankpay_commitpay(request):
     else:
     #TRANSACCIÓN CANCELADA            
         return HttpResponse('ERROR EN LA TRANSACCIÓN, SE CANCELO EL PAGO.')
+    
+def generate_signature(sdk_key, sdk_secret, meeting_number, role):
+    timestamp = datetime.datetime.utcnow().strftime('%Y%m%d%H%M%S')
+    data = base64.b64encode(
+        json.dumps({'meetingNumber': meeting_number, 'role': role}).encode('utf-8')
+    ).decode('utf-8').strip()
+
+    message = f'{sdk_key}{data}{timestamp}'
+    message_bytes = message.encode('utf-8')
+    secret_bytes = sdk_secret.encode('utf-8')
+    signature = base64.b64encode(
+        hmac.new(secret_bytes, message_bytes, hashlib.sha256).digest()
+    ).decode('utf-8').strip()
+
+    return {
+        'signature': base64.b64encode(
+            f'{sdk_key}.{data}.{timestamp}.{signature}'.encode('utf-8')
+        ).decode('utf-8').strip()
+    }
+
+def generatesignature(request):
+    sdk_key = "dUBoSFQRQmusjyruFMFI7g"
+    sdk_secret = "eddeIAwQIAT75RRLqvu7HlAfh0abjR7n"
+    meeting_number = request.GET.get('meeting_number')
+    role = request.GET.get('role', 0)  # Default to participant (0)
+
+    signature = generate_signature(sdk_key, sdk_secret, meeting_number, role)
+    print(signature) 
+    return JsonResponse(signature)

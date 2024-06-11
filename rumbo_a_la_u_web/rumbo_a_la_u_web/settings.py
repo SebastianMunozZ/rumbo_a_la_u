@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rumbo_a_la_u_web.wsgi.application'
+handler404 = 'rumbo_a_la_u_web.views.error'
 
 
 # Database
