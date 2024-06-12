@@ -62,3 +62,11 @@ class Carro(models.Model):
         managed = False
         db_table = 'CARRO'
         unique_together = (('curso_id', 'shopping_session'),)
+
+class Inscripciones(models.Model):
+    enrollment_id = models.AutoField(primary_key=True)
+    student = models.ForeignKey('Usuarios', on_delete=models.CASCADE)
+    course = models.ForeignKey('Curso', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'INSCRIPCIONES'

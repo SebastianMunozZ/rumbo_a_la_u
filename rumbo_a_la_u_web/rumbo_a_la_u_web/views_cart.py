@@ -26,10 +26,6 @@ def load(request, course_id):
     request.session['total'] = total
     request.session['buy_order'] = buy_order
     request.session['session_id'] = session_id
-    
-    print(f'products desde load:{products}') 
-    print(f'quantities desde load:{quantities}')
-    print(f'total desde load:{total}')
 
     return redirect(reverse('carro'))
 
@@ -62,6 +58,7 @@ def load_cart(customer_id:int=None):
             if precio == None:
                 precio = 0
             product = {
+                'id': cart.curso.course_id,
                 'name': cart.curso.nombre_del_curso,
                 'description': cart.curso.descripcion, 
                 'quantity': cart.cantidad,
