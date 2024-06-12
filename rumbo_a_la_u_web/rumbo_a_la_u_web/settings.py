@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rumbo_a_la_u_web.wsgi.application'
+handler404 = 'rumbo_a_la_u_web.views.error'
 
 
 # Database
@@ -128,3 +129,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL = 'index'
