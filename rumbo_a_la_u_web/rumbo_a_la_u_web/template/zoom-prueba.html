@@ -76,59 +76,68 @@
     <!-- rts zoom meeting area start -->
     <div id="zmmtg-root"></div>
     <div id="aria-notify-area"></div>
+    <form id="zoom-meeting-form">
+        <label for="meeting-number">Número de reunión:</label>
+        <input type="text" id="meeting-number" name="meeting-number">
+        <label for="passcode">Passcode:</label>
+        <input type="text" id="passcode" name="passcode">
+        <input type="submit" value="Cargar Reunión">
+    </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/8.0.12/jsrsasign-all-min.js"></script>
     <script>
-        ZoomMtg.preLoadWasm();
-        ZoomMtg.prepareWebSDK();
-        // https://www.npmjs.com/package/jsrsasign
-
-
-        const iat = Math.round(new Date().getTime() / 1000) - 30
-        const exp = iat + 60 * 60 * 2
-        const oHeader = { alg: 'HS256', typ: 'JWT' }
-
-        const oPayload = {
-            sdkKey: "dUBoSFQRQmusjyruFMFI7g",
-            appKey: "dUBoSFQRQmusjyruFMFI7g",
-            mn: 84332278248,
-            role: 0,
-            iat: iat,
-            exp: exp,
-            tokenExp: exp
-        }
-
-        const sHeader = JSON.stringify(oHeader)
-        const sPayload = JSON.stringify(oPayload)
-        const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, 'eddeIAwQIAT75RRLqvu7HlAfh0abjR7n')
+        document.getElementById('zoom-meeting-form').addEventListener('submit', function(event) {
+            event.preventDefault();
         
+            var meetingNumber = document.getElementById('meeting-number').value;
+            var passcode = document.getElementById('passcode').value;
         
+            ZoomMtg.preLoadWasm();
+            ZoomMtg.prepareWebSDK();
+            // https://www.npmjs.com/package/jsrsasign
 
-        fetch('/generate_signature?meeting_number=82186901954&role=0')
-    .then(response => response.json())
-    .then(data => {
-        ZoomMtg.init({
-            leaveUrl: "http://localhost:8000",
-            success: function() {
-                ZoomMtg.join({
-                    meetingNumber: "84332278248",
-                    userName: "desde pagina",
-                    signature: sdkJWT,
-                    sdkKey: "dUBoSFQRQmusjyruFMFI7g",
-                    userEmail: "", // Si necesitas el email del usuario
-                    passWord: "", // Dejar vacío si la reunión no requiere contraseña
-                    success: function(res) {
-                        console.log("Join meeting success");
-                    },
-                    error: function(res) {
-                        console.log(res);
-                    }
-                });
-            },
-            error: function(res) {
-                console.log(res);
+
+            const iat = Math.round(new Date().getTime() / 1000) - 30
+            const exp = iat + 60 * 60 * 2
+            const oHeader = { alg: 'HS256', typ: 'JWT' }
+
+            const oPayload = {
+                sdkKey: "dUBoSFQRQmusjyruFMFI7g",
+                appKey: "dUBoSFQRQmusjyruFMFI7g",
+                mn: meetingNumber,
+                role: 0,
+                iat: iat,
+                exp: exp,
+                tokenExp: exp
             }
+
+            const sHeader = JSON.stringify(oHeader)
+            const sPayload = JSON.stringify(oPayload)
+            const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, 'eddeIAwQIAT75RRLqvu7HlAfh0abjR7n')
+            
+            ZoomMtg.init({
+                leaveUrl: "http://localhost:8000",
+                success: function() {
+                    ZoomMtg.join({
+                        meetingNumber: meetingNumber,
+                        userName: "Sebastian",
+                        signature: sdkJWT,
+                        sdkKey: "dUBoSFQRQmusjyruFMFI7g",
+                        userEmail: "", // Si necesitas el email del usuario
+                        passWord: "", // Dejar vacío si la reunión no requiere contraseña
+                        success: function(res) {
+                            console.log("Join meeting success");
+                        },
+                        error: function(res) {
+                            console.log(res);
+                        }
+                    });
+                },
+                error: function(res) {
+                    console.log(res);
+                }
+            });
         });
-    });
+
     </script>
     <!-- rts zoom meeting area end -->
 
