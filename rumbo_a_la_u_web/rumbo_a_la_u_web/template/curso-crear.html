@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Curso</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -73,7 +74,8 @@
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="course-information-area">
-                                            <form method="POST" action="{% url 'views_course' %}" class="top-form-create-course" enctype="multipart/form-data">
+                                            <form method="POST" action="{% url 'views_course' %}"
+                                                class="top-form-create-course" enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 <div class="single-input">
                                                     <label for="name">Título del Curso</label>
@@ -206,7 +208,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="rts-btn btn-primary mb--30">Publicar</button>
+                                                <button type="submit"
+                                                    class="rts-btn btn-primary mb--30">Publicar</button>
                                             </form>
                                         </div>
                                     </div>
@@ -732,7 +735,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="{% static 'images/banner/04.jpg' %}" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

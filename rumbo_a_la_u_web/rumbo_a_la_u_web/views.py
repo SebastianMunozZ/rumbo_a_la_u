@@ -54,7 +54,7 @@ def zoommeeting(request):
     return render(request, 'zoom-meeting.html')
 
 
-def zoomdetails(request):
+def zoomreuniones(request):
     return render(request, 'zoom-reuniones.html')
 
 

@@ -14,7 +14,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cursos Matriculados</title>
-        <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+        <link rel="shortcut icon" type="image/x-icon"
+            href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
         <!-- fontawesome 6.4.2 -->
         <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
         <!-- swiper Css 10.2.0 -->
@@ -31,37 +32,36 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
 
-    <body>
+<body>
 
-        <!-- header style one -->
-        <!-- header style one -->
-        {% include 'header.html' %}
-        <!-- header style end -->
-        <!-- header style end -->
+    <!-- header style one -->
+    <!-- header style one -->
+    {% include 'header.html' %}
+    <!-- header style end -->
+    <!-- header style end -->
 
 
-        <!-- dashboard banner area start -->
-        <div class="dashboard-banner-area-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="dashboard-banner-area-start bg_image  student-dashboard">
+    <!-- dashboard banner area start -->
+    <div class="dashboard-banner-area-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="dashboard-banner-area-start bg_image  student-dashboard">
 
-                            <div class="author-profile-image-and-name">
-                                <div class="profile-pic">
-                                    <img src="{% static 'images/dashboard/04.png' %}" alt="dashboard">
+                        <div class="author-profile-image-and-name">
+                            <div class="profile-pic">
+                                <img src="{% static 'images/dashboard/04.png' %}" alt="dashboard">
+                            </div>
+                            <div class="name-desig"></div>
+                            <h1 class="title">{{ user.nombre }}</h1>
+                            <div class="course-vedio">
+                                <div class="single">
+                                    <i class="fa-thin fa-book"></i>
+                                    <span>5 Cursos Inscritos</span>
                                 </div>
-                                <div class="name-desig"></div>
-                                <h1 class="title">{{ user.nombre }}</h1>
-                                <div class="course-vedio">
-                                    <div class="single">
-                                        <i class="fa-thin fa-book"></i>
-                                        <span>5 Cursos Inscritos</span>
-                                    </div>
-                                    <div class="single">
-                                        <i class="fa-thin fa-file-certificate"></i>
-                                        <span>4 Certificados</span>
-                                    </div>
+                                <div class="single">
+                                    <i class="fa-thin fa-file-certificate"></i>
+                                    <span>4 Certificados</span>
                                 </div>
                             </div>
                         </div>
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- dashboard banner area end -->
 
@@ -195,7 +196,8 @@
                                                     <h5 class="title">{{ inscripcion.course.nombre_del_curso }}</h5>
                                                 </a>
                                                 <div class="teacher-stars">
-                                                    <div class="teacher"><span>{{ inscripcion.course.teacher.user.nombre}}</span></div>
+                                                    <div class="teacher"><span>{{
+                                                            inscripcion.course.teacher.user.nombre}}</span></div>
                                                     <ul class="stars">
                                                         <li class="span">4.5</li>
                                                         <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -281,7 +283,8 @@
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
                                             <a href="cursos-historia-ejehistoria.html" class="thumbnail">
-                                                <img src="{% static 'images/course/cursos-historia.png' %}" alt="course">
+                                                <img src="{% static 'images/course/cursos-historia.png' %}"
+                                                    alt="course">
                                                 <div class="tag-thumb">
                                                     <span>Historia</span>
                                                 </div>
@@ -400,7 +403,8 @@
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
                                             <a href="cursos-historia-ejehistoria.html" class="thumbnail">
-                                                <img src="{% static 'images/course/cursos-historia.png' %}" alt="course">
+                                                <img src="{% static 'images/course/cursos-historia.png' %}"
+                                                    alt="course">
                                                 <div class="tag-thumb">
                                                     <span>Historia</span>
                                                 </div>
@@ -487,7 +491,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -514,7 +519,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -541,7 +547,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -584,7 +591,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="{% static 'images/banner/04.jpg' %}" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

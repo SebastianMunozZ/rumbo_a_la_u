@@ -7,8 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -43,7 +44,7 @@
                                 {% endfor %}
                         </ul>
                         {% endif %}
-                        
+
                         <form method="POST" action="{% url 'views_register' %}">
                             {% csrf_token %}
                             <div class="single-input-wrapper">
@@ -86,8 +87,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-thumbnail-login-p mt--100">
-                        <object type="image/svg+xml" data="{% static 'images/banner/tablet-login-animate.svg' %}" width="600"
-                            height="495" alt="login-form"></object>
+                        <object type="image/svg+xml" data="{% static 'images/banner/tablet-login-animate.svg' %}"
+                            width="600" height="495" alt="login-form"></object>
                     </div>
                 </div>
             </div>
@@ -100,7 +101,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="static/images/banner/04.jpg" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

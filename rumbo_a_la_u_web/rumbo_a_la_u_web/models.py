@@ -1,25 +1,30 @@
 
 from django.db import models
 
+
 class Usuarios(models.Model):
     user_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
     correo_electronico = models.EmailField(unique=True)
     contrasena = models.CharField(max_length=255)
-    tipo_usuario = models.CharField(max_length=255, default ="1")
+    tipo_usuario = models.CharField(max_length=255, default="1")
 
     class Meta:
         db_table = 'USUARIOS'
 
+
 class Alumno(models.Model):
-    user = models.OneToOneField(Usuarios, primary_key=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        Usuarios, primary_key=True, on_delete=models.CASCADE)
     ano_de_ingreso = models.CharField(max_length=255, default='2024')
-    nivel_de_educacion = models.CharField(max_length=255, default='Media Completa')
+    nivel_de_educacion = models.CharField(
+        max_length=255, default='Media Completa')
     comuna_id = models.CharField(max_length=255, default='1')
 
     class Meta:
         db_table = 'ESTUDIANTES'
+
 
 class Profesor(models.Model):
     teacher_id = models.AutoField(primary_key=True)
@@ -30,6 +35,7 @@ class Profesor(models.Model):
     class Meta:
         db_table = 'PROFESORES'
 
+
 class Curso(models.Model):
     course_id = models.AutoField(primary_key=True)
     nombre_del_curso = models.CharField(max_length=255)
@@ -37,14 +43,17 @@ class Curso(models.Model):
     asignatura = models.CharField(max_length=100)
     es_pagado = models.IntegerField()
     precio = models.IntegerField(null=True, default=0)
-    miniatura = models.ImageField(upload_to='fotos/', default='fotos/default.jpg')
+    miniatura = models.ImageField(
+        upload_to='fotos/', default='fotos/default.jpg')
     teacher = models.ForeignKey(Profesor, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'CURSOS'
 
+
 class ShoppingSession(models.Model):
-    usuario = models.ForeignKey(Usuarios, models.DO_NOTHING, blank=True, null=True)
+    usuario = models.ForeignKey(
+        Usuarios, models.DO_NOTHING, blank=True, null=True)
     create_at = models.DateTimeField(blank=True, null=True)
     state = models.IntegerField(blank=True, null=True)
 
@@ -52,16 +61,19 @@ class ShoppingSession(models.Model):
         managed = False
         db_table = 'SHOPPING_SESSION'
 
+
 class Carro(models.Model):
     precio = models.IntegerField(blank=True, null=True)
     cantidad = models.IntegerField(blank=True, null=True)
-    curso = models.OneToOneField('Curso', models.DO_NOTHING, primary_key=True)  # The composite primary key (products_id, shopping_session_id) found, that is not supported. The first column is selected.
+    # The composite primary key (products_id, shopping_session_id) found, that is not supported. The first column is selected.
+    curso = models.OneToOneField('Curso', models.DO_NOTHING, primary_key=True)
     shopping_session = models.ForeignKey('ShoppingSession', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'CARRO'
         unique_together = (('curso_id', 'shopping_session'),)
+
 
 class Inscripciones(models.Model):
     enrollment_id = models.AutoField(primary_key=True)

@@ -100,35 +100,35 @@
         const sHeader = JSON.stringify(oHeader)
         const sPayload = JSON.stringify(oPayload)
         const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, 'eddeIAwQIAT75RRLqvu7HlAfh0abjR7n')
-        
-        
+
+
 
         fetch('/generate_signature?meeting_number=82186901954&role=0')
-    .then(response => response.json())
-    .then(data => {
-        ZoomMtg.init({
-            leaveUrl: "http://localhost:8000",
-            success: function() {
-                ZoomMtg.join({
-                    meetingNumber: "84332278248",
-                    userName: "desde pagina",
-                    signature: sdkJWT,
-                    sdkKey: "dUBoSFQRQmusjyruFMFI7g",
-                    userEmail: "", // Si necesitas el email del usuario
-                    passWord: "", // Dejar vacío si la reunión no requiere contraseña
-                    success: function(res) {
-                        console.log("Join meeting success");
+            .then(response => response.json())
+            .then(data => {
+                ZoomMtg.init({
+                    leaveUrl: "http://localhost:8000",
+                    success: function () {
+                        ZoomMtg.join({
+                            meetingNumber: "84332278248",
+                            userName: "desde pagina",
+                            signature: sdkJWT,
+                            sdkKey: "dUBoSFQRQmusjyruFMFI7g",
+                            userEmail: "", // Si necesitas el email del usuario
+                            passWord: "", // Dejar vacío si la reunión no requiere contraseña
+                            success: function (res) {
+                                console.log("Join meeting success");
+                            },
+                            error: function (res) {
+                                console.log(res);
+                            }
+                        });
                     },
-                    error: function(res) {
+                    error: function (res) {
                         console.log(res);
                     }
                 });
-            },
-            error: function(res) {
-                console.log(res);
-            }
-        });
-    });
+            });
     </script>
     <!-- rts zoom meeting area end -->
 
@@ -139,7 +139,7 @@
 
 
 
-   
+
 
     <!-- cart area start -->
 
@@ -152,7 +152,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -179,7 +180,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -206,7 +208,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -249,7 +252,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="{% static 'images/banner/04.jpg' %}" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

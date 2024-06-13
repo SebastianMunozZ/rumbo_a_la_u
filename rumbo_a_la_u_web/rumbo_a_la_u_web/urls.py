@@ -170,7 +170,7 @@ urlpatterns = [
          name="zoom-detalles-quim-quimicaorganica"),
     path('zoom-detalles-quim-quimicasyestequiometria', zoomdetallesquimquimicasyestequiometria,
          name="zoom-detalles-quim-quimicasyestequiometria"),
-    path('zoom-reuniones', zoomdetails, name="zoom-reuniones"),
+    path('zoom-reuniones', zoomreuniones, name="zoom-reuniones"),
     path('zoom-prueba', zoomprueba, name="zoom-prueba"),
     path('generate_signature/', generatesignature, name='generate_signature'),
 ]

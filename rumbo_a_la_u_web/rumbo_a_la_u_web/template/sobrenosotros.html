@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
@@ -503,8 +504,8 @@
                         </div>
                         <!-- single choose reason end -->
                     </div>
-                    <a href="cursos.html" class="rts-btn btn-primary-white with-arrow">Ver todos los cursos <i
-                            class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{% url 'cursos'%}" class="rts-btn btn-primary-white with-arrow">Ver todos los cursos
+                        <i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -874,7 +875,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="static/images/banner/04.jpg" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

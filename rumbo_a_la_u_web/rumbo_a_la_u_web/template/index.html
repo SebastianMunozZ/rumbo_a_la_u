@@ -51,7 +51,8 @@
                                 distancia.
                             </p>
                             <div class="banner-btn-author-wrapper">
-                                <a href="zoom-reuniones.html" class="rts-btn btn-primary radious-0">Clases grupales en
+                                <a href="{% url 'zoom-reuniones'%}" class="rts-btn btn-primary radious-0">Clases
+                                    grupales en
                                     vivo</a>
                                 <div class="sm-image-wrapper">
                                     <div class="images-wrap">
@@ -164,7 +165,7 @@
                         </div>
 
                         <div class="about-bottom-button-area-4">
-                            <a href="sobrenosotros.html" class="rts-btn btn-primary radious-0">Sobre nosotros</a>
+                            <a href="{% url 'sobrenosotros'%}" class="rts-btn btn-primary radious-0">Sobre nosotros</a>
                             <!-- author mid start -->
                             <div class="author-about">
                                 <img src="{% static 'images/about/01.png' %}" alt="about">
@@ -368,7 +369,7 @@
                                 Encontrarás algo que despierte tu curiosidad y mejorarás
                             </p>
                         </div>
-                        <a href="cursos.html" class="rts-btn with-arrow p-0">Revisa todos los cursos <i
+                        <a href="{% url 'cursos'%}" class="rts-btn with-arrow p-0">Revisa todos los cursos <i
                                 class="fa-light fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -857,14 +858,15 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="{% static 'images/students-feedback/boy-holding-notebook-outside.png' %}" alt="">
+                                                <img src="{% static 'images/students-feedback/boy-holding-notebook-outside.png' %}"
                                                     alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="{% static 'images/students-feedback/10.png' %}" alt="feedback">
+                                                    <img src="{% static 'images/students-feedback/10.png' %}"
+                                                        alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     La profesora Lizbeth es una experta en su materia, tiene un enfoque
@@ -873,7 +875,7 @@
                                                     rápido a mis consultas y es muy atenta con mi aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-biologia 60x60.png' %}" alt="students">
+                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-biologia 60x60.png' %}"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Lizbeth White</h5>
@@ -892,14 +894,15 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="{% static 'images/students-feedback/dreamy-student-school.png' %}" alt="students">
-                                                    alt="">
+                                                <img src="{% static 'images/students-feedback/dreamy-student-school.png' %}"
+                                                    alt="students">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="{% static 'images/students-feedback/10.png' %}" alt="feedback">
+                                                    <img src="{% static 'images/students-feedback/10.png' %}"
+                                                        alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     El profesor Thomas es excepcional en su capacidad para transmitir
@@ -909,7 +912,7 @@
                                                     experiencia de aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-historia 60x60.png' %}" alt="students">
+                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-historia 60x60.png' %}"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Thomas Fred</h5>
@@ -928,14 +931,15 @@
                                     <div class="row align-items-center">
                                         <div class="col-lg-4 ">
                                             <div class="testimonials-wrapper-left">
-                                                <img src="{% static 'images/students-feedback/young-man-with-notebook-book.png' %}" alt="students">
-                                                    alt="">
+                                                <img src="{% static 'images/students-feedback/young-man-with-notebook-book.png' %}"
+                                                    alt="students">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 pl--60 pl_md--20 pl_sm--15 mt_sm--20 mt_md--20">
                                             <div class="inner-testimonials">
                                                 <div class="quote">
-                                                    <img src="{% static 'images/students-feedback/10.png' %}" alt="feedback">
+                                                    <img src="{% static 'images/students-feedback/10.png' %}"
+                                                        alt="feedback">
                                                 </div>
                                                 <p class="disc">
                                                     El profe Elías tiene una gran habilidad para explicar conceptos
@@ -944,7 +948,7 @@
                                                     disposición para brindar apoyo en mi aprendizaje.
                                                 </p>
                                                 <div class="author-area">
-                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-quimica 60x60.png' %}" alt="students">
+                                                    <img src="{% static 'images/students-feedback/fotoperfil-inst-quimica 60x60.png' %}"
                                                         alt="students">
                                                     <div class="information">
                                                         <h5 class="title">Elias Gomez</h5>
@@ -1077,7 +1081,8 @@
                         <div class="footer-singl-wized left-logo">
                             <div class="head">
                                 <a href="#">
-                                    <img src="{% static 'images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png' %}" alt="logo" loading="lazy">
+                                    <img src="{% static 'images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png' %}"
+                                        alt="logo" loading="lazy">
                                 </a>
                             </div>
                             <div class="body">
@@ -1188,7 +1193,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -1215,7 +1221,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -1242,7 +1249,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -1286,7 +1294,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="{% static 'images/banner/04.jpg' %}" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>
