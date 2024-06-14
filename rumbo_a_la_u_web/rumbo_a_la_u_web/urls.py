@@ -36,7 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Error 404
-    path('404', error, name="error"),
+    path('error', error, name="error"),
 
     # Sobre nosotros
     path('sobrenosotros', sobrenosotros, name="sobrenosotros"),
@@ -164,10 +164,13 @@ urlpatterns = [
          name="zoom-detalles-mat-geometria"),
     path('zoom-detalles-mat-probabilidadyestadistica',
          zoomdetallesprobabilidadyestadistica, name="zoom-detalles-probabilidadyestadistica"),
+
     path('zoom-detalles-quim-estructuraatomica', zoomdetallesquimestructuraatomica,
-         name="zoom-detalles-quim-estructuraatomica"),
+         name='zoom-detalles-quim-estructuraatomica'),
+
     path('zoom-detalles-quim-quimicaorganica', zoomdetallesquimquimicaorganica,
          name="zoom-detalles-quim-quimicaorganica"),
+
     path('zoom-detalles-quim-quimicasyestequiometria', zoomdetallesquimquimicasyestequiometria,
          name="zoom-detalles-quim-quimicasyestequiometria"),
     path('zoom-reuniones', zoomreuniones, name="zoom-reuniones"),

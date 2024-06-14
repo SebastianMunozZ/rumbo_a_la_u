@@ -107,7 +107,7 @@ def becomeinstructor(request):
 
 
 def error(request):
-    return render(request, '404.html')
+    return render(request, 'error.html')
 
 
 @login_required_manual
@@ -378,12 +378,16 @@ def zoomdetallesmatalgebrayfunciones(request):
     return render(request, 'zoom-detalles-mat-algebrayfunciones.html')
 
 
+def zoomdetallesprobabilidadyestadistica(request):
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica')
+
+
 def zoomdetallesmatgeometria(request):
     return render(request, 'zoom-detalles-mat-geometria.html')
 
 
-def zoomdetallesprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
+def zoomdetallesquimestructuraatomica(request):
+    return render(request, 'zoom-detalles-quim-estructuraatomica.html')
 
 
 def zoomprueba(request):
