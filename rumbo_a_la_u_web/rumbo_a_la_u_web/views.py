@@ -4,7 +4,7 @@ import hmac
 import hashlib
 import datetime
 from django.shortcuts import render
-from .models import Usuarios, Curso, Inscripciones
+from .models import Usuarios, Curso, Inscripciones, Comentario
 import datetime as dt
 from .views_cart import load_cart
 import traceback, os, requests
@@ -285,19 +285,24 @@ def blogblogdet(request):
     return render(request, 'blogblogdet.html')
 
 def blogblogdet01(request):
-    return render(request, 'blogdet01.html')
+    comentarios = Comentario.objects.filter(noticia=1)
+    return render(request, 'blogdet01.html', {'comentarios': comentarios})
 
 def blogblogdet02(request):
-    return render(request, 'blogdet02.html')
+    comentarios = Comentario.objects.filter(noticia=2)
+    return render(request, 'blogdet02.html', {'comentarios': comentarios})
 
 def blogblogdet03(request):
-    return render(request, 'blogdet03.html')
+    comentarios = Comentario.objects.filter(noticia=3)
+    return render(request, 'blogdet03.html', {'comentarios': comentarios})
 
 def blogblogdet04(request):
-    return render(request, 'blogdet04.html')
+    comentarios = Comentario.objects.filter(noticia=4)
+    return render(request, 'blogdet04.html', {'comentarios': comentarios})
 
 def blogblogdet05(request):
-    return render(request, 'blogdet05.html')
+    comentarios = Comentario.objects.filter(noticia=5)
+    return render(request, 'blogdet05.html', {'comentarios': comentarios})
 
 @login_required_manual
 def cursos(request):
