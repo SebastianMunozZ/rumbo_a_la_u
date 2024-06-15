@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -24,6 +25,7 @@
 </head>
 
 <body>
+
     <!-- header style one -->
     <!-- header style one -->
     {% include 'header.html' %}
@@ -46,12 +48,12 @@
                                 <i class="fa-regular fa-star"></i>
                             </div>
                             <p>Profesora de Comprensión Lectora</p>
-                            <a href="curso-crear.html" class="create-btn"><i class="fa-regular fa-circle-plus"></i>
-                                Crear un nuevo curso</a>
+
                         </div>
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
-                                <img src="assets/images/dashboard/fotoperfil-inst-complectora.png" alt="dashboard">
+                                <img src="{% static 'images/dashboard/fotoperfil-inst-complectora.png' %}"
+                                    alt="dashboard">
                             </div>
                             <div class="name-desig">
                                 <h1 class="title">Emma Elizabeth</h1>
@@ -115,8 +117,9 @@
                             <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                 <!-- rts single course -->
                                 <div class="rts-single-course">
-                                    <a href="cursos-complectora-interpretar.html" class="thumbnail">
-                                        <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
+                                    <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
                                     </a>
                                     <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
                                         <i class="fa-sharp fa-light fa-bookmark"></i>
@@ -136,10 +139,12 @@
                                             <span>54 Alumnos</span>
                                         </div>
                                     </div>
-                                    <a href="cursos-complectora-interpretar.html">
-                                        <h5 class="title">Interpretar: Estableciendo significados a partir de
-                                            relaciones entre diferentes partes de un texto</h5>
+                                    <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail">
+                                        <h5 class="title">Interpretar: Estableciendo significados a partir de relaciones
+                                            entre diferentes partes de un texto
+                                        </h5>
                                     </a>
+
                                     <p class="teacher">Emma Elizabeth</p>
                                     <div class="rating-and-price">
                                         <div class="rating-area">
@@ -169,9 +174,11 @@
                             <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                 <!-- rts single course -->
                                 <div class="rts-single-course">
-                                    <a href="cursos-complectora-localizar.html" class="thumbnail">
-                                        <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
+                                    <a href="{% url 'cursos-complectora-localizar' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
                                     </a>
+
                                     <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
                                         <i class="fa-sharp fa-light fa-bookmark"></i>
                                     </div>
@@ -190,10 +197,12 @@
                                             <span>54 Alumnos</span>
                                         </div>
                                     </div>
-                                    <a href="cursos-complectora-localizar.html">
+                                    <a href="{% url 'cursos-complectora-localizar' %}" class="thumbnail">
                                         <h5 class="title">Localizar: Identificando, reconociendo y extrayendo datos
-                                            textuales presentes en nuestra lectura</h5>
+                                            textuales presentes en nuestra lectura
+                                        </h5>
                                     </a>
+
                                     <p class="teacher">Emma Elizabeth</p>
                                     <div class="rating-and-price">
                                         <div class="rating-area">
@@ -220,8 +229,9 @@
                             <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                 <!-- rts single course -->
                                 <div class="rts-single-course">
-                                    <a href="cursos-complectora-evaluar.html" class="thumbnail">
-                                        <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
+                                    <a href="{% url 'cursos-complectora-evaluar' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
                                     </a>
                                     <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
                                         <i class="fa-sharp fa-light fa-bookmark"></i>
@@ -241,11 +251,11 @@
                                             <span>54 Alumnos</span>
                                         </div>
                                     </div>
-                                    <a href="cursos-complectora-evaluar.html">
-                                        <h5 class="title">Evaluar: Reflexionar
-                                            y juzgar a partir del
-                                            análisis de la forma o contenido</h5>
+                                    <a href="{% url 'cursos-complectora-evaluar' %}" class="thumbnail">
+                                        <h5 class="title">Evaluar: Reflexionar y juzgar a partir del análisis de la
+                                            forma o contenido</h5>
                                     </a>
+
                                     <p class="teacher">Emma Elizabeth</p>
                                     <div class="rating-and-price">
                                         <div class="rating-area">
@@ -283,32 +293,9 @@
 
 
 
-    <!-- footer dashboards area -->
-    <div class="footer-dashboard">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-dashboard-inner">
-                        <p>Copyright © 2024 All Rights Reserved by <a href="#">Studyhub</a></p>
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo-4.svg" alt="logo">
-                        </a>
-                        <div class="social-area-dashboard-footer">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer dashboards area end -->
-
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
 
     <!-- Modal -->
     <div class="modal login-pupup-modal fade" id="exampleModal-login" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -347,7 +334,9 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -374,7 +363,9 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -401,7 +392,9 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -444,7 +437,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="assets/images/banner/04.jpg" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>
@@ -704,11 +697,15 @@
     <script src="{% static 'js/plugins/twinmax.js' %}"></script>
     <!-- chroma js -->
     <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
+    <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
     <!-- bootstrap 5.0.2 -->
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
     <!-- dymanic Contact Form -->
     <script src="{% static 'js/plugins/contact.form.js' %}"></script>
+    <script src="{% static 'js/plugins/contact.form.js' %}"></script>
     <!-- calender js -->
+    <script src="{% static 'js/plugins/calender.js' %}"></script>
     <script src="{% static 'js/plugins/calender.js' %}"></script>
     <!-- main Js -->
     <script src="{% static 'js/main.js' %}"></script>

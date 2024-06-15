@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesores</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -24,6 +25,7 @@
 </head>
 
 <body>
+
     <!-- header style one -->
     <!-- header style one -->
     {% include 'header.html' %}
@@ -40,9 +42,9 @@
                         <h1 class="title">Profesores</h1>
                         <!-- breadcrumb pagination area -->
                         <div class="pagination-wrapper">
-                            <a href="index.html">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                             <i class="fa-regular fa-chevron-right"></i>
-                            <a class="active" href="profesores.html">Todos los profesores</a>
+                            <a class="active" href="{% url 'profesores' %}">Todos los profesores</a>
                         </div>
                         <!-- breadcrumb pagination area end -->
                     </div>
@@ -61,8 +63,8 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-complectora.html" class="thumbnail">
-                                <img src="static/images/instructor/medium-shot-happy-girl-with-cement-background.png"
+                            <a href="{% url 'profesor-profile-complectora' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/medium-shot-happy-girl-with-cement-background.png' %}"
                                     alt="instructor">
                             </a>
                             <div class="social-img-instructor">
@@ -74,6 +76,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <a href="#">
                             <h5 class="title">Emma Elizabeth</h5>
                         </a>
@@ -85,10 +88,11 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-historia.html" class="thumbnail">
-                                <img src="static/images/instructor/front-view-smiley-father-holding-tablet.png"
+                            <a href="{% url 'profesor-profile-historia' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/front-view-smiley-father-holding-tablet.png' %}"
                                     alt="instructor">
                             </a>
+
                             <div class="social-img-instructor">
                                 <ul>
                                     <li><a href="#"><i class="fa-sharp fa-light fa-share-nodes"></i></a></li>
@@ -109,8 +113,8 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-biologia.html" class="thumbnail">
-                                <img src="static/images/instructor/smiley-female-teacher-with-stack-books.png"
+                            <a href="{% url 'profesor-profile-biologia' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/smiley-female-teacher-with-stack-books.png' %}"
                                     alt="instructor">
                             </a>
                             <div class="social-img-instructor">
@@ -122,6 +126,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <a href="#">
                             <h5 class="title">Lizbeth White</h5>
                         </a>
@@ -133,8 +138,8 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-quimica.html" class="thumbnail">
-                                <img src="static/images/instructor/portrait-bearded-man-holding-documents.png"
+                            <a href="{% url 'profesor-profile-quimica' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/portrait-bearded-man-holding-documents.png' %}"
                                     alt="instructor">
                             </a>
                             <div class="social-img-instructor">
@@ -146,6 +151,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <a href="#">
                             <h5 class="title">Elias Gomez</h5>
                         </a>
@@ -157,8 +163,8 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-fisica.html" class="thumbnail">
-                                <img src="static/images/instructor/woman-work-posing-looking-camera.png"
+                            <a href="{% url 'profesor-profile-fisica' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/woman-work-posing-looking-camera.png' %}"
                                     alt="instructor">
                             </a>
                             <div class="social-img-instructor">
@@ -170,6 +176,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <a href="#">
                             <h5 class="title">Lucía Dominguez</h5>
                         </a>
@@ -181,8 +188,8 @@
                     <!-- single instrustor -->
                     <div class="single-instructor">
                         <div class="thumbnail-img">
-                            <a href="profesor-profile-matematica.html" class="thumbnail">
-                                <img src="static/images/instructor/front-view-smiley-woman-posing-while-holding-glasses.png"
+                            <a href="{% url 'profesor-profile-matematica' %}" class="thumbnail">
+                                <img src="{% static 'images/instructor/front-view-smiley-woman-posing-while-holding-glasses.png' %}"
                                     alt="instructor">
                             </a>
                             <div class="social-img-instructor">
@@ -194,6 +201,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <a href="#">
                             <h5 class="title">Macarena Gonzalez</h5>
                         </a>
@@ -220,7 +228,7 @@
                         <div class="footer-singl-wized left-logo">
                             <div class="head">
                                 <a href="#">
-                                    <img src="static/images/logo/logo-1.svg" alt="logo" loading="lazy">
+                                    <img src="{% static 'images/logo/logo-1.svg' %}" alt="logo" loading="lazy">
                                 </a>
                             </div>
                             <div class="body">
@@ -329,7 +337,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -356,7 +365,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -383,7 +393,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
@@ -426,7 +437,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="static/images/banner/04.jpg" alt="elevate">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
             </div>
             <div class="inner-content">
                 <h4 class="title">We Build Building and Great Constructive Homes.</h4>

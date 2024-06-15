@@ -3,11 +3,11 @@ version: '3'
 services:
   db:
     build: ./db
-    image: mysql:8.0   # Imagen de Docker a utilizar para la base de datos MySQL
+    image: mysql:8.0 # Imagen de Docker a utilizar para la base de datos MySQL
     ports:
-      - "3306:3306"    # Mapeo del puerto 3306 del contenedor al puerto 3306 del host
+      - "3310:3306" # Mapeo del puerto 3306 del contenedor al puerto 3306 del host
     environment:
-      MYSQL_DATABASE: rumbo_a_la_u    # Configuración de la base de datos MySQL
+      MYSQL_DATABASE: rumbo_a_la_u # Configuración de la base de datos MySQL
       MYSQL_USER: seba
       MYSQL_PASSWORD: seba
       MYSQL_ROOT_PASSWORD: root
@@ -18,7 +18,7 @@ services:
     build: ./rumbo_a_la_u_web
     ports:
       - "8000:8000"
-    command: ["sh", "/app/entrypoint.sh", "db", "3306"]
+    command: [ "sh", "/app/entrypoint.sh", "db", "3306" ]
     volumes:
       - ./rumbo_a_la_u_web/:/app/rumbo_a_la_u_web
     depends_on:
