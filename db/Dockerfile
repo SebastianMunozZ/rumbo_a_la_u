@@ -8,3 +8,4 @@ ENV MYSQL_ROOT_PASSWORD 'root'
 ENV MYSQL_DATABASE rumbo_a_la_u
 # COPY SCRIPT SQL FILES
 COPY ./scripts/ /docker-entrypoint-initdb.d/
+

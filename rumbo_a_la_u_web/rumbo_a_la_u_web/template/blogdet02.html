@@ -1,0 +1,826 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
+    <!-- custom style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- header style one -->
+    <!-- header style one -->
+    {% include 'header.html' %}
+    <!-- header style end -->
+    <!-- header style end -->
+
+
+    <!-- bread crumb area -->
+    <div class="rts-bread-crumbarea-1 rts-section-gap bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-main-wrapper">
+                        <h1 class="title">Blog: Noticias</h1>
+                        <!-- breadcrumb pagination area -->
+                        <div class="pagination-wrapper">
+                            <a href="index.html">Home</a>
+                            <i class="fa-regular fa-chevron-right"></i>
+                            <a class="active" href="blog.html">Nuestro Blog</a>
+                            <i class="fa-regular fa-chevron-right"></i>
+                            <a class="active" href="blogdet02.html">Blog: Noticias</a>
+                        </div>
+                        <!-- breadcrumb pagination area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread crumb area end -->
+
+
+    <!-- blog details area start -->
+    <div class="rts-blog-list-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">
+                <!-- rts blo post area -->
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <!-- single post -->
+                    <div class="blog-single-post-listing details mb--0">
+                        <div class="thumbnail">
+                            <img src="{% static 'images/blog/ingreso-univ.jpg' %}" alt="Business-Blog">
+                        </div>
+                        <div class="blog-listing-content">
+                            <div class="user-info">
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-user-circle"></i>
+                                    <span>por Portal Educa | Grupo Prensa Digital</span>
+                                </div>
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-clock"></i>
+                                    <span>11 de Enero 2024</span>
+                                </div>
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="far fa-tags"></i>
+                                    <span>PAES 2025</span>
+                                </div>
+                                <!-- single infoe end -->
+                            </div>
+                            <h3 class="title animated fadeIn">El 91% de los estudiantes de preuniversitario online
+                                logran ingresar a la universidad
+                            </h3>
+                            <p class="disc para-1">
+                                De la mano de Filadd, el preuniversitario online de Latinoamérica, se orientó y formó a
+                                más de 30 mil estudiantes de
+                                distintos países durante el 2023, permitiendo que su mayoría ingresaran a la universidad
+                                y carrera de preferencia;
+                                incluyendo a Chile entre los estudiantes con mejores resultados.
+                            </p>
+
+
+                            <p class="disc para-1">
+                                Con foco en la innovación y digitalización de nuevas opciones educativas, el
+                                preuniversitario Filadd, presente en
+                                Brasil, Argentina, Colombia y Chile ha llevado la preparación de la educación superior a
+                                otro nivel, permitiendo que el
+                                91% de sus 10 mil estudiantes en Chile ingresarán con éxito a la universidad y carrera
+                                esperada.
+                            </p>
+                            <p class="disc para-1">
+                                A través de su plataforma y modalidad 100% digital, los profesores y orientadores
+                                educacionales se enfocan en guiar al
+                                estudiante hacia sus objetivos y metas, potenciando un buen rendimiento en la PAES, de
+                                acuerdo a las asignaturas de
+                                preferencia, además de un seguimiento de su postulación y elección final de carrera y
+                                centro
+                                de estudios.
+                            </p>
+
+
+                            <!-- quote area start -->
+                            <div class="rts-quote-area text-start reveal">
+                                <h5 class="title title-g">“Esta nueva forma de prepararse para la universidad combina un
+                                    calendario de clases sincrónicas semanal con profesores y
+                                    compañeros, ya sea estudiante escolar o egresado con contenido correspondiente al
+                                    temario DEMRE de cada prueba;
+                                    disponible 24/7 en la plataforma, permitiendo a los alumnos estudiar a su propio
+                                    ritmo y flexibilidad con formatos
+                                    variados (juegos, guías teóricas, prácticas, ensayos, microensayos y más). Los
+                                    estudiantes cuentan con consultas ilimitadas
+                                    de sus profesores por chat, por lo que no deben esperar a la siguiente
+                                    clase para resolver sus dudas; igualmente de sesiones de orientación vocacional y
+                                    motivacional desde que ingresan al
+                                    preuniversitario. También pueden participar de charlas y talleres de las carreras
+                                    que les interesan”
+                                    <p class="author-name">Joaquín Olmedo, CEO de Filadd</p>
+                            </div>
+                            <!-- quote area end -->
+
+                            </p>
+                            <p class="disc">
+                                A pesar del método tradicional que acostumbran apoderados y padres, clases en aulas
+                                físicas y material en papel; son los
+                                mismos estudiantes quienes buscan nuevas formas de aprender, que se adapten a sus
+                                dispositivos favoritos, pc,
+                                smartphones y tablets; y sean más amigables con sus requisitos: menos papeleos y
+                                accesibilidad, desde cualquier lugar y
+                                región.
+                            </p>
+                            <p class="disc">
+                                Además de ser parte del recorrido y éxito de tres alumnos chilenos con Puntaje Máximo
+                                Nacional, tan solo en 2023, el 91%
+                                de los estudiantes matriculados en Filadd lograron los resultados esperados e ingresaron
+                                a la carrera y universidad de
+                                interés; proyectando para 2024 más jóvenes interesados en ser parte de la reforma de la
+                                educación preuniversitaria.
+                            </p>
+
+                            <!-- quote area start -->
+                            <div class="rts-quote-area text-start reveal">
+                                <h5 class="title title-g">“Para este 2024, buscamos un crecimiento de matrículas y vemos
+                                    esencial el llegar y convencer a los padres, dándoles
+                                    confianza y mostrándonos como una alternativa válida; de que la tecnología no es
+                                    algo negativo y que en la actualidad es
+                                    fundamental para la formación de profesionales”
+                                    <p class="author-name">Claudia Hanania, Channel Expansion Coordinator del
+                                        Preuniversitario</p>
+                            </div>
+                            <!-- quote area end -->
+
+
+
+
+                            <div class="row  align-items-center">
+                                <div class="col-lg-6 col-md-12">
+                                    <!-- tags details -->
+                                    <div class="details-tag">
+                                        <h6>Tags:</h6>
+                                        <button>PAES 2025</button>
+                                    </div>
+                                    <!-- tags details End -->
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="details-share">
+                                        <h6>Comparte:</h6>
+                                        <button><i class="fab fa-facebook-f"></i></button>
+                                        <button><i class="fab fa-twitter"></i></button>
+                                        <button><i class="fab fa-instagram"></i></button>
+                                        <button><i class="fab fa-linkedin-in"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author-area reveal">
+                                <div class="thumbnail details mb_sm--15">
+                                    <img src="{% static 'images/students-feedback/logo grupo prensa.png' %}" alt="">
+                                </div>
+                                <div class="author-details team">
+                                    <h5 class="title-g">Portal Educa | Grupo Prensa Digital</h5>
+                                    <p class="disc title-g">
+                                        Medio de prensa colaborativo, temático y digital, perteneciente a Grupo Prensa
+                                        Digital www.grupoprensadigital.cl.
+
+                                    </p>
+                                </div>
+                            </div>
+                            {% for comentario in comentarios %}
+                            <div class="replay-area-details">
+                                <h4 class="title">{{ comentario.nombre }} {{ comentario.apellido }}</h4>
+                                <p>{{ comentario.comentario }}</p>
+                            </div>
+                            {% endfor %}
+                            <div class="replay-area-details">
+                                <h4 class="title">Deja un comentario</h4>
+                                <form action="{% url 'comentario' %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row g-4">
+                                        <div class="col-lg-6">
+                                            <input name="nombre" type="text" placeholder="Nombre" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input name="apellido" type="text" placeholder="Apellido" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <textarea name="comentario" placeholder="Tu comentario aqui..."
+                                                required></textarea>
+                                        </div>
+                                        <input type="hidden" name="id_noticia" value="2">
+                                    </div>
+                                    <button type="submit" class="rts-btn btn-primary mt--20">Enviar mensaje</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single post End-->
+                </div>
+                <!-- rts-blog post end area -->
+                <!--rts blog wizered area -->
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12 rts-sticky-column-item">
+                    <div class="blog-sidebar theiaStickySidebar">
+
+                        <!-- single wizered start -->
+                        <div class="rts-single-wized Categories">
+                            <div class="wized-header">
+                                <h5 class="title">
+                                    Categorías
+                                </h5>
+                            </div>
+                            <div class="wized-body">
+                                <!-- single categoris -->
+                                <ul class="single-categories">
+                                    <li><a href="#">PAES 2025 <i class="far fa-long-arrow-right"></i></a></li>
+                                </ul>
+                                <!-- single categoris End -->
+                            </div>
+                        </div>
+                        <!-- single wizered End -->
+                        <!-- single wizered start -->
+                        <div class="rts-single-wized Recent-post">
+                            <div class="wized-header">
+                                <h5 class="title">
+                                    Publicaciones Recientes
+                                </h5>
+                            </div>
+                            <div class="wized-body">
+                                <!-- recent-post -->
+                                <div class="recent-post-single">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blogblogdet01' %}"><img src="{% static 'images/course/10-290.jpg' %}" alt="Blog_post"></a>
+                                    </div>
+                                    <div class="content-area text-start">
+                                        <div class="user">
+                                            <i class="fal fa-clock"></i>
+                                            <span>26 de Marzo, 2024</span>
+                                        </div>
+                                        <a class="post-title" href="{% url 'blogblogdet01' %}">
+                                            <h6 class="title">Aumentan los inscritos a la PAES de Invierno</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- recent-post End -->
+                                <!-- recent-post -->
+                                <div class="recent-post-single">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blogblogdet03' %}"><img src="{% static 'images/course/12-290.jpg' %}" alt="Blog_post"></a>
+                                    </div>
+                                    <div class="content-area text-start">
+                                        <div class="user">
+                                            <i class="fal fa-clock"></i>
+                                            <span>21 de Marzo, 2024</span>
+                                        </div>
+                                        <a class="post-title" href="{% url 'blogblogdet03' %}">
+                                            <h6 class="title">Calendario del Proceso de Admisión 2025</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- recent-post End -->
+                                <!-- recent-post -->
+                                <div class="recent-post-single">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blogblogdet04' %}"><img src="{% static 'images/course/11-290.jpg' %}" alt="Blog_post"></a>
+                                    </div>
+                                    <div class="content-area text-start">
+                                        <div class="user">
+                                            <i class="fal fa-clock"></i>
+                                            <span>02 de Enero, 2024</span>
+                                        </div>
+                                        <a class="post-title" href="{% url 'blogblogdet04' %}">
+                                            <h6 class="title">Cómo lograr la resiliencia en la educación
+                                            </h6>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- recent-post End -->
+                            </div>
+                        </div>
+                        <!-- single wizered End -->
+                        <!-- single wizered start -->
+                        <div class="rts-single-wized">
+                            <div class="wized-header">
+                                <h5 class="title">
+                                    Tags Populares
+                                </h5>
+                            </div>
+                            <div class="wized-body">
+                                <div class="tags-wrapper">
+                                    <a href="#">PAES 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single wizered End -->
+                    </div>
+                </div>
+                <!-- rts- blog wizered end area -->
+            </div>
+        </div>
+    </div>
+    <!-- blog details area end -->
+
+    <!-- footer call to action area start -->
+    <div class="footer-callto-action-area bg-light-1">
+        <div class="container ptb--105">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized left-logo">
+                            <div class="head">
+                                <a href="#">
+                                    <img src="{% static 'images/logo/logo-1.svg' %}" alt="logo" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p class="dsic">
+                                    We are passionate education dedicated to providing high-quality resources learners
+                                    all backgrounds.
+                                </p>
+                                <ul class="wrapper-list">
+                                    <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia </li>
+                                    <li><i class="fa-regular fa-phone"></i><a href="call-to:61485826710">+(61)
+                                            485-826-710</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Quick Links</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">Latest Courses</a></li>
+                                    <li><a href="#">Mission & Vision</a></li>
+                                    <li><a href="#">Join a Carrer</a></li>
+                                    <li><a href="#">Our Approach</a></li>
+                                    <li><a href="#">Pricing Plan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Explore</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Upcoming Events</a></li>
+                                    <li><a href="#">Blog & News</a></li>
+                                    <li><a href="#">FAQ Question</a></li>
+                                    <li><a href="#">Course</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Newsletter</h6>
+                            </div>
+                            <div class="body">
+                                <p class="disc">Subscribe Our newsletter get update our new course</p>
+                                <form action="#">
+                                    <div class="input-area-fill">
+                                        <input type="email" placeholder="Enter Your Email" required>
+                                        <button> Subscribe</button>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input type="checkbox" id="exampleCheck1">
+                                        <label for="exampleCheck1">I agree to the terms of use and privacy
+                                            policy.</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                    </div>
+                    <!-- footer main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area-one-border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-area-one">
+                            <p>Copyright © 2024 All Rights Reserved by Studyhub</p>
+                            <div class="social-copyright">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer call to action area end -->
+    <!-- cart area start -->
+
+    <!-- cart area start -->
+    <div class="cart-bar">
+        <div class="cart-header">
+            <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
+            <div class="close-cart"><i class="fal fa-times"></i></div>
+        </div>
+        <div class="product-area">
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb"></div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Construct Map</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">3 ×</span>
+                            <span class="product-price">$198.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="3">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb"></div>
+                    <div class="item-wrapper">
+                        <span class="product-name"> Bridge product</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">2 ×</span>
+                            <span class="product-price">$88.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item last-child">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb"></div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Labour helmet</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">1 ×</span>
+                            <span class="product-price">$289.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-bottom-area">
+            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
+                FOR FREE SHIPPING</span>
+            <span class="total-price">TOTAL: <span class="price">$556</span></span>
+            <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
+            <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
+        </div>
+    </div>
+    <!-- cart area edn -->
+    <!-- cart area edn -->
+
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="{% static 'images/banner/04.jpg' %}" alt="elevate">
+            </div>
+            <div class="inner-content">
+                <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+                <p class="disc">
+                    We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                    master new technologies.
+                </p>
+                <div class="footer">
+                    <h4 class="title">Got a project in mind?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Home</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="index.html">Main Home</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Online Course</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Course Hub</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Distance Learning</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Single Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-six.html">Language Academy</a></li>
+                            <li><a class="mobile-menu-link" href="index-seven.html">Gym Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-eight.html">Kitchen Coach</a></li>
+                            <li><a class="mobile-menu-link" href="index-nine.html">Course Portal</a></li>
+                            <li><a class="mobile-menu-link" href="index-ten.html">Business Coach</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="about-two.html">About Us Two</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Profile</a></li>
+                            <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Zoom</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="zoom-meeting.html"></a>Zoom Meeting</li>
+                                    <li><a href="zoom-details.html"></a>Zoom Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Event</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="event.html"></a>Event</li>
+                                    <li><a href="event-two.html"></a>Event Two</li>
+                                    <li><a href="event-details.html"></a>Event Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Shop</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="shop.html"></a>Shop</li>
+                                    <li><a href="product-details.html"></a>Product Details</li>
+                                    <li><a href="checkout.html"></a>Checkout</li>
+                                    <li><a href="cart.html"></a>Cart</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Course</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-one.html">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-two.html">Course List</a></li>
+                            <li><a class="mobile-menu-link" href="course-three.html">Course Grid</a></li>
+                            <li><a class="mobile-menu-link" href="course-four.html">Course List Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-five.html">Course Grid Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-six.html">Course Filter</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course.html">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-two.html">Courses Details V2</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-three.html">Courses Details V3</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-four.html">Courses Details V4</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-five.html">Courses Details V5</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-free.html">Courses Details Free</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Others</a></li>
+                            <li><a class="mobile-menu-link" href="become-instructor.html">Become an Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Instructor Profile</a></li>
+                            <li><a class="mobile-menu-link" href="instructor.html">Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="pricing.html">Membership Plan</a></li>
+                            <li><a class="mobile-menu-link" href="log-in.html">Log In</a></li>
+                            <li><a class="mobile-menu-link" href="registration.html">Registration</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Dashboard</a>
+                        <ul class="submenu mm-collapse">
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Instructor Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="dashboard.html"></a>Dashboard</li>
+                                    <li><a href="my-profile.html"></a>My Profile</li>
+                                    <li><a href="enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="wishlist.html"></a>Wishlist</li>
+                                    <li><a href="reviews.html"></a>Reviews</li>
+                                    <li><a href="quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="order-history.html"></a>Order History</li>
+                                    <li><a href="question-answer.html"></a>Question Answer</li>
+                                    <li><a href="calender.html"></a>Calender</li>
+                                    <li><a href="my-course.html"></a>My Course</li>
+                                    <li><a href="announcement.html"></a>Announcement</li>
+                                    <li><a href="assignments.html"></a>Assignments</li>
+                                    <li><a href="certificate.html"></a>Certificate</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Students Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="student-dashboard.html"></a>Dashboard</li>
+                                    <li><a href="student-profile.html"></a>My Profile</li>
+                                    <li><a href="student-enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="student-wishlist.html"></a>Wishlist</li>
+                                    <li><a href="student-reviews.html"></a>Reviews</li>
+                                    <li><a href="student-quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="student-order-history.html"></a>Order History</li>
+                                    <li><a href="student-question-answer.html"></a>Question Answer</li>
+                                    <li><a href="student-calender.html"></a>Calender</li>
+                                    <li><a href="student-settings.html"></a>Students Settings</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="buttons-area">
+                <a href="#" class="rts-btn btn-border">Log In</a>
+                <a href="#" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <!-- modal -->
+    <div id="myModal-1" class="modal fade" role="dialog">
+        <div class="modal-dialog bg_image">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-light fa-x"></i></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="inner-content">
+                        <div class="title-area">
+                            <span class="pre">Get Our Courses Free</span>
+                            <h4 class="title">Wonderful for Learning</h4>
+                        </div>
+                        <form action="#">
+                            <input type="text" placeholder="Your Mail.." required>
+                            <button>Download Now</button>
+                            <span>Your information will never be shared with any third party</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+    <!-- offcanvase search -->
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- offcanvase search -->
+    <div id="anywhere-home" class="">
+    </div>
+
+    <!-- all scripts -->
+    <!-- jquery min js -->
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <!-- jquery ui js -->
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <!-- metismenu js -->
+    <script src="{% static 'js/vendor/metismenu.js' %}"></script>
+    <!-- magnific popup js-->
+    <script src="{% static 'js/vendor/magnifying-popup.js' %}"></script>
+    <!-- swiper JS 10.2.0 -->
+    <script src="{% static 'js/plugins/swiper.js' %}"></script>
+    <!-- counterup js -->
+    <script src="{% static 'js/plugins/counterup.js' %}"></script>
+    <!-- waypoint js -->
+    <script src="{% static 'js/vendor/waypoint.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'js/vendor/waw.js' %}"></script>
+    <!-- isotop mesonary -->
+    <script src="{% static 'js/plugins/isotop.js' %}"></script>
+    <!-- jquery imageloaded -->
+    <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- resize sensor js -->
+    <script src="{% static 'js/plugins/resizer-sensor.js' %}"></script>
+    <!-- sticky sidebar -->
+    <script src="{% static 'js/plugins/sticky-sidebar.js' %}"></script>
+    <!-- gsap twinmax js -->
+    <script src="{% static 'js/plugins/twinmax.js' %}"></script>
+    <!-- chroma js -->
+    <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
+    <!-- bootstrap 5.0.2 -->
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
+    <!-- dymanic Contact Form -->
+    <script src="{% static 'js/plugins/contact.form.js' %}"></script>
+    <!-- calender js -->
+    <script src="{% static 'js/plugins/calender.js' %}"></script>
+    <!-- main Js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

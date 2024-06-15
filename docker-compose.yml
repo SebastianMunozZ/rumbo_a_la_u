@@ -11,10 +11,16 @@ services:
       MYSQL_USER: seba
       MYSQL_PASSWORD: seba
       MYSQL_ROOT_PASSWORD: root
-  backend:
-    build: ./rumbo_a_la_u
+    networks:
+      - portafolio-net
+
+  rumbo_a_la_u:
+    build: ./rumbo_a_la_u_web
     ports:
       - "8000:8000"
+    command: ["sh", "/app/entrypoint.sh", "db", "3306"]
+    volumes:
+      - ./rumbo_a_la_u_web/:/app/rumbo_a_la_u_web
     depends_on:
       - db
     environment:
@@ -22,7 +28,8 @@ services:
       - DATABASE_NAME=rumbo_a_la_u
       - DATABASE_USER=seba
       - DATABASE_PASSWORD=seba
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
+    networks:
+      - portafolio-net
+
+networks:
+  portafolio-net:
