@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.views import View
+from django.core.mail import send_mail
 from .models import Usuarios, Profesor, Alumno
 from django.contrib.auth.hashers import make_password
 
@@ -18,7 +19,14 @@ class RegisterView(View):
             messages.error(request, 'El correo electrónico ya está en uso')
             return redirect('registration')
 
-        
+        send_mail(
+            'Bienvenido a Rumbo a La U',
+            'Gracias por registrarte en nuestra plataforma.',
+            'rumboalau@outlook.com',
+            [correo],
+            fail_silently=False,
+        )
+
         user = Usuarios(
             nombre=nombre,
             username=username,
@@ -29,7 +37,6 @@ class RegisterView(View):
         alumno = Alumno(user=user)
         alumno.save()
 
-        
 
         return redirect('login')
     
