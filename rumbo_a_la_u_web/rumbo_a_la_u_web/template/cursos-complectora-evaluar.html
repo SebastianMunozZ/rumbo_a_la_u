@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -38,11 +39,11 @@
                 <div class="col-lg-12">
                     <div class="single-course-left-align-wrapper">
                         <div class="meta-area">
-                            <a href="index.html">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                             <i class="fa-solid fa-chevron-right"></i>
-                            <a href="cursos.html">Cursos</a>
+                            <a href="{% url 'cursos' %}">Cursos</a>
                             <i class="fa-solid fa-chevron-right"></i>
-                            <a class="active" href="cursos-complectora-evaluar.html">Curso "Evaluar"</a>
+                            <a class="active" href="{% url 'cursos-complectora-evaluar' %}">Curso "Evaluar"</a>
                         </div>
                         <h1 class="title">
                             Evaluar: Reflexionar y juzgar a partir del análisis de la forma o contenido
@@ -67,7 +68,7 @@
                         </div>
                         <div class="author-area">
                             <div class="author">
-                                <img src="assets/images/breadcrumb/prof-complectora.png" alt="breadcrumb">
+                                <img src="{% static 'images/breadcrumb/prof-complectora.png' %}" alt="breadcrumb">
                                 <h6 class="name"><span>By</span> Emma Elizabeth</h6>
                             </div>
                             <p> <span>Categorías: </span> Comprensión Lectora</p>
@@ -618,8 +619,8 @@
                         <div class="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <!-- single instructor area staret -->
                             <div class="single-instructor-area-details">
-                                <a href="profesor-profile-complectora.html" class="thumbnail">
-                                    <img src="assets/images/instructor/profe-complectora.png" alt="instructor">
+                                <a href="{% url 'profesor-profile-complectora' %}" class="thumbnail">
+                                    <img src="{% static 'images/instructor/profe-complectora.png' %}" alt="instructor">
                                 </a>
                                 <div class="inner-instrustor-area">
                                     <h5 class="title">Emma Elizabeth</h5>
@@ -776,7 +777,8 @@
                                 <div class="indevidual-rating-area">
                                     <!-- author-area -->
                                     <div class="author-area">
-                                        <img src="assets/images/instructor/resena-luisfernandez.png" alt="instructor">
+                                        <img src="{% static 'images/instructor/resena-luisfernandez.png' %}"
+                                            alt="instructor">
                                         <div class="information">
                                             <span>Luis Fernandez</span>
                                             <div class="stars">
@@ -811,7 +813,8 @@
                                 <div class="indevidual-rating-area">
                                     <!-- author-area -->
                                     <div class="author-area">
-                                        <img src="assets/images/instructor/resena-fernandoaguilar.png" alt="instructor">
+                                        <img src="{% static 'images/instructor/resena-fernandoaguilar.png' %}"
+                                            alt="instructor">
                                         <div class="information">
                                             <span>Fernando Aguilar</span>
                                             <div class="stars">
@@ -850,13 +853,13 @@
                     <div class="wrapper-bottom-course-details-page g-5 row mt--50 pr--60 pr_sm--0 pl_sm--0">
                         <div class="title-between-area pr--150">
                             <h5 class="title mb-0">Más cursos de Emma Elizabeth</h5>
-                            <a href="cursos.html" class="rts-btn with-arrow p-0">Ver todos los cursos <i
+                            <a href="{% url 'cursos' %}" class="rts-btn with-arrow p-0">Ver todos los cursos <i
                                     class="fa-light fa-arrow-right"></i></a>
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-12">
                             <div class="rts-single-course">
-                                <a href="cursos-complectora-localizar.html" class="thumbnail">
-                                    <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
+                                <a href="{% url 'cursos-complectora-localizar' %}" class="thumbnail">
+                                    <img src="{% static 'images/course/cursos-comprensionlectora.png' %}" alt="course">
                                     <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
                                         <i class="fa-sharp fa-light fa-bookmark"></i>
                                     </div>
@@ -875,7 +878,7 @@
                                             <span>60 alumnos</span>
                                         </div>
                                     </div>
-                                    <a href="cursos-complectora-localizar.html">
+                                    <a href="{% url 'cursos-complectora-localizar' %}">
                                         <h5 class="title">Localizar: Identificando, reconociendo y extrayendo datos
                                             textuales presentes en nuestra lectura</h5>
                                     </a>
@@ -903,8 +906,8 @@
                         </div>
                         <div class="col-lg-5 col-md-6 col-sm-12">
                             <div class="rts-single-course">
-                                <a href="cursos-complectora-interpretar.html" class="thumbnail">
-                                    <img src="assets/images/course/cursos-comprensionlectora.png" alt="course">
+                                <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail">
+                                    <img src="{% static 'images/course/cursos-comprensionlectora.png' %}" alt="course">
                                     <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
                                         <i class="fa-sharp fa-light fa-bookmark"></i>
                                     </div>
@@ -923,7 +926,7 @@
                                             <span>60 alumnos</span>
                                         </div>
                                     </div>
-                                    <a href="cursos-complectora-interpretar.html">
+                                    <a href="{% url 'cursos-complectora-interpretar' %}">
                                         <h5 class="title">Interpretar: Estableciendo significados a partir de relaciones
                                             entre diferentes partes de un texto</h5>
                                     </a>
@@ -960,7 +963,7 @@
                         <!-- single course-sidebar -->
                         <div class="course-side-bar">
                             <div class="thumbnail">
-                                <img src="assets/images/course/complectora.png" alt="">
+                                <img src="{% static 'images/course/complectora.png' %}" alt="">
                                 <div class="vedio-icone">
                                     <a class="video-play-button play-video popup-video"
                                         href="https://www.youtube.com/watch?v=ezbJwaLmOeM">
@@ -1045,7 +1048,7 @@
                                 <h5 class="title">Un curso realizado por</h5>
                                 <div class="body">
                                     <div class="author">
-                                        <img src="assets/images/course/prof-complectora.png" alt="">
+                                        <img src="{% static 'images/course/prof-complectora.png' %}" alt="">
                                         <span>Emma Elizabeth</span>
                                     </div>
 
@@ -1176,7 +1179,7 @@
                         <div class="footer-singl-wized left-logo">
                             <div class="head">
                                 <a href="#">
-                                    <img src="assets/images/logo/logo-1.svg" alt="logo" loading="lazy">
+                                    <img src="{% static 'images/logo/logo-1.svg' %}" alt="logo" loading="lazy">
                                 </a>
                             </div>
                             <div class="body">
@@ -1280,20 +1283,23 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hi, Welcome back!</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">¡Bienvenido de nuevo!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="#" class="login-form">
-                        <input type="text" placeholder="Username of Email Address" required>
-                        <input type="password" placeholder="Password" required>
+                        <input type="text" placeholder="Correo electrónico" required>
+                        <input type="password" placeholder="Contraseña" required>
                         <div class="d-flex mb--20 align-items-center">
                             <input type="checkbox" id="examplecheck-modal">
-                            <label for="examplecheck-modal">I agree to the terms of use and privacy policy.</label>
+                            <label for="examplecheck-modal">Acepto las condiciones de uso y la política de
+                                privacidad</label>
                         </div>
-                        <button type="submit" class="rts-btn btn-primary">Sign In</button>
+                        <button type="submit" class="rts-btn btn-primary">Iniciar Sesión</button>
 
-                        <p class="dont-acc mt--20">Dont Have an Account? <a href="registration.html">Sign-up</a> </p>
+                        <p class="dont-acc mt--20">¿Aun no tienes una cuenta? <a
+                                href="{% url 'registration' %}">Registrate</a>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -1311,7 +1317,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -1338,7 +1345,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -1365,7 +1373,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="assets/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
