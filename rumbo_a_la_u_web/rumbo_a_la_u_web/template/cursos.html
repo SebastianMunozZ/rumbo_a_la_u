@@ -352,9 +352,9 @@
                                 <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                     <!-- rts single course -->
                                     <div class="rts-single-course">
-                                        <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
-                                                alt="course">
+                                        <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail"></a>
+                                        <img src="{{curso.miniatura.url}}"
+                                            alt="course">
                                         </a>
                                         <div class="save-icon" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal-login">

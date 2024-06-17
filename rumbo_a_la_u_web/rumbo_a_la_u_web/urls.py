@@ -15,6 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from .views import index
@@ -26,6 +28,7 @@ from .views_login import LoginView
 from .views_sell_course import SellCourseView
 from .views_cart import load as load_viewcart
 from .views_sell_course import SellCourseView
+from .views_blogcomments import CommentView
 from .views import transbankpay_load, transbankpay_commitpay
 from .views import error
 from .views import sobrenosotros  # Import the missing view function
@@ -70,14 +73,10 @@ urlpatterns = [
     path('profesor-asignaciontareas', profesorasignaciontareas,
          name="profesor-asignaciontareas"),
     path('profesor-calendario', profesorcalendario, name="profesor-calendario"),
-    path('profesor-certificado', profesorcertificado,
-         name="profesor-certificado"),
-    path('profesor-configuraciones', profesorconfiguraciones,
-         name="profesor-configuraciones"),
-    path('profesor-dashboard', profesorconfiguraciones,
-         name="profesor-configuraciones"),
-    path('profesor-evaluaciones', profesorevaluaciones,
-         name="profesor-evaluaciones"),
+    path('profesor-certificado', profesorcertificado, name="profesor-certificado"),
+    path('profesor-configuraciones', profesorconfiguraciones, name="profesor-configuraciones"),
+    path('profesor-dashboard', profesorconfiguraciones, name="profesor-dashboard"),
+    path('profesor-evaluaciones', profesorevaluaciones, name="profesor-evaluaciones"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
     path('profesor-miscursos', profesormiscursos, name="profesor-miscursos"),
@@ -109,6 +108,7 @@ urlpatterns = [
     path('blogblogdet03', blogblogdet03, name="blogblogdet03"),
     path('blogblogdet04', blogblogdet04, name="blogblogdet04"),
     path('blogblogdet05', blogblogdet05, name="blogblogdet05"),
+    path('comentario/', CommentView.as_view(), name='comentario'),
 
     # Seccion Cursos
     path('cursos', cursos, name="cursos"),
@@ -176,4 +176,4 @@ urlpatterns = [
     path('zoom-reuniones', zoomreuniones, name="zoom-reuniones"),
     path('zoom-prueba', zoomprueba, name="zoom-prueba"),
     path('generate_signature/', generatesignature, name='generate_signature'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
