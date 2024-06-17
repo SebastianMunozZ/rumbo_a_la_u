@@ -1,0 +1,1471 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
+    <!-- custom style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- header style one -->
+    <!-- header style one -->
+    {% include 'header.html' %}
+    <!-- header style end -->
+    <!-- header style end -->
+
+    <!-- course details breadcrumb -->
+    <div class="course-details-breadcrumb-1 bg_image rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-course-left-align-wrapper">
+                        <div class="meta-area">
+                            <a href="{% url 'index' %}">Inicio</a>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a href="{% url 'cursos' %}">Cursos</a>
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <a class="active" href="{% url 'cursos-fisica-mecanica' %}">Curso "Mecánica"</a>
+                        </div>
+                        <h1 class="title">
+                            Mecánica: Movimiento traslacional de cuerpos
+                        </h1>
+                        <div class="rating-area">
+                            <div class="stars-area">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="students">
+                                <i class="fa-thin fa-users"></i>
+                                <span>3054 Alumnos</span>
+                            </div>
+                            <div class="calender-area-stars">
+                                <i class="fa-light fa-calendar-lines-pen"></i>
+                                <span>Ultima vez actualizado: 04/06/2024</span>
+                            </div>
+                        </div>
+                        <div class="author-area">
+                            <div class="author">
+                                <img src="{% static 'images/breadcrumb/prof-fisica.png' %}" alt="breadcrumb">
+                                <h6 class="name"><span>By </span> Lucía Dominguez</h6>
+                            </div>
+                            <p> <span>Categorías: </span> Física</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- course details breadcrumb end -->
+
+
+    <!-- course details area start -->
+    <div class="rts-course-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8 order-cl-1 order-lg-1 order-md-2 order-sm-2 order-2">
+                    <div class="course-details-btn-wrapper pb--50">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">Información del Curso</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link " id="profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                    aria-selected="false">Contenido del Curso</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                                    type="button" role="tab" aria-controls="contact"
+                                    aria-selected="false">Docente</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contacts-tab" data-bs-toggle="tab"
+                                    data-bs-target="#contacts" type="button" role="tab" aria-controls="contacts"
+                                    aria-selected="false">Reseñas</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content mt--50" id="myTabContent">
+                        <div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="course-content-wrapper">
+                                <h5 class="title">Acerca del curso</h5>
+                                <p class="disc">
+                                    Adentrate en el emocionante universo de la mecánica, explorando cómo los objetos se
+                                    desplazan en el espacio. A través de
+                                    lecciones interactivas y ejemplos prácticos, adquirirás una sólida comprensión de
+                                    los principios físicos que rigen el
+                                    movimiento traslacional. Prepárate para aplicar este conocimiento en situaciones del
+                                    mundo real mientras exploramos
+                                    juntos las fascinantes leyes que gobiernan nuestro universo.
+                                </p>
+                                <h5 class="title">Descripción</h5>
+                                <p class="disc">
+                                    En esta área temática se
+                                    evaluará la capacidad
+                                    del y de la postulante de
+                                    analizar informaciones,
+                                    investigaciones, conceptos
+                                    o leyes científicas,
+                                    relacionadas con las causas
+                                    del movimiento traslacional
+                                    de cuerpos, en distintos
+                                    contextos, así como también
+                                    la presión sobre la materia
+                                    y, además, comprender el
+                                    funcionamiento y utilidad
+                                    de diversos aparatos o
+                                    dispositivos tecnológicos
+                                    que utilizan fuerzas.
+                                </p>
+
+                                <div class="module-wrapper">
+                                    <h6 class="title">¿Qué aprenderás?</h6>
+                                    <div class="inner-content">
+                                        <div class="single-wrapper">
+                                            <div class="single-codule">
+                                                <i class="fa-regular fa-check"></i>
+                                                <p>Leyes de Newton en cuerpos que se desplazan con velocidad
+                                                    constante o aceleración constante</p>
+                                            </div>
+                                            <div class="single-codule">
+                                                <i class="fa-regular fa-check"></i>
+                                                <p>Fuerza de roce estático y cinético debido al contacto entre
+                                                    superficies</p>
+                                            </div>
+                                            <div class="single-codule">
+                                                <i class="fa-regular fa-check"></i>
+                                                <p>Fuerza de roce con el aire en términos cualitativos</p>
+                                            </div>
+                                            <div class="single-codule">
+                                                <i class="fa-regular fa-check"></i>
+                                                <p>Fuerza peso, elástica (ley de Hooke), tensión y normal, entre
+                                                    otras</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="course-content-wrapper-main">
+                                <h5 class="title">Contenido del Curso</h5>
+
+                                <!-- course content accordion area -->
+                                <div class="accordion mt--30" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                <span>Introducción</span>
+                                                <span>3 Lecturas . 9 min</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <span class="play">Preview</span>
+                                                        <span>9 min</span>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <span class="play">Preview</span>
+                                                        <span>9 min</span>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <span>Learn to Storyboard</span>
+                                                <span>7 Lecturas . 120 min</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Become a storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>LEarning Fundamentsl Elementor</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Enter to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Main Part of the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Function About PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                <span>How to draw characters, layouts, and scenes</span>
+                                                <span>7 Lecturas . 83 min</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Become a storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>LEarning Fundamentsl Elementor</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Enter to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Main Part of the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Function About PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                <span>1-point and 2-point perspective</span>
+                                                <span>7 Lecturas . 72 min</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Become a storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>LEarning Fundamentsl Elementor</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Enter to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Main Part of the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Function About PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFive">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                aria-expanded="false" aria-controls="collapseFive">
+                                                <span>Digital drawing application</span>
+                                                <span>7 Lecturas . 90 min</span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Become a storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>storyboard artist</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Introduction PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>LEarning Fundamentsl Elementor</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Enter to the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Main Part of the course</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                                <!-- play single area start -->
+                                                <a href="#" class="play-vedio-wrapper">
+                                                    <div class="left">
+                                                        <i class="fa-light fa-circle-play"></i>
+                                                        <span>Function About PHP</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <i class="fa-regular fa-lock"></i>
+                                                    </div>
+                                                </a>
+                                                <!-- play single area end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- course content accordion area end -->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <!-- single instructor area staret -->
+                            <div class="single-instructor-area-details">
+                                <a href="{% url 'profesor-profile-fisica' %}" class="thumbnail">
+                                    <img src="{% static 'images/instructor/profe-fisica.png' %}" alt="instructor">
+                                </a>
+                                <div class="inner-instrustor-area">
+                                    <h5 class="title">Lucía Dominguez</h5>
+                                    <span class="deg">Profesora de Física</span>
+                                    <div class="stars-area-wrapper">
+                                        <div class="stars-area">
+                                            <span>4.5</span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="users-area">
+                                            <i class="fa-light fa-users"></i>
+                                            <span>1350 Alumnos</span>
+                                        </div>
+                                        <div class="users-area">
+                                            <i class="fa-light fa-video"></i>
+                                            <span>26 Cursos</span>
+                                        </div>
+                                    </div>
+                                    <p class="disc">
+                                        Docente titulada de Pedadogía en Educación Media en Física en la Universidad
+                                        Católica
+                                    </p>
+                                    <div class="follow-us">
+                                        <span>Seguir</span>
+                                        <ul>
+                                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single instructor area end -->
+
+                        </div>
+
+                        <div class="tab-pane fade " id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                            <div class="rating-main-wrapper">
+                                <!-- single-top-rating -->
+                                <div class="rating-top-main-wrapper">
+                                    <!-- rating area start -->
+                                    <div class="rating-area-main-wrapper">
+                                        <h2 class="title">4.5</h2>
+                                        <div class="stars-wrapper">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <span>Total 2 Valoraciones</span>
+                                    </div>
+                                    <!-- rating area end -->
+                                    <div class="progress-wrapper-main">
+                                        <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
+                                            data-sal-duration="800">
+                                            <div class="progress-top">
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="parcent">
+                                                    5
+                                                </span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
+                                                    style="width: 100%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="end">
+                                                <span>25 Valoraciones</span>
+                                            </div>
+                                        </div>
+                                        <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
+                                            data-sal-duration="800">
+                                            <div class="progress-top">
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="parcent">
+                                                    4
+                                                </span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
+                                                    style="width: 80%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="end">
+                                                <span>20 Valoraciones</span>
+                                            </div>
+                                        </div>
+                                        <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
+                                            data-sal-duration="800">
+                                            <div class="progress-top">
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="parcent">
+                                                    3
+                                                </span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
+                                                    style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="end">
+                                                <span>5 Valoraciones</span>
+                                            </div>
+                                        </div>
+                                        <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
+                                            data-sal-duration="800">
+                                            <div class="progress-top">
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="parcent">
+                                                    2
+                                                </span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
+                                                    style="width: 40%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="end">
+                                                <span>2 Valoraciones</span>
+                                            </div>
+                                        </div>
+                                        <div class="single-progress-area-h" data-sal-delay="150" data-sal="slide-up"
+                                            data-sal-duration="800">
+                                            <div class="progress-top">
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="parcent">
+                                                    1
+                                                </span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
+                                                    style="width: 20%" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                </div>
+                                            </div>
+                                            <div class="end">
+                                                <span>1 Valoraciones</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-top-rating end-->
+                                <!-- person indevidual rating area  -->
+                                <div class="indevidual-rating-area">
+                                    <!-- author-area -->
+                                    <div class="author-area">
+                                        <img src="{% static 'images/instructor/resena-miguelmorales.png' %}"
+                                            alt="instructor">
+                                        <div class="information">
+                                            <span>Miguel Morales</span>
+                                            <div class="stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="ml--30">Hace 1 semana</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- author-area end -->
+                                    <p class="disc">
+                                        ¡Este curso de física fue una verdadera joya! Explorar el movimiento
+                                        traslacional de cuerpos fue como un emocionante
+                                        viaje al corazón de la mecánica. Los conceptos, aunque desafiantes, fueron
+                                        presentados de manera accesible y con
+                                        ejemplos del mundo real que realmente ayudaron a aclarar las cosas. La
+                                        plataforma en línea era fácil de navegar y el
+                                        equipo de apoyo siempre estuvo disponible para responder preguntas.
+                                        ¡Definitivamente, este curso amplió mi comprensión
+                                        de la física y lo recomendaría a cualquiera que busque aprender de manera
+                                        divertida y efectiva!
+                                    </p>
+                                    <div class="like-love-area">
+                                        <a href="#">
+                                            <i class="fa-sharp fa-light fa-thumbs-up"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- person indevidual rating area end -->
+                                <!-- person indevidual rating area  -->
+                                <div class="indevidual-rating-area">
+                                    <!-- author-area -->
+                                    <div class="author-area">
+                                        <img src="{% static 'images/instructor/resena-jaimeflores.png' %}"
+                                            alt="instructor">
+                                        <div class="information">
+                                            <span>Jaime Flores</span>
+                                            <div class="stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-regular fa-star"></i>
+                                                <span class="ml--30">Hace 1 semana</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- author-area end -->
+                                    <p class="disc">
+                                        ¡Increíblemente enriquecedor! Este curso de física sobre el movimiento
+                                        traslacional de cuerpos superó mis expectativas.
+                                        Desde el primer día, me sentí inmerso en el mundo de la mecánica, gracias a las
+                                        lecciones bien estructuradas y los
+                                        recursos interactivos proporcionados. Los ejercicios prácticos fueron
+                                        desafiantes pero gratificantes, y realmente
+                                        ayudaron a reforzar mi comprensión de los conceptos. ¡Gracias a este curso,
+                                        ahora tengo una comprensión mucho más sólida
+                                        de la física y estoy emocionado de seguir aprendiendo!
+                                    </p>
+                                    <div class="like-love-area">
+                                        <a href="#">
+                                            <i class="fa-sharp fa-light fa-thumbs-up"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- person indevidual rating area end -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 order-cl-2 order-lg-2 order-md-1 order-sm-1 order-1  rts-sticky-column-item">
+                    <!-- right- sticky bar area -->
+                    <div class="right-course-details">
+                        <!-- single course-sidebar -->
+                        <div class="course-side-bar">
+                            <div class="thumbnail">
+                                <img src="{% static 'images/course/fisica.png' %}" alt="">
+                                <div class="vedio-icone">
+                                    <a class="video-play-button play-video popup-video"
+                                        href="https://www.youtube.com/watch?v=ezbJwaLmOeM">
+                                        <span></span>
+                                    </a>
+                                    <div class="video-overlay">
+                                        <a class="video-overlay-close">×</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-area">
+                                <h3 class="title">$24.999</h3>
+                                <h4 class="none">$8.999</h4>
+                                <span class="discount">-36%</span>
+                            </div>
+                            <div class="clock-area">
+                                <i class="fa-light fa-clock"></i>
+                                <span>¡Quedan 2 días para comprar a este precio!</span>
+                            </div>
+                            <a href="#" class="rts-btn btn-primary">Añadir al Carro</a>
+                            <a href="#" class="rts-btn btn-border">Comprar ahora</a>
+
+                            <div class="what-includes">
+                                <span class="m">Garantía de devolución de 30 días</span>
+                                <h5 class="title">Este curso incluye: </h5>
+                                <div class="single-include">
+                                    <div class="left">
+                                        <i class="fa-light fa-chart-bar"></i>
+                                        <span>Niveles</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>Principiante</span>
+                                    </div>
+                                </div>
+                                <div class="single-include">
+                                    <div class="left">
+                                        <i class="fa-light fa-timer"></i>
+                                        <span>Duración</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>6 horas 56 minutos</span>
+                                    </div>
+                                </div>
+                                <div class="single-include">
+                                    <div class="left">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                        <span>Tema</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>Interpretar</span>
+                                    </div>
+                                </div>
+                                <div class="single-include">
+                                    <div class="left">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                        <span>Actualización</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>29 Octubre, 2024 </span>
+                                    </div>
+                                </div>
+                                <div class="single-include">
+                                    <div class="left">
+                                        <i class="fa-sharp fa-light fa-file-certificate"></i>
+                                        <span>Certificado</span>
+                                    </div>
+                                    <div class="right">
+                                        <span>Certificado de finalización </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single course-sidebar end -->
+                    </div>
+                    <!-- right- sticky bar area end -->
+                    <!-- right- sticky bar area -->
+                    <div class="right-course-details mt--30">
+                        <!-- single course-sidebar -->
+                        <div class="course-side-bar">
+                            <!-- course single sidebar -->
+                            <div class="course-single-information">
+                                <h5 class="title">Un curso realizado por</h5>
+                                <div class="body">
+                                    <div class="author">
+                                        <img src="{% static 'images/course/prof-fisica.png' %}" alt="">
+                                        <span>Lucía Dominguez</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+                            <!-- course single sidebar -->
+                            <div class="course-single-information">
+                                <h5 class="title">El material incluye</h5>
+                                <div class="body">
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Fechas límite flexibles
+                                    </div>
+                                    <!-- ingle check end -->
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Horas de demostración en directo
+                                    </div>
+                                    <!-- ingle check end -->
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Resolución de dudas vía mensaje
+                                    </div>
+                                    <!-- ingle check end -->
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Más de 200 recursos descargables
+                                    </div>
+                                    <!-- ingle check end -->
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+                            <!-- course single sidebar -->
+                            <div class="course-single-information">
+                                <h5 class="title">Requisitos</h5>
+                                <div class="body">
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Familiaridad con computadores y otros dispositivos
+                                    </div>
+                                    <!-- ingle check end -->
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        ¡Constancia, perseverancia y muchas ganas de aprender!
+                                    </div>
+                                    <!-- ingle check end -->
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+                            <!-- course single sidebar -->
+                            <div class="course-single-information">
+                                <h5 class="title">Tags</h5>
+                                <div class="body">
+                                    <div class="tags-wrapper">
+                                        <!-- single tags -->
+                                        <span>PAES</span>
+                                        <span>Física</span>
+
+                                        <!-- single tags end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+                            <!-- course single sidebar -->
+                            <div class="course-single-information">
+                                <h5 class="title">Compartir</h5>
+                                <div class="body">
+                                    <!-- social-share-course-sidebar -->
+                                    <div class="social-share-course-side-bar">
+                                        <ul>
+                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- social-share-course-sidebar end -->
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+
+                            <!-- course single sidebar -->
+                            <div class="course-single-information last">
+                                <h5 class="title">Audiencia</h5>
+                                <div class="body">
+                                    <!-- ingle check -->
+                                    <div class="single-check">
+                                        <i class="fa-light fa-circle-check"></i>
+                                        Apto para principiantes e intermedios
+                                    </div>
+                                    <!-- ingle check end -->
+                                </div>
+                            </div>
+                            <!-- course single sidebar end-->
+                        </div>
+                        <!-- single course-sidebar end -->
+                    </div>
+                    <!-- right- sticky bar area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- course details area end -->
+
+    <!-- cart area start -->
+
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
+
+    <!-- cart area edn -->
+
+    <!-- Modal -->
+    <div class="modal login-pupup-modal fade" id="exampleModal-login" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¡Bienvenido de nuevo!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="login-form">
+                        <input type="text" placeholder="Correo electrónico" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <div class="d-flex mb--20 align-items-center">
+                            <input type="checkbox" id="examplecheck-modal">
+                            <label for="examplecheck-modal">Acepto las condiciones de uso y la política de
+                                privacidad</label>
+                        </div>
+                        <button type="submit" class="rts-btn btn-primary">Iniciar Sesión</button>
+                        <p class="dont-acc mt--20">¿Aun no tienes una cuenta? <a
+                                href="{% url 'registration' %}">Registrate</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart area start -->
+
+    <!-- cart area start -->
+    <div class="cart-bar">
+        <div class="cart-header">
+            <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
+            <div class="close-cart"><i class="fal fa-times"></i></div>
+        </div>
+        <div class="product-area">
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Construct Map</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">3 ×</span>
+                            <span class="product-price">$198.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="3">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name"> Bridge product</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">2 ×</span>
+                            <span class="product-price">$88.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item last-child">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Labour helmet</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">1 ×</span>
+                            <span class="product-price">$289.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-bottom-area">
+            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
+                FOR FREE SHIPPING</span>
+            <span class="total-price">TOTAL: <span class="price">$556</span></span>
+            <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
+            <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
+        </div>
+    </div>
+    <!-- cart area edn -->
+    <!-- cart area edn -->
+
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
+            </div>
+            <div class="inner-content">
+                <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+                <p class="disc">
+                    We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                    master new technologies.
+                </p>
+                <div class="footer">
+                    <h4 class="title">Got a project in mind?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Home</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="index.html">Main Home</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Online Course</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Course Hub</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Distance Learning</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Single Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-six.html">Language Academy</a></li>
+                            <li><a class="mobile-menu-link" href="index-seven.html">Gym Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-eight.html">Kitchen Coach</a></li>
+                            <li><a class="mobile-menu-link" href="index-nine.html">Course Portal</a></li>
+                            <li><a class="mobile-menu-link" href="index-ten.html">Business Coach</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="about-two.html">About Us Two</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Profile</a></li>
+                            <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Zoom</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="zoom-meeting.html"></a>Zoom Meeting</li>
+                                    <li><a href="zoom-details.html"></a>Zoom Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Event</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="event.html"></a>Event</li>
+                                    <li><a href="event-two.html"></a>Event Two</li>
+                                    <li><a href="event-details.html"></a>Event Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Shop</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="shop.html"></a>Shop</li>
+                                    <li><a href="product-details.html"></a>Product Details</li>
+                                    <li><a href="checkout.html"></a>Checkout</li>
+                                    <li><a href="cart.html"></a>Cart</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Course</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-one.html">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-two.html">Course List</a></li>
+                            <li><a class="mobile-menu-link" href="course-three.html">Course Grid</a></li>
+                            <li><a class="mobile-menu-link" href="course-four.html">Course List Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-five.html">Course Grid Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-six.html">Course Filter</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course.html">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-two.html">Courses Details V2</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-three.html">Courses Details V3</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-four.html">Courses Details V4</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-five.html">Courses Details V5</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-free.html">Courses Details Free</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Others</a></li>
+                            <li><a class="mobile-menu-link" href="become-instructor.html">Become an Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Instructor Profile</a></li>
+                            <li><a class="mobile-menu-link" href="instructor.html">Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="pricing.html">Membership Plan</a></li>
+                            <li><a class="mobile-menu-link" href="log-in.html">Log In</a></li>
+                            <li><a class="mobile-menu-link" href="registration.html">Registration</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Dashboard</a>
+                        <ul class="submenu mm-collapse">
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Instructor Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="dashboard.html"></a>Dashboard</li>
+                                    <li><a href="my-profile.html"></a>My Profile</li>
+                                    <li><a href="enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="wishlist.html"></a>Wishlist</li>
+                                    <li><a href="reviews.html"></a>Reviews</li>
+                                    <li><a href="quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="order-history.html"></a>Order History</li>
+                                    <li><a href="question-answer.html"></a>Question Answer</li>
+                                    <li><a href="calender.html"></a>Calender</li>
+                                    <li><a href="my-course.html"></a>My Course</li>
+                                    <li><a href="announcement.html"></a>Announcement</li>
+                                    <li><a href="assignments.html"></a>Assignments</li>
+                                    <li><a href="certificate.html"></a>Certificate</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Students Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="student-dashboard.html"></a>Dashboard</li>
+                                    <li><a href="student-profile.html"></a>My Profile</li>
+                                    <li><a href="student-enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="student-wishlist.html"></a>Wishlist</li>
+                                    <li><a href="student-reviews.html"></a>Reviews</li>
+                                    <li><a href="student-quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="student-order-history.html"></a>Order History</li>
+                                    <li><a href="student-question-answer.html"></a>Question Answer</li>
+                                    <li><a href="student-calender.html"></a>Calender</li>
+                                    <li><a href="student-settings.html"></a>Students Settings</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="buttons-area">
+                <a href="#" class="rts-btn btn-border">Log In</a>
+                <a href="#" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <!-- modal -->
+    <div id="myModal-1" class="modal fade" role="dialog">
+        <div class="modal-dialog bg_image">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-light fa-x"></i></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="inner-content">
+                        <div class="title-area">
+                            <span class="pre">Get Our Courses Free</span>
+                            <h4 class="title">Wonderful for Learning</h4>
+                        </div>
+                        <form action="#">
+                            <input type="text" placeholder="Your Mail.." required>
+                            <button>Download Now</button>
+                            <span>Your information will never be shared with any third party</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+    <!-- offcanvase search -->
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- offcanvase search -->
+    <div id="anywhere-home" class="">
+    </div>
+
+    <!-- all scripts -->
+    <!-- jquery min js -->
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <!-- jquery ui js -->
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <!-- metismenu js -->
+    <script src="{% static 'js/vendor/metismenu.js' %}"></script>
+    <!-- magnific popup js-->
+    <script src="{% static 'js/vendor/magnifying-popup.js' %}"></script>
+    <!-- swiper JS 10.2.0 -->
+    <script src="{% static 'js/plugins/swiper.js' %}"></script>
+    <!-- counterup js -->
+    <script src="{% static 'js/plugins/counterup.js' %}"></script>
+    <!-- waypoint js -->
+    <script src="{% static 'js/vendor/waypoint.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'js/vendor/waw.js' %}"></script>
+    <!-- isotop mesonary -->
+    <script src="{% static 'js/plugins/isotop.js' %}"></script>
+    <!-- jquery imageloaded -->
+    <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- resize sensor js -->
+    <script src="{% static 'js/plugins/resizer-sensor.js' %}"></script>
+    <!-- sticky sidebar -->
+    <script src="{% static 'js/plugins/sticky-sidebar.js' %}"></script>
+    <!-- gsap twinmax js -->
+    <script src="{% static 'js/plugins/twinmax.js' %}"></script>
+    <!-- chroma js -->
+    <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
+    <!-- bootstrap 5.0.2 -->
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
+    <!-- dymanic Contact Form -->
+    <script src="{% static 'js/plugins/contact.form.js' %}"></script>
+    <!-- calender js -->
+    <script src="{% static 'js/plugins/calender.js' %}"></script>
+    <!-- main Js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>

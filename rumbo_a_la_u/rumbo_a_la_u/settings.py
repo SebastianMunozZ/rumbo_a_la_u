@@ -11,7 +11,19 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sys
+import logging
 
+# Configuración básica de logging
+logging.basicConfig(
+    # Configura el nivel de registro a DEBUG para mostrar todos los mensajes
+    level=logging.DEBUG,
+    # Redirige la salida a sys.stdout (la salida estándar)
+    stream=sys.stdout,
+    # Formato del mensaje de registro
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,8 +49,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # rumbo_a_la_u.rumbo_a_la_u',
     'api',
     'rest_framework',
+    'coreapi',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +70,7 @@ ROOT_URLCONF = 'rumbo_a_la_u.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'development-pkg', 'dest'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,15 +129,29 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = "index-four"
+LOGOUT_REDIRECT_URL = "index-four"
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'development-pkg', 'dest',
+                 'C:\\rumbo_a_la_u\\rumbo_a_la_u_web\\rumbo_a_la_u_web\\static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
