@@ -31,15 +31,14 @@
                     <!-- single sized  footer  -->
                     <div class="footer-singl-wized">
                         <div class="head">
-                            <h6 class="title">Quick Links</h6>
+                            <h6 class="title">Enlaces directos</h6>
                         </div>
                         <div class="body">
                             <ul class="menu">
-                                <li><a href="#">Latest Courses</a></li>
+                                <li><a href="{% url 'cursos' %}">Cursos</a></li>
                                 <li><a href="#">Mission & Vision</a></li>
-                                <li><a href="#">Join a Carrer</a></li>
-                                <li><a href="#">Our Approach</a></li>
-                                <li><a href="#">Pricing Plan</a></li>
+                                <li><a href="{% url 'profesor-registro'}">Conviertete en Profesor</a></li>
+                                <li><a href="{% url 'planesdemembresia' %}">Planes de Membresía</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,15 +46,14 @@
                     <!-- single sized  footer  -->
                     <div class="footer-singl-wized">
                         <div class="head">
-                            <h6 class="title">Explore</h6>
+                            <h6 class="title">Explora</h6>
                         </div>
                         <div class="body">
                             <ul class="menu">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Upcoming Events</a></li>
-                                <li><a href="#">Blog & News</a></li>
-                                <li><a href="#">FAQ Question</a></li>
-                                <li><a href="#">Course</a></li>
+                                <li><a href="{% url 'sobrenosotros' %}">Sobre nosotros</a></li>
+                                <li><a href="{% url 'profesores' %}">Nuestros Profesores</a></li>
+                                <li><a href="{% url 'blog' %}">Blog & News</a></li>
+                                <li><a href="{% url 'zoom-reuniones'}">Cursos vía Zoom</a></li>
                             </ul>
                         </div>
                     </div>
