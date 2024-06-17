@@ -1,0 +1,308 @@
+{% load static %}
+<!-- header style one -->
+<header class="header-one v-5 header--sticky">
+    <div class="header-top-one-wrapper with-admin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-top-one">
+                        <div class="left-information">
+                            <a href="mailto:someone@example.com" class="email none-sm"><i
+                                    class="fa-light fa-envelope"></i>info@rumboalau.cl</a>
+                            <a href="tel:+4733378901" class="email"><i class="fa-light fa-phone"></i>+569 0120
+                                1244</a>
+                        </div>
+                        {% if user.username %}
+                        <div class="right-information">
+                            <div class="right-information admin-panel">
+                                <ul class="rts-dropdown-menu switcher-language">
+                                    <li class="has-child-menu">
+                                        <a href="#">
+                                            <i class="fa-regular fa-user"></i>
+                                            <span class="menu-item">Bienvenido, {{ user.username }}</span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="user-profile">
+                                                <div class="profile-picture">
+                                                    <img src="static/images/banner/36.png" alt="banner">
+                                                    <div class="info">
+                                                        <h6 class="name">{{ user.username }}</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'alumnodashboard' %}" class="single-item active">
+                                                    <i class="fa-light fa-house"></i>
+                                                    <p>Dashboard</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'alumnomiperfil' %}" class="single-item">
+                                                    <i class="fa-regular fa-user"></i>
+                                                    <p>Mi Perfil </p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'alumnocursosmatriculados' %}" class="single-item">
+                                                    <i class="fa-light fa-graduation-cap"></i>
+                                                    <p>Cursos Inscritos</p>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{% url 'alumnoresenas' %}" class="single-item">
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <p>Reseñas</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'alumnomisevaluaciones' %}" class="single-item">
+                                                    <i class="fa-sharp fa-light fa-bullseye-pointer"></i>
+                                                    <p>Mi Progreso</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'alumnohistorialpedidos' %}" class="single-item">
+                                                    <i class="fa-sharp fa-light fa-bag-shopping"></i>
+                                                    <p>Historial de Compras</p>
+                                                </a>
+                                            </li>
+                                            <li class="admin-border-top">
+                                                <a href="{% url 'alumnoconfiguraciones' %}" class="single-item">
+                                                    <i class="fa-sharp fa-regular fa-gear"></i>
+                                                    <p>Configuración</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'logout' %}" class="single-item">
+                                                    <i class="fa-light fa-right-from-bracket"></i>
+                                                    <p>Cerrar Sesión</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="header-right-area-one admin-top-area-right">
+                                    <div class="actions-area">
+                                        <div class="cart cart-icon">
+                                            <i class="fa-regular fa-cart-shopping"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header-one-wrapper">
+                    <div class="left-side-header">
+                        <a href="{% url 'index' %}" class="logo-area">
+                            <img src="{% static 'images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png' %}"
+                                alt="logo">
+                        </a>
+                        <div class="search-area">
+                            <form action="#">
+                                <input class="autocomplete" type="text" name="name" placeholder="Search..." required>
+                                <button type="submit" class="search-btn">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.3124 14.517L11.0643 10.2689C12.0851 9.04342 12.5941 7.47157 12.4855 5.88034C12.3769 4.28912 11.659 2.80103 10.4811 1.72564C9.30326 0.650244 7.75616 0.0703477 6.16164 0.106582C4.56713 0.142816 3.04796 0.79239 1.92018 1.92018C0.79239 3.04796 0.142816 4.56713 0.106582 6.16164C0.0703477 7.75616 0.650244 9.30326 1.72564 10.4811C2.80103 11.659 4.28912 12.3769 5.88034 12.4855C7.47157 12.5941 9.04342 12.0851 10.2689 11.0643L14.517 15.3124L15.3124 14.517ZM1.24989 6.31239C1.24989 5.31112 1.5468 4.33234 2.10307 3.49981C2.65935 2.66729 3.45 2.01842 4.37505 1.63525C5.3001 1.25208 6.318 1.15183 7.30003 1.34716C8.28206 1.5425 9.18411 2.02466 9.89212 2.73266C10.6001 3.44066 11.0823 4.34272 11.2776 5.32474C11.473 6.30677 11.3727 7.32467 10.9895 8.24972C10.6064 9.17477 9.95749 9.96543 9.12496 10.5217C8.29244 11.078 7.31366 11.3749 6.31239 11.3749C4.97019 11.3734 3.68339 10.8396 2.73431 9.89047C1.78522 8.94139 1.25138 7.65459 1.24989 6.31239V6.31239Z"
+                                            fill="#525252" />
+                                        <path
+                                            d="M15.3124 14.517L11.0643 10.2689C12.0851 9.04342 12.5941 7.47157 12.4855 5.88034C12.3769 4.28912 11.659 2.80103 10.4811 1.72564C9.30326 0.650244 7.75616 0.0703477 6.16164 0.106582C4.56713 0.142816 3.04796 0.79239 1.92018 1.92018C0.79239 3.04796 0.142816 4.56713 0.106582 6.16164C0.0703477 7.75616 0.650244 9.30326 1.72564 10.4811C2.80103 11.659 4.28912 12.3769 5.88034 12.4855C7.47157 12.5941 9.04342 12.0851 10.2689 11.0643L14.517 15.3124L15.3124 14.517ZM1.24989 6.31239C1.24989 5.31112 1.5468 4.33234 2.10307 3.49981C2.65935 2.66729 3.45 2.01842 4.37505 1.63525C5.3001 1.25208 6.318 1.15183 7.30003 1.34716C8.28206 1.5425 9.18411 2.02466 9.89212 2.73266C10.6001 3.44066 11.0823 4.34272 11.2776 5.32474C11.473 6.30677 11.3727 7.32467 10.9895 8.24972C10.6064 9.17477 9.95749 9.96543 9.12496 10.5217C8.29244 11.078 7.31366 11.3749 6.31239 11.3749C4.97019 11.3734 3.68339 10.8396 2.73431 9.89047C1.78522 8.94139 1.25138 7.65459 1.24989 6.31239V6.31239Z"
+                                            fill="#553CDF" />
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header-right-area-one">
+
+                        <div class="main-nav-one">
+                            <nav>
+                                <ul>
+
+
+
+                                    <li class="has-dropdown">
+                                        <a class="nav-link" href="#">Paginas</a>
+                                        <ul class="submenu">
+                                            <li><a href="{% url 'sobrenosotros' %}">Sobre nosotros</a></li>
+                                            <li class="sub-dropdown">
+                                                <a href="javascript:void(0);">Zoom</a>
+                                                <ul class="submenu third-lvl base">
+                                                    <li><a class="mobile-menu-link"
+                                                            href="{% url 'zoom-reuniones' %}">Zoom
+                                                            Reuniones</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="sub-dropdown">
+                                                <a href="javascript:void(0);">Shop</a>
+                                                <ul class="submenu third-lvl base">
+                                                    <li><a class="mobile-menu-link" href="{% url 'carro' %}">Carro de
+                                                            compras</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'error' %}">Error 404</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown" style="position: static;">
+                                        <a class="nav-link" href="#">Cursos</a>
+                                        <ul class="megamenu-hub min-mega shape-move">
+                                            <li>
+                                                <ul class="">
+                                                    <li class="parent"><a href="#">Cursos</a></li>
+                                                    <li><a class="mobile-menu-link" href="{% url 'cursos' %}">Cursos</a>
+                                                    </li>
+                                            </li>
+
+                                        </ul>
+
+                                        <ul class="">
+                                            <li class="parent"><a href="#">Otros</a></li>
+                                            {% if user.tipo_usuario == "1" %}
+                                            <li><a href="{% url 'profesorregistro' %}">Conviertete en Profesor</a></li>
+                                            {% endif %}
+                                    </li>
+                                    <li><a href="{% url 'profesores' %}">Profesores</a></li>
+                                    <li><a href="{% url 'planesdemembresia' %}">Planes de Membresía</a></li>
+                                    </li>
+                                </ul>
+                                {% if user.tipo_usuario == "2" %}
+                                <div class="thumbnav-area">
+                                    <!-- single thumbnav -->
+                                    <a href="{% url 'cursocrear' %}" class="single-thumbnav">
+                                        <div class="icon">
+                                            <img src="{% static 'images/nav/04.png' %}" alt="nav">
+                                        </div>
+                                        <span>Crear Curso</span>
+                                    </a>
+                                    <!-- single thumbnav end -->
+                                    <!-- single thumbnav -->
+                                    <a href="profesor-reporteria.html" class="single-thumbnav mash">
+                                        <div class="icon">
+                                            <img src="{% static 'images/nav/05.png' %}" alt="nav">
+                                        </div>
+                                        <span>Reportería</span>
+                                    </a>
+                                    <!-- single thumbnav end -->
+
+                                    <!-- single thumbnav end -->
+                                </div>
+                                {% endif %}
+                                </li>
+                                </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a class="nav-link" href="#">Dashboard</a>
+                                    <ul class="submenu">
+                                        <li class="sub-dropdown">
+                                            <a class="submenu-link" href="javascript:void(0);">
+                                                Dashboard Profesor</a>
+                                            <ul class="submenu third-lvl base">
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-dashboard.html">Dashboard</a></li>
+                                                <li><a class="mobile-menu-link" href="profesor-miperfil.html">Mi
+                                                        Perfil</a></li>
+                                                <li><a class="mobile-menu-link" href="profesor-resenas.html">Reseñas</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-evaluaciones.html">Evaluaciones</a></li>
+                                                <li><a class="mobile-menu-link" href="profesor-pregyresp.html">Preguntas
+                                                        y
+                                                        Respuestas</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-calendario.html">Calendario</a></li>
+                                                <li><a class="mobile-menu-link" href="profesor-miscursos.html">Mis
+                                                        cursos</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-anuncios.html">Anuncios</a></li>
+                                                <li><a class="mobile-menu-link" href="profesor-saldo.html">Saldo</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-asignaciontareas.html">Asignaciones</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-certificado.html">Certificado</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-reporteria.html">Reportería</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="profesor-configuraciones.html">Configuraciones</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-dropdown">
+                                            <a class="submenu-link" href="javascript:void(0);">
+                                                Dashboard Alumno</a>
+                                            <ul class="submenu third-lvl base">
+                                                <li><a class="mobile-menu-link"
+                                                        href="alumno-dashboard.html">Dashboard</a></li>
+                                                <li><a class="mobile-menu-link" href="alumno-miperfil.html">Mi
+                                                        Perfil</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="alumno-cursosmatriculados.html">Cursos
+                                                        Matriculados</a></li>
+                                                <li><a class="mobile-menu-link" href="alumno-listadedeseos.html">Lista
+                                                        de Deseos</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link" href="alumno-resenas.html">Reseñas</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link" href="alumno-misevaluaciones.html">Mis
+                                                        Evaluaciones</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="alumno-historialdepedidos.html">Historial de
+                                                        Pedidos</a></li>
+                                                <li><a class="mobile-menu-link" href="alumno-pregyresp.html">Preguntas y
+                                                        Respuestas</a>
+                                                </li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="alumno-calendario.html">Calendario</a></li>
+                                                <li><a class="mobile-menu-link"
+                                                        href="alumno-configuraciones.html">Configuraciones</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a class="nav-link" href="#">Blog</a>
+                                    <ul class="submenu">
+
+                                        <li><a href="{% url 'blog' %}">Blog del Preu</a></li>
+                                    </ul>
+                                </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        {% if not user.username %}
+                        <div class="buttons-area">
+                            <a href="{% url 'login' %}" class="rts-btn btn-primary radious-0">Inicia Sesión</a>
+                        </div>
+                        <div class="buttons-area">
+                            <a href="{% url 'registration' %}" class="rts-btn btn-primary radious-0">Registrate</a>
+                        </div>
+                        {% endif %}
+                        <div class="menu-btn" id="menu-btn">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect width="20" height="2" fill="#1F1F25"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header style end -->

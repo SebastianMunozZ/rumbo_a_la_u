@@ -1,0 +1,75 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Exitosa </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
+    <!-- custom style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="rts-bread-crumbarea-1 rts-section-gap bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-main-wrapper">
+                        <h1 class="title">Compra Exitosa!</h1>
+                        <!-- breadcrumb pagination area -->
+                        <!-- breadcrumb pagination area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table id="tbl-transaction-detail" class="table" style="max-width:650px;margin: auto;">
+        <caption>Detalle de Pago: <strong>{{transaction_detail.state}}</strong></caption>
+        <thead>
+            <tr hidden>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Estado:</strong></td>
+                <td>{{transaction_detail.state}}</td>
+            </tr>
+            <tr>
+                <td><strong>Fecha:</strong></td>
+                <td>{{transaction_detail.transaction_date}}</td>
+            </tr>
+            <tr>
+                <td><strong>N° de tarjeta:</strong></td>
+                <td>XXXX XXXX XXXX {{transaction_detail.card_number}}</td>
+            </tr>
+            <tr>
+                <td><strong>Tipo de Pago:</strong></td>
+                <td>{{transaction_detail.pay_type}}</td>
+            </tr>
+            <tr>
+                <td><strong>Monto Pagado:</strong></td>
+                <td>{{transaction_detail.amount}}</td>
+            </tr>
+            <tr>
+                <td><strong>Comprobante:</strong></td>
+                <td>{{transaction_detail.authorization_code}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

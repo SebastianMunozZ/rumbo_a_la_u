@@ -1,0 +1,597 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumbo a la U | Tu educación Preuniversitaria a distancia 💻</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
+    <!-- custom style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- header style one -->
+    <!-- header style one -->
+    {% include 'header.html' %}
+    <!-- header style end -->
+    <!-- header style end -->
+
+
+
+    <!-- bread crumb area -->
+    <div class="rts-bread-crumbarea-1 rts-section-gap bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-main-wrapper">
+                        <h1 class="title">Química: Reacciones químicas y estequiometría</h1>
+                        <!-- breadcrumb pagination area -->
+                        <div class="pagination-wrapper">
+                            <a href="{% url 'index' %}">Inicio</a>
+                            <i class="fa-regular fa-chevron-right"></i>
+                            <a href="{% url 'zoom-reuniones' %}">Zoom: Reuniones</a>
+                            <i class="fa-regular fa-chevron-right"></i>
+                            <a class="active" href="{% url 'zoom-detalles-quim-quimicasyestequiometria' %}">Zoom -
+                                Química:
+                                Reacciones químicas y estequiometría</a>
+                        </div>
+                        <!-- breadcrumb pagination area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread crumb area end -->
+
+
+
+    <!-- rts- zoom details area start -->
+    <div class="rts-zoom-details-thumbnail-area rts-section-gapTop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="{% static 'images/zoom/quimica-detalles.png' %}" alt="zoom">
+                </div>
+            </div>
+            <div class="row mt--50 g-5">
+                <div class="col-lg-8">
+                    <div class="zoom-meeting-left-content-details">
+                        <h4 class="title">Química:
+                            Reacciones químicas y estequiometría</h4>
+                        <p class="disc">
+                            Únete a nosotros en nuestras clases en línea, donde compartiremos nuestros conocimientos
+                            para acompañarte en tu
+                            preparación para la prueba de la PAES de Química, enfocada en el estudio de reacciones
+                            químicas y estequiometría.
+                            Descubre de primera mano las estrategias, desafíos y tendencias que han dado forma a este
+                            campo. Sumérgete en un
+                            ambiente de aprendizaje enriquecedor mientras exploramos los conceptos fundamentales y las
+                            aplicaciones prácticas de las
+                            reacciones químicas y la estequiometría en la química.
+                        </p>
+                        <h5 class="title">Clases:</h5>
+                        <p class="disc">
+                            Profundiza en las habilidades y estrategias prácticas para mejorar tu adaptabilidad a los
+                            desafíos que presenta la PAES
+                            en el ámbito de Química, centrándote especialmente en el estudio de reacciones químicas y
+                            estequiometría.
+                        </p>
+                        <div class="events-details-single-area">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18"
+                                    fill="none">
+                                    <path
+                                        d="M8.25 0L7.18942 1.06058L10.6289 4.5H1.5C1.10218 4.5 0.720645 4.65804 0.43934 4.93934C0.158036 5.22064 0 5.60218 0 6V18H1.5V6H10.6289L7.18942 9.43942L8.25 10.5L13.5 5.25L8.25 0Z"
+                                        fill="#525252"></path>
+                                    <path
+                                        d="M8.25 0L7.18942 1.06058L10.6289 4.5H1.5C1.10218 4.5 0.720645 4.65804 0.43934 4.93934C0.158036 5.22064 0 5.60218 0 6V18H1.5V6H10.6289L7.18942 9.43942L8.25 10.5L13.5 5.25L8.25 0Z"
+                                        fill="#553CDF"></path>
+                                </svg>
+                            </div>
+                            <div class="information">
+                                <h6 class="title">Panorama general:</h6>
+                                <p class="disc">
+                                    Sumérgete en el panorama actual del estudio de reacciones químicas y estequiometría
+                                    de la mano de nuestro docente.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="events-details-single-area">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18"
+                                    fill="none">
+                                    <path
+                                        d="M8.25 0L7.18942 1.06058L10.6289 4.5H1.5C1.10218 4.5 0.720645 4.65804 0.43934 4.93934C0.158036 5.22064 0 5.60218 0 6V18H1.5V6H10.6289L7.18942 9.43942L8.25 10.5L13.5 5.25L8.25 0Z"
+                                        fill="#525252"></path>
+                                    <path
+                                        d="M8.25 0L7.18942 1.06058L10.6289 4.5H1.5C1.10218 4.5 0.720645 4.65804 0.43934 4.93934C0.158036 5.22064 0 5.60218 0 6V18H1.5V6H10.6289L7.18942 9.43942L8.25 10.5L13.5 5.25L8.25 0Z"
+                                        fill="#553CDF"></path>
+                                </svg>
+                            </div>
+                            <div class="information">
+                                <h6 class="title">Aprendizaje colaborativo:</h6>
+                                <p class="disc">
+                                    Únete a un debate dinámico donde compartiremos abiertamente nuestras experiencias
+                                    para superar estos desafíos y
+                                    adaptarnos a la forma de abordarlos para la PAES en el estudio de reacciones
+                                    químicas y estequiometría
+                                </p>
+                            </div>
+                        </div>
+                        <h5 class="title">Principales conclusiones:</h5>
+                        <div class="key-takeways-wrapper">
+                            <ul>
+                                <li>Mejora tus capacidades para analizar problemas complejos en el campo del estudio de
+                                    reacciones químicas y
+                                    estequiometría, desarrollando soluciones lógicas y estructuradas.
+                                </li>
+                                <li>Interactua en tiempo real con tu profesor y otros estudiantes, facilitando la
+                                    discusión de conceptos, la resolución de
+                                    dudas y el intercambio de ideas.</li>
+                                <li>Recibe retroalimentación instantánea de tu profesora sobre tu progreso y comprensión
+                                    de conceptos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="zoom-meeting-information-details">
+                        <h5 class="title">Información de la Reunión</h5>
+                        <div class="single-information">
+                            <span>Organizado por</span>
+                            <span>Elías Gomez</span>
+                        </div>
+                        <div class="single-information">
+                            <span>Fecha</span>
+                            <span> 07 de Agosto, 2024</span>
+                        </div>
+                        <div class="single-information">
+                            <span>Categoría</span>
+                            <span>Química</span>
+                        </div>
+                        <div class="single-information">
+                            <span>Duración</span>
+                            <span>60 minutos</span>
+                        </div>
+                        <button class="rts-btn btn-border">Ingresa vía Zoom App</button>
+                        <button class="rts-btn btn-border">Ingresa vía Navegador</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts- zoom details area end -->
+
+
+
+    <div class="rts-section-gap">
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="call-to-sction bg_image shape-move">
+                    <h2 class="title">Certificado de competencias <br> de Rumbo a la U</h2>
+                    <a href="{% url 'cursos' %}" class="rts-btn btn-primary-white with-arrow">Ver todos los cursos
+                        <i class="fa-regular fa-arrow-right"></i></a>
+                    <class="fa-regular fa-arrow-right"></i></a>
+                        <div class="cta-image">
+                            <img src="static/images/cta/front-view-stacked-books-graduation-cap-diploma-education-day-removebg-preview.png"
+                                alt="">
+                        </div>
+                        <div class="shape-image">
+                            <div class="shape one" data-speed="0.04"><img src="static/images/cta/03.svg" alt="">
+                            </div>
+                            <div class="shape two" data-speed="0.04"><img src="static/images/cta/04.svg" alt="">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
+
+    <!-- cart area start -->
+
+    <!-- cart area start -->
+    <div class="cart-bar">
+        <div class="cart-header">
+            <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
+            <div class="close-cart"><i class="fal fa-times"></i></div>
+        </div>
+        <div class="product-area">
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Construct Map</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">3 ×</span>
+                            <span class="product-price">$198.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="3">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name"> Bridge product</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">2 ×</span>
+                            <span class="product-price">$88.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item last-child">
+                <div class="product-detail">
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
+                    <div class="item-wrapper">
+                        <span class="product-name">Labour helmet</span>
+                        <div class="item-wrapper">
+                            <span class="product-variation"><span class="color">Green /</span>
+                                <span class="size">XL</span></span>
+                        </div>
+                        <div class="item-wrapper">
+                            <span class="product-qnty">1 ×</span>
+                            <span class="product-price">$289.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-edit">
+                    <div class="quantity-edit">
+                        <button class="button"><i class="fal fa-minus minus"></i></button>
+                        <input type="text" class="input" value="2">
+                        <button class="button plus">+<i class="fal fa-plus plus"></i></button>
+                    </div>
+                    <div class="item-wrapper d-flex mr--5 align-items-center">
+                        <a href="#" class="product-edit"><i class="fal fa-edit"></i></a>
+                        <a href="#" class="delete-cart"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-bottom-area">
+            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
+                FOR FREE SHIPPING</span>
+            <span class="total-price">TOTAL: <span class="price">$556</span></span>
+            <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
+            <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
+        </div>
+    </div>
+    <!-- cart area edn -->
+    <!-- cart area edn -->
+
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="{% static 'images/banner/04.png' %}" alt="elevate">
+            </div>
+            <div class="inner-content">
+                <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+                <p class="disc">
+                    We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                    master new technologies.
+                </p>
+                <div class="footer">
+                    <h4 class="title">Got a project in mind?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Home</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="index.html">Main Home</a></li>
+                            <li><a class="mobile-menu-link" href="index-two.html">Online Course</a></li>
+                            <li><a class="mobile-menu-link" href="index-three.html">Course Hub</a></li>
+                            <li><a class="mobile-menu-link" href="index-four.html">Distance Learning</a></li>
+                            <li><a class="mobile-menu-link" href="index-five.html">Single Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-six.html">Language Academy</a></li>
+                            <li><a class="mobile-menu-link" href="index-seven.html">Gym Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="index-eight.html">Kitchen Coach</a></li>
+                            <li><a class="mobile-menu-link" href="index-nine.html">Course Portal</a></li>
+                            <li><a class="mobile-menu-link" href="index-ten.html">Business Coach</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Pages</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="about.html">About Us</a></li>
+                            <li><a class="mobile-menu-link" href="about-two.html">About Us Two</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Profile</a></li>
+                            <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Zoom</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="zoom-meeting.html"></a>Zoom Meeting</li>
+                                    <li><a href="zoom-details.html"></a>Zoom Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Event</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="event.html"></a>Event</li>
+                                    <li><a href="event-two.html"></a>Event Two</li>
+                                    <li><a href="event-details.html"></a>Event Details</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Shop</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="shop.html"></a>Shop</li>
+                                    <li><a href="product-details.html"></a>Product Details</li>
+                                    <li><a href="checkout.html"></a>Checkout</li>
+                                    <li><a href="cart.html"></a>Cart</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Course</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-one.html">Courses</a></li>
+                            <li><a class="mobile-menu-link" href="course-two.html">Course List</a></li>
+                            <li><a class="mobile-menu-link" href="course-three.html">Course Grid</a></li>
+                            <li><a class="mobile-menu-link" href="course-four.html">Course List Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-five.html">Course Grid Two</a></li>
+                            <li><a class="mobile-menu-link" href="course-six.html">Course Filter</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course.html">Courses Details</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-two.html">Courses Details V2</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-three.html">Courses Details V3</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-four.html">Courses Details V4</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-five.html">Courses Details V5</a></li>
+                            <li><a class="mobile-menu-link" href="single-course-free.html">Courses Details Free</a></li>
+                        </ul>
+                        <ul class="submenu mm-collapse">
+                            <li><a href="#" class="tag">Others</a></li>
+                            <li><a class="mobile-menu-link" href="become-instructor.html">Become an Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="instructor-profile.html">Instructor Profile</a></li>
+                            <li><a class="mobile-menu-link" href="instructor.html">Instructor</a></li>
+                            <li><a class="mobile-menu-link" href="pricing.html">Membership Plan</a></li>
+                            <li><a class="mobile-menu-link" href="log-in.html">Log In</a></li>
+                            <li><a class="mobile-menu-link" href="registration.html">Registration</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Dashboard</a>
+                        <ul class="submenu mm-collapse">
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Instructor Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="dashboard.html"></a>Dashboard</li>
+                                    <li><a href="my-profile.html"></a>My Profile</li>
+                                    <li><a href="enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="wishlist.html"></a>Wishlist</li>
+                                    <li><a href="reviews.html"></a>Reviews</li>
+                                    <li><a href="quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="order-history.html"></a>Order History</li>
+                                    <li><a href="question-answer.html"></a>Question Answer</li>
+                                    <li><a href="calender.html"></a>Calender</li>
+                                    <li><a href="my-course.html"></a>My Course</li>
+                                    <li><a href="announcement.html"></a>Announcement</li>
+                                    <li><a href="assignments.html"></a>Assignments</li>
+                                    <li><a href="certificate.html"></a>Certificate</li>
+                                </ul>
+                            </li>
+                            <li class="has-droupdown third-lvl">
+                                <a class="main" href="#">Students Dashboard</a>
+                                <ul class="submenu-third-lvl mm-collapse">
+                                    <li><a href="student-dashboard.html"></a>Dashboard</li>
+                                    <li><a href="student-profile.html"></a>My Profile</li>
+                                    <li><a href="student-enroll-course.html"></a>Enroll Course</li>
+                                    <li><a href="student-wishlist.html"></a>Wishlist</li>
+                                    <li><a href="student-reviews.html"></a>Reviews</li>
+                                    <li><a href="student-quick-attempts.html"></a>Quick Attempts</li>
+                                    <li><a href="student-order-history.html"></a>Order History</li>
+                                    <li><a href="student-question-answer.html"></a>Question Answer</li>
+                                    <li><a href="student-calender.html"></a>Calender</li>
+                                    <li><a href="student-settings.html"></a>Students Settings</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-droupdown">
+                        <a href="#" class="main">Blog</a>
+                        <ul class="submenu mm-collapse">
+                            <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
+                            <li><a class="mobile-menu-link" href="blog-grid.html">Blog Grid</a></li>
+                            <li><a class="mobile-menu-link" href="blog-list.html">Blog List</a></li>
+                            <li><a class="mobile-menu-link" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                            <li><a class="mobile-menu-link" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="buttons-area">
+                <a href="#" class="rts-btn btn-border">Log In</a>
+                <a href="#" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+    <!-- modal -->
+    <div id="myModal-1" class="modal fade" role="dialog">
+        <div class="modal-dialog bg_image">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-light fa-x"></i></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="inner-content">
+                        <div class="title-area">
+                            <span class="pre">Get Our Courses Free</span>
+                            <h4 class="title">Wonderful for Learning</h4>
+                        </div>
+                        <form action="#">
+                            <input type="text" placeholder="Your Mail.." required>
+                            <button>Download Now</button>
+                            <span>Your information will never be shared with any third party</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+    <!-- offcanvase search -->
+    <div class="search-input-area">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
+                    <button><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    </div>
+    <!-- offcanvase search -->
+    <div id="anywhere-home" class="">
+    </div>
+
+    <!-- all scripts -->
+    <!-- jquery min js -->
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <!-- jquery ui js -->
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <!-- metismenu js -->
+    <script src="{% static 'js/vendor/metismenu.js' %}"></script>
+    <!-- magnific popup js-->
+    <script src="{% static 'js/vendor/magnifying-popup.js' %}"></script>
+    <!-- swiper JS 10.2.0 -->
+    <script src="{% static 'js/plugins/swiper.js' %}"></script>
+    <!-- counterup js -->
+    <script src="{% static 'js/plugins/counterup.js' %}"></script>
+    <!-- waypoint js -->
+    <script src="{% static 'js/vendor/waypoint.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'js/vendor/waw.js' %}"></script>
+    <!-- isotop mesonary -->
+    <script src="{% static 'js/plugins/isotop.js' %}"></script>
+    <!-- jquery imageloaded -->
+    <script src="{% static 'js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- resize sensor js -->
+    <script src="{% static 'js/plugins/resizer-sensor.js' %}"></script>
+    <!-- sticky sidebar -->
+    <script src="{% static 'js/plugins/sticky-sidebar.js' %}"></script>
+    <!-- gsap twinmax js -->
+    <script src="{% static 'js/plugins/twinmax.js' %}"></script>
+    <!-- chroma js -->
+    <script src="{% static 'js/vendor/chroma.min.js' %}"></script>
+    <!-- bootstrap 5.0.2 -->
+    <script src="{% static 'js/plugins/bootstrap.min.js' %}"></script>
+    <!-- dymanic Contact Form -->
+    <script src="{% static 'js/plugins/contact.form.js' %}"></script>
+    <!-- calender js -->
+    <script src="{% static 'js/plugins/calender.js' %}"></script>
+    <!-- main Js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
