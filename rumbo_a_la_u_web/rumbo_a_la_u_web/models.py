@@ -29,6 +29,8 @@ class Alumno(models.Model):
 class Profesor(models.Model):
     teacher_id = models.AutoField(primary_key=True)
     user = models.OneToOneField(Usuarios, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=255)
+    apellido = models.CharField(max_length=255)
     asignatura_que_ensena = models.CharField(max_length=255)
     # Tus campos específicos de Profesor aquí
 

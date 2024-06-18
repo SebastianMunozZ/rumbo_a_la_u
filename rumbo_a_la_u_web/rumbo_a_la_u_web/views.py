@@ -4,6 +4,7 @@ import hmac
 import hashlib
 import datetime
 from django.shortcuts import render
+from django.contrib.auth import update_session_auth_hash
 from .models import Usuarios, Curso, Inscripciones, Comentario
 import datetime as dt
 from .views_cart import load_cart
@@ -14,6 +15,7 @@ from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 import traceback
 from django.http import JsonResponse, HttpResponse
+from django.contrib.auth.hashers import make_password
 
 
 def login_required_manual(func):
@@ -22,6 +24,7 @@ def login_required_manual(func):
             return redirect('login')
         return func(request, *args, **kwargs)
     return wrapper
+
 
 
 def index(request):
@@ -309,23 +312,53 @@ def blogblogdet(request):
 
 def blogblogdet01(request):
     comentarios = Comentario.objects.filter(noticia=1)
-    return render(request, 'blogdet01.html', {'comentarios': comentarios})
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    context = {
+        'user': user,
+        'comentarios': comentarios
+    }
+    return render(request, 'blogdet01.html', context)
 
 def blogblogdet02(request):
     comentarios = Comentario.objects.filter(noticia=2)
-    return render(request, 'blogdet02.html', {'comentarios': comentarios})
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    context = {
+        'user': user,
+        'comentarios': comentarios
+    }
+    return render(request, 'blogdet02.html', context)
 
 def blogblogdet03(request):
     comentarios = Comentario.objects.filter(noticia=3)
-    return render(request, 'blogdet03.html', {'comentarios': comentarios})
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    context = {
+        'user': user,
+        'comentarios': comentarios
+    }
+    return render(request, 'blogdet03.html', context)
 
 def blogblogdet04(request):
     comentarios = Comentario.objects.filter(noticia=4)
-    return render(request, 'blogdet04.html', {'comentarios': comentarios})
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    context = {
+        'user': user,
+        'comentarios': comentarios
+    }
+    return render(request, 'blogdet04.html', context)
 
 def blogblogdet05(request):
     comentarios = Comentario.objects.filter(noticia=5)
-    return render(request, 'blogdet05.html', {'comentarios': comentarios})
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    context = {
+        'user': user,
+        'comentarios': comentarios
+    }
+    return render(request, 'blogdet05.html', context)
 
 @login_required_manual
 def cursos(request):

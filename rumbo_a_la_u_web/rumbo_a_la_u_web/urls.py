@@ -22,7 +22,7 @@ from django.urls import path
 from .views import index
 from .views import *
 from django.urls import path, include
-from .views_register import RegisterView, RegisterTeacherView
+from .views_register import RegisterView, RegisterTeacherView, ChangePasswordView
 from .views_courses import CourseView
 from .views_login import LoginView
 from .views_sell_course import SellCourseView
@@ -33,6 +33,7 @@ from .views import transbankpay_load, transbankpay_commitpay
 from .views import error
 from .views import sobrenosotros  # Import the missing view function
 from .views import carro
+from . import views
 
 urlpatterns = [
     path('', index, name='index'),
@@ -176,4 +177,5 @@ urlpatterns = [
     path('zoom-reuniones', zoomreuniones, name="zoom-reuniones"),
     path('zoom-prueba', zoomprueba, name="zoom-prueba"),
     path('generate_signature/', generatesignature, name='generate_signature'),
+    path('change_password/', ChangePasswordView.as_view(), name='change_password'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

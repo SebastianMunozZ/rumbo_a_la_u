@@ -18,6 +18,10 @@ class CourseView(View):
         if (gratis == True):
             es_pagado = 0
 
+        try:
+            profesor = Profesor.objects.get(user_id=request.session['user_id'])
+        except Profesor.DoesNotExist:
+            return redirect('cursocrear')
         curso = Curso(
             nombre_del_curso=titulo,
             descripcion=descripcion,
@@ -25,7 +29,7 @@ class CourseView(View):
             es_pagado=es_pagado,
             precio=precio,
             miniatura=foto,
-            teacher_id=request.session['user_id']
+            teacher_id=profesor.teacher_id
         )
         curso.save()
 

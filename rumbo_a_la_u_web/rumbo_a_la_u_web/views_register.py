@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.views import View
 from django.core.mail import send_mail
 from .models import Usuarios, Profesor, Alumno
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password, check_password
 
 class RegisterView(View):
     def post(self, request):
@@ -84,6 +84,12 @@ class RegisterTeacherView(View):
             user = Usuarios.objects.get(correo_electronico=correo)
             user.tipo_usuario = 2
             user.save()
+            profesor = Profesor(user_id=request.session['user_id'],
+                            nombre=nombre,
+                            apellido=apellido,
+                            asignatura_que_ensena=asignatura)
+
+            profesor.save()
             return redirect('login')
 
         
@@ -95,10 +101,38 @@ class RegisterTeacherView(View):
         )
         
         user.save()
-        profesor = Profesor(nombre=nombre,
-                            user=user,
-                            asignatura=asignatura)
+        profesor = Profesor(user_id=request.session['user_id'],
+                            nombre=nombre,
+                            apellido=apellido,
+                            asignatura_que_ensena=asignatura)
 
         profesor.save()
 
         return redirect('login')
+    
+class ChangePasswordView(View):
+    def post(self, request):
+        if request.method == 'POST':
+            user_id = request.session.get('user_id')
+            user = Usuarios.objects.get(user_id=user_id)
+            current_password = request.POST.get('current_password')
+            new_password = request.POST.get('new_password')
+            confirm_password = request.POST.get('confirm_password')
+
+            if not check_password(current_password, user.contrasena):
+                # La contraseña actual es incorrecta
+                messages.error(request, 'La contraseña actual es incorrecta')
+                return redirect('alumnoconfiguraciones')
+
+            if new_password != confirm_password:
+                # La nueva contraseña y la confirmación no coinciden
+                messages.error(request, 'Las contraseñas no coinciden')
+                return redirect('alumnoconfiguraciones')
+
+            # Todo está bien, cambiar la contraseña
+            user.contrasena = make_password(new_password)
+            user.save()
+
+            return redirect('login')
+
+        return redirect('alumnoconfiguraciones')
