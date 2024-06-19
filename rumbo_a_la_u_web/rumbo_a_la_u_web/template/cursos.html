@@ -43,9 +43,9 @@
                         <h1 class="title">Nuestros cursos</h1>
                         <!-- breadcrumb pagination area -->
                         <div class="pagination-wrapper">
-                            <a href="index.html">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                             <i class="fa-regular fa-chevron-right"></i>
-                            <a class="active" href="cursos.html">Todos los cursos</a>
+                            <a class="active" href="{% url 'cursos' %}">Todos los cursos</a>
                         </div>
                         <!-- breadcrumb pagination area end -->
                     </div>
@@ -58,841 +58,830 @@
 
 
     <!-- course area start -->
-    <div class="rts-course-default-area rts-section-gap">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-3">
-                    <!-- course-filter-area start -->
-                    <div class="rts-course-filter-area">
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Buscar</h6>
-                            <div class="search-filter filter-body">
-                                <div class="input-wrapper">
-                                    <input type="text" placeholder="Buscar Curso...">
-                                    <i class="fa-light fa-magnifying-glass"></i>
-                                </div>
+    <div class="rts-course-default-area rts-section-gap"></div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-3">
+                <!-- course-filter-area start -->
+                <div class="rts-course-filter-area">
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Buscar</h6>
+                        <div class="search-filter filter-body">
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Buscar Curso...">
+                                <i class="fa-light fa-magnifying-glass"></i>
                             </div>
                         </div>
-                        <!-- single filter wized end -->
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Tipo</h6>
-                            <div class="checkbox-filter filter-body">
-                                <div class="checkbox-wrapper">
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="type-1">
-                                            <label for="type-1">Curso</label><br>
-                                        </div>
-                                        <span class="number">(20,000)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="type-2">
-                                            <label for="type-2">Paquetes</label><br>
-                                        </div>
-                                        <span class="number">(20,000)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single filter wized end -->
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Categoría</h6>
-                            <div class="checkbox-filter filter-body">
-                                <div class="checkbox-wrapper">
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-1">
-                                            <label for="category-1">Comprensión Lectora</label><br>
-                                        </div>
-                                        <span class="number">(130)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-2">
-                                            <label for="category-2">Matemáticas</label><br>
-                                        </div>
-                                        <span class="number">(85)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-3">
-                                            <label for="category-3">Historia y Ciencias Sociales</label><br>
-                                        </div>
-                                        <span class="number">(210)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-4">
-                                            <label for="category-4">Biología</label><br>
-                                        </div>
-                                        <span class="number">(45)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-5">
-                                            <label for="category-5">Física</label><br>
-                                        </div>
-                                        <span class="number">(35)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="category-6">
-                                            <label for="category-6">Química</label><br>
-                                        </div>
-                                        <span class="number">(66)</span>
-                                    </div>
-                                    <!-- single check box end -->
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single filter wized end -->
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Nivel</h6>
-                            <div class="checkbox-filter filter-body">
-                                <div class="checkbox-wrapper">
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="lavel-1">
-                                            <label for="lavel-1">1ero Medio</label><br>
-                                        </div>
-                                        <span class="number">(130)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="lavel-2">
-                                            <label for="lavel-2">2do Medio</label><br>
-                                        </div>
-                                        <span class="number">(85)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="lavel-3">
-                                            <label for="lavel-3">3ero Medio</label><br>
-                                        </div>
-                                        <span class="number">(210)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="lavel-4">
-                                            <label for="lavel-4">4to Medio</label><br>
-                                        </div>
-                                        <span class="number">(45)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single filter wized end -->
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Autor</h6>
-                            <div class="checkbox-filter filter-body">
-                                <div class="checkbox-wrapper">
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-1">
-                                            <label for="author-1">Emma Elizabeth</label><br>
-                                        </div>
-                                        <span class="number">(130)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-2">
-                                            <label for="author-2">Thomas Fred</label><br>
-                                        </div>
-                                        <span class="number">(85)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-3">
-                                            <label for="author-3">Lizbeth White</label><br>
-                                        </div>
-                                        <span class="number">(210)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-4">
-                                            <label for="author-4">Elias Gomez</label><br>
-                                        </div>
-                                        <span class="number">(45)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-4">
-                                            <label for="author-4">Lucía Dominguez</label><br>
-                                        </div>
-                                        <span class="number">(45)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="author-4">
-                                            <label for="author-4">Macarena Gonzalez</label><br>
-                                        </div>
-                                        <span class="number">(45)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single filter wized end -->
-
-                        <!-- single filter wized -->
-                        <div class="single-filter-left-wrapper">
-                            <h6 class="title">Price</h6>
-                            <div class="checkbox-filter filter-body last">
-                                <div class="checkbox-wrapper">
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="price-1">
-                                            <label for="price-1">Gratis</label><br>
-                                        </div>
-                                        <span class="number">(6)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                    <!-- single check box -->
-                                    <div class="single-checkbox-filter">
-                                        <div class="check-box">
-                                            <input type="checkbox" id="price-2">
-                                            <label for="price-2">Pagado</label><br>
-                                        </div>
-                                        <span class="number">(80)</span>
-                                    </div>
-                                    <!-- single check box end -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single filter wized end -->
-                        <a href="#" class="rts-btn btn-border"><i class="fa-regular fa-x"></i> Limpiar todos los
-                            filtros</a>
                     </div>
-                    <!-- course-filter-area end -->
+                    <!-- single filter wized end -->
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Tipo</h6>
+                        <div class="checkbox-filter filter-body">
+                            <div class="checkbox-wrapper">
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="type-1">
+                                        <label for="type-1">Curso</label><br>
+                                    </div>
+                                    <span class="number">(20,000)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="type-2">
+                                        <label for="type-2">Paquetes</label><br>
+                                    </div>
+                                    <span class="number">(20,000)</span>
+                                </div>
+                                <!-- single check box end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single filter wized end -->
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Categoría</h6>
+                        <div class="checkbox-filter filter-body">
+                            <div class="checkbox-wrapper">
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-1">
+                                        <label for="category-1">Comprensión Lectora</label><br>
+                                    </div>
+                                    <span class="number">(130)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-2">
+                                        <label for="category-2">Matemáticas</label><br>
+                                    </div>
+                                    <span class="number">(85)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-3">
+                                        <label for="category-3">Historia y Ciencias Sociales</label><br>
+                                    </div>
+                                    <span class="number">(210)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-4">
+                                        <label for="category-4">Biología</label><br>
+                                    </div>
+                                    <span class="number">(45)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-5">
+                                        <label for="category-5">Física</label><br>
+                                    </div>
+                                    <span class="number">(35)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="category-6">
+                                        <label for="category-6">Química</label><br>
+                                    </div>
+                                    <span class="number">(66)</span>
+                                </div>
+                                <!-- single check box end -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single filter wized end -->
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Nivel</h6>
+                        <div class="checkbox-filter filter-body">
+                            <div class="checkbox-wrapper">
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="lavel-1">
+                                        <label for="lavel-1">1ero Medio</label><br>
+                                    </div>
+                                    <span class="number">(130)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="lavel-2">
+                                        <label for="lavel-2">2do Medio</label><br>
+                                    </div>
+                                    <span class="number">(85)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="lavel-3">
+                                        <label for="lavel-3">3ero Medio</label><br>
+                                    </div>
+                                    <span class="number">(210)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="lavel-4">
+                                        <label for="lavel-4">4to Medio</label><br>
+                                    </div>
+                                    <span class="number">(45)</span>
+                                </div>
+                                <!-- single check box end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single filter wized end -->
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Autor</h6>
+                        <div class="checkbox-filter filter-body">
+                            <div class="checkbox-wrapper">
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-1">
+                                        <label for="author-1">Emma Elizabeth</label><br>
+                                    </div>
+                                    <span class="number">(130)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-2">
+                                        <label for="author-2">Thomas Fred</label><br>
+                                    </div>
+                                    <span class="number">(85)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-3">
+                                        <label for="author-3">Lizbeth White</label><br>
+                                    </div>
+                                    <span class="number">(210)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-4">
+                                        <label for="author-4">Elias Gomez</label><br>
+                                    </div>
+                                    <span class="number">(45)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-4">
+                                        <label for="author-4">Lucía Dominguez</label><br>
+                                    </div>
+                                    <span class="number">(45)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="author-4">
+                                        <label for="author-4">Macarena Gonzalez</label><br>
+                                    </div>
+                                    <span class="number">(45)</span>
+                                </div>
+                                <!-- single check box end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single filter wized end -->
+
+                    <!-- single filter wized -->
+                    <div class="single-filter-left-wrapper">
+                        <h6 class="title">Price</h6>
+                        <div class="checkbox-filter filter-body last">
+                            <div class="checkbox-wrapper">
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="price-1">
+                                        <label for="price-1">Gratis</label><br>
+                                    </div>
+                                    <span class="number">(6)</span>
+                                </div>
+                                <!-- single check box end -->
+                                <!-- single check box -->
+                                <div class="single-checkbox-filter">
+                                    <div class="check-box">
+                                        <input type="checkbox" id="price-2">
+                                        <label for="price-2">Pagado</label><br>
+                                    </div>
+                                    <span class="number">(80)</span>
+                                </div>
+                                <!-- single check box end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single filter wized end -->
+                    <a href="#" class="rts-btn btn-border"><i class="fa-regular fa-x"></i> Limpiar todos los
+                        filtros</a>
                 </div>
-                <div class="col-lg-9">
-                    <!-- filter top-area  -->
-                    <div class="filter-small-top-full">
-                        <div class="left-filter">
-                            <span>Ordenar por</span>
-                            <select class="nice-select" name="price">
-                                <option>Todas las Categorías</option>
-                                <!--<option value="asc">Design</option>-->
-                                <!--<option value="desc">Development</option>-->
-                                <option value="pop">Más vendidos</option>
-                                <option value="low">Precio</option>
-                                <option value="high">Calificaciones</option>
-                            </select>
-                        </div>
-                        <div class="right-filter">
-                            <span>Mostrando 1-9 de 19 resultados</span>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">
-                                        <i class="fa-light fa-grid-2"></i>
-                                        <span>Cuadricula</span>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                        aria-selected="false">
-                                        <i class="fa-light fa-list"></i>
-                                        <span> Lista</span>
-                                    </button>
-                                </li>
-                            </ul>
+                <!-- course-filter-area end -->
+            </div>
+            <div class="col-lg-9">
+                <!-- filter top-area  -->
+                <div class="filter-small-top-full">
+                    <div class="left-filter">
+                        <span>Ordenar por</span>
+                        <select class="nice-select" name="price">
+                            <option>Todas las Categorías</option>
+                            <!--<option value="asc">Design</option>-->
+                            <!--<option value="desc">Development</option>-->
+                            <option value="pop">Más vendidos</option>
+                            <option value="low">Precio</option>
+                            <option value="high">Calificaciones</option>
+                        </select>
+                    </div>
+                    <div class="right-filter">
+                        <span>Mostrando 1-9 de 19 resultados</span>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">
+                                    <i class="fa-light fa-grid-2"></i>
+                                    <span>Cuadricula</span>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                    type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                    <i class="fa-light fa-list"></i>
+                                    <span> Lista</span>
+                                </button>
+                            </li>
+                        </ul>
 
+                    </div>
+                </div>
+                <!-- filter top-area end -->
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row g-5 mt--10">
+                            {% for curso in cursos %}
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail"></a>
+                                    <img src="{{curso.miniatura.url}}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>{{ curso.asignatura }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-complectora-interpretar' %}">
+                                        <h5 class="title">{{ curso.nombre_del_curso }}</h5>
+                                    </a>
+                                    <p class="teacher">{{ curso.teacher.user.nombre }}</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="price">
+                                                {% if curso.precio %}
+                                                ${{ curso.precio }}
+                                                {% else %}
+                                                Gratis
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-success ms-2"
+                                                href="/agregarcurso/{{ curso.course_id }}">
+                                                <i class="bi bi-plus-circle-fill"></i>
+                                                <span>Añadir al carro</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            {% endfor %}
+
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-historia-ejehistoria' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-historia.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Historia y Ciencias Sociales</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>22 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>60 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-historia-ejehistoria' %}">
+                                        <h5 class="title">Eje Historia: Mundo, América y Chile</h5>
+                                    </a>
+                                    <p class="teacher">Thomas Fred</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-matematicas-numeros' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-matematicas.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Matemáticas</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>23 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>40 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-matematicas-numeros' %}">
+                                        <h5 class="title">Matemáticas: Números, matemática financiera y logaritmos
+                                        </h5>
+                                    </a>
+                                    <p class="teacher">Macarena Gonzalez</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="not price">
+                                                $15.999
+                                            </div>
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-biologia-organismoyambiente' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-biologia.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Biología</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>19 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>14 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-biologia-organismoyambiente' %}">
+                                        <h5 class="title">Organismo y Ambiente: Materia orgánica en organismos
+                                            autótrofos</h5>
+                                    </a>
+                                    <p class="teacher">Lizbeth White</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="not price">
+                                                $17.999
+                                            </div>
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-matematicas-algebrayfunciones' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-matematicas.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Matemáticas</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>54 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-matematicas-algebrayfunciones' %}">
+                                        <h5 class="title">Algebra y Funciones: Ecuaciones lineales y ecuaciones de
+                                            segundo grado </h5>
+                                    </a>
+                                    <p class="teacher">Macarena Gonzalez</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="not price">
+                                                $16.999
+                                            </div>
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-complectora-localizar' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Comprensión Lectora</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>54 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-complectora-localizar' %}">
+                                        <h5 class="title">Localizar: Identificando, reconociendo y extrayendo datos
+                                            textuales presentes en nuestra lectura</h5>
+                                    </a>
+                                    <p class="teacher">Emma Elizabeth</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-fisica-mecanica' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-fisica.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Física</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>54 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-fisica-mecanica' %}">
+                                        <h5 class="title">Mecánica: Movimiento traslacional
+                                            de cuerpos</h5>
+                                    </a>
+                                    <p class="teacher">Lucía Dominguez</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="not price">
+                                                $14.999
+                                            </div>
+                                            <div class="price">
+                                                $8.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-quimica-estructuraatomica' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-quimica.png' %}" alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Química</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>54 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-quimica-estructuraatomica' %}">
+                                        <h5 class="title">Estructura Atómica: Analizando el comportamiento de la
+                                            materia</h5>
+                                    </a>
+                                    <p class="teacher">Elias Gomez</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="price">
+                                                $29.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- rts single course -->
+                                <div class="rts-single-course">
+                                    <a href="{% url 'cursos-complectora-evaluar' %}" class="thumbnail">
+                                        <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
+                                            alt="course">
+                                    </a>
+                                    <div class="save-icon" data-bs-toggle="modal" data-bs-target="#exampleModal-login">
+                                        <i class="fa-sharp fa-light fa-bookmark"></i>
+                                    </div>
+                                    <div class="tags-area-wrapper">
+                                        <div class="single-tag">
+                                            <span>Comprensión Lectora</span>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-studente">
+                                        <div class="lesson">
+                                            <i class="fa-light fa-calendar-lines-pen"></i>
+                                            <span>25 Clases</span>
+                                        </div>
+                                        <div class="lesson">
+                                            <i class="fa-light fa-user-group"></i>
+                                            <span>54 Alumnos</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'cursos-complectora-evaluar' %}">
+                                        <h5 class="title">Evaluar: Reflexionar
+                                            y juzgar a partir del
+                                            análisis de la forma o contenido</h5>
+                                    </a>
+                                    <p class="teacher">Emma Elizabeth</p>
+                                    <div class="rating-and-price">
+                                        <div class="rating-area">
+                                            <span>4.5</span>
+                                            <div class="stars">
+                                                <ul>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                                                    <li><i class="fa-sharp fa-regular fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="price-area">
+                                            <div class="not price">
+                                                $19.999
+                                            </div>
+                                            <div class="price">
+                                                $7.999
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rts single course end -->
+                            </div>
+
+
+                        </div>
+                        <div class="row mt--30">
+                            <div class="col-lg-12">
+                                <!-- rts-pagination-area -->
+                                <div class="rts-pagination-area-2">
+                                    <ul>
+                                        <li><i class="fa-solid fa-chevron-left"></i></li>
+                                        <li class="active">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li><i class="fa-solid fa-chevron-right"></i></li>
+                                    </ul>
+                                </div>
+                                <!-- rts-pagination-area end -->
+                            </div>
                         </div>
                     </div>
-                    <!-- filter top-area end -->
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row g-5 mt--10">
-                                {% for curso in cursos %}
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="{% url 'cursos-complectora-interpretar' %}" class="thumbnail"></a>
-                                        <img src="{{curso.miniatura.url}}"
-                                            alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>{{ curso.asignatura }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                        </div>
-                                        <a href="{% url 'cursos-complectora-interpretar' %}">
-                                            <h5 class="title">{{ curso.nombre_del_curso }}</h5>
-                                        </a>
-                                        <p class="teacher">{{ curso.teacher.user.nombre }}</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="price">
-                                                    {% if curso.precio %}
-                                                    ${{ curso.precio }}
-                                                    {% else %}
-                                                    Gratis
-                                                    {% endif %}
-                                                </div>
-                                            </div>
-                                            <div class="text-center">
-                                                <a class="btn btn-outline-success ms-2"
-                                                    href="/agregarcurso/{{ curso.course_id }}">
-                                                    <i class="bi bi-plus-circle-fill"></i>
-                                                    <span>Añadir al carro</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                {% endfor %}
-
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-historia-ejehistoria.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-historia.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Historia y Ciencias Sociales</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>22 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>60 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-historia-ejehistoria.html">
-                                            <h5 class="title">Eje Historia: Mundo, América y Chile</h5>
-                                        </a>
-                                        <p class="teacher">Thomas Fred</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-matematicas-numeros.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-matematicas.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Matemáticas</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>23 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>40 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-matematicas-numeros.html">
-                                            <h5 class="title">Matemáticas: Números, matemática financiera y logaritmos
-                                            </h5>
-                                        </a>
-                                        <p class="teacher">Macarena Gonzalez</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="not price">
-                                                    $15.999
-                                                </div>
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-biologia-organismoyambiente.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-biologia.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Biología</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>19 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>14 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-biologia-organismoyambiente.html">
-                                            <h5 class="title">Organismo y Ambiente: Materia orgánica en organismos
-                                                autótrofos</h5>
-                                        </a>
-                                        <p class="teacher">Lizbeth White</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="not price">
-                                                    $17.999
-                                                </div>
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-matematicas-algebrayfunciones.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-matematicas.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Matemáticas</span>
-                                            </div>
-
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>54 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-matematicas-algebrayfunciones.html">
-                                            <h5 class="title">Algebra y Funciones: Ecuaciones lineales y ecuaciones de
-                                                segundo grado </h5>
-                                        </a>
-                                        <p class="teacher">Macarena Gonzalez</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="not price">
-                                                    $16.999
-                                                </div>
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-complectora-localizar.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
-                                                alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Comprensión Lectora</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>54 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-complectora-localizar.html">
-                                            <h5 class="title">Localizar: Identificando, reconociendo y extrayendo datos
-                                                textuales presentes en nuestra lectura</h5>
-                                        </a>
-                                        <p class="teacher">Emma Elizabeth</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-fisica-mecanica.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-fisica.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Física</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>54 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-fisica-mecanica.html">
-                                            <h5 class="title">Mecánica: Movimiento traslacional
-                                                de cuerpos</h5>
-                                        </a>
-                                        <p class="teacher">Lucía Dominguez</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="not price">
-                                                    $14.999
-                                                </div>
-                                                <div class="price">
-                                                    $8.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-quimica.png' %}" alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Química</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>54 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-quimica-estructuraatomica.html">
-                                            <h5 class="title">Estructura Atómica: Analizando el comportamiento de la
-                                                materia</h5>
-                                        </a>
-                                        <p class="teacher">Elias Gomez</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="price">
-                                                    $29.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course">
-                                        <a href="cursos-complectora-evaluar.html" class="thumbnail">
-                                            <img src="{% static 'images/course/cursos-comprensionlectora.png' %}"
-                                                alt="course">
-                                        </a>
-                                        <div class="save-icon" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-login">
-                                            <i class="fa-sharp fa-light fa-bookmark"></i>
-                                        </div>
-                                        <div class="tags-area-wrapper">
-                                            <div class="single-tag">
-                                                <span>Comprensión Lectora</span>
-                                            </div>
-                                        </div>
-                                        <div class="lesson-studente">
-                                            <div class="lesson">
-                                                <i class="fa-light fa-calendar-lines-pen"></i>
-                                                <span>25 Clases</span>
-                                            </div>
-                                            <div class="lesson">
-                                                <i class="fa-light fa-user-group"></i>
-                                                <span>54 Alumnos</span>
-                                            </div>
-                                        </div>
-                                        <a href="cursos-complectora-evaluar.html">
-                                            <h5 class="title">Evaluar: Reflexionar
-                                                y juzgar a partir del
-                                                análisis de la forma o contenido</h5>
-                                        </a>
-                                        <p class="teacher">Emma Elizabeth</p>
-                                        <div class="rating-and-price">
-                                            <div class="rating-area">
-                                                <span>4.5</span>
-                                                <div class="stars">
-                                                    <ul>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                        <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="price-area">
-                                                <div class="not price">
-                                                    $19.999
-                                                </div>
-                                                <div class="price">
-                                                    $7.999
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- rts single course end -->
-                                </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row g-5 mt--30">
+                            <div class="col-lg-12">
 
 
-                            </div>
-                            <div class="row mt--30">
-                                <div class="col-lg-12">
-                                    <!-- rts-pagination-area -->
-                                    <div class="rts-pagination-area-2">
-                                        <ul>
-                                            <li><i class="fa-solid fa-chevron-left"></i></li>
-                                            <li class="active">1</li>
-                                            <li>2</li>
-                                            <li>3</li>
-                                            <li>4</li>
-                                            <li><i class="fa-solid fa-chevron-right"></i></li>
-                                        </ul>
-                                    </div>
-                                    <!-- rts-pagination-area end -->
-                                </div>
+
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="row g-5 mt--30">
-                                <div class="col-lg-12">
-
-
-
+                        <div class="row mt--10">
+                            <div class="col-lg-12">
+                                <!-- rts-pagination-area -->
+                                <div class="rts-pagination-area-2">
+                                    <ul>
+                                        <li><i class="fa-solid fa-chevron-left"></i></li>
+                                        <li class="active">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li><i class="fa-solid fa-chevron-right"></i></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="row mt--10">
-                                <div class="col-lg-12">
-                                    <!-- rts-pagination-area -->
-                                    <div class="rts-pagination-area-2">
-                                        <ul>
-                                            <li><i class="fa-solid fa-chevron-left"></i></li>
-                                            <li class="active">1</li>
-                                            <li>2</li>
-                                            <li>3</li>
-                                            <li>4</li>
-                                            <li><i class="fa-solid fa-chevron-right"></i></li>
-                                        </ul>
-                                    </div>
-                                    <!-- rts-pagination-area end -->
-                                </div>
+                                <!-- rts-pagination-area end -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- course area end -->
 
@@ -926,116 +915,10 @@
     <!-- cart area start -->
 
     <!-- footer call to action area start -->
-    <div class="footer-callto-action-area bg-light-1">
-        <div class="container ptb--105">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- footer main wrapper -->
-                    <div class="footer-one-main-wrapper">
-                        <!-- single sized  footer  -->
-                        <div class="footer-singl-wized left-logo">
-                            <div class="head">
-                                <a href="#">
-                                    <img src="{% static 'images/logo/logo-1.svg' %}" alt="logo" loading="lazy">
-                                </a>
-                            </div>
-                            <div class="body">
-                                <p class="dsic">
-                                    We are passionate education dedicated to providing high-quality resources learners
-                                    all backgrounds.
-                                </p>
-                                <ul class="wrapper-list">
-                                    <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia </li>
-                                    <li><a href="call-to:61485826710"><i class="fa-regular fa-phone"></i>+(61)
-                                            485-826-710</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- single sized  footer end -->
-                        <!-- single sized  footer  -->
-                        <div class="footer-singl-wized">
-                            <div class="head">
-                                <h6 class="title">Quick Links</h6>
-                            </div>
-                            <div class="body">
-                                <ul class="menu">
-                                    <li><a href="#">Latest Courses</a></li>
-                                    <li><a href="#">Mission & Vision</a></li>
-                                    <li><a href="#">Join a Carrer</a></li>
-                                    <li><a href="#">Our Approach</a></li>
-                                    <li><a href="#">Pricing Plan</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- single sized  footer end -->
-                        <!-- single sized  footer  -->
-                        <div class="footer-singl-wized">
-                            <div class="head">
-                                <h6 class="title">Explore</h6>
-                            </div>
-                            <div class="body">
-                                <ul class="menu">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Upcoming Events</a></li>
-                                    <li><a href="#">Blog & News</a></li>
-                                    <li><a href="#">FAQ Question</a></li>
-                                    <li><a href="#">Course</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- single sized  footer end -->
-                        <!-- single sized  footer  -->
-                        <div class="footer-singl-wized input-area">
-                            <div class="head">
-                                <h6 class="title">Newsletter</h6>
-                            </div>
-                            <div class="body">
-                                <p class="disc">Subscribe Our newsletter get update our new course</p>
-                                <form action="#">
-                                    <div class="input-area-fill">
-                                        <input type="email" placeholder="Enter Your Email" required>
-                                        <button> Subscribe</button>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <input type="checkbox" id="exampleCheck1">
-                                        <label for="exampleCheck1">I agree to the terms of use and privacy
-                                            policy.</label>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- single sized  footer end -->
-                    </div>
-                    <!-- footer main wrapper end -->
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area-one-border">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-area-one">
-                            <p>Copyright © 2024 All Rights Reserved by Studyhub</p>
-                            <div class="social-copyright">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include 'footer.html' %}
     <!-- footer call to action area end -->
-    <!-- cart area edn -->
 
-
-    <!-- cart area start -->
+    <!-- cart area end -->
 
     <!-- cart area start -->
     <div class="cart-bar">

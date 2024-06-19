@@ -38,13 +38,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="dashboard-banner-area-start bg_image  student-dashboard">
+                    <div class="dashboard-banner-area-start bg_image student-dashboard">
+
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
                                 <img src="{% static 'images/dashboard/04.png' %}" alt="dashboard">
                             </div>
                             <div class="name-desig">
-                                <h1 class="title">{{user.nombre}}</h1>
+                                <h1 class="title">{{ user.nombre }}</h1>
                                 <div class="course-vedio">
                                     <div class="single">
                                         <i class="fa-thin fa-book"></i>
@@ -57,10 +58,12 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- dashboard banner area end -->
 
@@ -193,7 +196,7 @@
                                 <!-- in progress course area end -->
                                 <!-- single progress area start -->
                                 <div class="single-progress-course">
-                                    <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
+                                    <a href="{% url 'cursos-quimica-estructuraatomica' %}" class="thumbnail">
                                         <img src="{% static 'images/dashboard/cursos-quimica.png' %}" alt="img">
                                     </a>
                                     <div class="information-progress-course">
@@ -205,7 +208,7 @@
                                             <i class="fa-light fa-star"></i>
                                             <span>(0)</span>
                                         </div>
-                                        <a href="cursos-quimica-estructuraatomica.html">
+                                        <a href="{% url 'cursos-quimica-estructuraatomica' %}">
                                             <h5 class="title">Estructura Atómica: Analizando el comportamiento de la
                                                 materia
                                             </h5>
@@ -339,31 +342,9 @@
 
 
 
-    <!-- footer dashboards area -->
-    <div class="footer-dashboard">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-dashboard-inner">
-                        <p>Copyright © 2024 All Rights Reserved by <a href="#">Studyhub</a></p>
-                        <a href="index.html">
-                            <img src="{% static 'images/logo/logo-4.svg' %}" alt="logo">
-                        </a>
-                        <div class="social-area-dashboard-footer">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer dashboards area end -->
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
 
     <!-- cart area start -->
 

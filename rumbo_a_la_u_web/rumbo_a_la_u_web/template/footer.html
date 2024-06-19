@@ -11,7 +11,7 @@
                     <div class="footer-singl-wized left-logo">
                         <div class="head">
                             <a href="#">
-                                <img src="static/images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png"
+                                <img src="{% static 'images/logo/wepik-linear-doodle-academy-public-school-logo-20240428034937tqNk-removebg-preview.png' %}"
                                     alt="logo" loading="lazy">
                             </a>
                         </div>
@@ -37,7 +37,6 @@
                         <div class="body">
                             <ul class="menu">
                                 <li><a href="{% url 'cursos' %}">Cursos</a></li>
-                                <li><a href="#">Mission & Vision</a></li>
                                 <li><a href="{% url 'profesor-registro'}">Conviertete en Profesor</a></li>
                                 <li><a href="{% url 'planesdemembresia' %}">Planes de Membresía</a></li>
                             </ul>
@@ -54,7 +53,7 @@
                                 <li><a href="{% url 'sobrenosotros' %}">Sobre nosotros</a></li>
                                 <li><a href="{% url 'profesores' %}">Nuestros Profesores</a></li>
                                 <li><a href="{% url 'blog' %}">Blog & News</a></li>
-                                <li><a href="{% url 'zoom-reuniones'}">Cursos vía Zoom</a></li>
+                                <li><a href="{% url 'zoom-reuniones' %}">Cursos vía Zoom</a></li>
                             </ul>
                         </div>
                     </div>

@@ -26,7 +26,6 @@ def login_required_manual(func):
     return wrapper
 
 
-
 def index(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id) if user_id else None
@@ -97,6 +96,7 @@ def login(request):
 
 def registration(request):
     return render(request, 'registro.html')
+
 
 @login_required_manual
 def cursocrear(request):
@@ -201,61 +201,71 @@ def alumnoresenas(request):
 def profesoranuncios(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-anuncios.html', {'user':user})
+    return render(request, 'profesor-anuncios.html', {'user': user})
+
 
 @login_required_manual
 def profesorasignaciontareas(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-asignaciontareas.html', {'user':user})
+    return render(request, 'profesor-asignaciontareas.html', {'user': user})
+
 
 @login_required_manual
 def profesorcalendario(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-calendario.html', {'user':user})
+    return render(request, 'profesor-calendario.html', {'user': user})
+
 
 @login_required_manual
 def profesorcertificado(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-certificado.html', {'user':user})
+    return render(request, 'profesor-certificado.html', {'user': user})
+
 
 @login_required_manual
 def profesorconfiguraciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-configuraciones.html', {'user':user})
+    return render(request, 'profesor-configuraciones.html', {'user': user})
+
 
 @login_required_manual
 def profesordashboard(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-dashboard.html', {'user':user})
+    return render(request, 'profesor-dashboard.html', {'user': user})
+
 
 @login_required_manual
 def profesorevaluaciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-evaluaciones.html', {'user':user})
+    return render(request, 'profesor-evaluaciones.html', {'user': user})
+
 
 @login_required_manual
 def profesormiperfil(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-miperfil.html', {'user':user})
+    return render(request, 'profesor-miperfil.html', {'user': user})
+
 
 @login_required_manual
 def profesormiscursos(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-miscursos.html', {'user':user})
+    return render(request, 'profesor-miscursos.html', {'user': user})
+
 
 @login_required_manual
 def profesorpregyresp(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-pregyresp.html', {'user':user})
+    return render(request, 'profesor-pregyresp.html', {'user': user})
+
 
 def profesorregistro(request):
     user_id = request.session.get('user_id')
@@ -267,19 +277,21 @@ def profesorregistro(request):
 def profesorreporteria(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-reporteria.html',{'user':user})
+    return render(request, 'profesor-reporteria.html', {'user': user})
+
 
 @login_required_manual
 def profesorresenas(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-resenas.html',{'user':user})
+    return render(request, 'profesor-resenas.html', {'user': user})
+
 
 @login_required_manual
 def profesorsaldo(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-saldo.html',{'user':user})
+    return render(request, 'profesor-saldo.html', {'user': user})
 
 
 def profesorprofilebiologia(request):
@@ -320,6 +332,7 @@ def blogblogdet01(request):
     }
     return render(request, 'blogdet01.html', context)
 
+
 def blogblogdet02(request):
     comentarios = Comentario.objects.filter(noticia=2)
     user_id = request.session.get('user_id')
@@ -329,6 +342,7 @@ def blogblogdet02(request):
         'comentarios': comentarios
     }
     return render(request, 'blogdet02.html', context)
+
 
 def blogblogdet03(request):
     comentarios = Comentario.objects.filter(noticia=3)
@@ -340,6 +354,7 @@ def blogblogdet03(request):
     }
     return render(request, 'blogdet03.html', context)
 
+
 def blogblogdet04(request):
     comentarios = Comentario.objects.filter(noticia=4)
     user_id = request.session.get('user_id')
@@ -350,6 +365,7 @@ def blogblogdet04(request):
     }
     return render(request, 'blogdet04.html', context)
 
+
 def blogblogdet05(request):
     comentarios = Comentario.objects.filter(noticia=5)
     user_id = request.session.get('user_id')
@@ -359,6 +375,7 @@ def blogblogdet05(request):
         'comentarios': comentarios
     }
     return render(request, 'blogdet05.html', context)
+
 
 @login_required_manual
 def cursos(request):
@@ -372,55 +389,71 @@ def cursos(request):
 def cursosbiologiaorganismoyambiente(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-biologia-organismoyambiente.html',{'user':user})
+    return render(request, 'cursos-biologia-organismoyambiente.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectoraevaluar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-evaluar.html',{'user':user})
+    return render(request, 'cursos-complectora-evaluar.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectorainterpretar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-interpretar.html',{'user':user})
+    return render(request, 'cursos-complectora-interpretar.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectoralocalizar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-localizar.html',{'user':user})
+    return render(request, 'cursos-complectora-localizar.html', {'user': user})
+
 
 @login_required_manual
 def cursosfisicamecanica(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-fisica-mecanica.html',{'user':user})
+    return render(request, 'cursos-fisica-mecanica.html', {'user': user})
+
 
 @login_required_manual
 def cursoshistoriaejehistoria(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-historia-ejehistoria.html',{'user':user})
+    return render(request, 'cursos-historia-ejehistoria.html', {'user': user})
+
 
 @login_required_manual
 def cursosmatematicasalgebrayfunciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-matematicas-algebrayfunciones.html',{'user':user})
+    return render(request, 'cursos-matematicas-algebrayfunciones.html', {'user': user})
+
 
 @login_required_manual
 def cursosmatematicasnumeros(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-matematicas-numeros.html',{'user':user})
+    return render(request, 'cursos-matematicas-numeros.html', {'user': user})
+
 
 @login_required_manual
 def cursosquimicaestructuraatomica(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-quimica-estructuraatomica.html',{'user':user})
+    return render(request, 'cursos-quimica-estructuraatomica.html', {'user': user})
+
+
+@login_required_manual
+def clasedemo(request):
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'clase-demo', {'user': user})
+
 
 def header(request):
     user_id = request.session.get('user_id')
@@ -445,7 +478,7 @@ def zoomdetallesmatalgebrayfunciones(request):
 
 
 def zoomdetallesprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-probabilidadyestadistica')
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
 
 
 def zoomdetallesmatgeometria(request):

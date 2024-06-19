@@ -74,10 +74,13 @@ urlpatterns = [
     path('profesor-asignaciontareas', profesorasignaciontareas,
          name="profesor-asignaciontareas"),
     path('profesor-calendario', profesorcalendario, name="profesor-calendario"),
-    path('profesor-certificado', profesorcertificado, name="profesor-certificado"),
-    path('profesor-configuraciones', profesorconfiguraciones, name="profesor-configuraciones"),
+    path('profesor-certificado', profesorcertificado,
+         name="profesor-certificado"),
+    path('profesor-configuraciones', profesorconfiguraciones,
+         name="profesor-configuraciones"),
     path('profesor-dashboard', profesorconfiguraciones, name="profesor-dashboard"),
-    path('profesor-evaluaciones', profesorevaluaciones, name="profesor-evaluaciones"),
+    path('profesor-evaluaciones', profesorevaluaciones,
+         name="profesor-evaluaciones"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
     path('profesor-miscursos', profesormiscursos, name="profesor-miscursos"),
@@ -135,6 +138,9 @@ urlpatterns = [
          name="cursos-matematicas-numeros"),
     path('cursos-quimica-estructuraatomica', cursosquimicaestructuraatomica,
          name="cursos-quimica-estructuraatomica"),
+
+    path('clase-demo', clasedemo,
+         name="clase-demo"),
     path('course/', CourseView.as_view(), name='views_course'),
 
     # Seccion Header
