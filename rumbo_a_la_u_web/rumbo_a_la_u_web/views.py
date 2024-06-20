@@ -121,7 +121,9 @@ def alumnomiperfil(request):
 
 
 def blog(request):
-    return render(request, 'blog.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id) if user_id else None
+    return render(request, 'blog.html', {'user': user})
 
 
 @login_required_manual

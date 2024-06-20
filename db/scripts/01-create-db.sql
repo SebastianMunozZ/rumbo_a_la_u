@@ -41,11 +41,19 @@ DROP TABLE IF EXISTS `REGIONES`;
 DROP TABLE IF EXISTS `PROVINCIAS`;
 DROP TABLE IF EXISTS `COMUNAS`;
 DROP TABLE IF EXISTS `NOTICIAS`;
+DROP TABLE IF EXISTS `USUARIOS`;
+CREATE TABLE Comentario (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `nombre` VARCHAR(100) NOT NULL,
+    `apellido` VARCHAR(100) NOT NULL,
+    `comentario` TEXT NOT NULL,
+    `noticia` INT NOT NULL
+);
 -- Crear tabla de Usuarios
 CREATE TABLE `USUARIOS` (
   `user_id` INT AUTO_INCREMENT,
   `nombre` VARCHAR(255) NOT NULL,
-  `apellido` VARCHAR(255) NOT NULL,
+  `username` VARCHAR(255) NOT NULL,
   `correo_electronico` VARCHAR(255) NOT NULL,
   `contrasena` VARCHAR(255) NOT NULL,
   `tipo_usuario` VARCHAR(50) NOT NULL,
@@ -78,7 +86,9 @@ CREATE TABLE `CURSOS` (
   `nombre_del_curso` VARCHAR(255) NOT NULL,
   `descripcion` TEXT,
   `asignatura` VARCHAR(100) NOT NULL,
-  `nivel_del_curso` VARCHAR(100) NOT NULL,
+  `es_pagado` INT NOT NULL,
+  `precio` INT NOT NULL,
+  `miniatura` VARCHAR(255) NOT NULL,
   `teacher_id` INT NOT NULL,
   PRIMARY KEY (`course_id`),
   FOREIGN KEY (`teacher_id`) REFERENCES `PROFESORES`(`teacher_id`)
