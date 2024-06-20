@@ -138,9 +138,6 @@ urlpatterns = [
          name="cursos-matematicas-numeros"),
     path('cursos-quimica-estructuraatomica', cursosquimicaestructuraatomica,
          name="cursos-quimica-estructuraatomica"),
-
-    path('clase-demo', clasedemo,
-         name="clase-demo"),
     path('course/', CourseView.as_view(), name='views_course'),
 
     # Seccion Header

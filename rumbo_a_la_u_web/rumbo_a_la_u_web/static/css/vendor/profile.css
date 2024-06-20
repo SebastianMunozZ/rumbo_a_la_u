@@ -1,0 +1,31 @@
+.profile-pic {
+    position: relative;
+    width: 150px; /* Ajusta el tamaño según tus necesidades */
+    height: 150px; /* Ajusta el tamaño según tus necesidades */
+    background-color: #f0f0f0; /* Fondo por defecto */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#imageUpload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+

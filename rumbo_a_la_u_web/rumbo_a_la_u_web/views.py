@@ -450,13 +450,6 @@ def cursosquimicaestructuraatomica(request):
     return render(request, 'cursos-quimica-estructuraatomica.html', {'user': user})
 
 
-@login_required_manual
-def clasedemo(request):
-    user_id = request.session.get('user_id')
-    user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'clase-demo', {'user': user})
-
-
 def header(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
@@ -480,7 +473,7 @@ def zoomdetallesmatalgebrayfunciones(request):
 
 
 def zoomdetallesprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica')
 
 
 def zoomdetallesmatgeometria(request):

@@ -45,7 +45,8 @@ class Curso(models.Model):
     asignatura = models.CharField(max_length=100)
     es_pagado = models.IntegerField()
     precio = models.IntegerField(null=True, default=0)
-    miniatura = models.ImageField(upload_to='media/', default='media/default.jpg')
+    miniatura = models.ImageField(
+        upload_to='media/', default='media/default.jpg')
     teacher = models.ForeignKey(Profesor, on_delete=models.CASCADE)
 
     class Meta:
@@ -83,6 +84,7 @@ class Inscripciones(models.Model):
 
     class Meta:
         db_table = 'INSCRIPCIONES'
+
 
 class Comentario(models.Model):
     nombre = models.CharField(max_length=100)
