@@ -5,8 +5,7 @@ import hashlib
 import datetime
 from django.shortcuts import render
 from django.contrib.auth import update_session_auth_hash
-from .models import Usuarios, Curso, Inscripciones, Comentario
-import datetime as dt
+from .models import Usuarios, Curso, Inscripciones, Comentario, Notas, Alumno
 from .views_cart import load_cart
 import traceback
 import os
@@ -16,6 +15,8 @@ from django.views.decorators.csrf import csrf_exempt
 import traceback
 from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.hashers import make_password
+from django.http import HttpResponse
+import openpyxl
 
 
 def login_required_manual(func):
@@ -723,3 +724,59 @@ def generatesignature(request):
     signature = generate_signature(sdk_key, sdk_secret, meeting_number, role)
     print(signature)
     return JsonResponse(signature)
+
+
+def mostrar_exportacion(request):
+    return render(request, 'exportar_usuarios.html')
+
+
+def exportar_usuarios_excel(request):
+    # Crear un nuevo libro de Excel y seleccionar la hoja activa
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Usuarios"
+
+    # Definir las columnas del archivo Excel
+    columns = ['Nombre', 'Correo Electrónico']
+    worksheet.append(columns)
+
+    # Obtener todos los usuarios de la base de datos y agregarlos al archivo Excel
+    usuarios = Usuarios.objects.all().values_list('nombre', 'correo_electronico')
+    for usuario in usuarios:
+        worksheet.append(usuario)
+
+    # Crear una respuesta HTTP para devolver el archivo Excel como descarga
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=usuarios.xlsx'
+
+    # Guardar el libro de Excel en la respuesta HTTP
+    workbook.save(response)
+
+    return response
+
+
+def exportar_notas_excel(request):
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Notas"
+
+    columns = ['Nombre', 'Curso', 'Nota']
+    worksheet.append(columns)
+
+    usuarios = Usuarios.objects.all()
+
+    for usuario in usuarios:
+        # Ajusta el campo user_id según tu modelo
+        notas = Notas.objects.all()
+        for nota in notas:
+            worksheet.append(
+                [usuario.nombre, nota.course_id, nota.calificacion])
+
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=notas_' + \
+        usuario.nombre+'.xlsx'
+    workbook.save(response)
+
+    return response

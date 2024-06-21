@@ -193,7 +193,25 @@
                 <!-- menu end -->
                 <div class="col-lg-9">
                     <div class="certificates-wrapper-dashed">
-                        <img src="{% static 'images/instructor/reporteria.png' %}" alt="Reporteria">
+                        <h1>Exportar Usuarios a Excel</h1>
+                        <div class="col-lg-9">
+                            <div class="certificates-wrapper-dashed">
+                                <form action="{% url 'exportar_usuarios_excel' %}" method="get">
+                                    <button type="submit">Exportar a Excel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificates-wrapper-dashed">
+                        <h1>Exportar Notas a Excel</h1>
+                        <div class="col-lg-9">
+                            <div class="certificates-wrapper-dashed">
+                                <form action="{% url 'exportar_notas_excel' %}" method="get">
+                                    <button type="submit">Exportar a Excel</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <!-- single certificates-end -->
                     <!-- single certificates- -->

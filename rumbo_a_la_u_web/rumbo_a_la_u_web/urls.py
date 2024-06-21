@@ -33,6 +33,7 @@ from .views import transbankpay_load, transbankpay_commitpay
 from .views import error
 from .views import sobrenosotros  # Import the missing view function
 from .views import carro
+from .views import exportar_usuarios_excel, mostrar_exportacion, exportar_notas_excel
 from . import views
 
 urlpatterns = [
@@ -181,4 +182,13 @@ urlpatterns = [
     path('zoom-prueba', zoomprueba, name="zoom-prueba"),
     path('generate_signature/', generatesignature, name='generate_signature'),
     path('change_password/', ChangePasswordView.as_view(), name='change_password'),
+
+    # Seccion Exportar Usuarios
+    path('exportar_usuarios', exportar_usuarios_excel,
+         name='exportar_usuarios_excel'),
+
+    # Seccion Exportar Notas
+    path('exportar_notas_excel/', exportar_notas_excel,
+         name='exportar_notas_excel'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
