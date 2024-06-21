@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <title>Rumbo a la U | Profesor - Mis Cursos</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
@@ -48,15 +49,16 @@
                                 <i class="fa-regular fa-star"></i>
                             </div>
                             <p>Profesor de ciencias</p>
-                            <a href="curso-crear.html" class="create-btn"><i class="fa-regular fa-circle-plus"></i>
+                            <a href="{% url 'cursocrear' %}" class="create-btn"><i
+                                    class="fa-regular fa-circle-plus"></i>
                                 Crear un nuevo curso</a>
                         </div>
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
-                                <img src="static/images/dashboard/01.png" alt="dashboard">
+                                <img src="{% static 'images/dashboard/01.png' %}" alt="dashboard">
                             </div>
                             <div class="name-desig">
-                                <h1 class="title">Jon Adam</h1>
+                                <h1 class="title">{{ user.nombre }}</h1>
                                 <div class="course-vedio">
                                     <div class="single">
                                         <i class="fa-light fa-users"></i>
@@ -81,43 +83,46 @@
     <div class="dashboard--area-main pt--100 pt_sm--50">
         <div class="container">
             <div class="row g-5">
+                <!-- menu start -->
                 <div class="col-lg-3 rts-sticky-column-item">
                     <div class="left-sindebar-dashboard theiaStickySidebar">
                         <div class="dashboard-left-single-wrapper">
                             <!-- single item -->
-                            <a href="profesor-dashboard.html" class="single-item">
+                            <a href="{% url 'profesor-dashboard' %}" class="single-item">
                                 <i class="fa-light fa-house"></i>
                                 <p>Dashboard</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-miperfil.html" class="single-item">
+                            <a href="{% url 'profesor-miperfil' %}" class="single-item">
                                 <i class="fa-regular fa-user"></i>
                                 <p>Mi Perfil</p>
                             </a>
                             <!-- single item end -->
 
                             <!-- single item -->
-                            <a href="profesor-resenas.html" class="single-item">
+                            <a href="{% url 'profesor-resenas' %}" class="single-item">
                                 <i class="fa-regular fa-star"></i>
                                 <p>Reseñas de mis Alumnos</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-evaluaciones.html" class="single-item">
+                            <a href="{% url 'profesor-evaluaciones' %}" class="single-item">
                                 <i class="fa-sharp fa-light fa-bullseye-pointer"></i>
                                 <p>Evaluaciones Realizadas</p>
                             </a>
                             <!-- single item end -->
 
                             <!-- single item -->
-                            <a href="profesor-pregyresp.html" class="single-item">
+                            <!-- single item -->
+                            <a href="{% url 'profesor-pregyresp' %}" class="single-item">
                                 <i class="fa-regular fa-circle-question"></i>
                                 <p>Preguntas y Respuestas</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-calendario.html" class="single-item">
+                            <!-- single item -->
+                            <a href="{% url 'profesor-calendario' %}" class="single-item">
                                 <i class="fa-light fa-calendar-days"></i>
                                 <p>Calendario</p>
                             </a>
@@ -126,38 +131,40 @@
                         <div class="dashboard-left-single-wrapper mt--40">
                             <h4 class="title mb--5">Instructor</h4>
                             <!-- single item -->
-                            <a href="profesor-miscursos.html" class="single-item active">
+                            <a href="{% url 'profesor-miscursos' %}" class="single-item active">
                                 <i class="fa-light fa-book"></i>
                                 <p>Mis cursos</p>
                             </a>
                             <!-- single item end -->
 
                             <!-- single item -->
-                            <a href="profesor-anuncios.html" class="single-item">
+                            <a href="{% url 'profesor-anuncios' %}" class="single-item">
                                 <i class="fa-solid fa-megaphone"></i>
                                 <p>Anuncios</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-saldo.html" class="single-item">
+                            <!-- single item -->
+                            <a href="{% url 'profesor-saldo' %}" class="single-item">
                                 <i class="fa-regular fa-box"></i>
                                 <p>Saldo a pago</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-asignaciontareas.html" class="single-item">
+                            <a href="{% url 'profesor-asignaciontareas' %}" class="single-item">
                                 <i class="fa-regular fa-page"></i>
                                 <p>Asignación de tareas</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-certificado.html" class="single-item">
+                            <!-- single item -->
+                            <a href="{% url 'profesor-certificado' %}" class="single-item">
                                 <i class="fa-sharp fa-light fa-file-certificate"></i>
                                 <p>Certificado</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="profesor-reporteria.html" class="single-item">
+                            <a href="{% url 'profesor-reporteria' %}" class="single-item">
                                 <i class="fa-light fa-chart-mixed"></i>
                                 <p>Reportería</p>
                             </a>
@@ -166,13 +173,13 @@
                         <div class="dashboard-left-single-wrapper bbnone mt--40">
                             <h4 class="title mb--5">User</h4>
                             <!-- single item -->
-                            <a href="profesor-configuraciones.html" class="single-item">
+                            <a href="{% url 'profesor-configuraciones' %}" class="single-item">
                                 <i class="fa-sharp fa-regular fa-gear"></i>
                                 <p>Configuraciones</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="index.html" class="single-item">
+                            <a href="{% url 'index' %}" class="single-item">
                                 <i class="fa-light fa-right-from-bracket"></i>
                                 <p>Cerrar sesión</p>
                             </a>
@@ -180,6 +187,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- menu end -->
                 <div class="col-lg-9">
                     <div class="exrolled-course-wrapper-dashed">
                         <h5 class="title">Mis Cursos</h5>
@@ -206,7 +214,7 @@
                                     <div class="col-xl-4 col-md-6 col-sm-12 col-12">
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/01.jpg" alt="course">
+                                                <img src="{% static 'images/course/01.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -258,7 +266,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/02.jpg" alt="course">
+                                                <img src="{% static 'images/course/02.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -311,7 +319,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/03.jpg" alt="course">
+                                                <img src="{% static 'images/course/03.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -364,7 +372,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/04.jpg" alt="course">
+                                                <img src="{% static 'images/course/04.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -417,7 +425,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/05.jpg" alt="course">
+                                                <img src="{% static 'images/course/05.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -470,7 +478,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/06.jpg" alt="course">
+                                                <img src="{% static 'images/course/06.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -526,7 +534,7 @@
                                     <div class="col-xl-4 col-md-6 col-sm-12 col-12">
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/01.jpg" alt="course">
+                                                <img src="{% static 'images/course/01.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -578,7 +586,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/02.jpg" alt="course">
+                                                <img src="{% static 'images/course/02.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -631,7 +639,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/03.jpg" alt="course">
+                                                <img src="{% static 'images/course/03.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -684,7 +692,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/04.jpg" alt="course">
+                                                <img src="{% static 'images/course/04.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -737,7 +745,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/05.jpg" alt="course">
+                                                <img src="{% static 'images/course/05.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -790,7 +798,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/06.jpg" alt="course">
+                                                <img src="{% static 'images/course/06.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -846,7 +854,7 @@
                                     <div class="col-xl-4 col-md-6 col-sm-12 col-12">
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/01.jpg" alt="course">
+                                                <img src="{% static 'images/course/01.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -898,7 +906,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/02.jpg" alt="course">
+                                                <img src="{% static 'images/course/02.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -951,7 +959,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/03.jpg" alt="course">
+                                                <img src="{% static 'images/course/03.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -1004,7 +1012,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/04.jpg" alt="course">
+                                                <img src="{% static 'images/course/04.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -1057,7 +1065,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/05.jpg" alt="course">
+                                                <img src="{% static 'images/course/05.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -1110,7 +1118,7 @@
                                         <!-- single course style two -->
                                         <div class="rts-single-course">
                                             <a href="single-course.html" class="thumbnail">
-                                                <img src="static/images/course/06.jpg" alt="course">
+                                                <img src="{% static 'images/course/06.jpg' %}" alt="course">
                                             </a>
                                             <div class="save-icon" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal-login">
@@ -1173,31 +1181,9 @@
 
     </div>
 
-    <!-- footer dashboards area -->
-    <div class="footer-dashboard">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-dashboard-inner">
-                        <p>Copyright © 2024 All Rights Reserved by <a href="#">Studyhub</a></p>
-                        <a href="index.html">
-                            <img src="static/images/logo/logo-4.svg" alt="logo">
-                        </a>
-                        <div class="social-area-dashboard-footer">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer dashboards area end -->
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
 
 
     <!-- cart area start -->
@@ -1211,7 +1197,9 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -1238,7 +1226,9 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -1265,7 +1255,9 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb">
+                        <img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">

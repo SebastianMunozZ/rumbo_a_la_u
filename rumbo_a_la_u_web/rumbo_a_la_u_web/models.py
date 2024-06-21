@@ -17,6 +17,7 @@ class Usuarios(models.Model):
 class Alumno(models.Model):
     user = models.OneToOneField(
         Usuarios, primary_key=True, on_delete=models.CASCADE)
+    student_id = models.IntegerField()
     ano_de_ingreso = models.CharField(max_length=255, default='2024')
     nivel_de_educacion = models.CharField(
         max_length=255, default='Media Completa')
@@ -45,7 +46,8 @@ class Curso(models.Model):
     asignatura = models.CharField(max_length=100)
     es_pagado = models.IntegerField()
     precio = models.IntegerField(null=True, default=0)
-    miniatura = models.ImageField(upload_to='media/', default='media/default.jpg')
+    miniatura = models.ImageField(
+        upload_to='media/', default='media/default.jpg')
     teacher = models.ForeignKey(Profesor, on_delete=models.CASCADE)
 
     class Meta:
@@ -84,6 +86,7 @@ class Inscripciones(models.Model):
     class Meta:
         db_table = 'INSCRIPCIONES'
 
+
 class Comentario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
@@ -92,3 +95,22 @@ class Comentario(models.Model):
 
     class Meta:
         db_table = 'Comentario'
+
+
+# grade_id, student_id, course_id, calificacion, fecha_de_calificacion
+
+class Notas(models.Model):
+    # user = models.ForeignKey(
+    # Alumno, on_delete=models.CASCADE, related_name='notas')
+    grade_id = models.AutoField(primary_key=True)
+    student = models.ForeignKey(
+        Alumno, on_delete=models.CASCADE, related_name='notas')
+    course_id = models.IntegerField()
+    calificacion = models.FloatField()
+    fecha_de_calificacion = models.DateField()
+
+    class Meta:
+        db_table = 'NOTAS'
+
+    def __str__(self):
+        return f"Nota de  - ID: {self.grade_id}"

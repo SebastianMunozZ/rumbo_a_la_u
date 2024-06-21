@@ -5,8 +5,7 @@ import hashlib
 import datetime
 from django.shortcuts import render
 from django.contrib.auth import update_session_auth_hash
-from .models import Usuarios, Curso, Inscripciones, Comentario
-import datetime as dt
+from .models import Usuarios, Curso, Inscripciones, Comentario, Notas, Alumno
 from .views_cart import load_cart
 import traceback
 import os
@@ -16,6 +15,8 @@ from django.views.decorators.csrf import csrf_exempt
 import traceback
 from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.hashers import make_password
+from django.http import HttpResponse
+import openpyxl
 
 
 def login_required_manual(func):
@@ -24,7 +25,6 @@ def login_required_manual(func):
             return redirect('login')
         return func(request, *args, **kwargs)
     return wrapper
-
 
 
 def index(request):
@@ -97,6 +97,7 @@ def login(request):
 
 def registration(request):
     return render(request, 'registro.html')
+
 
 @login_required_manual
 def cursocrear(request):
@@ -203,61 +204,71 @@ def alumnoresenas(request):
 def profesoranuncios(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-anuncios.html', {'user':user})
+    return render(request, 'profesor-anuncios.html', {'user': user})
+
 
 @login_required_manual
 def profesorasignaciontareas(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-asignaciontareas.html', {'user':user})
+    return render(request, 'profesor-asignaciontareas.html', {'user': user})
+
 
 @login_required_manual
 def profesorcalendario(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-calendario.html', {'user':user})
+    return render(request, 'profesor-calendario.html', {'user': user})
+
 
 @login_required_manual
 def profesorcertificado(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-certificado.html', {'user':user})
+    return render(request, 'profesor-certificado.html', {'user': user})
+
 
 @login_required_manual
 def profesorconfiguraciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-configuraciones.html', {'user':user})
+    return render(request, 'profesor-configuraciones.html', {'user': user})
+
 
 @login_required_manual
 def profesordashboard(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-dashboard.html', {'user':user})
+    return render(request, 'profesor-dashboard.html', {'user': user})
+
 
 @login_required_manual
 def profesorevaluaciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-evaluaciones.html', {'user':user})
+    return render(request, 'profesor-evaluaciones.html', {'user': user})
+
 
 @login_required_manual
 def profesormiperfil(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-miperfil.html', {'user':user})
+    return render(request, 'profesor-miperfil.html', {'user': user})
+
 
 @login_required_manual
 def profesormiscursos(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-miscursos.html', {'user':user})
+    return render(request, 'profesor-miscursos.html', {'user': user})
+
 
 @login_required_manual
 def profesorpregyresp(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-pregyresp.html', {'user':user})
+    return render(request, 'profesor-pregyresp.html', {'user': user})
+
 
 def profesorregistro(request):
     user_id = request.session.get('user_id')
@@ -269,19 +280,21 @@ def profesorregistro(request):
 def profesorreporteria(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-reporteria.html',{'user':user})
+    return render(request, 'profesor-reporteria.html', {'user': user})
+
 
 @login_required_manual
 def profesorresenas(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-resenas.html',{'user':user})
+    return render(request, 'profesor-resenas.html', {'user': user})
+
 
 @login_required_manual
 def profesorsaldo(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'profesor-saldo.html',{'user':user})
+    return render(request, 'profesor-saldo.html', {'user': user})
 
 
 def profesorprofilebiologia(request):
@@ -322,6 +335,7 @@ def blogblogdet01(request):
     }
     return render(request, 'blogdet01.html', context)
 
+
 def blogblogdet02(request):
     comentarios = Comentario.objects.filter(noticia=2)
     user_id = request.session.get('user_id')
@@ -331,6 +345,7 @@ def blogblogdet02(request):
         'comentarios': comentarios
     }
     return render(request, 'blogdet02.html', context)
+
 
 def blogblogdet03(request):
     comentarios = Comentario.objects.filter(noticia=3)
@@ -342,6 +357,7 @@ def blogblogdet03(request):
     }
     return render(request, 'blogdet03.html', context)
 
+
 def blogblogdet04(request):
     comentarios = Comentario.objects.filter(noticia=4)
     user_id = request.session.get('user_id')
@@ -352,6 +368,7 @@ def blogblogdet04(request):
     }
     return render(request, 'blogdet04.html', context)
 
+
 def blogblogdet05(request):
     comentarios = Comentario.objects.filter(noticia=5)
     user_id = request.session.get('user_id')
@@ -361,6 +378,7 @@ def blogblogdet05(request):
         'comentarios': comentarios
     }
     return render(request, 'blogdet05.html', context)
+
 
 @login_required_manual
 def cursos(request):
@@ -374,55 +392,64 @@ def cursos(request):
 def cursosbiologiaorganismoyambiente(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-biologia-organismoyambiente.html',{'user':user})
+    return render(request, 'cursos-biologia-organismoyambiente.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectoraevaluar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-evaluar.html',{'user':user})
+    return render(request, 'cursos-complectora-evaluar.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectorainterpretar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-interpretar.html',{'user':user})
+    return render(request, 'cursos-complectora-interpretar.html', {'user': user})
+
 
 @login_required_manual
 def cursoscomplectoralocalizar(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-complectora-localizar.html',{'user':user})
+    return render(request, 'cursos-complectora-localizar.html', {'user': user})
+
 
 @login_required_manual
 def cursosfisicamecanica(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-fisica-mecanica.html',{'user':user})
+    return render(request, 'cursos-fisica-mecanica.html', {'user': user})
+
 
 @login_required_manual
 def cursoshistoriaejehistoria(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-historia-ejehistoria.html',{'user':user})
+    return render(request, 'cursos-historia-ejehistoria.html', {'user': user})
+
 
 @login_required_manual
 def cursosmatematicasalgebrayfunciones(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-matematicas-algebrayfunciones.html',{'user':user})
+    return render(request, 'cursos-matematicas-algebrayfunciones.html', {'user': user})
+
 
 @login_required_manual
 def cursosmatematicasnumeros(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-matematicas-numeros.html',{'user':user})
+    return render(request, 'cursos-matematicas-numeros.html', {'user': user})
+
 
 @login_required_manual
 def cursosquimicaestructuraatomica(request):
     user_id = request.session.get('user_id')
     user = Usuarios.objects.get(user_id=user_id)
-    return render(request, 'cursos-quimica-estructuraatomica.html',{'user':user})
+    return render(request, 'cursos-quimica-estructuraatomica.html', {'user': user})
+
 
 def header(request):
     user_id = request.session.get('user_id')
@@ -697,3 +724,59 @@ def generatesignature(request):
     signature = generate_signature(sdk_key, sdk_secret, meeting_number, role)
     print(signature)
     return JsonResponse(signature)
+
+
+def mostrar_exportacion(request):
+    return render(request, 'exportar_usuarios.html')
+
+
+def exportar_usuarios_excel(request):
+    # Crear un nuevo libro de Excel y seleccionar la hoja activa
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Usuarios"
+
+    # Definir las columnas del archivo Excel
+    columns = ['Nombre', 'Correo Electrónico']
+    worksheet.append(columns)
+
+    # Obtener todos los usuarios de la base de datos y agregarlos al archivo Excel
+    usuarios = Usuarios.objects.all().values_list('nombre', 'correo_electronico')
+    for usuario in usuarios:
+        worksheet.append(usuario)
+
+    # Crear una respuesta HTTP para devolver el archivo Excel como descarga
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=usuarios.xlsx'
+
+    # Guardar el libro de Excel en la respuesta HTTP
+    workbook.save(response)
+
+    return response
+
+
+def exportar_notas_excel(request):
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Notas"
+
+    columns = ['Nombre', 'Curso', 'Nota']
+    worksheet.append(columns)
+
+    usuarios = Usuarios.objects.all()
+
+    for usuario in usuarios:
+        # Ajusta el campo user_id según tu modelo
+        notas = Notas.objects.all()
+        for nota in notas:
+            worksheet.append(
+                [usuario.nombre, nota.course_id, nota.calificacion])
+
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=notas_' + \
+        usuario.nombre+'.xlsx'
+    workbook.save(response)
+
+    return response
