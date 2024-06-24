@@ -473,8 +473,8 @@ def zoomdetallesmatalgebrayfunciones(request):
     return render(request, 'zoom-detalles-mat-algebrayfunciones.html')
 
 
-def zoomdetallesprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-probabilidadyestadistica')
+def zoomdetallesmatprobabilidadyestadistica(request):
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
 
 
 def zoomdetallesmatgeometria(request):
@@ -483,6 +483,30 @@ def zoomdetallesmatgeometria(request):
 
 def zoomdetallesquimestructuraatomica(request):
     return render(request, 'zoom-detalles-quim-estructuraatomica.html')
+
+
+def clasedemohistoria(request):
+    return render(request, 'clase-demo-historia.html')
+
+
+def clasedemofisica(request):
+    return render(request, 'clase-demo-fisica.html')
+
+
+def clasedemoquimica(request):
+    return render(request, 'clase-demo-quimica.html')
+
+
+def clasedemobiologia(request):
+    return render(request, 'clase-demo-biologia.html')
+
+
+def clasedemomatematica(request):
+    return render(request, 'clase-demo-matematica.html')
+
+
+def clasedemocomprensionlectora(request):
+    return render(request, 'clase-demo-comprensionlectora.html')
 
 
 def zoomprueba(request):

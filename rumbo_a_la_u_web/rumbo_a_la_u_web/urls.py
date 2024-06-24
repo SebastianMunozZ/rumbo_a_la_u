@@ -79,7 +79,7 @@ urlpatterns = [
          name="profesor-certificado"),
     path('profesor-configuraciones', profesorconfiguraciones,
          name="profesor-configuraciones"),
-    path('profesor-dashboard', profesorconfiguraciones, name="profesor-dashboard"),
+    path('profesor-dashboard', profesordashboard, name="profesor-dashboard"),
     path('profesor-evaluaciones', profesorevaluaciones,
          name="profesor-evaluaciones"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
@@ -141,6 +141,18 @@ urlpatterns = [
          name="cursos-quimica-estructuraatomica"),
     path('course/', CourseView.as_view(), name='views_course'),
 
+    # Clase Demo de Cursos
+    path('clase-demo-historia', clasedemohistoria, name="clase-demo-historia"),
+    path('clase-demo-fisica', clasedemofisica, name="clase-demo-fisica"),
+    path('clase-demo-quimica', clasedemoquimica, name="clase-demo-quimica"),
+    path('clase-demo-biologia', clasedemobiologia, name="clase-demo-biologia"),
+    path('clase-demo-matematica', clasedemomatematica,
+         name="clase-demo-matematica"),
+    path('clase-demo-comprensionlectora', clasedemocomprensionlectora,
+         name="clase-demo-comprensionlectora"),
+
+
+
     # Seccion Header
     path('header', header, name="header"),
 
@@ -168,7 +180,7 @@ urlpatterns = [
     path('zoom-detalles-mat-geometria', zoomdetallesmatgeometria,
          name="zoom-detalles-mat-geometria"),
     path('zoom-detalles-mat-probabilidadyestadistica',
-         zoomdetallesprobabilidadyestadistica, name="zoom-detalles-probabilidadyestadistica"),
+         zoomdetallesmatprobabilidadyestadistica, name="zoom-detalles-mat-probabilidadyestadistica"),
 
     path('zoom-detalles-quim-estructuraatomica', zoomdetallesquimestructuraatomica,
          name='zoom-detalles-quim-estructuraatomica'),
@@ -190,5 +202,7 @@ urlpatterns = [
     # Seccion Exportar Notas
     path('exportar_notas_excel/', exportar_notas_excel,
          name='exportar_notas_excel'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
