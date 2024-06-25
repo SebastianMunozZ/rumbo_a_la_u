@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumno - Evaluaciones</title>
+    <title>Rumbo a la U | Alumno - Evaluaciones</title>
     <link rel="shortcut icon" type="image/x-icon"
         href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
 
@@ -37,14 +37,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="dashboard-banner-area-start bg_image  student-dashboard">
+                    <div class="dashboard-banner-area-start bg_image student-dashboard">
 
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
-                                <img src="{% static 'images/dashboard/04.png' %}" alt="dashboard">
+                                <img src="{% static 'images/dashboard/fotodeperfil.png' %}" alt="dashboard">
                             </div>
                             <div class="name-desig">
-                                <h1 class="title">Jon Adam</h1>
+                                <h1 class="title">{{ user.nombre }}</h1>
                                 <div class="course-vedio">
                                     <div class="single">
                                         <i class="fa-thin fa-book"></i>
@@ -57,10 +57,12 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- dashboard banner area end -->
 
@@ -80,7 +82,7 @@
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="{% url 'alumnomiperfil' %}" class="single-item active">
+                            <a href="{% url 'alumnomiperfil' %}" class="single-item ">
                                 <i class="fa-regular fa-user"></i>
                                 <p>Mi Perfil</p>
                             </a>
@@ -104,7 +106,7 @@
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="{% url 'alumnomisevaluaciones' %}" class="single-item ">
+                            <a href="{% url 'alumnomisevaluaciones' %}" class="single-item active">
                                 <i class="fa-sharp fa-light fa-bullseye-pointer"></i>
                                 <p>Mis Evaluaciones</p>
                             </a>
@@ -412,31 +414,9 @@
 
     </div>
 
-    <!-- footer dashboards area -->
-    <div class="footer-dashboard">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-dashboard-inner">
-                        <p>Copyright © 2024 All Rights Reserved by <a href="#">Studyhub</a></p>
-                        <a href="index.html">
-                            <img src="{% static 'images/logo/logo-4.svg' %}" alt="logo">
-                        </a>
-                        <div class="social-area-dashboard-footer">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer dashboards area end -->
+    <!-- footer call to action area start -->
+    {% include 'footer.html' %}
+    <!-- footer call to action area end -->
 
 
     <!-- cart area start -->
@@ -534,8 +514,6 @@
             </div>
         </div>
         <div class="cart-bottom-area">
-            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
-                FOR FREE SHIPPING</span>
             <span class="total-price">TOTAL: <span class="price">$556</span></span>
             <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>

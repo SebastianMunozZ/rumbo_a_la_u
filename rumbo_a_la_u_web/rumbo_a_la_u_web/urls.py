@@ -15,21 +15,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from .views import index
 from .views import *
 from django.urls import path, include
-from .views_register import RegisterView, RegisterTeacherView
+from .views_register import RegisterView, RegisterTeacherView, ChangePasswordView
 from .views_courses import CourseView
 from .views_login import LoginView
 from .views_sell_course import SellCourseView
 from .views_cart import load as load_viewcart
-from .views_sell_course import SellCourseView
+from .views_blogcomments import CommentView
 from .views import transbankpay_load, transbankpay_commitpay
 from .views import error
 from .views import sobrenosotros  # Import the missing view function
 from .views import carro
+from .views import exportar_usuarios_excel, mostrar_exportacion, exportar_notas_excel
+from . import views
 
 urlpatterns = [
     path('', index, name='index'),
@@ -74,8 +78,7 @@ urlpatterns = [
          name="profesor-certificado"),
     path('profesor-configuraciones', profesorconfiguraciones,
          name="profesor-configuraciones"),
-    path('profesor-dashboard', profesorconfiguraciones,
-         name="profesor-configuraciones"),
+    path('profesor-dashboard', profesordashboard, name="profesor-dashboard"),
     path('profesor-evaluaciones', profesorevaluaciones,
          name="profesor-evaluaciones"),
     path('profesor-miperfil', profesormiperfil, name="profesor-miperfil"),
@@ -109,6 +112,7 @@ urlpatterns = [
     path('blogblogdet03', blogblogdet03, name="blogblogdet03"),
     path('blogblogdet04', blogblogdet04, name="blogblogdet04"),
     path('blogblogdet05', blogblogdet05, name="blogblogdet05"),
+    path('comentario/', CommentView.as_view(), name='comentario'),
 
     # Seccion Cursos
     path('cursos', cursos, name="cursos"),
@@ -135,6 +139,18 @@ urlpatterns = [
     path('cursos-quimica-estructuraatomica', cursosquimicaestructuraatomica,
          name="cursos-quimica-estructuraatomica"),
     path('course/', CourseView.as_view(), name='views_course'),
+
+    # Clase Demo de Cursos
+    path('clase-demo-historia', clasedemohistoria, name="clase-demo-historia"),
+    path('clase-demo-fisica', clasedemofisica, name="clase-demo-fisica"),
+    path('clase-demo-quimica', clasedemoquimica, name="clase-demo-quimica"),
+    path('clase-demo-biologia', clasedemobiologia, name="clase-demo-biologia"),
+    path('clase-demo-matematica', clasedemomatematica,
+         name="clase-demo-matematica"),
+    path('clase-demo-comprensionlectora', clasedemocomprensionlectora,
+         name="clase-demo-comprensionlectora"),
+
+
 
     # Seccion Header
     path('header', header, name="header"),
@@ -163,7 +179,7 @@ urlpatterns = [
     path('zoom-detalles-mat-geometria', zoomdetallesmatgeometria,
          name="zoom-detalles-mat-geometria"),
     path('zoom-detalles-mat-probabilidadyestadistica',
-         zoomdetallesprobabilidadyestadistica, name="zoom-detalles-probabilidadyestadistica"),
+         zoomdetallesmatprobabilidadyestadistica, name="zoom-detalles-mat-probabilidadyestadistica"),
 
     path('zoom-detalles-quim-estructuraatomica', zoomdetallesquimestructuraatomica,
          name='zoom-detalles-quim-estructuraatomica'),
@@ -176,4 +192,16 @@ urlpatterns = [
     path('zoom-reuniones', zoomreuniones, name="zoom-reuniones"),
     path('zoom-prueba', zoomprueba, name="zoom-prueba"),
     path('generate_signature/', generatesignature, name='generate_signature'),
-]
+    path('change_password/', ChangePasswordView.as_view(), name='change_password'),
+
+    # Seccion Exportar Usuarios
+    path('exportar_usuarios', exportar_usuarios_excel,
+         name='exportar_usuarios_excel'),
+
+    # Seccion Exportar Notas
+    path('exportar_notas_excel/', exportar_notas_excel,
+         name='exportar_notas_excel'),
+
+
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,32 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumno - Mis Cursos</title>
-    {% load static %}
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cursos Matriculados</title>
-        <link rel="shortcut icon" type="image/x-icon"
-            href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
-        <!-- fontawesome 6.4.2 -->
-        <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
-        <!-- swiper Css 10.2.0 -->
-        <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
-        <!-- magnific popup css -->
-        <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
-        <!-- Bootstrap 5.0.2 -->
-        <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
-        <!-- jquery ui css -->
-        <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
-        <!-- metismenu scss -->
-        <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
-        <!-- custom style css -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
+    <title>Rumbo a la U | Alumno - Configuraciones</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{% static 'css/vendor/jquery-ui.css' %}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{% static 'css/vendor/metismenu.css' %}">
+    <!-- custom style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
 <body>
 
@@ -46,25 +38,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="dashboard-banner-area-start bg_image  student-dashboard">
+                    <div class="dashboard-banner-area-start bg_image student-dashboard">
 
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
-                                <img src="{% static 'images/dashboard/04.png' %}" alt="dashboard">
+                                <img src="{% static 'images/dashboard/fotodeperfil.png' %}" alt="dashboard">
                             </div>
-                            <div class="name-desig"></div>
-                            <h1 class="title">{{ user.nombre }}</h1>
-                            <div class="course-vedio">
-                                <div class="single">
-                                    <i class="fa-thin fa-book"></i>
-                                    <span>5 Cursos Inscritos</span>
-                                </div>
-                                <div class="single">
-                                    <i class="fa-thin fa-file-certificate"></i>
-                                    <span>4 Certificados</span>
+                            <div class="name-desig">
+                                <h1 class="title">{{ user.nombre }}</h1>
+                                <div class="course-vedio">
+                                    <div class="single">
+                                        <i class="fa-thin fa-book"></i>
+                                        <span>5 Cursos Inscritos</span>
+                                    </div>
+                                    <div class="single">
+                                        <i class="fa-thin fa-file-certificate"></i>
+                                        <span>4 Certificados</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -89,13 +83,13 @@
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="{% url 'alumnomiperfil' %}" class="single-item active">
+                            <a href="{% url 'alumnomiperfil' %}" class="single-item ">
                                 <i class="fa-regular fa-user"></i>
                                 <p>Mi Perfil</p>
                             </a>
                             <!-- single item end -->
                             <!-- single item -->
-                            <a href="{% url 'alumnocursosmatriculados' %}" class="single-item ">
+                            <a href="{% url 'alumnocursosmatriculados' %}" class="single-item active">
                                 <i class="fa-light fa-graduation-cap"></i>
                                 <p>Cursos Matriculados</p>
                             </a>
@@ -181,7 +175,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
-                                            <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
+                                            <a href="{% url 'cursos-quimica-estructuraatomica' %}" class="thumbnail">
                                                 <img src="{% static 'images/course/cursos-quimica.png' %}" alt="course">
                                                 <div class="tag-thumb">
                                                     <span>{{ inscripcion.course.asignatura}}</span>
@@ -192,12 +186,11 @@
                                                     <div class="tags">Lo más vendido</div>
                                                     <div class="price"></div>
                                                 </div>
-                                                <a href="cursos-quimica-estructuraatomica.html">
+                                                <a href="{% url 'cursos-quimica-estructuraatomica' %}">
                                                     <h5 class="title">{{ inscripcion.course.nombre_del_curso }}</h5>
                                                 </a>
                                                 <div class="teacher-stars">
-                                                    <div class="teacher"><span>{{
-                                                            inscripcion.course.teacher.user.nombre}}</span></div>
+                                                    <div class="teacher"><span>{{ inscripcion.course.teacher.user.nombre}}</span></div>
                                                     <ul class="stars">
                                                         <li class="span">4.5</li>
                                                         <li><i class="fa-sharp fa-solid fa-star"></i></li>
@@ -232,7 +225,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
-                                            <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
+                                            <a href="{% url 'cursos-quimica-estructuraatomica' %}" class="thumbnail">
                                                 <img src="{% static 'images/course/cursos-quimica.png' %}" alt="course">
                                                 <div class="tag-thumb">
                                                     <span>Química</span>
@@ -243,7 +236,7 @@
                                                     <div class="tags">Lo más vendido</div>
                                                     <div class="price"></div>
                                                 </div>
-                                                <a href="cursos-quimica-estructuraatomica.html">
+                                                <a href="{% url 'cursos-quimica-estructuraatomica' %}">
                                                     <h5 class="title">Estructura Atómica: Analizando el comportamiento
                                                         de la materia</h5>
                                                 </a>
@@ -282,7 +275,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
-                                            <a href="cursos-historia-ejehistoria.html" class="thumbnail">
+                                            <a href="{% url 'cursos-historia-ejehistoria' %}" class="thumbnail">
                                                 <img src="{% static 'images/course/cursos-historia.png' %}"
                                                     alt="course">
                                                 <div class="tag-thumb">
@@ -294,7 +287,7 @@
                                                     <div class="tags">Lo más vendido</div>
                                                     <div class="price"></div>
                                                 </div>
-                                                <a href="cursos-historia-ejehistoria.html">
+                                                <a href="{% url 'cursos-historia-ejehistoria' %}">
                                                     <h5 class="title">Eje Historia: Mundo, América y Chile</h5>
                                                 </a>
                                                 <div class="teacher-stars">
@@ -337,7 +330,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
-                                            <a href="cursos-quimica-estructuraatomica.html" class="thumbnail">
+                                            <a href="{% url 'cursos-quimica-estructuraatomica' %}" class="thumbnail">
                                                 <img src="{% static 'images/course/cursos-quimica.png' %}" alt="course">
                                                 <div class="tag-thumb">
                                                     <span>Química</span>
@@ -348,7 +341,7 @@
                                                     <div class="tags">Lo más vendido</div>
                                                     <div class="price"></div>
                                                 </div>
-                                                <a href="cursos-quimica-estructuraatomica.html">
+                                                <a href="{% url 'cursos-quimica-estructuraatomica' %}">
                                                     <h5 class="title">Estructura Atómica: Analizando el comportamiento
                                                         de la materia</h5>
                                                 </a>
@@ -402,7 +395,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                                         <!-- single course style two -->
                                         <div class="single-course-style-three enroll-course">
-                                            <a href="cursos-historia-ejehistoria.html" class="thumbnail">
+                                            <a href="{% url 'cursos-historia-ejehistoria' %}" class="thumbnail">
                                                 <img src="{% static 'images/course/cursos-historia.png' %}"
                                                     alt="course">
                                                 <div class="tag-thumb">
@@ -414,7 +407,7 @@
                                                     <div class="tags">Lo más vendido</div>
                                                     <div class="price"></div>
                                                 </div>
-                                                <a href="cursos-historia-ejehistoria.html">
+                                                <a href="{% url 'cursos-historia-ejehistoria' %}">
                                                     <h5 class="title">Eje Historia: Mundo, América y Chile</h5>
                                                 </a>
                                                 <div class="teacher-stars">
@@ -575,8 +568,6 @@
             </div>
         </div>
         <div class="cart-bottom-area">
-            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
-                FOR FREE SHIPPING</span>
             <span class="total-price">TOTAL: <span class="price">$556</span></span>
             <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>

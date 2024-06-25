@@ -19,12 +19,13 @@
                                     <li class="has-child-menu">
                                         <a href="#">
                                             <i class="fa-regular fa-user"></i>
-                                            <span class="menu-item">Bienvenido, {{ user.username }}</span>
+                                            <span class="menu-item">Bienvenid@, {{ user.username }}</span>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="user-profile">
                                                 <div class="profile-picture">
-                                                    <img src="static/images/banner/36.png" alt="banner">
+                                                    <img src="{% static 'images/banner/fotodeperfilheader.png' %}"
+                                                        alt="banner">
                                                     <div class="info">
                                                         <h6 class="name">{{ user.username }}</h6>
                                                     </div>
@@ -151,7 +152,6 @@
                                                             compras</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'error' %}">Error 404</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-dropdown" style="position: static;">
@@ -173,7 +173,7 @@
                                             {% endif %}
                                     </li>
                                     <li><a href="{% url 'profesores' %}">Profesores</a></li>
-                                    <li><a href="{% url 'planesdemembresia' %}">Planes de Membresía</a></li>
+                                    <li><a href="{% url 'planesdemembresia' %}">Planes de Membresía</a>
                                     </li>
                                 </ul>
                                 {% if user.tipo_usuario == "2" %}
@@ -187,7 +187,7 @@
                                     </a>
                                     <!-- single thumbnav end -->
                                     <!-- single thumbnav -->
-                                    <a href="profesor-reporteria.html" class="single-thumbnav mash">
+                                    <a href="{% url 'profesor-reporteria' %}" class="single-thumbnav mash">
                                         <div class="icon">
                                             <img src="{% static 'images/nav/05.png' %}" alt="nav">
                                         </div>
@@ -201,78 +201,41 @@
                                 </li>
                                 </ul>
                                 </li>
+                                {% if user.tipo_usuario == "2" %}
                                 <li class="has-dropdown">
                                     <a class="nav-link" href="#">Dashboard</a>
                                     <ul class="submenu">
-                                        <li class="sub-dropdown">
-                                            <a class="submenu-link" href="javascript:void(0);">
-                                                Dashboard Profesor</a>
-                                            <ul class="submenu third-lvl base">
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-dashboard.html">Dashboard</a></li>
-                                                <li><a class="mobile-menu-link" href="profesor-miperfil.html">Mi
-                                                        Perfil</a></li>
-                                                <li><a class="mobile-menu-link" href="profesor-resenas.html">Reseñas</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-evaluaciones.html">Evaluaciones</a></li>
-                                                <li><a class="mobile-menu-link" href="profesor-pregyresp.html">Preguntas
-                                                        y
-                                                        Respuestas</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-calendario.html">Calendario</a></li>
-                                                <li><a class="mobile-menu-link" href="profesor-miscursos.html">Mis
-                                                        cursos</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-anuncios.html">Anuncios</a></li>
-                                                <li><a class="mobile-menu-link" href="profesor-saldo.html">Saldo</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-asignaciontareas.html">Asignaciones</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-certificado.html">Certificado</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-reporteria.html">Reportería</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="profesor-configuraciones.html">Configuraciones</a>
-                                                </li>
-                                            </ul>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-dashboard' %}">Dashboard</a></li>
+                                        <li><a class="mobile-menu-link" href="{% url 'profesor-miperfil' %}">Mi
+                                                Perfil</a></li>
+                                        <li><a class="mobile-menu-link" href="{% url 'profesor-resenas' %}">Reseñas</a>
                                         </li>
-                                        <li class="sub-dropdown">
-                                            <a class="submenu-link" href="javascript:void(0);">
-                                                Dashboard Alumno</a>
-                                            <ul class="submenu third-lvl base">
-                                                <li><a class="mobile-menu-link"
-                                                        href="alumno-dashboard.html">Dashboard</a></li>
-                                                <li><a class="mobile-menu-link" href="alumno-miperfil.html">Mi
-                                                        Perfil</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="alumno-cursosmatriculados.html">Cursos
-                                                        Matriculados</a></li>
-                                                <li><a class="mobile-menu-link" href="alumno-listadedeseos.html">Lista
-                                                        de Deseos</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link" href="alumno-resenas.html">Reseñas</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link" href="alumno-misevaluaciones.html">Mis
-                                                        Evaluaciones</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="alumno-historialdepedidos.html">Historial de
-                                                        Pedidos</a></li>
-                                                <li><a class="mobile-menu-link" href="alumno-pregyresp.html">Preguntas y
-                                                        Respuestas</a>
-                                                </li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="alumno-calendario.html">Calendario</a></li>
-                                                <li><a class="mobile-menu-link"
-                                                        href="alumno-configuraciones.html">Configuraciones</a>
-                                                </li>
-                                            </ul>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-evaluaciones' %}">Evaluaciones</a></li>
+                                        <li><a class="mobile-menu-link" href="{% url 'profesor-pregyresp' %}">Preguntas
+                                                y
+                                                Respuestas</a></li>
+                                        <li><a class="mobile-menu-link" href="{% url 'profesor-miscursos' %}">Mis
+                                                cursos</a></li>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-anuncios' %}">Anuncios</a></li>
+                                        <li><a class="mobile-menu-link" href="{% url 'profesor-saldo' %}">Saldo</a>
                                         </li>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-asignaciontareas' %}">Asignaciones</a>
+                                        </li>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-certificado' %}">Certificado</a></li>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-reporteria' %}">Reportería</a></li>
+                                        <li><a class="mobile-menu-link"
+                                                href="{% url 'profesor-configuraciones' %}">Configuraciones</a>
+                                        </li>
+
                                     </ul>
                                 </li>
+                                {% endif %}
                                 <li class="has-dropdown">
                                     <a class="nav-link" href="#">Blog</a>
                                     <ul class="submenu">

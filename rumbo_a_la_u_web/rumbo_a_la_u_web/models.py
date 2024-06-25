@@ -17,6 +17,7 @@ class Usuarios(models.Model):
 class Alumno(models.Model):
     user = models.OneToOneField(
         Usuarios, primary_key=True, on_delete=models.CASCADE)
+    student_id = models.IntegerField()
     ano_de_ingreso = models.CharField(max_length=255, default='2024')
     nivel_de_educacion = models.CharField(
         max_length=255, default='Media Completa')
@@ -29,6 +30,8 @@ class Alumno(models.Model):
 class Profesor(models.Model):
     teacher_id = models.AutoField(primary_key=True)
     user = models.OneToOneField(Usuarios, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=255)
+    apellido = models.CharField(max_length=255)
     asignatura_que_ensena = models.CharField(max_length=255)
     # Tus campos específicos de Profesor aquí
 
@@ -44,7 +47,7 @@ class Curso(models.Model):
     es_pagado = models.IntegerField()
     precio = models.IntegerField(null=True, default=0)
     miniatura = models.ImageField(
-        upload_to='fotos/', default='fotos/default.jpg')
+        upload_to='media/', default='media/default.jpg')
     teacher = models.ForeignKey(Profesor, on_delete=models.CASCADE)
 
     class Meta:
@@ -82,3 +85,32 @@ class Inscripciones(models.Model):
 
     class Meta:
         db_table = 'INSCRIPCIONES'
+
+
+class Comentario(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    comentario = models.TextField()
+    noticia = models.IntegerField(blank=True, null=False)
+
+    class Meta:
+        db_table = 'Comentario'
+
+
+# grade_id, student_id, course_id, calificacion, fecha_de_calificacion
+
+class Notas(models.Model):
+    # user = models.ForeignKey(
+    # Alumno, on_delete=models.CASCADE, related_name='notas')
+    grade_id = models.AutoField(primary_key=True)
+    student = models.ForeignKey(
+        Alumno, on_delete=models.CASCADE, related_name='notas')
+    course_id = models.IntegerField()
+    calificacion = models.FloatField()
+    fecha_de_calificacion = models.DateField()
+
+    class Meta:
+        db_table = 'NOTAS'
+
+    def __str__(self):
+        return f"Nota de  - ID: {self.grade_id}"

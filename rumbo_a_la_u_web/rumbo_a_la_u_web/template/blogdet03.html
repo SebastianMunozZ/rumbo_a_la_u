@@ -5,11 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    <title>Rumbo a la U | Blog 📰</title>
     <link rel="shortcut icon" type="image/x-icon"
         href="{% static 'images/wepik-linear-doodle-academy-public-school-logo-20240428034859w65e-removebg-preview.ico' %}">
     <!-- fontawesome 6.4.2 -->
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-6.css' %}">
     <!-- swiper Css 10.2.0 -->
     <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
@@ -183,21 +182,30 @@
                                     </p>
                                 </div>
                             </div>
+                            {% for comentario in comentarios %}
+                            <div class="replay-area-details">
+                                <h4 class="title">{{ comentario.nombre }} {{ comentario.apellido }}</h4>
+                                <p>{{ comentario.comentario }}</p>
+                            </div>
+                            {% endfor %}
                             <div class="replay-area-details">
                                 <h4 class="title">Deja un comentario</h4>
-                                <form action="#">
+                                <form action="{% url 'comentario' %}" method="post">
+                                    {% csrf_token %}
                                     <div class="row g-4">
                                         <div class="col-lg-6">
-                                            <input type="text" placeholder="Nombre" required>
+                                            <input name="nombre" type="text" placeholder="Nombre" required>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="text" placeholder="Apellido" required>
+                                            <input name="apellido" type="text" placeholder="Apellido" required>
                                         </div>
                                         <div class="col-12">
-                                            <textarea placeholder="Tu comentario aqui" required></textarea>
+                                            <textarea name="comentario" placeholder="Tu comentario aqui"
+                                                required></textarea>
                                         </div>
+                                        <input type="hidden" name="id_noticia" value="3">
                                     </div>
-                                    <button type="submit" class="rts-btn btn-primary mt--20">Submit Message</button>
+                                    <button type="submit" class="rts-btn btn-primary mt--20">Enviar mensaje</button>
                                 </form>
                             </div>
                         </div>
@@ -409,8 +417,6 @@
             </div>
         </div>
         <div class="cart-bottom-area">
-            <span class="spend-shipping"><i class="fal fa-truck"></i> SPENT <span class="amount">$199.00</span> MORE
-                FOR FREE SHIPPING</span>
             <span class="total-price">TOTAL: <span class="price">$556</span></span>
             <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>

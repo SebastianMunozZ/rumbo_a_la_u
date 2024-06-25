@@ -64,6 +64,6 @@ class SellCourseView(View):
         except Exception as ex: 
             print('Error: al cargar los datos')
             print(f'Error: {ex}')
-        return render(request, 'cursos.html', {'products': products, 'quantities': quantities})
+        return redirect(request.META['HTTP_REFERER'])
     
     
