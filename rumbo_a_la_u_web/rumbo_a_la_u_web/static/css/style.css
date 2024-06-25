@@ -31300,3 +31300,10 @@ header.header-three .sub-dropdown .submenu.third-lvl.base {
   transform: scale(1.05);
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+.btn-custom-color {
+    background-color: #553CDF;
+    color: white; /* Color del texto */
+    border: none; /* Eliminar borde si es necesario */
+    /* Otros estilos según necesites */
+}
