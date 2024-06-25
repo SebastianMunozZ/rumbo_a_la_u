@@ -48,12 +48,13 @@
                                 <i class="fa-regular fa-star"></i>
                             </div>
                             <p>Profesor de Ciencias</p>
-                            <a href="curso-crear.html" class="create-btn"><i class="fa-regular fa-circle-plus"></i>
+                            <a href="{% url 'cursocrear' %}" class="create-btn"><i
+                                    class="fa-regular fa-circle-plus"></i>
                                 Crear un nuevo curso</a>
                         </div>
                         <div class="author-profile-image-and-name">
                             <div class="profile-pic">
-                                <img src="static/images/dashboard/fotodeperfil.png" alt="dashboard">
+                                <img src="{% static 'images/dashboard/fotodeperfil.png' %}" alt="dashboard">
                             </div>
                             <div class="name-desig">
                                 <h1 class="title">Jon Adam</h1>
@@ -376,7 +377,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -403,7 +405,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -430,7 +433,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">

@@ -34,11 +34,15 @@ def index(request):
 
 
 def sobrenosotros(request):
-    return render(request, 'sobrenosotros.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'sobrenosotros.html', {'user': user})
 
 
 def profesores(request):
-    return render(request, 'profesores.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesores.html', {'user': user})
 
 
 def pricing(request):
@@ -58,7 +62,9 @@ def zoommeeting(request):
 
 
 def zoomreuniones(request):
-    return render(request, 'zoom-reuniones.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-reuniones.html', {'user': user})
 
 
 def event(request):
@@ -298,27 +304,39 @@ def profesorsaldo(request):
 
 
 def profesorprofilebiologia(request):
-    return render(request, 'profesor-profile-biologia.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-biologia.html', {'user': user})
 
 
 def profesorprofilecomplectora(request):
-    return render(request, 'profesor-profile-complectora.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-complectora.html', {'user': user})
 
 
 def profesorprofilefisica(request):
-    return render(request, 'profesor-profile-fisica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-fisica.html', {'user': user})
 
 
 def profesorprofilehistoria(request):
-    return render(request, 'profesor-profile-historia.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-historia.html', {'user': user})
 
 
 def profesorprofilematematica(request):
-    return render(request, 'profesor-profile-matematica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-matematica.html', {'user': user})
 
 
 def profesorprofilequimica(request):
-    return render(request, 'profesor-profile-quimica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'profesor-profile-quimica.html', {'user': user})
 
 
 def blogblogdet(request):
@@ -462,7 +480,9 @@ def footer(request):
 
 
 def planesdemembresia(request):
-    return render(request, 'planesdemembresia.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'planesdemembresia.html', {'user': user})
 
 
 def registro(request):
@@ -470,19 +490,27 @@ def registro(request):
 
 
 def zoomdetallesmatalgebrayfunciones(request):
-    return render(request, 'zoom-detalles-mat-algebrayfunciones.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-mat-algebrayfunciones.html', {'user': user})
 
 
 def zoomdetallesmatprobabilidadyestadistica(request):
-    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-mat-probabilidadyestadistica.html', {'user': user})
 
 
 def zoomdetallesmatgeometria(request):
-    return render(request, 'zoom-detalles-mat-geometria.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-mat-geometria.html', {'user': user})
 
 
 def zoomdetallesquimestructuraatomica(request):
-    return render(request, 'zoom-detalles-quim-estructuraatomica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-quim-estructuraatomica.html', {'user': user})
 
 
 def clasedemohistoria(request):
@@ -516,15 +544,21 @@ def zoomprueba(request):
 
 
 def zoomdetallesquimestructuraatomica(request):
-    return render(request, 'zoom-detalles-quim-estructuraatomica.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-quim-estructuraatomica.html', {'user': user})
 
 
 def zoomdetallesquimquimicaorganica(request):
-    return render(request, 'zoom-detalles-quim-quimicasyestequiometria.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-quim-quimicasyestequiometria.html', {'user': user})
 
 
 def zoomdetallesquimquimicasyestequiometria(request):
-    return render(request, 'zoom-detalles-quim-quimicasyestequiometria.html')
+    user_id = request.session.get('user_id')
+    user = Usuarios.objects.get(user_id=user_id)
+    return render(request, 'zoom-detalles-quim-quimicasyestequiometria.html', {'user': user})
 
 
 def transbankpay_load(request):
