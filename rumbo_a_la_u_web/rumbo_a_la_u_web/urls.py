@@ -27,7 +27,6 @@ from .views_courses import CourseView
 from .views_login import LoginView
 from .views_sell_course import SellCourseView
 from .views_cart import load as load_viewcart
-from .views_sell_course import SellCourseView
 from .views_blogcomments import CommentView
 from .views import transbankpay_load, transbankpay_commitpay
 from .views import error

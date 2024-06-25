@@ -27,7 +27,7 @@ def load(request, course_id):
     request.session['buy_order'] = buy_order
     request.session['session_id'] = session_id
 
-    return redirect(reverse('carro'))
+    return redirect('carro')
 
 def load_cart(customer_id:int=None):
     carts = []

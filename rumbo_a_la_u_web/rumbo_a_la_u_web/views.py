@@ -2,7 +2,7 @@ import json
 import base64
 import hmac
 import hashlib
-import datetime
+import datetime as dt
 from django.shortcuts import render
 from django.contrib.auth import update_session_auth_hash
 from .models import Usuarios, Curso, Inscripciones, Comentario, Notas, Alumno
@@ -81,14 +81,15 @@ def carro(request):
         'quantities': quantities,
         'total': total,
         'buy_order': buy_order,
-        'session_id': user_id
+        'session_id': user_id,
+        'course_id': products[0]['id']
     }
     print(f'products desde views:{products}')
     print(f'user desde views:{user}')
     print(f'quantities desde views:{quantities}')
     print(f'total desde views:{total}')
     print(f'buy_order desde views:{buy_order}')
-    return render(request, 'carro.html', context)
+    return render(request, 'carro.html', context) 
 
 
 def login(request):
