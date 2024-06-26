@@ -81,6 +81,10 @@ def carro(request):
         print(f'Error: {ex}')
         traceback.print_exc()
     buy_order = request.session.get('buy_order')
+    course_id = ""
+    if products:
+        course_id = products[0]['id']
+    
     context = {
         'user': user,
         'products': products,
@@ -88,7 +92,7 @@ def carro(request):
         'total': total,
         'buy_order': buy_order,
         'session_id': user_id,
-        'course_id': products[0]['id']
+        'course_id': course_id
     }
     print(f'products desde views:{products}')
     print(f'user desde views:{user}')
