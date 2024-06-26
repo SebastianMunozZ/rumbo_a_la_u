@@ -42,9 +42,9 @@
                         <h1 class="title">Cómo ser Profesor</h1>
                         <!-- breadcrumb pagination area -->
                         <div class="pagination-wrapper">
-                            <a href="index.html">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                             <i class="fa-regular fa-chevron-right"></i>
-                            <a class="active" href="become-instructor.html">Cómo ser Profesor</a>
+                            <a class="active" href="{% url 'profesor-registro' %}">Cómo ser Profesor</a>
                         </div>
                         <!-- breadcrumb pagination area end -->
                     </div>
@@ -73,7 +73,7 @@
                             </p>
                         </div>
                         <div class="large-image-thumb" style="text-align: center;">
-                            <img src="static/images/instructor/become.instructor.png" alt="instructor">
+                            <img src="{% static 'images/instructor/become.instructor.png' %}" alt="instructor">
                         </div>
 
                     </div>
@@ -125,7 +125,8 @@
                                     </div>
                                     <div class="right-side">
                                         <div class="thumbnail">
-                                            <img src="static/images/instructor/conv-profesor.png" alt="instructor">
+                                            <img src="{% static 'images/instructor/conv-profesor.png' %}"
+                                                alt="instructor">
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +152,7 @@
                                     </div>
                                     <div class="right-side">
                                         <div class="thumbnail">
-                                            <img src="static/images/instructor/normas.png" alt="instructor">
+                                            <img src="{% static 'images/instructor/normas.png' %}" alt="instructor">
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +179,8 @@
                                     </div>
                                     <div class="right-side">
                                         <div class="thumbnail">
-                                            <img src="static/images/instructor/comienza-clases.png" alt="instructor">
+                                            <img src="{% static 'images/instructor/comienza-clases.png' %}"
+                                                alt="instructor">
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +225,8 @@
                                 </div>
                             </div>
                             <button type="submit" class="rts-btn btn-primary mb--30">Registrarse como Profesor</button>
-                            <span>¿Ya tienes una cuenta? <a href="#" style="color: var(--color-primary);">Ingresa
+                            <span>¿Ya tienes una cuenta? <a href="{% url 'login' %}"
+                                    style="color: var(--color-primary);">Ingresa
                                     aquí</a></span>
                         </form>
                     </div>
@@ -251,7 +254,8 @@
         <div class="product-area">
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/01.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/01.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Construct Map</span>
                         <div class="item-wrapper">
@@ -278,7 +282,8 @@
             </div>
             <div class="product-item">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/02.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/02.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name"> Bridge product</span>
                         <div class="item-wrapper">
@@ -305,7 +310,8 @@
             </div>
             <div class="product-item last-child">
                 <div class="product-detail">
-                    <div class="product-thumb"><img src="static/images/course/cart/03.jpg" alt="product-thumb"></div>
+                    <div class="product-thumb"><img src="{% static 'images/course/cart/03.jpg' %}" alt="product-thumb">
+                    </div>
                     <div class="item-wrapper">
                         <span class="product-name">Labour helmet</span>
                         <div class="item-wrapper">
